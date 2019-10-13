@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .logo-toko{
     height: 150%;
     width: auto;
@@ -21,4 +22,29 @@
 
 .navbar{
     background-image: linear-gradient( to right,white,#F2E2FF);
+=======
+.logo-toko{
+    height: 150%;
+    width: auto;
+}
+
+.navbar-form{
+    margin-left: 35%;
+}
+
+.kelas{
+    position: relative;
+    float: left;
+    margin: 10px 5%;
+    left: 8%;
+    padding: 5%;
+}
+
+.navbar-right{
+    margin-right: 10%;
+}
+
+.navbar{
+    background-image: linear-gradient( to right,white,#F2E2FF);
+>>>>>>> master
 }
