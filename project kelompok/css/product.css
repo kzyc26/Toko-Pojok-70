@@ -1,0 +1,56 @@
+.logo-toko{
+    height: 150%;
+    width: auto;
+}
+
+.navbar-form{
+    margin-left: 35%;
+}
+
+.kelas{
+    position: relative;
+    float: left;
+    margin: 10px 5%;
+    left: 8%;
+    padding: 5%;
+}
+
+.navbar-right{
+    margin-right: 10%;
+}
+
+.navbar{
+    background-image: linear-gradient( to right,#EEE4FF, #EDFFF3, #FFF0F8,#FFEBD7);
+}
+body{
+    background-image: linear-gradient( to right,#EEE4FF, #EDFFF3, #FFF0F8,#FFEBD7);
+}
+.productsimg {
+        background-color: #ddd;
+        min-height: 500px;
+        overflow: auto;
+        padding: 20px;
+    }
+    .container {
+        width: 800px;
+        margin: 0 auto;
+    }
+.thumbnail{
+    background-color: white;
+			text-align: center;
+			padding: 10px;
+			width: 225px;
+			margin: 10px;
+            float: left;
+            position: relative;
+}
+.dropdown{
+ position: relative;
+ float:none;   
+ left:650px;
+}
+.categories{
+   padding: 40px;
+    float:left;
+    width: 250px;
+}
