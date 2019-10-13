@@ -22,3 +22,20 @@
 .navbar{
     background-image: linear-gradient( to right,#EEE4FF, #EDFFF3, #FFF0F8,#FFEBD7);
 }
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: 30%;
+    height: auto;
+}
+
+.carousel-caption{
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    color: black;
+    background:rgba(255, 255, 255, 0.5);
+    bottom: 30px;
+    padding: 2px;
+}
