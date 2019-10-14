@@ -23,6 +23,10 @@
     background-image: linear-gradient( to right,#EEE4FF, #EDFFF3, #FFF0F8,#FFEBD7);
 }
 
+.carousel{
+    top: 0;
+}
+
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img{
     margin-left: 50%;
