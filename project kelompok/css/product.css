@@ -26,10 +26,9 @@ body{
     background-image: linear-gradient( to right,#EEE4FF, #EDFFF3, #FFF0F8,#FFEBD7);
 }
 .productsimg {
-        background-color: #ddd;
-        min-height: 500px;
-        overflow: auto;
-        padding: 20px;
+    /* background-color: #ddd; */
+    min-height: 500px;
+    overflow: auto;
     }
     .container {
         width: 800px;
