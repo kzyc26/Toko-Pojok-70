@@ -1,3 +1,20 @@
+/* color selection  */
+.pink{
+    background-color: #FFDEF1;
+}
+.purple{
+    background-color: #F2E2FF
+}
+.blue{
+    background-color: #E2EDFF;
+}
+.cyan{
+    background-color: #DCFFFB;
+}
+.cream{
+    background-color: #FFFFE3;
+}
+
 .logo-toko{
     height: 150%;
     width: auto;
@@ -21,4 +38,5 @@
 
 .navbar{
     background-image: linear-gradient( to right,#EEE4FF, #EDFFF3, #FFF0F8,#FFEBD7);
+    margin-bottom: 0px;
 }
