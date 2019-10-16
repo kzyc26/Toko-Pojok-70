@@ -53,3 +53,62 @@ body{
     float:left;
     width: 250px;
 }
+.modal{
+ padding:10%;
+ width:90%
+}
+.modal-content > img{
+width:30%;
+height:auto;
+margin-left:50%;
+transform:translateX(-50%);
+
+}
+/* The grid: Four equal columns that floats next to each other */
+.row{
+    position: relative;
+    margin-left:50%;
+    transform: translateX(-15%);
+width: 100%;
+}
+.row>.column{
+    margin-left:3%;
+}
+.column {
+    width: 5%;
+    float: left;
+    padding: 10px;
+    border:1px solid black;
+  }
+  
+  /* Style the images inside the grid */
+  .column>img {
+    cursor: pointer; 
+    width:120%;
+     }
+  
+.column>img:active{
+    border-color: blue;
+}
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  .modal-content>h4{
+      padding-left: 40px;
+
+  }
+
+
+
