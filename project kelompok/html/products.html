@@ -225,19 +225,19 @@
             
         </div>
         
-        <img src="../assets/images/Slide 1.jpg" id="propreview">
+        <img src="../assets/images/Slide 1.jpg" id="firstpreview">
         <div class="row">
           <div class="column">
-            <img src="../assets/images/Slide 2.jpg"  onclick="myFunction(this);">
+            <img src="../assets/images/Slide 2.jpg"   onclick="myFunction(this);">
           </div>
           <div class="column">
-            <img src="../assets/images/Slide 3.jpg"  onclick="myFunction(this);">
+            <img src="../assets/images/Slide 3.jpg"   onclick="myFunction(this);">
           </div>
-          <div class="column">
+          <div class="column" >
             <img src="../assets/images/color pallete.jpg"  onclick="myFunction(this);">
           </div>
-          <div class="column">
-              <img src="../assets/images/Slide 1.jpg"  onclick="myFunction(this);">
+          <div class="column" >
+              <img src="../assets/images/Slide 1.jpg"   onclick="myFunction(this);">
             </div>
          </div>
         
@@ -283,11 +283,13 @@ window.onclick = function(event) {
     <script>
       function myFunction(imgs) {
   // Get the expanded image
-  var expandImg = document.getElementById("propreview");
+  var expandImg = document.getElementById("firstpreview");
   // // Use the same src in the expanded image as the image being clicked on from the grid
   expandImg.src = imgs.src;
   // Use the value of the alt attribute of the clickable image as text inside the expanded image
   expandImg.parentElement.style.display = "block";
+  document.getElementsByClassName("column").style.borderColor="blue";
   }
-    </script>
+      </script>
+    
 </body>

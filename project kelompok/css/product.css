@@ -68,7 +68,7 @@ transform:translateX(-50%);
 .row{
     position: relative;
     margin-left:50%;
-    transform: translateX(-15%);
+    transform: translateX(-18%);
 width: 100%;
 }
 .row>.column{
@@ -78,18 +78,18 @@ width: 100%;
     width: 5%;
     float: left;
     padding: 10px;
-    border:1px solid black;
+    border:5px solid black;
   }
   
   /* Style the images inside the grid */
   .column>img {
     cursor: pointer; 
     width:120%;
+    
      }
   
-.column>img:active{
-    border-color: blue;
-}
+
+
   /* Clear floats after the columns */
   .row:after {
     content: "";
