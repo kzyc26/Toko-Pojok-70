@@ -26,7 +26,7 @@ body{
     background-image: linear-gradient( to right,#EEE4FF, #EDFFF3, #FFF0F8,#FFEBD7);
 }
 .productsimg {
-    /* background-color: #ddd; */
+    
     min-height: 500px;
     overflow: auto;
     }
@@ -53,32 +53,53 @@ body{
     float:left;
     width: 250px;
 }
-.modal{
- padding:10%;
- width:90%
+
+.modal-content{
+    overflow:auto;
+    width:100%;
+    background-image:white;
 }
-.modal-content > img{
-width:30%;
+.addtocart>.btn{
+    position:relative;
+}
+.firstpic{
+width:100%;
 height:auto;
-margin-left:50%;
+margin-left:60%;
 transform:translateX(-50%);
+position: relative;
 
 }
-/* The grid: Four equal columns that floats next to each other */
-.row{
+.addtocart{
+    width:100%;
     position: relative;
-    margin-left:50%;
+    margin-left:10%;
+}
+/* The grid: Four equal columns that floats next to each other */
+.productdesc{
+    float:left;
+    text-align: left;
+    width:30%;
+}
+.imagecollection .row{
+    position: relative;
+    margin-left:24%;
     transform: translateX(-18%);
 width: 100%;
+padding-top:10%;
 }
-.row>.column{
-    margin-left:3%;
+.row > .column{
+    margin-left:5%;
+}
+.imagecollection{
+    float:left;
 }
 .column {
-    width: 5%;
+    width: 20%;
     float: left;
-    padding: 10px;
-    border:5px solid black;
+    padding: 5%;
+    border:1px solid black;
+
   }
   
   /* Style the images inside the grid */
@@ -88,8 +109,6 @@ width: 100%;
     
      }
   
-
-
   /* Clear floats after the columns */
   .row:after {
     content: "";
@@ -98,9 +117,10 @@ width: 100%;
   }
 
   .closebtn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
+    position:absolute;
+    z-index:999;
+    /* top: 10px;
+    right: 15px; */
     color: white;
     font-size: 35px;
     cursor: pointer;
@@ -109,6 +129,9 @@ width: 100%;
       padding-left: 40px;
 
   }
+  .product_view .modal-dialog{max-width: 800px; width: 100%;}
+  .pre-cost{text-decoration: line-through; color: white;}
+  .space-ten{padding: 10px 0;}
 
 
 
