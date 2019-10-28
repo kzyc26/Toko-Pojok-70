@@ -1,0 +1,28 @@
+img.foto {
+    position: relative;
+    width: 10%;
+    height: auto;
+    top: 50px;
+    margin: 0 45%;
+    border-radius: 50%;
+    display: block;
+    border-style: solid;
+    border-color: #403C37;
+    border-width: 5px;
+}
+
+.form-signin{
+    width: 30%;
+    margin: auto;
+}
+
+h2.form-signin-heading{
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px;
+}
+
+footer{
+    font-size: medium;
+    background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
+}
