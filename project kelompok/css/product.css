@@ -1,176 +1,220 @@
-.logo-toko{
-    height: 150%;
-    width: auto;
-}
 
-.navbar-form{
-    margin-left: 35%;
-}
 
-.kelas{
-    position: relative;
-    float: left;
-    margin: 10px 5%;
-    left: 8%;
-    padding: 5%;
-}
-.menu-option{z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:#f1f1f1;  position:absolute; text-align:center; font-size:12px;}
-.menu-option ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
-.menu-option li {display: block;   padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
-.menu-option li:hover{display: block;    background:#ffffff; padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
-.menu-option ul li a { text-decoration:none;  margin: 0px; color:#666;}
-.menu-option ul li a:hover {  color: #666; text-decoration:none;}
-.menu-option a{text-decoration:none; color:#666;}
-.menu-option a:hover{text-decoration:none; color:#666;}
-
-.navbar-right{
-    margin-right: 10%;
-}
-.menu{
-   margin-left:0%;
+.menu-option {
+    z-index: 1000000;
+    font-weight: bold;
+    font-size: 0.8em;
+    width: 100%;
+    background: #f1f1f1;
     position: absolute;
-    padding-top:1%;
-}
-.navbar-brand{
-    position:absolute;
-    margin-left:50%;
-    transform: translateX(30%);
+    text-align: center;
+    font-size: 12px;
 }
 
-.bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 0;
-    transition: 0.4s;
-  }
-  
-  .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
-  }
-  
-  .change .bar2 {opacity: 0;}
-  
-  .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
-  }
-
-.navbar{
-    background-image: linear-gradient( to right,#EEE4FF, #EDFFF3, #FFF0F8,#FFEBD7);
+.menu-option ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    list-style-image: none;
 }
-body{
-    background-image: linear-gradient( to right,#EEE4FF, #EDFFF3, #FFF0F8,#FFEBD7);
+
+.menu-option li {
+    display: block;
+    padding: 15px 0 15px 0;
+    border-bottom: #dddddd 1px solid;
+}
+
+.menu-option li:hover {
+    display: block;
+    background: #ffffff;
+    padding: 15px 0 15px 0;
+    border-bottom: #dddddd 1px solid;
+}
+
+.menu-option ul li a {
+    text-decoration: none;
+    margin: 0px;
+    color: #666;
+}
+
+.menu-option ul li a:hover {
+    color: #666;
+    text-decoration: none;
+}
+
+.menu-option a {
+    text-decoration: none;
+    color: #666;
+}
+
+.menu-option a:hover {
+    text-decoration: none;
+    color: #666;
+}
+
+
+
+.menu {
+    margin-left: 0%;
+    position: absolute;
+    padding-top: 1%;
+}
+
+
+body {
+    background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
 }
 
 .productsimg {
-    
+
     min-height: 500px;
     overflow: auto;
-    }
-    .container {
-        width: 800px;
-        margin: 0 auto;
-    }
-.thumbnail{
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.thumbnail {
     background-color: white;
-			text-align: center;
-			padding: 10px;
-			width: 225px;
-			margin: 10px;
-            float: left;
-            position: relative;
+    text-align: center;
+    padding: 10px;
+    width: 225px;
+    margin: 10px;
+    float: left;
+    position: relative;
 }
-.dropdown{
- position: relative;
- float:none;   
- left:650px;
+
+.dropdown {
+    position: relative;
+    float: none;
+    left: 650px;
 }
-.categories{
-   padding: 40px;
-    float:left;
+
+.categories {
+    padding: 40px;
+    float: left;
     width: 250px;
 }
 
-.modal-content{
-    overflow:auto;
-    width:100%;
-    background-image:white;
+.modal-content {
+    overflow: auto;
+    width: 100%;
+    background-image: white;
 }
-.addtocart>.btn{
-    position:relative;
+
+.addtocart>.btn {
+    position: relative;
 }
-.firstpic{
-width:100%;
-height:auto;
-margin-left:60%;
-transform:translateX(-50%);
-position: relative;
+
+.firstpic {
+    width: 100%;
+    height: auto;
+    margin-left: 60%;
+    transform: translateX(-50%);
+    position: relative;
 
 }
-.addtocart{
-    width:100%;
+
+.addtocart {
+    width: 100%;
     position: relative;
-    margin-left:10%;
+    margin-left: 10%;
 }
+
 /* The grid: Four equal columns that floats next to each other */
-.productdesc{
-    float:left;
+.productdesc {
+    float: left;
     text-align: left;
-    width:30%;
+    width: 30%;
 }
-.imagecollection .row{
+
+.imagecollection .row {
     position: relative;
-    margin-left:24%;
+    margin-left: 24%;
     transform: translateX(-18%);
-width: 100%;
-padding-top:10%;
+    width: 100%;
+    padding-top: 10%;
 }
-.row > .column{
-    margin-left:5%;
+
+.row>.column {
+    margin-left: 5%;
 }
-.imagecollection{
-    float:left;
+
+.imagecollection {
+    float: left;
 }
+
 .column {
     width: 20%;
     float: left;
     padding: 5%;
-    border:1px solid black;
+    border: 1px solid black;
 
-  }
-  
-  /* Style the images inside the grid */
-  .column>img {
-    cursor: pointer; 
-    width:120%;
-    
-     }
-  
-  /* Clear floats after the columns */
-  .row:after {
+}
+
+/* Style the images inside the grid */
+.column>img {
+    cursor: pointer;
+    width: 120%;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
-
-  .closebtn {
-    position:absolute;
-    z-index:999;
-    /* top: 10px;
-    right: 15px; */
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-  }
-  .modal-content>h4{
-      padding-left: 40px;
-
-  }
-  .product_view .modal-dialog{max-width: 800px; width: 100%;}
-  .pre-cost{text-decoration: line-through; color: white;}
-  .space-ten{padding: 10px 0;}
+}
 
 
 
+.modal-content>h4 {
+    padding-left: 40px;
+
+}
+
+.product_view .modal-dialog {
+    max-width: 800px;
+    width: 100%;
+}
+
+
+.space-ten {
+    padding: 10px 0;
+}
+
+/* float button */
+.float {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    bottom: 40px;
+    right: 40px;
+    background-color: white;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+}
+
+.my-float {
+    font-size: 24px;
+    margin-top: 18px;
+}
+.float>h5{
+  position: relative;
+  bottom: 12%;
+    color:violet;
+}
+a.float+div.label-container {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease;
+}
+
+a.float:hover+div.label-container {
+    visibility: visible;
+    opacity: 1;
+}
