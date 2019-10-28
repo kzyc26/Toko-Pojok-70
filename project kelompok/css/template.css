@@ -43,3 +43,28 @@
     background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
     margin-bottom: 10px;
 }
+
+/* footer */
+.footer{
+    text-align: center;
+}
+.footer ul li {display: inline-block;
+    position: relative;}
+
+.footer ul li a {padding: 10px 20px;
+text-decoration: none;}
+
+.footer .contact{
+    margin: 20px;
+    float: left;
+}
+
+.footer img{
+    height: 32px;
+    width: auto;
+}
+
+.contact-container{
+    position: relative;
+    left: 39%;
+}
