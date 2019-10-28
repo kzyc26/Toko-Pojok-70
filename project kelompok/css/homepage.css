@@ -111,3 +111,18 @@
     left: 75%;
     transform: translateY(80px);
 }
+
+.panel-font{
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    color: black;
+    text-align: center;
+}
+
+.rating{
+    text-align: center;
+}
+
+.col-lg-4{
+    
+}
