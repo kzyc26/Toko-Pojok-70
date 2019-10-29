@@ -1,0 +1,12 @@
+.content{
+    widows: 100%;
+}
+.search{
+    margin-left:50%;
+    transform: translateX(-50);
+    top:10%;
+}
+.srchbar{
+    width:30%;
+    top:10%;
+}
