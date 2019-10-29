@@ -1,0 +1,34 @@
+.content{
+    padding-left:10%;
+    padding-right:10%;
+   
+}
+.choose{
+    border-right-style: dashed;
+}
+.total{
+    text-align:left;
+    margin-left:6%;
+}
+.paymentmethod{
+    border:1px solid black;
+    width:400px;
+    height:350px;
+    overflow-y:auto;
+    margin-left:5%;
+    
+}
+.paymentmethod>h5{
+    text-align:center;
+}
+.paymentmethod > p{
+    position: relative;
+    padding-top:10%;
+}
+.methods{
+    margin-left:5%;
+}
+.cbpolicy{
+    margin-top:5%;
+    margin-left:5%;
+}
