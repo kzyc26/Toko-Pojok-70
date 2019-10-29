@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Sign Up</title>
-        <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-            <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-                      <!-- Brand and toggle get grouped for better mobile display -->
-                      <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                          <span class="sr-only">Toggle navigation</span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#"><img src="../assets/images/99818.png" class="logo-toko"></a>
-                
-                      </div>
-                
-                      <!-- Collect the nav links, forms, and other content for toggling -->
-                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <!-- <ul class="nav navbar-nav">
+
+<head>
+  <title>Sign Up</title>
+  <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="../assets/images/99818.png" class="logo-toko"></a>
+
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <!-- <ul class="nav navbar-nav">
                           <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                           <li><a href="#">Link</a></li>
                           <li class="dropdown">
@@ -40,17 +42,17 @@
                             </ul>
                           </li>
                         </ul> -->
-                        <form class="navbar-form navbar-left">
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                          </div>
-                          <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                        </form>
-                        <ul class="nav navbar-nav navbar-right">
-                          <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                          <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
-                          <li><a href="#"><span class="glyphicon glyphicon-inbox"></span></a></li>
-                          <!-- <li class="dropdown">
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-inbox"></span></a></li>
+          <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                               aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -61,32 +63,69 @@
                               <li><a href="#">Separated link</a></li>
                             </ul>
                           </li> -->
-                        </ul>
-                      </div><!-- /.navbar-collapse -->
-                    </div><!-- /.container-fluid -->
-                  </nav>
-
-                  <footer class="footer">
-                        <div class="footer-container">
-                            <ul class="footer-list">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">FAQs</a></li>
-                                <li><a href="#">Our Policy</a></li>
-                            </ul>
-                            <div class="contact-container">
-                                <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
-                                        <p>@baybees.wardrobe</p>
-                                    </a></div>
-                                <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
-                                        <p>+62 81638495xx7</p>
-                                    </a></div>
-                            </div>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="content">
+    <div class="col-md-9 biodata">
+      <h1 class="title-bio">Biodata</h1>
+      <br>
+      <div class="col-md-3">
+          <div class="tulisan">Nama Lengkap</div>
+          <div class="tulisan">No. Telepon</div>
+          <div class="tulisan">Jenis Kelamin</div>
+          <div class="tulisan">Provinsi</div>
+      </div>
+      <form class="sign-up">        
+        <input type="type" id="nama-lengkap" class="form-control pendek" placeholder="Nama Lengkap" required="" autofocus="">
                 
-                        </div>
-                    </footer>
+        <input type="tel" id="no-telp" class="form-control pendek" placeholder="+62 81637829xxx" required="">
+        <div class="kotak">
+            <div class="col-md-2">
+                <input class="gender" type="checkbox" value="female"> Female            
+            </div>
+            <div class="col-md-1">
+                <input class="gender" type="checkbox" value="male"> Male            
+            </div>
+        </div> 
+        <br>
+        <select name="provinsi" id="provinsi" class="provinsi">
+          <option value="jawa-timur">Jawa Timur</option>
+          <option value="jawa-tengah">Jawa Tengah</option>
+          <option value="jawa-barat">Jawa Barat</option>
+        </select>        
+      </form>
+    </div>
+    <div class="col-md-3 benefits">
+      <h1 class="title-bio">Benefits</h1>
+    </div>
+  </div>
 
-        <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
-        <link href="../css/template.css" rel="stylesheet">
-        <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
-    </body>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <ul class="footer-list">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Our Policy</a></li>
+      </ul>
+      <div class="contact-container">
+        <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
+            <p>@baybees.wardrobe</p>
+          </a></div>
+        <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
+            <p>+62 81638495xx7</p>
+          </a></div>
+      </div>
+
+    </div>
+  </footer>
+
+  <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
+  <link href="../css/template.css" rel="stylesheet">
+  <link href="../css/sign-up.css" rel="stylesheet">
+  <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+</body>
+
 </html>

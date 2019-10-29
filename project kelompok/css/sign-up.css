@@ -1,0 +1,38 @@
+.tulisan{
+    padding: 8px;
+}
+
+.biodata{
+    overflow: auto;
+}
+
+.content h1{
+    text-align: center;
+}
+
+.title-bio{
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+}
+
+.pendek{
+    width: 40%;
+}
+
+.kotak{
+    padding: 8px 0;
+}
+
+.gender{
+    margin: 10px;
+}
+
+.benefits{
+    background-image: linear-gradient(to right,#FFF0F8, #FFEBD7);
+    position: fixed;
+    right: 0;
+}
+
+.footer{
+    background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
+}

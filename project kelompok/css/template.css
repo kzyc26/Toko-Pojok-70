@@ -48,6 +48,8 @@
 .footer{
     text-align: center;
     height: 100%;
+    clear: both;
+    font-size: medium;
 }
 .footer ul li {display: inline-block;
     position: relative;}
@@ -67,5 +69,5 @@ text-decoration: none;}
 
 .contact-container{
     position: relative;
-    left: 39%;
+    left: 38%;
 }
