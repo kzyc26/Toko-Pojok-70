@@ -1,10 +1,10 @@
 .content{
     padding-left:10%;
     padding-right:10%;
-   
 }
 .choose{
-    border-right-style: dashed;
+    border-right-style: dashed;  
+    background-image:linear-gradient(left,pink,lightblue,lightgreen)
 }
 .total{
     text-align:left;
@@ -66,3 +66,5 @@
 .btnpaylater{
     margin-top:2%;
 }
+
+
