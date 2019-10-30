@@ -32,14 +32,37 @@
     margin-top:5%;
     margin-left:5%;
 }
+
 .confirm>h3{
     text-align: center;
 }
 .addimg{
-    width:60%;
+    width:80%;
+    height:50%;
     border:1px solid black;
     margin-left:10%;
+    padding:10%;
+    border-style:dashed;
 }
 .addimg>img{
-    
+    margin-left: 39%;
+    margin-top:10%;
+}
+.addimg>p{
+    position: relative;
+    margin-left: 25%;
+    margin-top:10%;
+}
+.addimg>button{
+    position: relative;
+    margin-left: 28%;
+}
+.buttonss{
+    position: relative;
+    padding:5%;
+    text-align: center;
+    margin-left:5%;
+}
+.btnpaylater{
+    margin-top:2%;
 }
