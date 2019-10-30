@@ -1,0 +1,68 @@
+.content{
+    border-bottom-style: dashed; 
+}
+
+.total{
+    text-align:left;
+    margin-left:6%;
+}
+.paymentmethod{
+    border:1px solid black;
+    width:400px;
+    height:350px;
+    overflow-y:auto;
+    margin-left:5%;
+    
+}
+.paymentmethod>h5{
+    text-align:center;
+}
+.paymentmethod > p{
+    position: relative;
+    padding-top:10%;
+}
+.methods{
+    margin-left:5%;
+}
+.cbpolicy{
+    margin-top:5%;
+    margin-left:5%;
+}
+.confirm{
+    border-left-style: dashed;  
+}
+.confirm>h3{
+    text-align: center;
+}
+.addimg{
+    width:80%;
+    height:50%;
+    border:1px solid black;
+    margin-left:10%;
+    padding:10%;
+    border-style:dashed;
+}
+.addimg>img{
+    margin-left: 39%;
+    margin-top:10%;
+}
+.addimg>p{
+    position: relative;
+    margin-left: 25%;
+    margin-top:10%;
+}
+.addimg>button{
+    position: relative;
+    margin-left: 28%;
+}
+.buttonss{
+    position: relative;
+    padding:5%;
+    text-align: center;
+    margin-left:5%;
+}
+.btnpaylater{
+    margin-top:2%;
+}
+
+
