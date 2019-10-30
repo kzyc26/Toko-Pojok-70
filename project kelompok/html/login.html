@@ -5,6 +5,7 @@
     <title>Login Page</title>
     <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -72,18 +73,18 @@
     <br><br><br>
     <div class="container">        
         <form class="form-signin">
-            <h2 class="form-signin-heading">Please sign in</h2>
+            <h2 class="form-signin-heading">Please sign in</h2><br>
             <label for="inputEmail">Email address</label>
             <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required=""
-                autofocus="">
-            <label for="inputPassword" class="sr-only">Password</label>
+                autofocus=""><br>
+            <label for="inputPassword">Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
             <div class="checkbox">
                 <label>
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <button onClick="window.location.href='../html/check-out.html'" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
 
     </div>

@@ -50,6 +50,7 @@
     height: 100%;
     clear: both;
     font-size: medium;
+    font-family: 'Lato', sans-serif;
 }
 .footer ul li {display: inline-block;
     position: relative;}
