@@ -1,0 +1,22 @@
+.content{
+  width:100%;
+ 
+}
+.content>H1{
+  margin:auto;
+  text-align: center;
+}
+img{
+width:300px;
+
+}
+
+table{
+ margin-left:23%;
+ margin-top:5%;
+
+}
+button{
+  float:right;
+  background: lightsalmon;
+}
