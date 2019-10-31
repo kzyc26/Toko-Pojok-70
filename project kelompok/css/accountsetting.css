@@ -1,0 +1,46 @@
+
+.content{
+    border-bottom: 1px solid black;
+}
+
+.profilemenu{
+    margin-left:3%;
+    border-right:1px solid black;
+}
+.profilesetting > h2{
+position: relative;
+float:right;
+margin-right:20%;
+}
+.profpic{
+    float:left;
+    position: relative;
+
+}
+.changepic,.logout{
+    position: relative;
+    margin-top:5%;
+    
+}
+.categories{
+    width:80%;
+    position: relative;
+    margin-top:5%;
+}
+
+.informations > h2{
+    float: left;
+}
+.informations{
+    overflow:auto;
+    
+}
+.profiledetails > h3{
+    float:left;
+}
+label{
+margin-left:2%;
+}
+table,td{
+    border:1px solid black;
+}
