@@ -70,50 +70,86 @@
   </nav>
   <div class="content">
     <div class="col-md-9 biodata">
-      <h1 class="title-bio">Biodata</h1>
-      <br>
-      <div class="col-md-3 judul">
-          <div class="tulisan">Nama Lengkap</div>
-          <div class="tulisan">No. Telepon</div>
-          <div class="tulisan">Jenis Kelamin</div>
-          <br><br>
-          <div class="tulisan">Provinsi</div>
-          <div class="tulisan">Kababupaten/Kota</div>
-          <div class="tulisan">Kecamatan</div>
-          <div class="tulisan">Kelurahan</div>
-          <div class="tulisan">Kode Pos</div>
-          <div class="tulisan">Alamat</div>
-      </div>
-      <form class="sign-up">        
-        <input type="type" id="nama-lengkap" class="form-control pendek" placeholder="Nama Lengkap" required="" autofocus="">
-                
-        <input type="tel" id="no-telp" class="form-control pendek" placeholder="+62 81637829xxx" required="">
-        <div class="kotak">
-            <div class="col-md-2">
-                <input class="gender" type="checkbox" value="female"> Female            
-            </div>
-            <div class="col-md-1">
-                <input class="gender" type="checkbox" value="male"> Male            
-            </div>
-        </div> 
-        <br><br><br>
-        <select name="provinsi" id="provinsi" class="form-control pendek" onchange="gantikab(this.id, 'kabkota')">
-          <option value=""></option>
-          <option value="jawa-timur">Jawa Timur</option>
-          <option value="jawa-tengah">Jawa Tengah</option>
-          <option value="jawa-barat">Jawa Barat</option>
-        </select> 
-        <select name="kabkota" id="kabkota" class="form-control pendek" onchange="gantikecamatan(this.id, 'kecamatan')"></select> 
-        <select name="kecamatan" id="kecamatan" class="form-control pendek" onchange="gantikelurahan(this.id, 'kelurahan')"></select>
-        <select name="kelurahan" id="kelurahan" class="form-control pendek"></select>
-        <input type="text" id="kodepos" class="form-control pendek" placeholder="Kodepos" required="">
-        <input type="text" id="alamat" class="form-control panjang" placeholder="Alamat" required="">  
-        <br><br>            
-      </form>
+      <h1 class="title-bio">Biodata</h1><br>
+      <table class="col-md-12">
+        <tr>
+          <td>
+            <div class="tulisan">Nama Lengkap</div>
+          </td>
+          <td><input type="type" id="nama-lengkap" class="form-control pendek" placeholder="Nama Lengkap" required=""
+              autofocus=""></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">No. Telepon</div>
+          </td>
+          <td><input type="tel" id="no-telp" class="form-control pendek" placeholder="+62 81637829xxx" required=""></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Jenis Kelamin</div>
+          </td>
+          <td><input class="gender" type="checkbox" value="female"> Female
+            <br>
+            <input class="gender" type="checkbox" value="male"> Male
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="subjudul">Alamat</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Provinsi</div>
+          </td>
+          <td><select name="provinsi" id="provinsi" class="form-control pendek" onchange="gantikab(this.id, 'kabkota')">
+              <option value=""></option>
+              <option value="jawa-timur">Jawa Timur</option>
+              <option value="jawa-tengah">Jawa Tengah</option>
+              <option value="jawa-barat">Jawa Barat</option>
+            </select></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Kabupaten/Kota</div>
+          </td>
+          <td><select name="kabkota" id="kabkota" class="form-control pendek"
+              onchange="gantikecamatan(this.id, 'kecamatan')"></select></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Kecamatan</div>
+          </td>
+          <td><select name="kecamatan" id="kecamatan" class="form-control pendek"
+              onchange="gantikelurahan(this.id, 'kelurahan')"></select></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Kelurahan</div>
+          </td>
+          <td><select name="kelurahan" id="kelurahan" class="form-control pendek"></select></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Kode Pos</div>
+          </td>
+          <td><input type="text" id="kodepos" class="form-control pendek" placeholder="Kodepos" required=""></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Alamat</div>
+          </td>
+          <td><input type="text" id="alamat" class="form-control panjang" placeholder="Alamat" required=""></td>
+        </tr>
+      </table>
+
     </div>
     <div class="col-md-3 benefits">
       <h1 class="title-bio">Benefits</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.</p>
       <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
       <input type="checkbox" value="agree"> I Agree to the user <a href="#">terms and conditions</a>
       <br><br><br>
@@ -121,9 +157,9 @@
       <br><br><br><br>
     </div>
   </div>
-
-
-  <footer class="footer">
+  
+  <footer class="footer"> 
+      <br><br>   
     <div class="footer-container">
       <ul class="footer-list">
         <li><a href="#">About Us</a></li>

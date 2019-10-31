@@ -70,6 +70,167 @@
     </div><!-- /.container-fluid -->
   </nav>
 
+    <span class="col-md-6 judul"><h2>Cart</h2></span>
+    <span class="col-md-6 judulgeser"><h2>Delivery Details</h2></span>
+  
+<div class="content">  
+  <div class="col-md-6 cart">    
+    <div> 
+      <div class="col-md-1 product"><input type="checkbox"></div> 
+      <div class="col-md-1 product">
+      <button type="submit form-control"><span class="glyphicon glyphicon-trash"></span></button> 
+      </div> 
+      <div class="col-md-10">        
+        <table>
+          <tr>
+            <td class="pic"><img src="../assets/images/Slide 1.jpg" alt="" width="100%" height="auto"></td>
+            <td><div>Size: </div>
+              <select name="size" id="size" class="form-control">            
+                  <option value="s">S</option>
+                  <option value="m">M</option>
+                  <option value="l">L</option>
+              </select></td>
+              <td class="pref"><div>Color: </div>
+                <select name="color" id="color" class="form-control">            
+                    <option value="pink">Pink</option>
+                    <option value="white">White</option>
+                    <option value="baby blue">Baby Blue</option>
+                </select></td>
+                <td class="qty pref"><div>Qty: </div>
+                  <input type="number" class="form-control" min="1"></td>
+          </tr>
+        </table>        
+      </div>
+    </div>
+    <div> 
+        <div class="col-md-1 product"><input type="checkbox"></div> 
+        <div class="col-md-1 product">
+        <button type="submit form-control"><span class="glyphicon glyphicon-trash"></span></button> 
+        </div> 
+        <div class="col-md-10">        
+          <table>
+            <tr>
+              <td class="pic"><img src="../assets/images/Slide 2.jpg" alt="" width="100%" height="auto"></td>
+              <td><div>Size: </div>
+                <select name="size" id="size" class="form-control">            
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                </select></td>
+                <td class="pref"><div>Color: </div>
+                  <select name="color" id="color" class="form-control">            
+                      <option value="pink">Pink</option>
+                      <option value="white">White</option>
+                      <option value="baby blue">Baby Blue</option>
+                  </select></td>
+                  <td class="qty pref"><div>Qty: </div>
+                    <input type="number" class="form-control" min="1"></td>
+            </tr>
+          </table>        
+        </div>
+      </div>
+      <div> 
+          <div class="col-md-1 product"><input type="checkbox"></div> 
+          <div class="col-md-1 product">
+          <button type="submit form-control"><span class="glyphicon glyphicon-trash"></span></button> 
+          </div> 
+          <div class="col-md-10">        
+            <table>
+              <tr>
+                <td class="pic"><img src="../assets/images/Slide 3.jpg" alt="" width="100%" height="auto"></td>
+                <td><div>Size: </div>
+                  <select name="size" id="size" class="form-control">            
+                      <option value="s">S</option>
+                      <option value="m">M</option>
+                      <option value="l">L</option>
+                  </select></td>
+                  <td class="pref"><div>Color: </div>
+                    <select name="color" id="color" class="form-control">            
+                        <option value="pink">Pink</option>
+                        <option value="white">White</option>
+                        <option value="baby blue">Baby Blue</option>
+                    </select></td>
+                    <td class="qty pref"><div>Qty: </div>
+                      <input type="number" class="form-control" min="1"></td>
+              </tr>
+            </table>        
+          </div>
+        </div>
+  </div>
+
+  <div class="col-md-6 delivery-details"><br>
+    <table class="col-md-12">
+        <tr>
+          <td>
+            <div class="tulisan">Nama Lengkap</div>
+          </td>
+          <td><input type="type" id="nama-lengkap" class="form-control pendek" placeholder="Nama Lengkap" required=""
+              autofocus=""></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">No. Telepon</div>
+          </td>
+          <td><input type="tel" id="no-telp" class="form-control pendek" placeholder="+62 81637829xxx" required=""></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Jenis Kelamin</div>
+          </td>
+          <td><input class="gender" type="checkbox" value="female"> Female
+            <br>
+            <input class="gender" type="checkbox" value="male"> Male
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="subjudul">Alamat</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Provinsi</div>
+          </td>
+          <td><select name="provinsi" id="provinsi" class="form-control pendek" onchange="gantikab(this.id, 'kabkota')">
+              <option value=""></option>
+              <option value="jawa-timur">Jawa Timur</option>
+              <option value="jawa-tengah">Jawa Tengah</option>
+              <option value="jawa-barat">Jawa Barat</option>
+            </select></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Kabupaten/Kota</div>
+          </td>
+          <td><select name="kabkota" id="kabkota" class="form-control pendek"
+              onchange="gantikecamatan(this.id, 'kecamatan')"></select></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Kecamatan</div>
+          </td>
+          <td><select name="kecamatan" id="kecamatan" class="form-control pendek"
+              onchange="gantikelurahan(this.id, 'kelurahan')"></select></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Kelurahan</div>
+          </td>
+          <td><select name="kelurahan" id="kelurahan" class="form-control pendek"></select></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Kode Pos</div>
+          </td>
+          <td><input type="text" id="kodepos" class="form-control pendek" placeholder="Kodepos" required=""></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Alamat</div>
+          </td>
+          <td><input type="text" id="alamat" class="form-control panjang" placeholder="Alamat" required=""></td>
+        </tr>
+      </table>
+  </div>
+</div>
   <footer class="footer">
       <div class="footer-container">
           <ul class="footer-list">
@@ -88,8 +249,9 @@
 
       </div>
   </footer>
-</div>  
+</div>
   <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
   <link href="../css/template.css" rel="stylesheet">
+  <link href="../css/check-out.css" rel="stylesheet">
   <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
 </body>
