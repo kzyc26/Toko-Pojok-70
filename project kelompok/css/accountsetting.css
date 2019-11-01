@@ -1,0 +1,60 @@
+
+.content{
+    border-bottom: 1px solid black;
+}
+
+.profilemenu{
+    margin-left:3%;
+   
+}
+.profilesetting > h2{
+float:right;
+margin-right:20%;
+}
+.profpic{
+    float:left;
+    position: relative;
+
+}
+.changepic,.logout{
+    position: relative;
+    margin-top:5%;
+    
+}
+.categories{
+    width:80%;
+    position: relative;
+    margin-top:5%;
+}
+
+.profiledetails > h2{
+    float: left;
+}
+.informations{
+    overflow:auto;
+    border-left: 1px solid black;
+}
+.profiledetails > h3{
+    float:left;
+}
+label{
+margin-left:2%;
+}
+table{
+    width: 100%;
+}
+.subcatvoucher > h2{
+    margin-left:50%;
+
+}
+table,td{
+    border:1px solid black;
+}
+.subcatvoucher img{
+    margin-left:20%;
+}
+.subcatvoucher button{
+    float:right;
+    margin-top:2%;
+   
+}
