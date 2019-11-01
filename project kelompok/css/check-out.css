@@ -17,8 +17,15 @@ h2{
 
 .delivery-details{
     background-color: #FFEBD7;
+    min-height: 550px;
     max-height: 550px; 
     overflow: auto;
+}
+.tabel{
+    line-height: 40px;
+}
+#alamat{
+    padding: 10px 10px 50px 10px;
 }
 .subjudul{
     font-family: 'Dancing Script', cursive;

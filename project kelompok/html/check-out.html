@@ -159,10 +159,10 @@
   </div>
 
   <div class="col-md-6 delivery-details"><br>
-    <table class="col-md-12">
+    <table class="col-md-12 tabel">
         <tr>
           <td>
-            <div class="tulisan">Nama Lengkap</div>
+            <div class="tulisan">Nama Penerima</div>
           </td>
           <td><input type="type" id="nama-lengkap" class="form-control pendek" placeholder="Nama Lengkap" required=""
               autofocus=""></td>
@@ -175,12 +175,21 @@
         </tr>
         <tr>
           <td>
-            <div class="tulisan">Jenis Kelamin</div>
+            <div class="tulisan">E-Mail Penerima</div>
           </td>
-          <td><input class="gender" type="checkbox" value="female"> Female
-            <br>
-            <input class="gender" type="checkbox" value="male"> Male
+          <td><input type="email" id="email" class="form-control pendek" placeholder="email@email.com"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Opsi Pengiriman</div>
           </td>
+          <td><select name="pengiriman" id="pengiriman" class="form-control pendek">
+              <option value=""></option>
+              <option value="jne-reg">JNE Reguler</option>
+              <option value="jne-eks">JNE Ekspress</option>
+              <option value="jnt-reg">J&T Reguler</option>
+              <option value="jnt-eks">J&T Ekspress</option>
+            </select></td>
         </tr>
         <tr>
           <td colspan="2" class="subjudul">Alamat</td>
@@ -228,7 +237,19 @@
           </td>
           <td><input type="text" id="alamat" class="form-control panjang" placeholder="Alamat" required=""></td>
         </tr>
+        <tr>
+          <td>
+            <input type="checkbox" id="send-details" onclick="nyala(this)"> Send my order details via </td>
+      <td>
+            <select name="cb-details" id="cb-details" class="form-control pendek">
+        <option value=""></option>
+        <option value="sms">SMS</option>
+        <option value="email">E-Mail</option>
+      </select>
+          </td>
+        </tr>
       </table>
+      
   </div>
 </div>
   <footer class="footer">
