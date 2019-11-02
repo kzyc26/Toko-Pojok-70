@@ -239,18 +239,18 @@
         </tr>
         <tr>
           <td>
-            <input type="checkbox" id="send-details" onclick="nyala(this)"> Send my order details via </td>
+            <input type="checkbox" id="send-details" onclick="nyala()"> Send my order details via </td>
       <td>
-            <select name="cb-details" id="cb-details" class="form-control pendek">
+            <select name="cb-details" id="cb-details" class="form-control pendek" disabled onchange="cekemail()">
         <option value=""></option>
         <option value="sms">SMS</option>
         <option value="email">E-Mail</option>
       </select>
           </td>
         </tr>
-      </table>
-      
+      </table>      
   </div>
+  <a href="../html/payment.html"><button type="submit" id="payment-but"><img src="../assets/images/Cash.png">Payment</button></a>
 </div>
   <footer class="footer">
       <div class="footer-container">
@@ -275,4 +275,5 @@
   <link href="../css/template.css" rel="stylesheet">
   <link href="../css/check-out.css" rel="stylesheet">
   <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+  <script src="../js/check-out.js"></script>
 </body>

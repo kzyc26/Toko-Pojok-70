@@ -58,7 +58,20 @@ h2{
 .qty{
     width: 15%;
 }
-
+#payment-but{
+    display: block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color:  #FF9B91;
+    top: 75%;
+    right: 5%;
+    position: fixed;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-size: medium;
+    font-weight: bolder;
+}
 .footer{
     background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
 }
