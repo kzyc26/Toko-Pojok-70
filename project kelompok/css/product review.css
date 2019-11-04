@@ -27,14 +27,14 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 /****** Style Star Rating Widget *****/
 
-#rating1, #rating2, #rating3 { 
+.rating { 
   border: none;
   float: left;
   font-size: 30px;
 }
 
-#rating1 > input, #rating2 > input, #rating3 > input { display: none; } 
-#rating1 > label:before,#rating2 > label:before, #rating3 > label:before { 
+.rating > input { display: none; } 
+.rating > label:before { 
   margin: 5px;
   font-size: 1.25em;
   font-family: FontAwesome;
@@ -42,41 +42,26 @@ h1 { font-size: 1.5em; margin: 10px; }
   content: "\f005";
 }
 
-#rating1 > .half:before, #rating2 > .half:before, #rating3 > .half:before { 
+.rating > .half:before { 
   content: "\f089";
   position: absolute;
 }
 
-#rating1 > label, #rating2 > label, #rating3 > label { 
+.rating > label { 
   color: #ddd; 
  float: right; 
 }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 
-#rating1 > input:checked ~ label, /* show gold star when clicked */
-#rating1:not(:checked) > label:hover, /* hover current star */
-#rating1:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
 
-#rating2 > input:checked ~ label, /* show gold star when clicked */
-#rating2:not(:checked) > label:hover, /* hover current star */
-#rating2:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
-#rating2 > input:checked + label:hover, /* hover current star when changing rating */
-
-#rating3 > input:checked ~ label, /* show gold star when clicked */
-#rating3:not(:checked) > label:hover, /* hover current star */
-#rating3:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
-#rating3 > input:checked ~ label:hover,
-
-#rating1 > label:hover ~ input:checked ~ label, /* lighten current selection */
-#rating1 > input:checked ~ label:hover ~ label { color: #FFED85;  }
-
-#rating2 > label:hover ~ input:checked ~ label, /* lighten current selection */
-#rating2 > input:checked ~ label:hover ~ label { color: #FFED85;  } 
-
-#rating3 > label:hover ~ input:checked ~ label, /* lighten current selection */
-#rating3 > input:checked ~ label:hover ~ label { color: #FFED85;  } 
-
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
 /* float button */
 .float{
 	position:fixed;
