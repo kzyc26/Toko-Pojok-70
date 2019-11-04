@@ -60,8 +60,10 @@
     padding-top: 1%;
 }
 
-
-body {
+body{
+    background-image: url("../assets/images/background.jpg");
+}
+footer {
     background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
 }
 
