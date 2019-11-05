@@ -61,15 +61,4 @@ table,td{
 .subcatpolicy h2{
     margin-left:50%;
 }
-.policycontent{
-    max-height:450px;
-    overflow: auto;
-    border:1px solid black;
-    
 
-}
-.policycontent p{
-    margin-left:2%;
-    padding:10px 10px 10px 10px;
-text-align: justify;
-}
