@@ -85,7 +85,7 @@
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title" onclick="changcontent(accountcontent)">
+                                <h4 class="panel-title">
                                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">
                                         My Account
@@ -96,17 +96,17 @@
                                 aria-labelledby="headingOne">
                                 <div class="panel-body">
                                     <ul>
-                                        <li><a>Profile</a></li>
-                                        <li><a>Bank and Cards</a></li>
-                                        <li><a>Address</a></li>
-                                        <li><a>Change Password</a></li>
+                                        <li onclick="changecontent()" class="submenu">Profile</li>
+                                        <li onclick="changecontent()" class="submenu">Bank and Cards</li>
+                                        <li onclick="changecontent()" class="submenu">Address</li>
+                                        <li onclick="changecontent()" class="submenu">Change Password</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title" onclick="changecontent(ordercontent)">
+                                <h4 class="panel-title" onclick="changecontent()">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         Order History
@@ -117,17 +117,17 @@
                                 aria-labelledby="headingTwo">
                                 <div class="panel-body">
                                     <ul>
-                                        <li><a>All</a></li>
-                                        <li><a>Completed</a></li>
-                                        <li><a>Ongoing</a></li>
-                                        <li><a>unpaid</a></li>
+                                        <li onclick="changecontent()" class="submenu">All</li>
+                                        <li onclick="changecontent()" class="submenu">Completed</li>
+                                        <li onclick="changecontent()" class="submenu">Ongoing</li>
+                                        <li onclick="changecontent()" class="submenu">Unpaid</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title" onclick="changecontent(notifcontent)">
+                                <h4 class="panel-title" onclick="changecontent()">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         Notifications
@@ -137,13 +137,13 @@
                             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingThree">
                                 <div class="panel-body">
-                                    
+
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingFour">
-                                <h4 class="panel-title" onclick="changecontent(vouchercontent)">
+                                <h4 class="panel-title" onclick="changecontent()">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                         My Vouchers
@@ -159,7 +159,7 @@
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingFive">
-                                <h4 class="panel-title" onclick="changecontent(wish)" >
+                                <h4 class="panel-title" onclick="changecontent()">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                         Wishlist
@@ -180,87 +180,89 @@
             </div>
             <div class="col-md-8 informations">
                 <div class="subcatprofile">
-                        <div clas="profiledetails">                    
-                                <h2>Profile</h2>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <div class="tulisan">Nama Lengkap</div>
-                                        </td>
-                                        <td style="padding: 10px 10px 10px 100px;"><input type="type" id="nama-lengkap" class="form-control pendek"
-                                                placeholder="Nama Lengkap" required="" autofocus=""></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="tulisan">No. Telepon</div>
-                                        </td>
-                                        <td style="padding: 10px 10px 10px 100px;"><input type="tel" id="no-telp" class="form-control pendek" placeholder="+62 81637829xxx"
-                                                required=""></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="tulisan">Jenis Kelamin</div>
-                                        </td >
-                                        <td style="padding: 10px 10px 10px 100px;"><input class="gender" type="checkbox" value="female"> Female
-                                            <br>
-                                            <input class="gender" type="checkbox" value="male"> Male
-                                        </td>
-                                    </tr>
-                                 
-                                    <tr>
-                                        <td>
-                                            <div class="tulisan">Provinsi</div>
-                                        </td>
-                                        <td style="padding: 10px 10px 10px 100px;"><select name="provinsi" id="provinsi" class="form-control pendek"
-                                                onchange="gantikab(this.id, 'kabkota')">
-                                                <option value=""></option>
-                                                <option value="jawa-timur">Jawa Timur</option>
-                                                <option value="jawa-tengah">Jawa Tengah</option>
-                                                <option value="jawa-barat">Jawa Barat</option>
-                                            </select></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="tulisan">Kabupaten/Kota</div>
-                                        </td>
-                                        <td style="padding: 10px 10px 10px 100px;"><select name="kabkota" id="kabkota" class="form-control pendek"
-                                                onchange="gantikecamatan(this.id, 'kecamatan')"></select></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="tulisan">Kecamatan</div>
-                                        </td>
-                                        <td style="padding: 10px 10px 10px 100px;"><select name="kecamatan" id="kecamatan" class="form-control pendek"
-                                                onchange="gantikelurahan(this.id, 'kelurahan')"></select></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="tulisan">Kelurahan</div>
-                                        </td>
-                                        <td style="padding: 10px 10px 10px 100px;"><select name="kelurahan" id="kelurahan" class="form-control pendek"></select></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="tulisan">Kode Pos</div>
-                                        </td>
-                                        <td style="padding: 10px 10px 10px 100px;"><input type="text" id="kodepos" class="form-control pendek" placeholder="Kodepos"
-                                                required=""></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="tulisan">Alamat Lengkap</div>
-                                        </td>
-                                        <td style="padding: 10px 10px 10px 100px;"><textarea row="10" cols="50" id="alamat" class="form-control panjang" placeholder="Alamat"
-                                                required=""></textarea></td>
-                                    </tr>
-                                </table>
-            
-                            </div>
-                            <div class="Bankdetails">
-                            </div>
-                            <div class="Adressdetails">
-                                </div>
-                                <div class="changepass"></div>
+                    <div class="profiledetails">
+                        <h2>Profile</h2>
+                        <table>
+                            <tr>
+                              <td>
+                                <div class="tulisan">Nama Lengkap</div>
+                              </td>
+                              <td><input type="type" id="nama-lengkap" class="form-control pendek" placeholder="Nama Lengkap" disabled
+                                  autofocus=""></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="tulisan">No. Telepon</div>
+                              </td>
+                              <td><input type="tel" id="no-telp" class="form-control pendek" placeholder="+62 81637829xxx" disabled></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="tulisan">Jenis Kelamin</div>
+                              </td>
+                              <td><input class="gender" type="checkbox" value="female" disabled> Female
+                                <br>
+                                <input class="gender" type="checkbox" value="male" disabled> Male
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="2" class="subjudul">Alamat</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="tulisan">Provinsi</div>
+                              </td>
+                              <td><select name="provinsi" id="provinsi" class="form-control pendek" onchange="gantikab(this.id, 'kabkota')" disabled>
+                                  <option value=""></option>
+                                  <option value="jawa-timur">Jawa Timur</option>
+                                  <option value="jawa-tengah">Jawa Tengah</option>
+                                  <option value="jawa-barat">Jawa Barat</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="tulisan">Kabupaten/Kota</div>
+                              </td>
+                              <td><select name="kabkota" id="kabkota" class="form-control pendek"
+                                  onchange="gantikecamatan(this.id, 'kecamatan')" disabled></select></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="tulisan">Kecamatan</div>
+                              </td>
+                              <td><select name="kecamatan" id="kecamatan" class="form-control pendek"
+                                  onchange="gantikelurahan(this.id, 'kelurahan')" disabled></select></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="tulisan">Kelurahan</div>
+                              </td>
+                              <td><select name="kelurahan" id="kelurahan" class="form-control pendek" disabled></select></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="tulisan">Kode Pos</div>
+                              </td>
+                              <td><input type="text" id="kodepos" class="form-control pendek" placeholder="Kodepos" required="" disabled></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="tulisan">Alamat</div>
+                              </td>
+                              <td><input type="text" id="alamat" class="form-control panjang" placeholder="Alamat" required="" disabled></td>
+                            </tr>
+                          </table>
+
+                    </div>
+                    <div class="Bankdetails">
+                        banks
+                    </div>
+                    <div class="Addressdetails">
+                        address
+                    </div>
+                    <div class="changepass">
+                        nantinya berupa input
+                    </div>
                 </div>
                 <div class="subcatorderhistory">
 
@@ -268,80 +270,90 @@
                 <div class="subcatnotifications">
 
                 </div>
-                 <div class="subcatvoucher">
-                <h2>My Vouchers</h2>
-<table>
-    <tr>
-        <td><img src="https://img.icons8.com/nolan/100/000000/loyalty-card.png"></td>
-        <td style="padding: 10px 0px 10px 100px; width:80%;" ><h5>10% Discount</h5>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></td>
-    </tr>
-</table>
-<br>
-<table style="padding-bottom:10px;">
-        <tr>
-            <td><img src="https://img.icons8.com/nolan/100/000000/loyalty-card.png"></td>
-            <td style="padding: 10px 0px 10px 100px; width:80%;" ><h5>10% Discount</h5>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></td>
-        </tr>
-        
-    </table>
-    <br>
-<table style="padding-bottom:10px;">
-        <tr>
-            <td><img src="https://img.icons8.com/nolan/100/000000/loyalty-card.png"></td>
-            <td style="padding: 10px 0px 10px 100px; width:80%;" ><h5>10% Discount</h5>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></td>
-        </tr>
-        
-    </table>
-<button class="backtoprofile">Back To Profile</button>
-<br><br>
-                </div> 
-                <div class="subcatpolicy">
-                    <h2>Policy</h2>
-                    <div class="policycontent">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                    </div>
+                <div class="subcatvoucher">
+                    <h2>My Vouchers</h2>
+                    <table>
+                        <tr>
+                            <td><img src="https://img.icons8.com/nolan/100/000000/loyalty-card.png"></td>
+                            <td style="padding: 10px 0px 10px 100px; width:80%;">
+                                <h5>10% Discount</h5>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    It has survived not only five centuries, but also the leap into electronic
+                                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                                    the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                    with desktop publishing software like Aldus PageMaker including versions of Lorem
+                                    Ipsum.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table style="padding-bottom:10px;">
+                        <tr>
+                            <td><img src="https://img.icons8.com/nolan/100/000000/loyalty-card.png"></td>
+                            <td style="padding: 10px 0px 10px 100px; width:80%;">
+                                <h5>10% Discount</h5>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    It has survived not only five centuries, but also the leap into electronic
+                                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                                    the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                    with desktop publishing software like Aldus PageMaker including versions of Lorem
+                                    Ipsum.</p>
+                            </td>
+                        </tr>
+
+                    </table>
+                    <br>
+                    <table style="padding-bottom:10px;">
+                        <tr>
+                            <td><img src="https://img.icons8.com/nolan/100/000000/loyalty-card.png"></td>
+                            <td style="padding: 10px 0px 10px 100px; width:80%;">
+                                <h5>10% Discount</h5>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    It has survived not only five centuries, but also the leap into electronic
+                                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                                    the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                    with desktop publishing software like Aldus PageMaker including versions of Lorem
+                                    Ipsum.</p>
+                            </td>
+                        </tr>
+
+                    </table>
                 </div>
             </div>
-        </div>
-    </div>
-    <footer class="footer">
-        <div class="footer-container">
-            <ul class="footer-list">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Our Policy</a></li>
-            </ul>
-            <div class="contact-container">
-                <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
-                        <p>@baybees.wardrobe</p>
-                    </a></div>
-                <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
-                        <p>+62 81638495xx7</p>
-                    </a></div>
-            </div>
 
+            <button class="backtoprofile">Back To Profile</button>
+            <br><br>
+
+            <footer class="footer">
+                <div class="footer-container">
+                    <ul class="footer-list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Our Policy</a></li>
+                    </ul>
+                    <div class="contact-container">
+                        <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
+                                <p>@baybees.wardrobe</p>
+                            </a></div>
+                        <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
+                                <p>+62 81638495xx7</p>
+                            </a></div>
+                    </div>
+
+                </div>
+            </footer>
         </div>
-    </footer>
-    </div>
-    <link href="../css/template.css" rel="stylesheet">
-    <link href="../css/accountsetting.css" rel="stylesheet">
-    <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
-    <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
-    <script src="../js/accountsetting.js"></script>
+        <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
+        <link href="../css/template.css" rel="stylesheet">
+        <link href="../css/accountsetting.css" rel="stylesheet">
+        
+        <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+        <script src="../js/accountsetting.js"></script>
 
 </body>

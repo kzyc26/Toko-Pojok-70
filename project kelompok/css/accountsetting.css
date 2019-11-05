@@ -32,7 +32,6 @@ margin-right:20%;
 }
 .informations{
     overflow:auto;
-    border-left: 1px solid black;
 }
 .profiledetails > h3{
     float:left;
@@ -47,8 +46,8 @@ table{
     margin-left:50%;
 
 }
-table,td{
-    border:1px solid black;
+table{
+    border-collapse: collapse;
 }
 .subcatvoucher img{
     margin-left:20%;
@@ -62,3 +61,9 @@ table,td{
     margin-left:50%;
 }
 
+.submenu:hover{
+    background-color: #E2EDFF;
+}
+ul{
+    list-style-type: none;
+}
