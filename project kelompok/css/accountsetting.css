@@ -32,6 +32,8 @@ margin-right:20%;
 }
 .informations{
     overflow:auto;
+    border-left:1px solid black;
+   
 }
 .profiledetails > h3{
     float:left;
@@ -67,3 +69,4 @@ table{
 ul{
     list-style-type: none;
 }
+

@@ -87,7 +87,7 @@
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
                                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                        aria-expanded="true" aria-controls="collapseOne">
+                                        aria-expanded="true" aria-controls="collapseOne" onclick="changeaccount()">
                                         My Account
                                     </a>
                                 </h4>
@@ -96,19 +96,19 @@
                                 aria-labelledby="headingOne">
                                 <div class="panel-body">
                                     <ul>
-                                        <li onclick="changecontent()" class="submenu">Profile</li>
-                                        <li onclick="changecontent()" class="submenu">Bank and Cards</li>
-                                        <li onclick="changecontent()" class="submenu">Address</li>
-                                        <li onclick="changecontent()" class="submenu">Change Password</li>
+                                        <li class="submenu">Profile</li>
+                                        <li class="submenu">Bank and Cards</li>
+                                        <li class="submenu">Address</li>
+                                        <li class="submenu">Change Password</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title" onclick="changecontent()">
+                                <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="showhistory()">
                                         Order History
                                     </a>
                                 </h4>
@@ -117,19 +117,19 @@
                                 aria-labelledby="headingTwo">
                                 <div class="panel-body">
                                     <ul>
-                                        <li onclick="changecontent()" class="submenu">All</li>
-                                        <li onclick="changecontent()" class="submenu">Completed</li>
-                                        <li onclick="changecontent()" class="submenu">Ongoing</li>
-                                        <li onclick="changecontent()" class="submenu">Unpaid</li>
+                                        <li class="submenu">All</li>
+                                        <li class="submenu">Completed</li>
+                                        <li class="submenu">Ongoing</li>
+                                        <li class="submenu">Unpaid</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title" onclick="changecontent()">
+                                <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onclick="shownotif()">
                                         Notifications
                                     </a>
                                 </h4>
@@ -143,9 +143,9 @@
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingFour">
-                                <h4 class="panel-title" onclick="changecontent()">
+                                <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"onclick="changetovoucher()">
                                         My Vouchers
                                     </a>
                                 </h4>
@@ -159,9 +159,9 @@
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingFive">
-                                <h4 class="panel-title" onclick="changecontent()">
+                                <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" onclick="showwish()">
                                         Wishlist
                                     </a>
                                 </h4>
@@ -179,79 +179,84 @@
                 </div>
             </div>
             <div class="col-md-8 informations">
-                <div class="subcatprofile">
+                <div class="subcatprofile" id="subcatprofiles">
                     <div class="profiledetails">
                         <h2>Profile</h2>
                         <table>
                             <tr>
-                              <td>
-                                <div class="tulisan">Nama Lengkap</div>
-                              </td>
-                              <td><input type="type" id="nama-lengkap" class="form-control pendek" placeholder="Nama Lengkap" disabled
-                                  autofocus=""></td>
+                                <td>
+                                    <div class="tulisan">Nama Lengkap</div>
+                                </td>
+                                <td><input type="type" id="nama-lengkap" class="form-control pendek"
+                                        placeholder="Nama Lengkap" disabled autofocus=""></td>
                             </tr>
                             <tr>
-                              <td>
-                                <div class="tulisan">No. Telepon</div>
-                              </td>
-                              <td><input type="tel" id="no-telp" class="form-control pendek" placeholder="+62 81637829xxx" disabled></td>
+                                <td>
+                                    <div class="tulisan">No. Telepon</div>
+                                </td>
+                                <td><input type="tel" id="no-telp" class="form-control pendek"
+                                        placeholder="+62 81637829xxx" disabled></td>
                             </tr>
                             <tr>
-                              <td>
-                                <div class="tulisan">Jenis Kelamin</div>
-                              </td>
-                              <td><input class="gender" type="checkbox" value="female" disabled> Female
-                                <br>
-                                <input class="gender" type="checkbox" value="male" disabled> Male
-                              </td>
+                                <td>
+                                    <div class="tulisan">Jenis Kelamin</div>
+                                </td>
+                                <td><input class="gender" type="checkbox" value="female" disabled> Female
+                                    <br>
+                                    <input class="gender" type="checkbox" value="male" disabled> Male
+                                </td>
                             </tr>
                             <tr>
-                              <td colspan="2" class="subjudul">Alamat</td>
+                                <td colspan="2" class="subjudul">Alamat</td>
                             </tr>
                             <tr>
-                              <td>
-                                <div class="tulisan">Provinsi</div>
-                              </td>
-                              <td><select name="provinsi" id="provinsi" class="form-control pendek" onchange="gantikab(this.id, 'kabkota')" disabled>
-                                  <option value=""></option>
-                                  <option value="jawa-timur">Jawa Timur</option>
-                                  <option value="jawa-tengah">Jawa Tengah</option>
-                                  <option value="jawa-barat">Jawa Barat</option>
-                                </select></td>
+                                <td>
+                                    <div class="tulisan">Provinsi</div>
+                                </td>
+                                <td><select name="provinsi" id="provinsi" class="form-control pendek"
+                                        onchange="gantikab(this.id, 'kabkota')" disabled>
+                                        <option value=""></option>
+                                        <option value="jawa-timur">Jawa Timur</option>
+                                        <option value="jawa-tengah">Jawa Tengah</option>
+                                        <option value="jawa-barat">Jawa Barat</option>
+                                    </select></td>
                             </tr>
                             <tr>
-                              <td>
-                                <div class="tulisan">Kabupaten/Kota</div>
-                              </td>
-                              <td><select name="kabkota" id="kabkota" class="form-control pendek"
-                                  onchange="gantikecamatan(this.id, 'kecamatan')" disabled></select></td>
+                                <td>
+                                    <div class="tulisan">Kabupaten/Kota</div>
+                                </td>
+                                <td><select name="kabkota" id="kabkota" class="form-control pendek"
+                                        onchange="gantikecamatan(this.id, 'kecamatan')" disabled></select></td>
                             </tr>
                             <tr>
-                              <td>
-                                <div class="tulisan">Kecamatan</div>
-                              </td>
-                              <td><select name="kecamatan" id="kecamatan" class="form-control pendek"
-                                  onchange="gantikelurahan(this.id, 'kelurahan')" disabled></select></td>
+                                <td>
+                                    <div class="tulisan">Kecamatan</div>
+                                </td>
+                                <td><select name="kecamatan" id="kecamatan" class="form-control pendek"
+                                        onchange="gantikelurahan(this.id, 'kelurahan')" disabled></select></td>
                             </tr>
                             <tr>
-                              <td>
-                                <div class="tulisan">Kelurahan</div>
-                              </td>
-                              <td><select name="kelurahan" id="kelurahan" class="form-control pendek" disabled></select></td>
+                                <td>
+                                    <div class="tulisan">Kelurahan</div>
+                                </td>
+                                <td><select name="kelurahan" id="kelurahan" class="form-control pendek"
+                                        disabled></select></td>
                             </tr>
                             <tr>
-                              <td>
-                                <div class="tulisan">Kode Pos</div>
-                              </td>
-                              <td><input type="text" id="kodepos" class="form-control pendek" placeholder="Kodepos" required="" disabled></td>
+                                <td>
+                                    <div class="tulisan">Kode Pos</div>
+                                </td>
+                                <td><input type="text" id="kodepos" class="form-control pendek" placeholder="Kodepos"
+                                        required="" disabled></td>
                             </tr>
                             <tr>
-                              <td>
-                                <div class="tulisan">Alamat</div>
-                              </td>
-                              <td><input type="text" id="alamat" class="form-control panjang" placeholder="Alamat" required="" disabled></td>
+                                <td>
+                                    <div class="tulisan">Alamat</div>
+                                </td>
+                                <td><input type="text" id="alamat" class="form-control panjang" placeholder="Alamat"
+                                        required="" disabled></td>
                             </tr>
-                          </table>
+                        </table>
 
                     </div>
                     <div class="Bankdetails">
@@ -266,9 +271,68 @@
                 </div>
                 <div class="subcatorderhistory">
 
+                    <table>
+                        <tr>
+                            <th><a>Order ID</a></th>
+                            <th>Date/Time</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="subcatnotifications">
+                    <table>
+                        <tr>
+                            <td style="text-align:center;">
+                                <img src="https://img.icons8.com/nolan/64/000000/star.png">
+                            </td>
+                            <td style="padding-left: 30px;">
+                                <h4 style="text-align:center;"> Rate Your Order Now!</h4>
+                                <p>lorem ipsum blabablablablabl</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table>
+                        <tr>
+                            <td style="text-align:center;">
+                                <img src="https://img.icons8.com/nolan/64/000000/star.png">
 
+                            </td>
+                            <td style="padding-left: 30px;">
+                                <h4 style="text-align:center;"> Rate Your Order Now!</h4>
+                                <p>lorem ipsum blabablablablabl</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table>
+                        <tr>
+                            <td style="text-align:center;">
+                                <img src="https://img.icons8.com/nolan/64/000000/star.png">
+
+                            </td>
+                            <td style="padding-left: 30px;">
+                                <h4 style="text-align:center;"> Rate Your Order Now!</h4>
+                                <p>lorem ipsum blabablablablabl</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table>
+                        <tr>
+                            <td style="text-align:center;">
+                                <img src="https://img.icons8.com/nolan/64/000000/star.png">
+
+                            </td>
+                            <td style="padding-left: 30px;">
+                                <h4 style="text-align:center;"> Rate Your Order Now!</h4>
+                                <p>lorem ipsum blabablablablabl</p>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="subcatvoucher">
                     <h2>My Vouchers</h2>
@@ -325,12 +389,38 @@
 
                     </table>
                 </div>
+                <div calss="subcatwishlist">
+<table>
+    <tr>
+        <th>Image</th>
+        <th>Product Name</th>
+        <th>Variant</th>
+        <th>Availablity</th>
+        <th>Unit Price</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><img src="../assets/images/Slide 1.jpg"></td>
+        <td>Floral Shoes</td>
+        <td>Pink</td>
+        <td>5 pair</td>
+        <td>Rp. 150.000</td>
+        <td>
+            <button>add to cart</button>
+            <button>remove</button>
+        </td>
+    </tr>
+</table>
+                </div>
             </div>
-
-            <button class="backtoprofile">Back To Profile</button>
+<!-- 
+            <button class="backtoprofile">Back To Profile</button> -->
             <br><br>
 
-            <footer class="footer">
+            </footer>
+        </div>
+        </div>
+        <footer class="footer">
                 <div class="footer-container">
                     <ul class="footer-list">
                         <li><a href="#">About Us</a></li>
@@ -347,12 +437,10 @@
                     </div>
 
                 </div>
-            </footer>
-        </div>
         <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
         <link href="../css/template.css" rel="stylesheet">
         <link href="../css/accountsetting.css" rel="stylesheet">
-        
+
         <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
         <script src="../js/accountsetting.js"></script>
 
