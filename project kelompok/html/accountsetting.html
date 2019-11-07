@@ -108,7 +108,8 @@
                             <div class="panel-heading" role="tab" id="headingTwo">
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="showhistory()">
+                                        href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
+                                        onclick="showhistory()">
                                         Order History
                                     </a>
                                 </h4>
@@ -117,10 +118,10 @@
                                 aria-labelledby="headingTwo">
                                 <div class="panel-body">
                                     <ul>
-                                        <li class="submenu">All</li>
-                                        <li class="submenu">Completed</li>
-                                        <li class="submenu">Ongoing</li>
-                                        <li class="submenu">Unpaid</li>
+                                        <li class="submenu"><a>All</a></li>
+                                        <li class="submenu"><a>Completed</a></li>
+                                        <li class="submenu"><a>Ongoing</a></li>
+                                        <li class="submenu"><a>Unpaid</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -129,7 +130,8 @@
                             <div class="panel-heading" role="tab" id="headingThree">
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onclick="shownotif()">
+                                        href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
+                                        onclick="shownotif()">
                                         Notifications
                                     </a>
                                 </h4>
@@ -145,7 +147,8 @@
                             <div class="panel-heading" role="tab" id="headingFour">
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"onclick="changetovoucher()">
+                                        href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"
+                                        onclick="changetovoucher()">
                                         My Vouchers
                                     </a>
                                 </h4>
@@ -153,7 +156,7 @@
                             <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
                                 aria-labelledby="headingFour">
                                 <div class="panel-body">
-                                    <ul>
+
                                 </div>
                             </div>
                         </div>
@@ -161,7 +164,8 @@
                             <div class="panel-heading" role="tab" id="headingFive">
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" onclick="showwish()">
+                                        href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"
+                                        onclick="showwish()">
                                         Wishlist
                                     </a>
                                 </h4>
@@ -270,69 +274,108 @@
                     </div>
                 </div>
                 <div class="subcatorderhistory">
-
-                    <table>
+                    <h2>Order History</h2>
+                    <h4 class="historycat"></h4>
+                    <table class="histories">
                         <tr>
                             <th><a>Order ID</a></th>
                             <th>Date/Time</th>
                             <th>Description</th>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td>0e930423803</td>
+                            <td>09-10-2019 / 09:30</td>
+                            <td>Order Completed</td>
+                        </tr>
+
+                        <tr>
+                            <td>0e930423803</td>
+                            <td>09-10-2019 / 09:30</td>
+                            <td>Order Completed</td>
+                        </tr>
+
+                        <tr>
+                            <td>0e930423803</td>
+                            <td>09-10-2019 / 09:30</td>
+                            <td>Order Completed</td>
+                        </tr>
+
+                        <tr>
+                            <td>0e930423803</td>
+                            <td>09-10-2019 / 09:30</td>
+                            <td>Order Completed</td>
                         </tr>
                     </table>
                 </div>
                 <div class="subcatnotifications">
-                    <table>
+                    <h2>Notifications</h2>
+                    <table class="notif">
                         <tr>
                             <td style="text-align:center;">
                                 <img src="https://img.icons8.com/nolan/64/000000/star.png">
                             </td>
                             <td style="padding-left: 30px;">
-                                <h4 style="text-align:center;"> Rate Your Order Now!</h4>
-                                <p>lorem ipsum blabablablablabl</p>
+                                <h4><a> Rate Your Order Now!</a></h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    It has survived not only five centuries, but also the leap into electronic
+                                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                                    the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                    with desktop publishing software like Aldus PageMaker including versions of Lorem
+                                    Ipsum.</p>
                             </td>
                         </tr>
-                    </table>
-                    <br>
-                    <table>
                         <tr>
                             <td style="text-align:center;">
                                 <img src="https://img.icons8.com/nolan/64/000000/star.png">
+                            </td>
+                            <td style="padding-left: 30px;">
+                                <h4><a> Rate Your Order Now!</a></h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    It has survived not only five centuries, but also the leap into electronic
+                                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                                    the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                    with desktop publishing software like Aldus PageMaker including versions of Lorem
+                                    Ipsum.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <img src="https://img.icons8.com/nolan/64/000000/star.png">
+                            </td>
+                            <td style="padding-left: 30px;">
+                                <h4><a> Rate Your Order Now!</a></h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    It has survived not only five centuries, but also the leap into electronic
+                                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                                    the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                    with desktop publishing software like Aldus PageMaker including versions of Lorem
+                                    Ipsum.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <img src="https://img.icons8.com/nolan/64/000000/star.png">
+                            </td>
+                            <td style="padding-left: 30px;">
+                                <h4><a> Rate Your Order Now!</a></h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    It has survived not only five centuries, but also the leap into electronic
+                                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                                    the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                                    with desktop publishing software like Aldus PageMaker including versions of Lorem
+                                    Ipsum.</p>
+                            </td>
+                        </tr>
+                    </table>
 
-                            </td>
-                            <td style="padding-left: 30px;">
-                                <h4 style="text-align:center;"> Rate Your Order Now!</h4>
-                                <p>lorem ipsum blabablablablabl</p>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                    <table>
-                        <tr>
-                            <td style="text-align:center;">
-                                <img src="https://img.icons8.com/nolan/64/000000/star.png">
-
-                            </td>
-                            <td style="padding-left: 30px;">
-                                <h4 style="text-align:center;"> Rate Your Order Now!</h4>
-                                <p>lorem ipsum blabablablablabl</p>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                    <table>
-                        <tr>
-                            <td style="text-align:center;">
-                                <img src="https://img.icons8.com/nolan/64/000000/star.png">
-
-                            </td>
-                            <td style="padding-left: 30px;">
-                                <h4 style="text-align:center;"> Rate Your Order Now!</h4>
-                                <p>lorem ipsum blabablablablabl</p>
-                            </td>
-                        </tr>
-                    </table>
                 </div>
                 <div class="subcatvoucher">
                     <h2>My Vouchers</h2>
@@ -389,54 +432,89 @@
 
                     </table>
                 </div>
-                <div calss="subcatwishlist">
-<table>
-    <tr>
-        <th>Image</th>
-        <th>Product Name</th>
-        <th>Variant</th>
-        <th>Availablity</th>
-        <th>Unit Price</th>
-        <th></th>
-    </tr>
-    <tr>
-        <td><img src="../assets/images/Slide 1.jpg"></td>
-        <td>Floral Shoes</td>
-        <td>Pink</td>
-        <td>5 pair</td>
-        <td>Rp. 150.000</td>
-        <td>
-            <button>add to cart</button>
-            <button>remove</button>
-        </td>
-    </tr>
-</table>
+                <div class="subcatwish">
+                    <h2>Wishlist</h2>
+                    <br>
+                    <table class="wishes">
+                        <tr>
+                            <th>Image</th>
+                            <th>Product Name</th>
+                            <th>Variant</th>
+                            <th>Availablity</th>
+                            <th>Unit Price</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td><img src="../assets/images/Slide 1.jpg"></td>
+                            <td>Floral Shoes</td>
+                            <td>Pink</td>
+                            <td>5 pair</td>
+                            <td>Rp. 150.000</td>
+                            <td>
+                                <button>add to cart</button>
+                                <button>remove</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../assets/images/Slide 1.jpg"></td>
+                            <td>Floral Shoes</td>
+                            <td>Pink</td>
+                            <td>5 pair</td>
+                            <td>Rp. 150.000</td>
+                            <td>
+                                <button>add to cart</button>
+                                <button>remove</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../assets/images/Slide 1.jpg"></td>
+                            <td>Floral Shoes</td>
+                            <td>Pink</td>
+                            <td>5 pair</td>
+                            <td>Rp. 150.000</td>
+                            <td>
+                                <button>add to cart</button>
+                                <button>remove</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../assets/images/Slide 1.jpg"></td>
+                            <td>Floral Shoes</td>
+                            <td>Pink</td>
+                            <td>5 pair</td>
+                            <td>Rp. 150.000</td>
+                            <td>
+                                <button>add to cart</button>
+                                <button>remove</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
                 </div>
             </div>
-<!-- 
-            <button class="backtoprofile">Back To Profile</button> -->
+
             <br><br>
 
             </footer>
         </div>
-        </div>
-        <footer class="footer">
-                <div class="footer-container">
-                    <ul class="footer-list">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Our Policy</a></li>
-                    </ul>
-                    <div class="contact-container">
-                        <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
-                                <p>@baybees.wardrobe</p>
-                            </a></div>
-                        <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
-                                <p>+62 81638495xx7</p>
-                            </a></div>
-                    </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <ul class="footer-list">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Our Policy</a></li>
+            </ul>
+            <div class="contact-container">
+                <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
+                        <p>@baybees.wardrobe</p>
+                    </a></div>
+                <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
+                        <p>+62 81638495xx7</p>
+                    </a></div>
+            </div>
 
-                </div>
+        </div>
         <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
         <link href="../css/template.css" rel="stylesheet">
         <link href="../css/accountsetting.css" rel="stylesheet">

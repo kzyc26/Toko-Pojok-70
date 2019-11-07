@@ -1,6 +1,7 @@
 
 .content{
     border-bottom: 1px solid black;
+    
 }
 
 .profilemenu{
@@ -33,6 +34,7 @@ margin-right:20%;
 .informations{
     overflow:auto;
     border-left:1px solid black;
+    height:100%;
    
 }
 .profiledetails > h3{
@@ -68,5 +70,34 @@ table{
 }
 ul{
     list-style-type: none;
+}
+.subcatorderhistory h2{
+text-align: center;
+}
+
+.histories td, .histories th{
+border: 1px solid black;
+text-align: center;
+}
+.subcatnotifications h2{
+    text-align: center;
+}
+.notif h4{
+    text-align: center;
+}
+.notif p{
+    text-align: justify;
+}
+.subcatwish h2{
+text-align: center;
+}
+.wishes img{
+   width:100px;
+   height:100px;
+
+}
+.wishes tr,.wishes td,.wishes th{
+    border:1px solid black;
+    text-align: center;
 }
 
