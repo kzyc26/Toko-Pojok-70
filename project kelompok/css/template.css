@@ -49,11 +49,12 @@
     position: relative;
     bottom: 0;
     width: 100%;
-    height: 100px;
+    height: 120px;
     text-align: center;
     clear: both;
     font-size: medium;
     font-family: 'Lato', sans-serif;
+    background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
 }
 .footer ul li {display: inline-block;
     position: relative;}

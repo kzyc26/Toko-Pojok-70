@@ -41,3 +41,7 @@ table, th, td {
     margin-top:14%;
     margin-left:80%;
 }
+
+.footer{
+    position: absolute;
+}
