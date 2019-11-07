@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Payment Confirmation</title>
-    <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
+  <title></title>
+  <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -67,65 +69,26 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
-    <div class="content">
-        <div class="row">
-            <div class="col-md-6 choose">
-                <div class="total">
-                    <h2>SUBTOTAL : Rp.150.000,-
-                    </h2>
-                    <h4>Order ID : A90384723 </h4>
-                </div>
-                <div class="paymentmethod">
-                    <h5>Select Your Payment Method</h5>
-                    <div class="methods">
-                        <input type="radio" name="paymethod" value="ovo"> Ovo<br>
-                        <img src="https://img.icons8.com/nolan/150/000000/qr-code.png" class="qrcode"><br>
-                        <input type="radio" name="paymethod" value="BankABC"> Bank ABC<br>
-                        <p>Virtual Account : 021923223904328</p><br>
-                        <input type="radio" name="paymethod" value="BankCBA"> Bank CBA<br>
-                        <p>Virtual Account : 021923223904328</p>
-                    </div>
-
-                </div>
-                <div class="cbpolicy">
-<input type="checkbox" name="policy" value="agree"> I agree to the <a href="#">Payment Terms and Conditions</a>
-                </div>
-            </div>
-            <div class="col-md-6 confirm">
-                <h3>PAYMENT CONFIRMATION</h3>
-                <div class="addimg">
-                        <img src="https://img.icons8.com/carbon-copy/100/000000/image.png">
-                     <p>Drop Your Payment Invoice Here</p>
-                     <button>Choose file from my device</button>
-                </div>
-                <div class="buttonss">
-                    <button class="btnconfirm"><a href="../html/Trace and Track.html">Submit</a></button><br>
-                    <button class="btnpaylater"><a href="../html/Trace and Track.html">Confirm Later</a></button>
-                </div>
-          
-            </div>
-        </div>
-    </div>
-    <footer class="footer">
-        <div class="footer-container">
-            <ul class="footer-list">
+  <footer class="footer">
+      <div class="footer-container">
+          <ul class="footer-list">
               <li><a href="../html/about-us.html">About Us</a></li>
               <li><a href="../html/faq.html">FAQs</a></li>
               <li><a href="../html/policy.html">Our Policy</a></li>
-            </ul>
-            <div class="contact-container">
-                <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
-                        <p>@baybees.wardrobe</p>
-                    </a></div>
-                <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
-                        <p>+62 81638495xx7</p>
-                    </a></div>
-            </div>
+          </ul>
+          <div class="contact-container">
+              <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
+                      <p>@baybees.wardrobe</p>
+                  </a></div>
+              <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
+                      <p>+62 81638495xx7</p>
+                  </a></div>
+          </div>
 
-        </div>
-    </footer>
-    <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
-    <link href="../css/template.css" rel="stylesheet">
-    <link href="../css/payment.css" rel="stylesheet">
-    <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+      </div>
+  </footer>
+</div>  
+  <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
+  <link href="../css/template.css" rel="stylesheet">
+  <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
 </body>

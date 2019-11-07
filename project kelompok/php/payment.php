@@ -99,7 +99,7 @@
                      <button>Choose file from my device</button>
                 </div>
                 <div class="buttonss">
-                    <button class="btnconfirm"><a href="../html/Trace and Track.html">Submit</a></button><br>
+                <button class="btnconfirm"><a href="../html/Trace and Track.html">Submit</a></button><br>
                     <button class="btnpaylater"><a href="../html/Trace and Track.html">Confirm Later</a></button>
                 </div>
           

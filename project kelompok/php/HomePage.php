@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Homepage</title>
+  <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="../assets/images/99818.png" class="logo-toko"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <!-- <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul> -->
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <a href="../html/products.html"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../html/check-out.html"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+          <li><a href="../html/login.html"><span class="glyphicon glyphicon-user"></span></a></li>
+          <li><a href="../html/Trace and Track.html"><span class="glyphicon glyphicon-inbox"></span></a></li>
+          <!-- <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li> -->
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <!-- decoration -->
+      <img src="../assets/images/orange-watercolor.png" class="garland">
+      <div class="item active">
+        <a href="../html/products.html">
+          <img src="../assets/images/Slide 1.jpg" alt="...">
+          <div class="carousel-caption">
+            Shoes
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="../html/products.html">
+          <img src="../assets/images/Slide 2.jpg" alt="...">
+          <div class="carousel-caption">
+            GIRL's Outfit
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="../html/products.html">
+          <img src="../assets/images/Slide 3.jpg" alt="...">
+          <div class="carousel-caption">
+            BOY's Outfit
+          </div>
+      </div>
+      </a>
+      ...
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <!-- Dropdown grouped -->
+  <div class="dropdown_group">
+    <div id="footwear" class="dropdown">
+      <button onclick="scrollWin()" class="btn btn-default dropdown-toggle tombol purple" type="button"
+        id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Footwear
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="../html/products.html">All Footwear Collection</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="../html/products.html">a</a></li>
+        <li><a href="../html/products.html">b</a></li>
+        <li><a href="../html/products.html">c</a></li>
+        <li><a href="../html/products.html">d</a></li>
+        <li><a href="../html/products.html">e</a></li>
+      </ul>
+    </div>
+    <div id="girl" class="dropdown">
+      <button onclick="scrollWin()" class="btn btn-default dropdown-toggle tombol pink" type="button" id="dropdownMenu1"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Girl's Outfit
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="../html/products.html">All Girl's Collection</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="../html/products.html">Celana Panjang</a></li>
+        <li><a href="../html/products.html">Celana Pendek</a></li>
+        <li><a href="../html/products.html">Kaos Lengan Panjang</a></li>
+        <li><a href="../html/products.html">Kaos Lengan Pendek</a></li>
+        <li><a href="../html/products.html">Setelan</a></li>
+      </ul>
+    </div>
+    <div id="boy" class="dropdown">
+      <button onclick="scrollWin()" class="btn btn-default dropdown-toggle tombol cyan" type="button" id="dropdownMenu1"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Boy's Outfit
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="../html/products.html">All Boy's Collection</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="../html/products.html">Celana Panjang</a></li>
+        <li><a href="../html/products.html">Celana Pendek</a></li>
+        <li><a href="../html/products.html">Kaos Lengan Panjang</a></li>
+        <li><a href="../html/products.html">Kaos Lengan Pendek</a></li>
+        <li><a href="../html/products.html">Setelan</a></li>
+      </ul>
+    </div>
+    <div id="baby-gear" class="dropdown">
+      <button onclick="scrollWin()" class="btn btn-default dropdown-toggle tombol blue" type="button" id="dropdownMenu1"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Baby Gear
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="../html/products.html">All Baby Gear Collection</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="../html/products.html">a</a></li>
+        <li><a href="../html/products.html">b</a></li>
+        <li><a href="../html/products.html">c</a></li>
+        <li><a href="../html/products.html">d</a></li>
+        <li><a href="../html/products.html">e</a></li>
+      </ul>
+    </div>
+  </div>
+  <br><br><br><br><br><br>
+
+  <!-- cust. reviews -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title panel-font">Reviews</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>Jane Doe</h2>
+          <p>"Donec id elit non mi porta gravida at eget metus."</p>
+          <!-- <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p> -->
+          <div class="rating">
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+          </div>
+          <!-- <p><a class="btn btn-primary" href="#" role="button">View details »</a></p> -->
+        </div>
+        <div class="col-lg-4">
+          <h2>Marshall John</h2>
+          <p>"Donec id elit non mi porta gravida at eget metus."</p>
+          <div class="rating">
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+          </div>
+          <!-- <p><a class="btn btn-primary" href="#" role="button">View details »</a></p> -->
+        </div>
+        <div class="col-lg-4">
+          <h2>John Doe</h2>
+          <p>"Donec id elit non mi porta gravida at eget metus."</p>
+          <div class="rating">
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+          </div>
+          <!-- <p><a class="btn btn-primary" href="#" role="button">View details »</a></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <ul class="footer-list">
+        <li><a href="../html/about-us.html">About Us</a></li>
+        <li><a href="../html/faq.html">FAQs</a></li>
+        <li><a href="../html/policy.html">Our Policy</a></li>
+      </ul>
+      <div class="contact-container">
+        <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
+            <p>@baybees.wardrobe</p>
+          </a></div>
+        <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
+            <p>+62 81638495xx7</p>
+          </a></div>
+      </div>
+
+    </div>
+  </footer>
+
+  <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
+  <link href="../css/template.css" rel="stylesheet">
+  <link href="../css/homepage.css" rel="stylesheet">
+  <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+  <script src="../js/homepage.js"></script>
+</body>
+
+</html>
