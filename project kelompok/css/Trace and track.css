@@ -38,8 +38,8 @@ table, th, td {
     background-color: lightgreen;
     border-color: lightgreen;
     position: relative;
-    margin-top:14%;
     margin-left:80%;
+    text-decoration: none;
 }
 
 .footer{

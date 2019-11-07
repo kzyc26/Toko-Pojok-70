@@ -46,12 +46,12 @@
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>
-          <a href="../html/products.html"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
+          <a href="../php/products.php"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../html/check-out.html"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-          <li><a href="../html/login.html"><span class="glyphicon glyphicon-user"></span></a></li>
-          <li><a href="../html/Trace and Track.html"><span class="glyphicon glyphicon-inbox"></span></a></li>
+          <li><a href="../php/check-out.php"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+          <li><a href="../php/login.php"><span class="glyphicon glyphicon-user"></span></a></li>
+          <li><a href="../php/Trace and Track.php"><span class="glyphicon glyphicon-inbox"></span></a></li>
           <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
               aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -83,7 +83,7 @@
       <!-- decoration -->
       <img src="../assets/images/orange-watercolor.png" class="garland">
       <div class="item active">
-        <a href="../html/products.html">
+        <a href="../php/products.php">
           <img src="../assets/images/Slide 1.jpg" alt="...">
           <div class="carousel-caption">
             Shoes
@@ -91,7 +91,7 @@
         </a>
       </div>
       <div class="item">
-        <a href="../html/products.html">
+        <a href="../php/products.php">
           <img src="../assets/images/Slide 2.jpg" alt="...">
           <div class="carousel-caption">
             GIRL's Outfit
@@ -99,7 +99,7 @@
         </a>
       </div>
       <div class="item">
-        <a href="../html/products.html">
+        <a href="../php/products.php">
           <img src="../assets/images/Slide 3.jpg" alt="...">
           <div class="carousel-caption">
             BOY's Outfit
@@ -129,13 +129,13 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="../html/products.html">All Footwear Collection</a></li>
+        <li><a href="../php/products.php">All Footwear Collection</a></li>
         <li role="separator" class="divider"></li>
-        <li><a href="../html/products.html">a</a></li>
-        <li><a href="../html/products.html">b</a></li>
-        <li><a href="../html/products.html">c</a></li>
-        <li><a href="../html/products.html">d</a></li>
-        <li><a href="../html/products.html">e</a></li>
+        <li><a href="../php/products.php">a</a></li>
+        <li><a href="../php/products.php">b</a></li>
+        <li><a href="../php/products.php">c</a></li>
+        <li><a href="../php/products.php">d</a></li>
+        <li><a href="../php/products.php">e</a></li>
       </ul>
     </div>
     <div id="girl" class="dropdown">
@@ -145,13 +145,13 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="../html/products.html">All Girl's Collection</a></li>
+        <li><a href="../php/products.php">All Girl's Collection</a></li>
         <li role="separator" class="divider"></li>
-        <li><a href="../html/products.html">Celana Panjang</a></li>
-        <li><a href="../html/products.html">Celana Pendek</a></li>
-        <li><a href="../html/products.html">Kaos Lengan Panjang</a></li>
-        <li><a href="../html/products.html">Kaos Lengan Pendek</a></li>
-        <li><a href="../html/products.html">Setelan</a></li>
+        <li><a href="../php/products.php">Celana Panjang</a></li>
+        <li><a href="../php/products.php">Celana Pendek</a></li>
+        <li><a href="../php/products.php">Kaos Lengan Panjang</a></li>
+        <li><a href="../php/products.php">Kaos Lengan Pendek</a></li>
+        <li><a href="../php/products.php">Setelan</a></li>
       </ul>
     </div>
     <div id="boy" class="dropdown">
@@ -161,13 +161,13 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="../html/products.html">All Boy's Collection</a></li>
+        <li><a href="../php/products.php">All Boy's Collection</a></li>
         <li role="separator" class="divider"></li>
-        <li><a href="../html/products.html">Celana Panjang</a></li>
-        <li><a href="../html/products.html">Celana Pendek</a></li>
-        <li><a href="../html/products.html">Kaos Lengan Panjang</a></li>
-        <li><a href="../html/products.html">Kaos Lengan Pendek</a></li>
-        <li><a href="../html/products.html">Setelan</a></li>
+        <li><a href="../php/products.php">Celana Panjang</a></li>
+        <li><a href="../php/products.php">Celana Pendek</a></li>
+        <li><a href="../php/products.php">Kaos Lengan Panjang</a></li>
+        <li><a href="../php/products.php">Kaos Lengan Pendek</a></li>
+        <li><a href="../php/products.php">Setelan</a></li>
       </ul>
     </div>
     <div id="baby-gear" class="dropdown">
@@ -177,13 +177,13 @@
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="../html/products.html">All Baby Gear Collection</a></li>
+        <li><a href="../php/products.php">All Baby Gear Collection</a></li>
         <li role="separator" class="divider"></li>
-        <li><a href="../html/products.html">a</a></li>
-        <li><a href="../html/products.html">b</a></li>
-        <li><a href="../html/products.html">c</a></li>
-        <li><a href="../html/products.html">d</a></li>
-        <li><a href="../html/products.html">e</a></li>
+        <li><a href="../php/products.php">a</a></li>
+        <li><a href="../php/products.php">b</a></li>
+        <li><a href="../php/products.php">c</a></li>
+        <li><a href="../php/products.php">d</a></li>
+        <li><a href="../php/products.php">e</a></li>
       </ul>
     </div>
   </div>
@@ -241,9 +241,9 @@
     <div class="footer-container">
 
       <ul class="footer-list">
-        <li><a href="../html/about-us.html">About Us</a></li>
-        <li><a href="../html/faq.html">FAQs</a></li>
-        <li><a href="../html/policy.html">Our Policy</a></li>
+        <li><a href="../php/about-us.php">About Us</a></li>
+        <li><a href="../php/faq.php">FAQs</a></li>
+        <li><a href="../php/policy.php">Our Policy</a></li>
       </ul>
       <div class="contact-container">
         <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
@@ -263,5 +263,4 @@
   <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
   <script src="../js/homepage.js"></script>
 </body>
-
 </html>

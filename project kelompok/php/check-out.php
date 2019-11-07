@@ -21,7 +21,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../html/HomePage.html"><img src="../assets/images/99818.png" class="logo-toko"></a>
+        <a class="navbar-brand" href="../php/HomePage.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
 
       </div>
 
@@ -48,12 +48,12 @@
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>
-          <button type="submit" class="btn btn-default"><a href="../html/products.html"><span class="glyphicon glyphicon-search"></span></a></button>
+          <button type="submit" class="btn btn-default"><a href="../php/products.php"><span class="glyphicon glyphicon-search"></span></a></button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../html/check-out.html"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-          <li><a href="../html/login.html"><span class="glyphicon glyphicon-user"></span></a></li>
-          <li><a href="../html/Trace and Track.html"><span class="glyphicon glyphicon-inbox"></span></a></li>
+          <li><a href="../php/check-out.php"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+          <li><a href="../php/login.php"><span class="glyphicon glyphicon-user"></span></a></li>
+          <li><a href="../php/Trace and Track.php"><span class="glyphicon glyphicon-inbox"></span></a></li>
           <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
               aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -251,14 +251,14 @@
         </tr>
       </table>      
   </div>
-  <a href="../html/payment.html"><button type="submit" id="payment-but"><img src="../assets/images/Cash.png">Payment</button></a>
+  <a href="../php/payment.php"><button type="submit" id="payment-but"><img src="../assets/images/Cash.png">Payment</button></a>
 </div>
   <footer class="footer">
       <div class="footer-container">
           <ul class="footer-list">
-            <li><a href="../html/about-us.html">About Us</a></li>
-            <li><a href="../html/faq.html">FAQs</a></li>
-            <li><a href="../html/policy.html">Our Policy</a></li>
+            <li><a href="../php/about-us.php">About Us</a></li>
+            <li><a href="../php/faq.php">FAQs</a></li>
+            <li><a href="../php/policy.php">Our Policy</a></li>
           </ul>
           <div class="contact-container">
               <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
@@ -278,3 +278,4 @@
   <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
   <script src="../js/check-out.js"></script>
 </body>
+</html>

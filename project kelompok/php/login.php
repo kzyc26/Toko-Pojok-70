@@ -45,7 +45,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../html/HomePage.html"><img src="../assets/images/99818.png" class="logo-toko"></a>
+                    <a class="navbar-brand" href="../php/HomePage.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
             
                   </div>
             
@@ -72,12 +72,12 @@
                       <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
                       </div>
-                      <a href="../html/products.html"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
+                      <a href="../php/products.php"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                      <li><a href="../html/check-out.html"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                      <li><a href="../html/login.html"><span class="glyphicon glyphicon-user"></span></a></li>
-                      <li><a href="../html/Trace and Track.html"><span class="glyphicon glyphicon-inbox"></span></a></li>
+                      <li><a href="../php/check-out.php"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                      <li><a href="../php/login.php"><span class="glyphicon glyphicon-user"></span></a></li>
+                      <li><a href="../php/Trace and Track.php"><span class="glyphicon glyphicon-inbox"></span></a></li>
                       <!-- <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                           aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -110,8 +110,8 @@
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button onClick="window.location.href='../html/check-out.html'" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            <button onClick="window.location.href='../html/sign-up.html'" class="btn btn-lg btn-primary btn-block" type="submit">Register Now!</button>
+            <button onClick="window.location.href='../php/check-out.php'" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <button onClick="window.location.href='../php/sign-up.php'" class="btn btn-lg btn-primary btn-block" type="submit">Register Now!</button>
         </form>
         <?php } ?>
     </div>
@@ -119,9 +119,9 @@
     <footer class="footer">
         <div class="footer-container">
             <ul class="footer-list">
-                <li><a href="../html/about-us.html">About Us</a></li>
-                <li><a href="../html/faq.html">FAQs</a></li>
-                <li><a href="../html/policy.html">Our Policy</a></li>
+                <li><a href="../php/about-us.php">About Us</a></li>
+                <li><a href="../php/faq.php">FAQs</a></li>
+                <li><a href="../php/policy.php">Our Policy</a></li>
             </ul>
             <div class="contact-container">
                 <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
