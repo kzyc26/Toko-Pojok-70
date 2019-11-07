@@ -5,8 +5,16 @@
 .content h1{
     text-align: center;
 }
-
+.content img{
+    margin-left:20%;
+}
 .tengah{
-    left: 20%;
+    left: 15%;
     float: left;
+}
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }

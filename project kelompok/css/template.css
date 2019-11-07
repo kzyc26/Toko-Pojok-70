@@ -1,17 +1,21 @@
 /* color selection  */
-.pink{
+.pink {
     background-color: #FFDEF1;
 }
-.purple{
+
+.purple {
     background-color: #F2E2FF
 }
-.blue{
+
+.blue {
     background-color: #E2EDFF;
 }
-.cyan{
+
+.cyan {
     background-color: #DCFFFB;
 }
-.cream{
+
+.cream {
     background-color: #FFFFE3;
 }
 
@@ -45,34 +49,40 @@
 }
 
 /* footer */
-.footer{
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 120px;
+.footer {
+
+  position: relative;
+  bottom: 0;
+  width:100%;
+  height:120px;
     text-align: center;
     clear: both;
     font-size: medium;
     font-family: 'Lato', sans-serif;
     background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
 }
-.footer ul li {display: inline-block;
-    position: relative;}
 
-.footer ul li a {padding: 10px 20px;
-text-decoration: none;}
+.footer ul li {
+    display: inline-block;
+    position: relative;
+}
 
-.footer .contact{
+.footer ul li a {
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.footer .contact {
     margin: 20px;
     float: left;
 }
 
-.footer img{
+.footer img {
     height: 32px;
     width: auto;
 }
 
-.contact-container{
+.contact-container {
     position: relative;
     left: 38%;
 }
