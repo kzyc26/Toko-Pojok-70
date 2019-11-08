@@ -7,6 +7,8 @@
     background-image: url("../assets/images/orange-watercolor.png");
     padding-left: 60px;
     font-weight: bold;
+    max-height: 500px;
+    overflow: auto;
 }
 
 .content h1{
@@ -46,6 +48,7 @@
 .benefits{
     background-image: linear-gradient(to right,#FFF0F8, #FFEBD7);
     right: 0;
+    min-height: 300px;
 }
 
 .benefits p{        

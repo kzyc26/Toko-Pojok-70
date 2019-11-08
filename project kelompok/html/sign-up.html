@@ -69,7 +69,7 @@
         </div><!-- /.container-fluid -->
       </nav>
   <div class="content">
-    <div class="col-md-9 biodata">
+    <div class="col-md-9 biodata" id="biodata">
       <h1 class="title-bio">Biodata</h1><br>
       <table class="col-md-12">
         <tr>
@@ -93,6 +93,12 @@
             <br>
             <input class="gender" type="checkbox" value="male"> Male
           </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Email</div>
+          </td>
+          <td><input type="email" id="email" class="form-control panjang" placeholder="email@email.com" required=""></td>
         </tr>
         <tr>
           <td colspan="2" class="subjudul">Alamat</td>
@@ -164,7 +170,7 @@
       </table>
 
     </div>
-    <div class="col-md-3 benefits">
+    <div class="col-md-3 benefits" id="benefits">
       <h1 class="title-bio">Benefits</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
