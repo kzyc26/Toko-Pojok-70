@@ -140,6 +140,27 @@
           </td>
           <td><input type="text" id="alamat" class="form-control panjang" placeholder="Alamat" required=""></td>
         </tr>
+        <tr>
+          <td colspan="2" class="subjudul">Detail Log In</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Username</div>
+          </td>
+          <td><input type="text" id="username" class="form-control panjang" placeholder="username" required=""></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Password</div>
+          </td>
+          <td><input type="password" id="password" class="form-control panjang" placeholder="password" required=""></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tulisan">Ketik Ulang Password</div>
+          </td>
+          <td><input type="password" id="retypepassword" class="form-control panjang" placeholder="ketik ulang password" required=""></td>
+        </tr>
       </table>
 
     </div>
@@ -182,4 +203,5 @@
   <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
   <script src="../js/sign-up.js"></script>
 </body>
+
 </html>
