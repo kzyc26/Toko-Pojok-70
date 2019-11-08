@@ -150,6 +150,7 @@
       </ul>
     </div>
     <div class="productsimg">
+     
       <div class="thumbnail">
         <img src="../assets/images/Slide 1.jpg">
         <h2>Product 2</h2>
