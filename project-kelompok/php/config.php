@@ -4,9 +4,7 @@
     $username 	= "root";
     $password 	= "";
     $dbname 	= "toko_pojok_70";
-?>
 
-<?php
     // $base_url = "http://localhost/webdev/ucstore";
     // $servername = "localhost";
     // $username 	= "root";
