@@ -6,7 +6,7 @@
 	// 	require_once('_includes/cart.php'); //have $cart
 	// require_once('_includes/check_visitor.php'); //have $visitor
     
-  //   $category = strtolower($_GET["category"]);
+  //   $category = ($_GET["category"]);
 	// $cmd_extra = "AND lower(category_name)='".$category."'";
 	$cmd = "SELECT id_product, product_name, p.id_category, Price
   FROM  product p, category c
