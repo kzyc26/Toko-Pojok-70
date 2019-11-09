@@ -59,7 +59,7 @@ function gantikecamatan(sk, skc){
 }
 
 function gantikelurahan(skc, skl){
-    var skd = document.getElementById(skc);
+    var skc = document.getElementById(skc);
     var skl = document.getElementById(skl);
     skl.innerHTML = "";
 
