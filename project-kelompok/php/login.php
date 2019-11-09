@@ -10,27 +10,21 @@
 
 <body>
 <?php
-    require_once('config.php');
     require('db.php');	
-			if (isset($_POST['inputEmail'])){
+			if (isset($_POST['username'])){
         $p = $_POST;
-        $con = new mysqli("localhost", "root", "", "register");
-        
-      if ($con->connect_error){
-        die("Connection Failed: ".$con -> connect_error);
-      }
-				$email = $p['inputEmail'];
+				$username = $p['username'];
 				$password = $p['password'];
 				
 				//Checking is user existing in the database or not
-				$query = "SELECT * FROM `users` WHERE email='$email' and password='".sha1($password)."'";
+				$query = "SELECT * FROM `customer` WHERE username='$username' and password='".sha1($password)."'";
 				$result = mysqli_query($con,$query) or die(mysql_error());
 				$rows = mysqli_num_rows($result);
 				if($rows==1){
-					$_SESSION['inputEmail'] = $email;
+					$_SESSION['username'] = $username;
 					header("Location: HomePage.php"); // Redirect user to index.php
 				} else {
-					echo "<div class='form'><h3>Email/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+					echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
 				}
 			} else {
 		?> 
@@ -96,14 +90,12 @@
 
     <img class="foto" src="../assets/images/User.png">
     <br><br><br>
-    <div class="container">   
-       
-        <form class="form-signin" method="post" action="">
-        
+    <div class="container">       
+        <form class="form-signin" method="post" action="">        
             <h2 class="form-signin-heading">Please sign in</h2><br>
-            <label for="inputEmail">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required=""
-                autofocus="" name="inputEmail"><br>
+            <label for="username">Username</label>
+            <input type="text" id="username" class="form-control" placeholder="Username" required=""
+                autofocus="" name="username"><br>
             <label for="inputPassword">Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" name="password">
             <div class="checkbox">
