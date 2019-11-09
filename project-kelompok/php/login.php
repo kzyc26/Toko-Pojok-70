@@ -8,26 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 
-<body>
-<?php
-    require('db.php');	
-			if (isset($_POST['username'])){
-        $p = $_POST;
-				$username = $p['username'];
-				$password = $p['password'];
-				
-				//Checking is user existing in the database or not
-				$query = "SELECT * FROM `customer` WHERE username='$username' and password='".sha1($password)."'";
-				$result = mysqli_query($con,$query) or die(mysql_error());
-				$rows = mysqli_num_rows($result);
-				if($rows==1){
-					$_SESSION['username'] = $username;
-					header("Location: HomePage.php"); // Redirect user to index.php
-				} else {
-					echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
-				}
-			} else {
-		?> 
+<body> 
         <nav class="navbar navbar-default">
                 <div class="container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->
@@ -91,7 +72,28 @@
     <img class="foto" src="../assets/images/User.png">
     <br><br><br>
     <div class="container">       
-        <form class="form-signin" method="post" action="">        
+        <form class="form-signin" method="post" action="login.php">
+        <?php
+    // require('db.php');	
+    $con = new mysqli("localhost", "root", "", "toko_pojok_70");
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);}
+			if (isset($_POST['username'])){
+        $p = $_POST;
+				$username = $p['username'];
+				$password = $p['password'];				
+				//Checking is user existing in the database or not
+				$query = "SELECT * FROM `customer` WHERE username='$username' and password='.sha1($password).'";
+				$result = mysqli_query($con,$query) or die(mysqli_error());
+				$rows = mysqli_num_rows($result);
+				if($rows==1){
+					$_SESSION['username'] = $username;
+					header("Location: HomePage.php"); // Redirect user to index.php
+				} else {
+					echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+				}
+			}
+		?>        
             <h2 class="form-signin-heading">Please sign in</h2><br>
             <label for="username">Username</label>
             <input type="text" id="username" class="form-control" placeholder="Username" required=""
@@ -106,7 +108,6 @@
             <button onClick="window.location.href='../php/check-out.php'" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             <button onClick="window.location.href='../php/sign-up.php'" class="btn btn-lg btn-primary btn-block" type="submit">Register Now!</button>
         </form>
-        <?php } ?>
     </div>
     <br><br>
     <footer class="footer">
