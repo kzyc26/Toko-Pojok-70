@@ -1,4 +1,50 @@
 <!DOCTYPE html>
+<?php
+	session_start();
+  require_once('config.php');
+  require('db.php');
+	// 	require_once('_includes/cart.php'); //have $cart
+	// require_once('_includes/check_visitor.php'); //have $visitor
+    
+  //   $category = ($_GET["category"]);
+	// $cmd_extra = "AND lower(category_name)='".$category."'";
+	$cmd = "SELECT id_product, product_name, p.id_category, Price
+  FROM  product p, category c
+ WHERE p.id_category = c.id_category";
+	
+	$all_result 	= mysqli_query($con,$cmd) or die(mysqli_error($con));
+	$count_all_item = mysqli_num_rows($all_result);
+
+	$max_item 		= 9; //Max item in one page
+	$page 			= isset($_GET['page'])? (int)$_GET["page"]:1; //contoh IF INLINE
+	//echo $page;
+	$start 			= ($page>1) ? (($page * $max_item) - $max_item) : 0; //contoh IF INLINE
+	//echo $start;
+	
+	$cmd 			= $cmd." LIMIT $start, $max_item";
+	//echo $cmd;
+	$limit_result 	= mysqli_query($con,$cmd) or die(mysqli_error($con));
+
+	$count_pages 	= ceil($count_all_item / $max_item); 
+
+	$products = null;
+	if ($count_all_item >= 1){
+		while($row = mysqli_fetch_assoc($limit_result)) {
+			$products[] = $row;
+		}
+    }
+    
+    // //True Type
+    // $brand_truetype = "";
+    // $cmd2 = "SELECT b.name FROM brands b WHERE lower(b.name) = '$brand'";
+    // $temp_result = mysqli_query($con,$cmd2) or die(mysqli_error($con));
+    // $total_item = mysqli_num_rows($temp_result);
+    // if ($total_item ==1){
+    //     //BACA: https://stackoverflow.com/questions/10605456/selecting-one-row-from-mysql-query-php
+    //     $item = mysqli_fetch_assoc($temp_result);
+    //     $brand_truetype = $item['name'];
+    // }
+?>
 <html>
 
 <head>
@@ -20,7 +66,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../php/HomePage.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
+            <a class="navbar-brand" href="../html/HomePage.html"><img src="../assets/images/99818.png" class="logo-toko"></a>
     
           </div>
     
@@ -47,12 +93,12 @@
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search">
               </div>
-              <a href="../php/products.php"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
+              <a href="../html/products.html"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
             </form>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="../php/check-out.php"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-              <li><a href="../php/login.php"><span class="glyphicon glyphicon-user"></span></a></li>
-              <li><a href="../php/Trace and Track.php"><span class="glyphicon glyphicon-inbox"></span></a></li>
+              <li><a href="../html/check-out.html"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+              <li><a href="../html/login.html"><span class="glyphicon glyphicon-user"></span></a></li>
+              <li><a href="../html/Trace and Track.html"><span class="glyphicon glyphicon-inbox"></span></a></li>
               <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -149,87 +195,35 @@
         <li><a href="#">Color</a></li>
       </ul>
     </div>
-    <div class="productsimg">
+   
+    <div class='row productsimg' style='margin:0px auto;'>
+    
+				<?php 
+					foreach($products as $product){
+						$id = $product['id_product'];
+				?>
+					<div class="thumbnail">
+						<img src='../assets/images/products/<?php echo $id; ?>.jpg' class='img-responsive object-fit'/>
+						<h5><?php echo $product['product_name']; ?></h5>
+							<p>
+							Rp. 
+							<?php 
+								$price = $product['Price'];
+								echo number_format($price,2); 
+							?>
+            </p>
+            <div class="space-ten"></div>
+        <div class="btn-ground text-center">
+          <button type="button" onclick="showCheckout()" class="add btn btn-default"><i class="fa fa-shopping-cart"></i>
+            Add To Cart</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i
+              class="fa fa-search"></i> Quick View</button>
+        </div>
+        <div class="space-ten"></div>
+					</div>
+				<?php } ?>
+      </div>
      
-      <div class="thumbnail">
-        <img src="../assets/images/Slide 1.jpg">
-        <h2>Product 2</h2>
-        <p>Rp 250.000</p>
-        <div class="space-ten"></div>
-        <div class="btn-ground text-center">
-          <button type="button" onclick="showCheckout()" class="add btn btn-default"><i class="fa fa-shopping-cart"></i>
-            Add To Cart</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i
-              class="fa fa-search"></i> Quick View</button>
-        </div>
-        <div class="space-ten"></div>
-      </div>
-      <div class="thumbnail">
-        <img src="../assets/images/Slide 1.jpg">
-        <h2>Product 2</h2>
-        <p>Rp 250.000</p>
-        <div class="space-ten"></div>
-        <div class="btn-ground text-center">
-          <button type="button" onclick="showCheckout()" class="add btn btn-default"><i class="fa fa-shopping-cart"></i>
-            Add To Cart</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i
-              class="fa fa-search"></i> Quick View</button>
-        </div>
-        <div class="space-ten"></div>
-      </div>
-      <div class="thumbnail">
-        <img src="../assets/images/Slide 1.jpg">
-        <h2>Product 2</h2>
-        <p>Rp 250.000</p>
-        <div class="space-ten"></div>
-        <div class="btn-ground text-center">
-          <button type="button" onclick="showCheckout()" class="add btn btn-default"><i class="fa fa-shopping-cart"></i>
-            Add To Cart</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i
-              class="fa fa-search"></i> Quick View</button>
-        </div>
-        <div class="space-ten"></div>
-      </div>
-      <div class="thumbnail">
-        <img src="../assets/images/Slide 2.jpg">
-        <h2>Product 2</h2>
-        <p>Rp 250.000</p>
-        <div class="space-ten"></div>
-        <div class="btn-ground text-center">
-          <button type="button" onclick="showCheckout()" class="add btn btn-default"><i class="fa fa-shopping-cart"></i>
-            Add To Cart</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i
-              class="fa fa-search"></i> Quick View</button>
-        </div>
-        <div class="space-ten"></div>
-      </div>
-      <div class="thumbnail">
-        <img src="../assets/images/Slide 3.jpg">
-        <h2>Product 2</h2>
-        <p>Rp 250.000</p>
-        <div class="space-ten"></div>
-        <div class="btn-ground text-center">
-          <button type="button" onclick="showCheckout()" class="add btn btn-default"><i class="fa fa-shopping-cart"></i>
-            Add To Cart</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i
-              class="fa fa-search"></i> Quick View</button>
-        </div>
-        <div class="space-ten"></div>
-      </div>
-      <div class="thumbnail">
-        <img src="../assets/images/Slide 2.jpg">
-        <h2>Product 2</h2>
-        <p>Rp 250.000</p>
-        <div class="space-ten"></div>
-        <div class="btn-ground text-center">
-          <button type="button" onclick="showCheckout()" class="add btn btn-default"><i class="fa fa-shopping-cart"></i>
-            Add To Cart</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i
-              class="fa fa-search"></i> Quick View</button>
-          <div class="space-ten"></div>
-        </div>
-      </div>
-    </div>
     <div class="modal fade product_view" id="product_view">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -301,7 +295,7 @@
       </div>
     </div>
     <div class="floatbutton">
-      <a href="../php/check-out.php" class="float">
+      <a href="../php/" class="float">
         <img src="https://img.icons8.com/nolan/64/000000/shopping-cart.png">
         <h5>Checkout</h5>
       </a>
@@ -316,9 +310,9 @@
   <footer class="footer">
     <div class="footer-container">
       <ul class="footer-list">
-        <li><a href="../php/about-us.php">About Us</a></li>
-        <li><a href="../php/faq.php">FAQs</a></li>
-        <li><a href="../php/policy.php">Our Policy</a></li>
+        <li><a href="../html/about-us.html">About Us</a></li>
+        <li><a href="../html/faq.html">FAQs</a></li>
+        <li><a href="../html/policy.html">Our Policy</a></li>
       </ul>
       <div class="contact-container">
         <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
@@ -354,5 +348,6 @@
       document.querySelector('.floatbutton').style.display = 'block';
     }
   </script>
+
+
 </body>
-</html>

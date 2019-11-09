@@ -87,7 +87,12 @@ footer {
     float: left;
     position: relative;
 }
-
+.thumbnail img{
+    width:100%;
+}
+.thumbnail h3{
+ text-align:center;   
+}
 .dropdown {
     position: relative;
     float: none;
