@@ -2,10 +2,14 @@
     font-family: 'Lato', sans-serif;
 }
 
+.row{
+    padding: 7px;
+    margin: 0;
+}
+
 .cart{
-    max-height: 550px; 
+    max-height: 800px;
     overflow: auto;
-    background-color: #EDFFF3;
 }
 
 h2{
