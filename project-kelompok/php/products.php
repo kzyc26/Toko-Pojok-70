@@ -34,16 +34,16 @@
 		}
     }
     
-    // //True Type
-    // $brand_truetype = "";
-    // $cmd2 = "SELECT b.name FROM brands b WHERE lower(b.name) = '$brand'";
-    // $temp_result = mysqli_query($con,$cmd2) or die(mysqli_error($con));
-    // $total_item = mysqli_num_rows($temp_result);
-    // if ($total_item ==1){
-    //     //BACA: https://stackoverflow.com/questions/10605456/selecting-one-row-from-mysql-query-php
-    //     $item = mysqli_fetch_assoc($temp_result);
-    //     $brand_truetype = $item['name'];
-    // }
+    //True Type
+    $brand_truetype = "";
+    $cmd2 = "SELECT b.name FROM brands b WHERE lower(b.name) = '$brand'";
+    $temp_result = mysqli_query($con,$cmd2) or die(mysqli_error($con));
+    $total_item = mysqli_num_rows($temp_result);
+    if ($total_item ==1){
+        //BACA: https://stackoverflow.com/questions/10605456/selecting-one-row-from-mysql-query-php
+        $item = mysqli_fetch_assoc($temp_result);
+        $brand_truetype = $item['name'];
+    }
 ?>
 <html>
 

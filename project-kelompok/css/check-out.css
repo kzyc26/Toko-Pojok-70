@@ -78,4 +78,8 @@ h2{
 }
 .footer{
     background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
 }
