@@ -5,12 +5,16 @@
   require('db.php');
 	// 	require_once('_includes/cart.php'); //have $cart
 	// require_once('_includes/check_visitor.php'); //have $visitor
-    
-  //   $category = ($_GET["category"]);
-	// $cmd_extra = "AND lower(category_name)='".$category."'";
+    if (isset($_GET["id_category"])){
+      $category = strtolower($_GET["id_category"]);
+      $cmd_extra = "AND lower(p.id_category)='".$category."'";
+    } else{
+      $cmd_extra = "";
+    }
+  
 	$cmd = "SELECT id_product, product_name, p.id_category, Price
   FROM  product p, category c
- WHERE p.id_category = c.id_category";
+ WHERE p.id_category = c.id_category $cmd_extra";
 	
 	$all_result 	= mysqli_query($con,$cmd) or die(mysqli_error($con));
 	$count_all_item = mysqli_num_rows($all_result);
@@ -34,17 +38,17 @@
 		}
     }
     
-    //True Type
-    $brand_truetype = "";
-    $cmd2 = "SELECT b.name FROM brands b WHERE lower(b.name) = '$brand'";
-    $temp_result = mysqli_query($con,$cmd2) or die(mysqli_error($con));
-    $total_item = mysqli_num_rows($temp_result);
-    if ($total_item ==1){
-        //BACA: https://stackoverflow.com/questions/10605456/selecting-one-row-from-mysql-query-php
-        $item = mysqli_fetch_assoc($temp_result);
-        $brand_truetype = $item['name'];
-    }
-?>
+    // True Type mengembalikan tulisan awal seperti apa
+    // $category_truetype = "";
+    // $cmd2 = "SELECT category_name FROM category WHERE lower(category_name) = '$category'";
+    // $temp_result = mysqli_query($con,$cmd2) or die(mysqli_error($con));
+    // $total_item = mysqli_num_rows($temp_result);
+    // if ($total_item ==1){
+    //     //BACA: https://stackoverflow.com/questions/10605456/selecting-one-row-from-mysql-query-php
+    //     $item = mysqli_fetch_assoc($temp_result);
+    //     $category_truetype = $item['category_name'];
+    // }
+// ?>
 <html>
 
 <head>
@@ -128,12 +132,12 @@
         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
             <ul>
-              <li><a>Celana Panjang</a></li>
-              <li><a>Celana Pendek</a></li>
-              <li><a>Kaos Lengan Panjang</a></li>
-              <li><a>Kaos Lengan Pendek</a></li>
-              <li><a>Setelan</a></li>
-            </ul>
+              <li><a href="products.php?id_category=st04">Setelan Panjang</a></li>
+              <li><a href="products.php?id_category=st03">Setelan Pendek</a></li>
+              <li><a href="products.php?id_category=ks02">Kaos</a></li>
+              <li><a href="products.php?id_category=sp03">Sneakers</a></li>
+              <li><a href="products.php?id_category=sp04">Sepatu Sandal</a></li>
+             </ul>
           </div>
         </div>
       </div>
@@ -149,41 +153,21 @@
         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
           <div class="panel-body">
             <ul>
-              <li><a>Celana Panjang</a></li>
-              <li><a>Celana Pendek</a></li>
-              <li><a>Kaos Lengan Panjang</a></li>
-              <li><a>Kaos Lengan Pendek</a></li>
-              <li><a>Setelan</a></li>
+              <li><a href="products.php?id_category=ds01">Dress Lengan Panjang</a></li>
+              <li><a href="products.php?id_category=ds02">Dress Lengan Pendek</a></li>
+              <li><a href="products.php?id_category=st02">Setelan Lengan Panjang</a></li>
+              <li><a href="products.php?id_category=st01">Setelan Lengan Pendek</a></li>
+              <li><a href="products.php?id_category=sp01">Sneakers</a></li>
+              <li><a href="products.php?id_category=sp02">Sepatu Sandal</a></li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingThree">
-          <h4 class="panel-title">
-            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
-              aria-expanded="false" aria-controls="collapseThree">
-              Footwear
-            </a>
-          </h4>
-        </div>
-        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-          <div class="panel-body">
-            <ul>
-              <li><a>Sepatu Sandal</a></li>
-              <li><a>Sneakers</a></li>
-              <li><a>Sandal</a></li>
-              <li><a>Kaos Kaki</a></li>
-              <li><a>Sepatu Keds</a></li>
-            </ul>
-
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
   <div class="container">
-    <div class="dropdown">
+    <!-- <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="true">
         Filter
@@ -194,13 +178,15 @@
         <li><a href="#">Age</a></li>
         <li><a href="#">Color</a></li>
       </ul>
-    </div>
+    </div> -->
    
     <div class='row productsimg' style='margin:0px auto;'>
     
-				<?php 
+        <?php 
+        if ($count_all_item>0){
 					foreach($products as $product){
-						$id = $product['id_product'];
+            $id = $product['id_product'];
+          
 				?>
 					<div class="thumbnail">
 						<img src='../assets/images/products/<?php echo $id; ?>.jpg' class='img-responsive object-fit'/>
@@ -214,14 +200,16 @@
             </p>
             <div class="space-ten"></div>
         <div class="btn-ground text-center">
-          <button type="button" onclick="showCheckout()" class="add btn btn-default"><i class="fa fa-shopping-cart"></i>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"></i>
             Add To Cart</button>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i
               class="fa fa-search"></i> Quick View</button>
         </div>
         <div class="space-ten"></div>
 					</div>
-				<?php } ?>
+				<?php } } else { ?> 
+        <h2 class="warning"> Product Not Available </h2> <?php }
+          ?>
       </div>
      
     <div class="modal fade product_view" id="product_view">
@@ -302,7 +290,44 @@
 
     </div>
   </div>
-
+<div class='row text-center'>
+				<div class="btn-group">
+					<?php
+						if ($page>1){
+							$prev_page = $page-1;
+							//echo "Prev: ".$prev_page;
+					?>
+						<a href='products.php?id_category=<?php echo $category; ?>&page=<?php echo $prev_page; ?>' class="btn btn-default" title='Previous'>
+							<i class='glyphicon glyphicon-chevron-left'></i>
+							Previous
+						</a>
+					<?php } ?>
+					<?php
+						for ($i=1; $i<=$count_pages; $i++){
+							$flag_class = "";
+							if ($page==$i){
+								$flag_class = "active";
+							}
+							if($i==1){
+								echo "<a href='products.php?id_category=$category&page=$i' class='btn btn-default $flag_class' title='First'>$i</a>";
+							} else if($i==$count_pages) {
+								echo "<a href='products.php?id_category=$category&page=$i' class='btn btn-default $flag_class' title='Last'>$i</a>";
+							} else {
+								echo "<a href='products.php?id_category=$category&page=$i' class='btn btn-default $flag_class' title='Page $i'>$i</a>";
+							}
+						}
+					?>
+					<?php
+						if ($page<$count_pages){
+							$next_page = $page+1;
+							//echo "Next: ".$next_page;
+							echo "<a href='products.php?id_category=$category&page=$next_page' class='btn btn-default' title='Next'>
+										Next
+										<i class='glyphicon glyphicon-chevron-right'></i>
+									</a>";
+						}
+					?>
+				</div>
   </div>
 
 
@@ -348,6 +373,4 @@
       document.querySelector('.floatbutton').style.display = 'block';
     }
   </script>
-
-
 </body>

@@ -225,3 +225,6 @@ a.float:hover+div.label-container {
     visibility: visible;
     opacity: 1;
 }
+.warning h2{
+    margin-left: 30%;
+}
