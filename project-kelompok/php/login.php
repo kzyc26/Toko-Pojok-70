@@ -9,6 +9,27 @@
 </head>
 
 <body> 
+<?php
+    // require('db.php');	
+    $con = new mysqli("localhost", "root", "", "toko_pojok_70");
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);}
+			if (isset($_POST['username'])){
+        $p = $_POST;
+				$username = $p['username'];
+				$password = $p['password'];				
+				//Checking is user existing in the database or not
+				$query = "SELECT * FROM `customer` WHERE username='$username' and password='".sha1($password)."'";
+				$result = mysqli_query($con,$query) or die(mysqli_error());
+				$rows = mysqli_num_rows($result);
+				if($rows==1){
+					$_SESSION['username'] = $username;
+					header("Location: HomePage.php"); // Redirect user to index.php
+				} else {
+					echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+				}
+			}
+		?> 
         <nav class="navbar navbar-default">
                 <div class="container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->
@@ -73,27 +94,7 @@
     <br><br><br>
     <div class="container">       
         <form class="form-signin" method="post" action="login.php">
-        <?php
-    // require('db.php');	
-    $con = new mysqli("localhost", "root", "", "toko_pojok_70");
-if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);}
-			if (isset($_POST['username'])){
-        $p = $_POST;
-				$username = $p['username'];
-				$password = $p['password'];				
-				//Checking is user existing in the database or not
-				$query = "SELECT * FROM `customer` WHERE username='$username' and password='.sha1($password).'";
-				$result = mysqli_query($con,$query) or die(mysqli_error());
-				$rows = mysqli_num_rows($result);
-				if($rows==1){
-					$_SESSION['username'] = $username;
-					header("Location: HomePage.php"); // Redirect user to index.php
-				} else {
-					echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
-				}
-			}
-		?>        
+       
             <h2 class="form-signin-heading">Please sign in</h2><br>
             <label for="username">Username</label>
             <input type="text" id="username" class="form-control" placeholder="Username" required=""
@@ -105,7 +106,7 @@ if ($con->connect_error) {
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button onClick="window.location.href='../php/check-out.php'" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <button onClick="#" class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>
             <button onClick="window.location.href='../php/sign-up.php'" class="btn btn-lg btn-primary btn-block" type="submit">Register Now!</button>
         </form>
     </div>

@@ -9,6 +9,20 @@
 </head>
 
 <body>
+    <?php
+session_start();
+
+if(isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must login first to view this page";
+    header("location : login.php");
+}
+
+if(isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location : HomePage.php");
+}
+?>
         <nav class="navbar navbar-default">
                 <div class="container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->

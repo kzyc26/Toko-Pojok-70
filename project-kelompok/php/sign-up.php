@@ -10,23 +10,43 @@
 
 <body>
 <?php
-            require('db.php');
+      // echo "<pre>";
+      // print_r($_POST);
+      // echo "</pre>";
+      // die();
+            // require('db.php');
+            $con = new mysqli("localhost", "root", "", "toko_pojok_70");
             // If form submitted, insert values into the database.
-            if (isset($_REQUEST['username'])){
-                $username = stripslashes($_REQUEST['username']); // removes backslashes
-                $username = mysqli_real_escape_string($con,$username); //escapes special characters in a string
-                $email = stripslashes($_REQUEST['email']);
-                $email = mysqli_real_escape_string($con,$email);
-                $password = stripslashes($_REQUEST['password']);
-                $password = mysqli_real_escape_string($con,$password);
+            if (isset($_POST['register'])){
+                // $username = stripslashes($_REQUEST['username']); // removes backslashes
+                // $username = mysqli_real_escape_string($con,$username); //escapes special characters in a string
+                // $email = stripslashes($_REQUEST['email']);
+                // $email = mysqli_real_escape_string($con,$email);
+                // $password = stripslashes($_REQUEST['password']);
+                // $password = mysqli_real_escape_string($con,$password);
 
-                $trn_date = date("Y-m-d H:i:s");
-                $query = "INSERT into `users` (username, password, email, trn_date) VALUES ('$username', '".sha1($password)."', '$email', '$trn_date')";
-                $result = mysqli_query($con,$query);
-                if($result){
-                    echo "<div class='form'><h3>You are registered successfully.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
-                }
-            }else{
+                $email = mysqli_real_escape_string($con, $_POST['email']);
+                $username = mysqli_real_escape_string($con, $_POST['username']);
+                $pass = mysqli_real_escape_string($con, $_POST['password']);
+                $repass = mysqli_real_escape_string($con, $_POST['retype-password']);
+                $fullname = mysqli_real_escape_string($con, $_POST['nama-lengkap']);
+                $gender = mysqli_real_escape_string($con, $_POST['gender']);
+                $phone = mysqli_real_escape_string($con, $_POST['no-telp']);
+                $dob = mysqli_real_escape_string($con, $_POST['tanggal-lahir']);
+                $prov = mysqli_real_escape_string($con, $_POST['provinsi']);
+                $kabkota = mysqli_real_escape_string($con, $_POST['kabkota']);
+                $kecamatan = mysqli_real_escape_string($con, $_POST['kecamatan']);
+                $kelurahan = mysqli_real_escape_string($con, $_POST['kelurahan']);
+                $kodepos = mysqli_real_escape_string($con, $_POST['kodepos']);
+                $alamat = mysqli_real_escape_string($con, $_POST['alamat']);
+
+                // $trn_date = date("Y-m-d H:i:s");
+                $query = "INSERT into customer (`username`, `password`, `jenis_kelamin`, `fullname`, `email`, `telepon`, `provinsi`, `kab_kota`, `kecamatan`, `kelurahan`, `kode_pos`, `alamat`) values ('$username', '".sha1($pass)."', '$gender', '$fullname', '$email', '$phone', '$prov', '$kabkota', '$kecamatan', '$kelurahan', '$kodepos', '$alamat');";
+                mysqli_query($con, $query);
+                $_SESSION['username'] = $username;
+                $_SESSION['success'] = "You are now logged in";
+                header('location: accountsetting.php');
+            }                
         ?>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -89,7 +109,7 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-  <form class="content" name="register" action="" method="post">
+  <form class="content" action="sign-up.php" method="post">
     <div class="col-md-12">
       <div class="panel panel-default">
       <div class="panel-heading">
@@ -108,22 +128,22 @@
           <div class="row">
             <div class="col-md-4 tulisan">Email</div>
             <div class="col-md-8"><input type="email" id="email" class="form-control panjang"
-                placeholder="Email@email.com" required=""></div>
+                placeholder="Email@email.com" required="" name="email"></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Username</div>
             <div class="col-md-8"><input type="text" id="username" class="form-control panjang" placeholder="Username"
-                required=""></div>
+                required="" name="username"></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Password</div>
             <div class="col-md-8"><input type="password" id="password" class="form-control panjang"
-                placeholder="Password" required=""></div>
+                placeholder="Password" required="" name="password"></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Ketik Ulang Password</div>
             <div class="col-md-8"><input type="password" id="retype-password" class="form-control panjang"
-                placeholder="Ketik ulang password" required=""></div>
+                placeholder="Ketik ulang password" required="" name="retype-password"></div>
           </div>
         </div>
       </div>
@@ -134,7 +154,7 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-md-4 tulisan">Nama Lengkap</div>
-            <div class="col-md-8"><input type="type" id="nama-lengkap" class="form-control pendek" placeholder="Nama Lengkap" required=""></div>
+            <div class="col-md-8"><input type="type" id="nama-lengkap" class="form-control pendek" placeholder="Nama Lengkap" required="" name="nama-lengkap"></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Jenis Kelamin</div>
@@ -144,12 +164,12 @@
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Telepon</div>
-            <div class="col-md-8"><input type="tel" id="no-telp" class="form-control pendek" placeholder="+62 81637829xxx"></div>
+            <div class="col-md-8"><input type="tel" id="no-telp" class="form-control pendek" placeholder="+62 81637829xxx" name="no-telp"></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Tanggal lahir</div>
             <div class="col-md-8"><input type="date" id="tanggal-lahir" class="form-control panjang"
-                placeholder="Tanggal lahir"></div>
+                placeholder="Tanggal lahir" name="tanggal-lahir"></div>
           </div>
         </div>
       </div>
@@ -185,17 +205,18 @@
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Kode Pos</div>
-            <div class="col-md-8"><input type="text" id="kodepos" class="form-control pendek" placeholder="Kodepos" required=""></div>
+            <div class="col-md-8"><input type="text" id="kodepos" class="form-control pendek" placeholder="Kodepos" required="" name="kodepos"></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Alamat</div>
-            <div class="col-md-8"><input type="text" id="alamat" class="form-control panjang" placeholder="Alamat" required=""></div>
+            <div class="col-md-8"><input type="text" id="alamat" class="form-control panjang" placeholder="Alamat" required="" name="alamat"></div>
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-6 col-sm-12">
-        <input onClick="window.location.href='../php/check-out.php'" type="submit" value="Sign me in!" class="register">
+        <!-- <button onClick="check-out.php" class="register" type="submit" name="register">Register</button> -->
+        <input type="submit" value="Sign me in!" class= "register" name="register">
     </div>
   </form>
   <footer class="footer">
@@ -223,6 +244,5 @@
   <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
   <script src="../js/sign-up.js"></script>
   
-  <?php } ?>
 </body>
 </html>
