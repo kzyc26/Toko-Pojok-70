@@ -3,7 +3,7 @@
 	session_start();
   require_once('config.php');
   require('db.php');
-	// 	require_once('_includes/cart.php'); //have $cart
+		// require_once('_includes/check-out.php'); //have $cart
 	// require_once('_includes/check_visitor.php'); //have $visitor
     if (isset($_GET["id_category"])){
       $category = strtolower($_GET["id_category"]);
@@ -167,18 +167,6 @@
     </div>
   </div>
   <div class="container">
-    <!-- <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="true">
-        Filter
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#">Size</a></li>
-        <li><a href="#">Age</a></li>
-        <li><a href="#">Color</a></li>
-      </ul>
-    </div> -->
    
     <div class='row productsimg' style='margin:0px auto;'>
     
