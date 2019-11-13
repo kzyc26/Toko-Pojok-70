@@ -36,19 +36,7 @@
 		while($row = mysqli_fetch_assoc($limit_result)) {
 			$products[] = $row;
 		}
-    }
-    
-    // True Type mengembalikan tulisan awal seperti apa
-    // $category_truetype = "";
-    // $cmd2 = "SELECT category_name FROM category WHERE lower(category_name) = '$category'";
-    // $temp_result = mysqli_query($con,$cmd2) or die(mysqli_error($con));
-    // $total_item = mysqli_num_rows($temp_result);
-    // if ($total_item ==1){
-    //     //BACA: https://stackoverflow.com/questions/10605456/selecting-one-row-from-mysql-query-php
-    //     $item = mysqli_fetch_assoc($temp_result);
-    //     $category_truetype = $item['category_name'];
-    // }
-// ?>
+    } ?>
 <html>
 
 <head>
@@ -153,8 +141,8 @@
         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
           <div class="panel-body">
             <ul>
-              <li><a href="products.php?id_category=ds01">Dress Lengan Panjang</a></li>
-              <li><a href="products.php?id_category=ds02">Dress Lengan Pendek</a></li>
+              <li><a href="products.php?id_category=ds02">Dress Lengan Panjang</a></li>
+              <li><a href="products.php?id_category=ds01">Dress Lengan Pendek</a></li>
               <li><a href="products.php?id_category=st02">Setelan Lengan Panjang</a></li>
               <li><a href="products.php?id_category=st01">Setelan Lengan Pendek</a></li>
               <li><a href="products.php?id_category=sp01">Sneakers</a></li>
@@ -188,7 +176,7 @@
             </p>
             <div class="space-ten"></div>
         <div class="btn-ground text-center">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"></i>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addtocarts"></i>
             Add To Cart</button>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i
               class="fa fa-search"></i> Quick View</button>
@@ -201,6 +189,47 @@
       </div>
      
     <div class="modal fade product_view" id="product_view">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="#" data-dismiss="modal" class="class pull-right"><span
+                class="glyphicon glyphicon-remove"></span></a>
+            <h3 class="modal-title">Product Details</h3>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class='col-md-2'>
+              
+              </div>
+              <div class='col-md-8'>
+                <div class="imagecollection">
+                  <img src="../assets/images/Slide 1.jpg" id="firstpreview" class="firstpic">
+                  <div class="row">
+                    <div class="column">
+                      <img src="../assets/images/Slide 2.jpg" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                      <img src="../assets/images/Slide 3.jpg" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                      <img src="../assets/images/color pallete.jpg" onclick="myFunction(this);">
+                    </div>
+                    <div class="column">
+                      <img src="../assets/images/Slide 1.jpg" onclick="myFunction(this);">
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class='col-md-2'>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade product_view" id="addtocarts">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -242,6 +271,7 @@
                   </div>
 
                 </div>
+              </div>
               </div>
               <div class='col-md-4'>
                 <div class="addtocart">
