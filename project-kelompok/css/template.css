@@ -76,3 +76,20 @@ text-decoration: none;}
     position: relative;
     left: 38%;
 }
+
+.icon-input-btn{
+    display: inline-block;
+    position: relative;
+}
+.icon-input-btn input[type="submit"]{
+    padding-left: 2em;
+    padding-bottom: 2em;
+    background-color: transparent;
+    border: none;
+}
+.icon-input-btn .glyphicon{
+    display: inline-block;
+    position: absolute;
+    left: 0.65em;
+    top: 45%;
+}

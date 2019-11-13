@@ -10,6 +10,7 @@
 
 <body> 
 <?php
+    session_start();
     // require('db.php');	
     $con = new mysqli("localhost", "root", "", "toko_pojok_70");
 if ($con->connect_error) {
@@ -20,13 +21,18 @@ if ($con->connect_error) {
 				$password = $p['password'];				
 				//Checking is user existing in the database or not
 				$query = "SELECT * FROM `customer` WHERE username='$username' and password='".sha1($password)."'";
-				$result = mysqli_query($con,$query) or die(mysqli_error());
+        $result = mysqli_query($con,$query) or die(mysqli_error());
+        // echo "<pre>";
+        // print_r($query);
+        // echo "</pre>";
+        // die();
 				$rows = mysqli_num_rows($result);
 				if($rows==1){
 					$_SESSION['username'] = $username;
-					header("Location: HomePage.php"); // Redirect user to index.php
+					header("Location: index.php"); // Redirect user to index.php
 				} else {
-					echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+          $errmessage = "Username/Password is incorrect";
+					echo "<script type='text/javascript'> alert('$errmessage');</script>";
 				}
 			}
 		?> 
@@ -41,7 +47,7 @@ if ($con->connect_error) {
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../php/HomePage.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
+                    <a class="navbar-brand" href="../php/index.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
             
                   </div>
             

@@ -10,11 +10,16 @@
 
 <body>
 <?php
+      session_start();
+      if(isset($_SESSION['username'])){
+header("location: accountsetting.php");
+      }else{
       // echo "<pre>";
       // print_r($_POST);
       // echo "</pre>";
       // die();
             // require('db.php');
+            
             $con = new mysqli("localhost", "root", "", "toko_pojok_70");
             // If form submitted, insert values into the database.
             if (isset($_POST['register'])){
@@ -45,7 +50,8 @@
                 mysqli_query($con, $query);
                 $_SESSION['username'] = $username;
                 $_SESSION['success'] = "You are now logged in";
-                header('location: accountsetting.php');
+                header('location: index.php');
+                mysqli_close($con);
             }                
         ?>
   <nav class="navbar navbar-default">
@@ -59,7 +65,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../php/HomePage.php"><img src="../assets/images/99818.png"
+        <a class="navbar-brand" href="../php/index.php"><img src="../assets/images/99818.png"
             class="logo-toko"></a>
 
       </div>
@@ -215,10 +221,12 @@
       </div>
     </div>
     <div class="col-md-6 col-sm-12">
-        <!-- <button onClick="check-out.php" class="register" type="submit" name="register">Register</button> -->
         <input type="submit" value="Sign me in!" class= "register" name="register">
     </div>
   </form>
+  <?php
+      }
+  ?>
   <footer class="footer">
     <div class="footer-container">
       <ul class="footer-list">
