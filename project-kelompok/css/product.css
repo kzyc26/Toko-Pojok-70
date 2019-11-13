@@ -61,8 +61,7 @@
 }
 
 body{
-    background-image: url("../assets/images/background.jpg");
-}
+    background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);}
 footer {
     background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
 }
@@ -88,10 +87,11 @@ footer {
     position: relative;
 }
 .thumbnail img{
-    width:100%;
+    width: 500px;
 }
 .thumbnail h3{
- text-align:center;   
+ text-align:center;
+ color: pink;   
 }
 .dropdown {
     position: relative;
