@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -9,8 +12,7 @@
 </head>
 
 <body>
-<?php
-      session_start();
+<?php      
       if(isset($_SESSION['username'])){
 header("location: accountsetting.php");
       }else{
@@ -46,7 +48,7 @@ header("location: accountsetting.php");
                 $alamat = mysqli_real_escape_string($con, $_POST['alamat']);
 
                 // $trn_date = date("Y-m-d H:i:s");
-                $query = "INSERT into customer (`username`, `password`, `jenis_kelamin`, `fullname`, `email`, `telepon`, `provinsi`, `kab_kota`, `kecamatan`, `kelurahan`, `kode_pos`, `alamat`) values ('$username', '".sha1($pass)."', '$gender', '$fullname', '$email', '$phone', '$prov', '$kabkota', '$kecamatan', '$kelurahan', '$kodepos', '$alamat');";
+                $query = "INSERT into customer (`username`, `password`, `jenis_kelamin`, `fullname`, `email`, `telepon`, `provinsi`, `kab_kota`, `kecamatan`, `kelurahan`, `kode_pos`, `alamat`) values ('$username', '".sha1($pass)."', '$gender', '$fullname', '$email', '$phone', '$prov', '$kabkota', '$kecamatan', '$kelurahan', '$kodepos', '$alamat');";                
                 mysqli_query($con, $query);
                 $_SESSION['username'] = $username;
                 $_SESSION['success'] = "You are now logged in";
@@ -71,24 +73,7 @@ header("location: accountsetting.php");
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <!-- <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Link</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul> -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">        
         <form class="navbar-form navbar-left">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
@@ -99,18 +84,7 @@ header("location: accountsetting.php");
         <ul class="nav navbar-nav navbar-right">
           <li><a href="../php/check-out.php"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
           <li><a href="../php/login.php"><span class="glyphicon glyphicon-user"></span></a></li>
-          <li><a href="../php/Trace and Track.php"><span class="glyphicon glyphicon-inbox"></span></a></li>
-          <!-- <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </li> -->
+          <li><a href="../php/Trace and Track.php"><span class="glyphicon glyphicon-inbox"></span></a></li>          
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

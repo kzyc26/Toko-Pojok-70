@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -10,7 +14,6 @@
 
 <body>
 <?php
-session_start();
 if (isset($_POST['user'])){
   if(isset($_SESSION['username'])){
     header("location: accountsetting.php");

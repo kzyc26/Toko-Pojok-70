@@ -1,3 +1,16 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must login first to view this page";
+    header("location : login.php");
+}
+
+if(isset($_POST['logout'])) {
+    $_SESSION = [];
+    header("location : index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -9,20 +22,6 @@
 </head>
 
 <body>
-    <?php
-// session_start();
-
-// if(isset($_SESSION['username'])) {
-//     $_SESSION['msg'] = "You must login first to view this page";
-//     header("location : login.php");
-// }
-
-// if(isset($_GET['logout'])) {
-//     session_destroy();
-//     unset($_SESSION['username']);
-//     header("location : inde.php");
-// }
-?>
         <nav class="navbar navbar-default">
                 <div class="container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->
@@ -85,13 +84,24 @@
     <div class="content">
         <div class="row">
             <div class="col-md-3 profilemenu">
-                <div class="profilesetting">
-                    <h2>Jane Doe</h2>
+                <div class="profilesetting">                    
                     <img class="profpic" src="https://img.icons8.com/officel/80/000000/user-female-circle.png">
-                    <button type="submit" class="btn btn-info changepic">Change Picture</button>
-                    <!-- <button type="submit" class="changepic">Change Picture</button> -->
-                    <button type="submit" class="btn btn-info logout">Log Out</button>
-                    <!-- <button type="submit" class="logout">Log Out</button> -->
+                    <h3>
+                    <?php 
+                    $con = new mysqli("localhost", "root", "", "toko_pojok_70");
+                    if ($con->connect_error) {
+                        die("Connection failed: " . $con->connect_error);}
+                    $query = "SELECT fullname from `customer` where `username`='".$_SESSION['username']."';";
+                    $result = mysqli_query($con,$query) or die(mysqli_error());
+                    // $obj = mysqli_fetch_object($result);                
+                    // echo $obj;
+                    echo $_SESSION['username'];
+                    ?>
+                    </h3>
+                <form method="post" action="accountsetting.php">
+                    <button type="submit" class="btn btn-info changepic" name="changepic">Change Picture</button>
+                    <button type="submit" class="btn btn-info logout" name="logout">Log Out</button>
+                </form>
                 </div>
                 <div class="categories">
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">

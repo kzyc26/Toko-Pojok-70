@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -9,8 +12,7 @@
 </head>
 
 <body> 
-<?php
-    session_start();
+<?php    
     // require('db.php');	
     $con = new mysqli("localhost", "root", "", "toko_pojok_70");
 if ($con->connect_error) {
@@ -112,7 +114,7 @@ if ($con->connect_error) {
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button onClick="#" class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>
             <button onClick="window.location.href='../php/sign-up.php'" class="btn btn-lg btn-primary btn-block" type="submit">Register Now!</button>
         </form>
     </div>
