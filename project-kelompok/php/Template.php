@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-default">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -21,7 +22,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../php/HomePage.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
+            <a class="navbar-brand" href="../php/index.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
     
           </div>
     
@@ -91,5 +92,6 @@
   <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
   <link href="../css/template.css" rel="stylesheet">
   <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+  <script src="../js/template.js"></script>
 </body>
 </html>

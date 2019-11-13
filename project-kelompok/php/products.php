@@ -70,7 +70,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../html/HomePage.html"><img src="../assets/images/99818.png" class="logo-toko"></a>
+            <a class="navbar-brand" href="../html/index.html"><img src="../assets/images/99818.png" class="logo-toko"></a>
     
           </div>
     

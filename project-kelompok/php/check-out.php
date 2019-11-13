@@ -20,7 +20,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../php/HomePage.php"><img src="../assets/images/99818.png"
+        <a class="navbar-brand" href="../php/index.php"><img src="../assets/images/99818.png"
             class="logo-toko"></a>
 
       </div>

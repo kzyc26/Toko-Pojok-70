@@ -10,18 +10,18 @@
 
 <body>
     <?php
-session_start();
+// session_start();
 
-if(isset($_SESSION['username'])) {
-    $_SESSION['msg'] = "You must login first to view this page";
-    header("location : login.php");
-}
+// if(isset($_SESSION['username'])) {
+//     $_SESSION['msg'] = "You must login first to view this page";
+//     header("location : login.php");
+// }
 
-if(isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['username']);
-    header("location : HomePage.php");
-}
+// if(isset($_GET['logout'])) {
+//     session_destroy();
+//     unset($_SESSION['username']);
+//     header("location : inde.php");
+// }
 ?>
         <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -34,7 +34,7 @@ if(isset($_GET['logout'])) {
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../php/HomePage.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
+                    <a class="navbar-brand" href="../php/index.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
             
                   </div>
             
