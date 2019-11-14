@@ -13,10 +13,7 @@ session_start();
 
 <body> 
 <?php    
-    // require('db.php');	
-    $con = new mysqli("localhost", "root", "", "toko_pojok_70");
-if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);}
+    require('db.php');	    
 			if (isset($_POST['username'])){
         $p = $_POST;
 				$username = $p['username'];

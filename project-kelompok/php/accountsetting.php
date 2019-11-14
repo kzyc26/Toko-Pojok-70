@@ -88,9 +88,7 @@ if(isset($_POST['logout'])) {
                     <img class="profpic" src="https://img.icons8.com/officel/80/000000/user-female-circle.png">
                     <h3>
                     <?php 
-                    $con = new mysqli("localhost", "root", "", "toko_pojok_70");
-                    if ($con->connect_error) {
-                        die("Connection failed: " . $con->connect_error);}
+                    require('db.php');
                     $query = "SELECT fullname from `customer` where `username`='".$_SESSION['username']."';";
                     $result = mysqli_query($con,$query) or die(mysqli_error());
                     // $obj = mysqli_fetch_object($result);                

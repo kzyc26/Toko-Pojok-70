@@ -20,18 +20,12 @@ header("location: accountsetting.php");
       // print_r($_POST);
       // echo "</pre>";
       // die();
-            // require('db.php');
-            
-            $con = new mysqli("localhost", "root", "", "toko_pojok_70");
+      require('db.php');
             // If form submitted, insert values into the database.
             if (isset($_POST['register'])){
                 // $username = stripslashes($_REQUEST['username']); // removes backslashes
                 // $username = mysqli_real_escape_string($con,$username); //escapes special characters in a string
-                // $email = stripslashes($_REQUEST['email']);
-                // $email = mysqli_real_escape_string($con,$email);
-                // $password = stripslashes($_REQUEST['password']);
-                // $password = mysqli_real_escape_string($con,$password);
-
+                
                 $email = mysqli_real_escape_string($con, $_POST['email']);
                 $username = mysqli_real_escape_string($con, $_POST['username']);
                 $pass = mysqli_real_escape_string($con, $_POST['password']);
