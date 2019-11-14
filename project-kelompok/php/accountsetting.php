@@ -91,11 +91,10 @@ if(isset($_POST['logout'])) {
                     <h3>
                     <?php 
                     require('db.php');
-                    $query = "SELECT fullname from `customer` where `username`='".$_SESSION['username']."';";
+                    $query = "SELECT * from `customer` where `username`='".$_SESSION['username']."' LIMIT 1;";
                     $result = mysqli_query($con,$query) or die(mysqli_error());
-                    // $obj = mysqli_fetch_object($result);                
-                    // echo $obj;
-                    echo $_SESSION['username'];
+                    $row = mysqli_fetch_assoc($result);
+                    echo $row['fullname'];
                     ?>
                     </h3>
                 <form method="post" action="accountsetting.php">
