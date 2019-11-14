@@ -43,7 +43,9 @@
     <title>Products</title>
     <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/template.css" rel="stylesheet">
+    <link href="../css/product.css" rel="stylesheet">
 </head>
 
 <body>
@@ -379,9 +381,7 @@
 
         </div>
     </footer>
-    <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
-    <link href="../css/template.css" rel="stylesheet">
-    <link href="../css/product.css" rel="stylesheet">
+    
     <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
 
     <script>
