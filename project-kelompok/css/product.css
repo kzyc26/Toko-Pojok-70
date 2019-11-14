@@ -62,9 +62,7 @@
 
 body{
     background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);}
-footer {
-    background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
-}
+
 
 .productsimg {
 
@@ -108,7 +106,7 @@ footer {
 .modal-content {
     overflow: auto;
     width: 100%;
-    background-image: white;
+    background-image: black;
 }
 
 .addtocart>.btn {

@@ -1,7 +1,7 @@
 <?php
-    $base_url = "http://localhost/webdev/project-kelompok/project-kelompok/php/";
+    $base_url = "http://jmswijaya.com/phpmyadmin/";
     $servername = "localhost";
-    $username 	= "root";
-    $password 	= "";
-    $dbname 	= "toko_pojok_70";
+    $username 	= "Isb18";
+    $password 	= "Isb_2018";
+    $dbname 	= "store18_2";
 ?>
