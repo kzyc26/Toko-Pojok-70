@@ -14,7 +14,7 @@ img.foto {
 .form-signin{
     width: 30%;
     margin: auto;
-    font-family: 'Lato', sans-serif;    
+    font-family: 'Lato', sans-serif;     
 }
 
 h2.form-signin-heading{
@@ -22,7 +22,6 @@ h2.form-signin-heading{
     font-family: 'Dancing Script', cursive;
     font-size: 48px;
 }
-
-footer{    
+body, footer{    
     background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
 }

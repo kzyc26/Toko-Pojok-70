@@ -1,13 +1,29 @@
 <?php
 session_start();
+if (isset($_POST['user'])){
+    if(isset($_SESSION['username'])){
+      header("location: accountsetting.php");
+  exit;
+            }else{
+              header("location: login.php");
+  exit;
+            }
+  }
+  
+  if (isset($_POST['cart'])){
+    header("location: check-out.php");
+  }
+
 if(!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must login first to view this page";
     header("location : login.php");
 }
 
 if(isset($_POST['logout'])) {
-    $_SESSION = [];
-    header("location : index.php");
+    if(session_destroy()) // Destroying All Sessions
+    {
+        header("Location: index.php"); // Redirecting To Home Page
+    }
 }
 ?>
 
@@ -15,14 +31,14 @@ if(isset($_POST['logout'])) {
 <html>
 
 <head>
-    <title></title>
+    <title>Account</title>
     <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 
 <body>
-        <nav class="navbar navbar-default">
+<nav class="navbar navbar-default">
                 <div class="container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->
                   <div class="navbar-header">
@@ -89,11 +105,10 @@ if(isset($_POST['logout'])) {
                     <h3>
                     <?php 
                     require('db.php');
-                    $query = "SELECT fullname from `customer` where `username`='".$_SESSION['username']."';";
+                    $query = "SELECT * from `customer` where `username`='".$_SESSION['username']."' LIMIT 1;";
                     $result = mysqli_query($con,$query) or die(mysqli_error());
-                    // $obj = mysqli_fetch_object($result);                
-                    // echo $obj;
-                    echo $_SESSION['username'];
+                    $row = mysqli_fetch_assoc($result);
+                    echo $row['fullname'];
                     ?>
                     </h3>
                 <form method="post" action="accountsetting.php">

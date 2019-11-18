@@ -1,16 +1,34 @@
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title></title>
+  <title>About Us</title>
   <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 
 <body>
-        <nav class="navbar navbar-default">
+<?php
+if (isset($_POST['user'])){
+  if(isset($_SESSION['username'])){
+    header("location: accountsetting.php");
+exit;
+          }else{
+            header("location: login.php");
+exit;
+          }
+}
+
+if (isset($_POST['cart'])){
+  header("location: check-out.php");
+}
+?>
+  <nav class="navbar navbar-default">
                 <div class="container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->
                   <div class="navbar-header">
