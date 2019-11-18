@@ -106,8 +106,8 @@
         </form>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
-  </nav>
-    <div class="categories">
+</nav>
+<div class="categories">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                    <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
@@ -154,12 +154,13 @@
             </div>
 
         </div>
-    </div>
+</div>
     <div class="container">
-        <div class="Category_title"> 
+        <div class="Categorytitle"> 
         <?php if ($category==null){ ?>
         <h1> All Products </h1>
-        <?php } else { ?> <h1> <?php echo $category_name[0];?></h1><?php }?>
+        <?php } 
+        else { ?> <h1> <?php echo $category_name[0];?></h1><?php }?>
         </div>
         <div class='row productsimg'>
             <?php 
@@ -415,5 +416,5 @@
     <link href="../css/product.css" rel="stylesheet">
     <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
     <script src="../js/productview.js"></script>
-   
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Lato|Pacifico&display=swap" rel="stylesheet">
 </body>
