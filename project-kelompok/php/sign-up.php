@@ -13,6 +13,20 @@ session_start();
 
 <body>
 <?php      
+      if (isset($_POST['user'])){
+        if(isset($_SESSION['username'])){
+          header("location: accountsetting.php");
+      exit;
+                }else{
+                  header("location: login.php");
+      exit;
+                }
+      }
+      
+      if (isset($_POST['cart'])){
+        header("location: check-out.php");
+      }
+      
       if(isset($_SESSION['username'])){
 header("location: accountsetting.php");
       }else{
@@ -61,9 +75,7 @@ header("location: accountsetting.php");
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../php/index.php"><img src="../assets/images/99818.png"
-            class="logo-toko"></a>
-
+        <a class="navbar-brand" href="#"><img src="../assets/images/99818.png" class="logo-toko"></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,14 +84,15 @@ header("location: accountsetting.php");
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>
-          <a href="../php/products.php"><button type="button" class="btn btn-default"><span
-                class="glyphicon glyphicon-search"></span></button></a>
+          <a href="../php/products.php"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
         </form>
+        <form action="index.php" method="post">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../php/check-out.php"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-          <li><a href="../php/login.php"><span class="glyphicon glyphicon-user"></span></a></li>
-          <li><a href="../php/Trace and Track.php"><span class="glyphicon glyphicon-inbox"></span></a></li>          
+          <li><span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input type="submit" class="btn btn-default" name="cart" value=""></span></li>
+          <li><span class="icon-input-btn"><span class="glyphicon glyphicon-user"></span> <input type="submit" class="btn btn-default posisi" name="user" value=""></span></li>
+          <li><span class="icon-input-btn"><span class="glyphicon glyphicon-usd"></span> <input type="submit" class="btn btn-default" name="trace" value=""></span></li>
         </ul>
+        </form>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>

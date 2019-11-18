@@ -23,6 +23,10 @@ exit;
 exit;
           }
 }
+
+if (isset($_POST['cart'])){
+  header("location: check-out.php");
+}
 ?>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
