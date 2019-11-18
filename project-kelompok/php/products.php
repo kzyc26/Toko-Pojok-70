@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <?php
 	session_start();
-  require_once('config.php');
   require('db.php');
 		// require_once('_includes/check-out.php'); //have $cart
 	// require_once('_includes/check_visitor.php'); //have $visitor
     if (isset($_GET["id_category"])){
       $category = strtolower($_GET["id_category"]);
       $cmd_extra = "AND lower(p.id_category)='".$category."'";
+      $cmd_category_name ="SELECT category_name FROM category WHERE id_category = '".$category."'";
+      $category_name_result	= mysqli_query($con,$cmd_category_name) or die(mysqli_error($con));
+      $category_name = mysqli_fetch_row($category_name_result);
     } else{
+        $category=null;
       $cmd_extra = "";
     }
   
 	$cmd = "SELECT id_product, product_name, p.id_category, Price
   FROM  product p, category c
- WHERE p.id_category = c.id_category $cmd_extra";
-	
-	$all_result 	= mysqli_query($con,$cmd) or die(mysqli_error($con));
-	$count_all_item = mysqli_num_rows($all_result);
+ WHERE p.id_category = c.id_category  $cmd_extra
+ ORDER BY p.id_category";
+ 
 
+    
+    $all_result 	= mysqli_query($con,$cmd) or die(mysqli_error($con));
+	$count_all_item = mysqli_num_rows($all_result);
+    
 	$max_item 		= 9; //Max item in one page
 	$page 			= isset($_GET['page'])? (int)$_GET["page"]:1; //contoh IF INLINE
 	//echo $page;
@@ -30,22 +36,22 @@
 	$limit_result 	= mysqli_query($con,$cmd) or die(mysqli_error($con));
 
 	$count_pages 	= ceil($count_all_item / $max_item); 
-
+ 
+  
 	$products = null;
 	if ($count_all_item >= 1){
 		while($row = mysqli_fetch_assoc($limit_result)) {
 			$products[] = $row;
 		}
-    } ?>
+    } 
+    ?>
 <html>
 
 <head>
     <title>Products</title>
     <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
-    <link href="../css/template.css" rel="stylesheet">
-    <link href="../css/product.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -114,7 +120,7 @@
     </nav>
     <div class="categories">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
+                   <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
@@ -161,11 +167,14 @@
         </div>
     </div>
     <div class="container">
-
+        <div class="Category_title"> 
+        <?php if ($category==null){ ?>
+        <h1> All Products </h1>
+        <?php } else { ?> <h1> <?php echo $category_name[0];?></h1><?php }?>
+        </div>
         <div class='row productsimg'>
-
             <?php 
-        if ($count_all_item>0){
+            if ($count_all_item>0){
 					foreach($products as $product){
             $id = $product['id_product'];
           
@@ -177,16 +186,23 @@
                     Rp.
                     <?php 
 								$price = $product['Price'];
-								echo number_format($price,2); 
+								echo number_format($price,2,",","."); 
 							?>
                 </p>
                 <div class="space-ten"></div>
                 <div class="btn-ground text-center">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addtocarts"
-                        onclick=""></i>
+                    <form action="" method="post">
+                    <label class ="prod_id"> <?php echo $id;?> </label>
+                    <button type="button" class="btn btn-primary" Name="add" value="<?php echo $id;?>"
+                        data-toggle="modal" data-target="#addtocarts"></i>
                         Add To Cart</button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i
-                            class="fa fa-search"></i> Quick View</button>
+                    </form>
+                    <div class="space-ten"></div>
+                    <form action="" method="post">
+                    <label class ="prod_id"> <?php echo $id;?> </label>
+                    <button type="button" class="btn btn-primary" Name="view" value="<?php echo $id;?>"
+                        data-toggle="modal" data-target="#product_view"> Quick View
+                    </form>
                 </div>
                 <div class="space-ten"></div>
             </div>
@@ -205,10 +221,10 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <div class='col-md-2'>
+                            <div class='col-md-1'>
 
                             </div>
-                            <div class='col-md-8'>
+                            <div class='col-md-9'>
                                 <div class="imagecollection">
                                     <img src="../assets/images/Slide 1.jpg" id="firstpreview" class="firstpic">
                                     <div class="row">
@@ -247,20 +263,8 @@
                         <div class="row">
                             <div class='col-md-3'>
                                 <h4>Product Description</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the
-                                    industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                                    galley of type and
-                                    scrambled it to make a type specimen book. It has survived not only five centuries,
-                                    but also the leap
-                                    into
-                                    electronic typesetting, remaining essentially unchanged. It was popularised in the
-                                    1960s with the
-                                    release of
-                                    Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                                    publishing software
-                                    like
-                                    Aldus PageMaker including versions of Lorem Ipsum.
+                                <p>
+                                <?php echo $cmd_extra_details?>
                                 </p>
                             </div>
                             <div class='col-md-5'>
@@ -283,29 +287,31 @@
 
                                 </div>
                             </div>
-                        </div>
-                        <div class='col-md-4'>
-                            <div class="addtocart">
-                                <h5>Pilih Size</h5>
-                                <select name="size">
-                                    <option value="small">"S"</option>
-                                    <option value="medium">"M"</option>
-                                    <option value="large">"L"</option>
-                                    <option value="XL">"XL"</option>
-                                </select>
-                                <h5>Pilih Warna</h5>
-                                <select name="size">
-                                    <option value="Pink">"Pink"</option>
-                                    <option value="Biru">"Biru"</option>
-                                    <option value="Kuning">"Kuning"</option>
-                                </select>
-                                <h5>Jumlah</h5>
-                                <input type="number" min="1" max="4">
-                                <br><br><br>
-                                <button class="add btn btn-primary " onclick="showCheckout()" data-dismiss="modal">Add
-                                    to
-                                    Cart</button>
+                            <div class='col-md-4'>
+                                <div class="addtocart">
+                                    <h5>Pilih Size</h5>
+                                    <select name="size">
+                                        <option value="small">"S"</option>
+                                        <option value="medium">"M"</option>
+                                        <option value="large">"L"</option>
+                                        <option value="XL">"XL"</option>
+                                    </select>
+                                    <h5>Pilih Warna</h5>
+                                    <select name="size">
+                                        <option value="Pink">"Pink"</option>
+                                        <option value="Biru">"Biru"</option>
+                                        <option value="Kuning">"Kuning"</option>
+                                    </select>
+                                    <h5>Jumlah</h5>
+                                    <input type="number" min="1" max="4">
+                                    <br><br><br>
+                                    <button class="add btn btn-primary " onclick="showCheckout()"
+                                        data-dismiss="modal">Add
+                                        to
+                                        Cart</button>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -322,42 +328,76 @@
 
     <div class='row text-center'>
         <div class="btn-group">
-            <?php
-						if ($page>1){
-							$prev_page = $page-1;
-							//echo "Prev: ".$prev_page;
-					?>
+            <?php  if($category==null){
+            if ($page>1){
+                $prev_page = $page-1;
+                //echo "Prev: ".$prev_page;
+        ?>
+            <a href='products.php?page=<?php echo $prev_page; ?>' class="btn btn-default" title='Previous'>
+                <i class='glyphicon glyphicon-chevron-left'></i>
+                Previous
+            </a>
+            <?php } 
+            for ($i=1; $i<=$count_pages; $i++){
+                $flag_class = "";
+                if ($page==$i){
+                    $flag_class = "active";
+                }
+                if($i==1){
+                    echo "<a href='products.php?&page=$i' class='btn btn-default $flag_class' title='First'>$i</a>";
+                } else if($i==$count_pages) {
+                    echo "<a href='products.php?&page=$i' class='btn btn-default $flag_class' title='Last'>$i</a>";
+                } else {
+                    echo "<a href='products.php?page=$i' class='btn btn-default $flag_class' title='Page $i'>$i</a>";
+                }
+            }
+     
+            if ($page<$count_pages){
+                $next_page = $page+1;
+                //echo "Next: ".$next_page;
+                echo "<a href='products.php?page=$next_page' class='btn btn-default' title='Next'>
+                            Next
+                            <i class='glyphicon glyphicon-chevron-right'></i>
+                        </a>";
+            }
+        
+
+            }
+            else{
+            if ($page>1){
+                $prev_page = $page-1;
+                //echo "Prev: ".$prev_page;
+        ?>
             <a href='products.php?id_category=<?php echo $category; ?>&page=<?php echo $prev_page; ?>'
                 class="btn btn-default" title='Previous'>
                 <i class='glyphicon glyphicon-chevron-left'></i>
                 Previous
             </a>
-            <?php } ?>
-            <?php
-						for ($i=1; $i<=$count_pages; $i++){
-							$flag_class = "";
-							if ($page==$i){
-								$flag_class = "active";
-							}
-							if($i==1){
-								echo "<a href='products.php?id_category=$category&page=$i' class='btn btn-default $flag_class' title='First'>$i</a>";
-							} else if($i==$count_pages) {
-								echo "<a href='products.php?id_category=$category&page=$i' class='btn btn-default $flag_class' title='Last'>$i</a>";
-							} else {
-								echo "<a href='products.php?id_category=$category&page=$i' class='btn btn-default $flag_class' title='Page $i'>$i</a>";
-							}
-						}
-					?>
-            <?php
-						if ($page<$count_pages){
-							$next_page = $page+1;
-							//echo "Next: ".$next_page;
-							echo "<a href='products.php?id_category=$category&page=$next_page' class='btn btn-default' title='Next'>
-										Next
-										<i class='glyphicon glyphicon-chevron-right'></i>
-									</a>";
-						}
-					?>
+            <?php } 
+            for ($i=1; $i<=$count_pages; $i++){
+                $flag_class = "";
+                if ($page==$i){
+                    $flag_class = "active";
+                }
+                if($i==1){
+                    echo "<a href='products.php?id_category=$category&page=$i' class='btn btn-default $flag_class' title='First'>$i</a>";
+                } else if($i==$count_pages) {
+                    echo "<a href='products.php?id_category=$category&page=$i' class='btn btn-default $flag_class' title='Last'>$i</a>";
+                } else {
+                    echo "<a href='products.php?id_category=$category&page=$i' class='btn btn-default $flag_class' title='Page $i'>$i</a>";
+                }
+            }
+       
+            if ($page<$count_pages){
+                $next_page = $page+1;
+                //echo "Next: ".$next_page;
+                echo "<a href='products.php?id_category=$category&page=$next_page' class='btn btn-default' title='Next'>
+                            Next
+                            <i class='glyphicon glyphicon-chevron-right'></i>
+                        </a>";
+            }
+         } ?>
+
         </div>
     </div>
 
@@ -381,25 +421,10 @@
 
         </div>
     </footer>
-    
+    <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/template.css" rel="stylesheet">
+    <link href="../css/product.css" rel="stylesheet">
     <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
-
-    <script>
-        function myFunction(imgs) {
-            // Get the expanded image
-            var expandImg = document.getElementById("firstpreview");
-            // // Use the same src in the expanded image as the image being clicked on from the grid
-            expandImg.src = imgs.src;
-            // Use the value of the alt attribute of the clickable image as text inside the expanded image
-            expandImg.parentElement.style.display = "block";
-            document.getElementsByClassName("column").style.borderColor = "blue";
-        }
-    </script>
-    <script>
-        document.querySelector('.floatbutton').style.display = 'none';
-
-        function showCheckout() {
-            document.querySelector('.floatbutton').style.display = 'block';
-        }
-    </script>
+    <script src="../js/productview.js"></script>
+   
 </body>
