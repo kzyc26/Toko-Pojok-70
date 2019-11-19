@@ -14,10 +14,10 @@ function showCheckout() {
 }
 
 var productId;
-$(document).ready(function showview(){
-    $('.btnview').on('click', function showview(){
+$(document).ready(function(){
+    $('.btnview').on('click', function(){
         productId = $(this).data('id');
-        ///alert(productId);
+        alert(productId);
 
         $.ajax({
             url: "productdetails.php",
@@ -25,7 +25,7 @@ $(document).ready(function showview(){
             data: { id : productId },
             dataType: "html",
             success: function(result){
-                $("#modalview").html(result);
+                $("#contentview").html(result);
             }
         });
     });

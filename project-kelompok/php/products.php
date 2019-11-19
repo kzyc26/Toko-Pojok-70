@@ -188,7 +188,7 @@
                 <div class="btn-ground text-center">
 
                     <label class="prod_id"> <?php echo $id;?> </label>
-                    <button type="button" class="btn btn-primary btnview " data-toggle="modal" data-target="#view"></i>
+                    <button type="button" class="btn btn-primary btnview " data-toggle="modal" data-target="#view" data-id="<?php echo $id;?>"></i>
                         Quick View</button>
 
                     <div class="space-ten"></div>
@@ -209,60 +209,8 @@
                                 class="glyphicon glyphicon-remove"></span></a>
                         <h3 class="modal-title">Product Details</h3>
                     </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class='col-md-3'>
-                                <h4>Product Description</h4>
-                                <p>
-                                    <?php echo $cmd_extra_details?>
-                                </p>
-                            </div>
-                            <div class='col-md-5'>
-                                <div class="imagecollection">
-                                    <img src="../assets/images/Slide 1.jpg" id="firstpreview" class="firstpic">
-                                    <div class="row">
-                                        <div class="column">
-                                            <img src="../assets/images/Slide 2.jpg" onclick="myFunction(this);">
-                                        </div>
-                                        <div class="column">
-                                            <img src="../assets/images/Slide 3.jpg" onclick="myFunction(this);">
-                                        </div>
-                                        <div class="column">
-                                            <img src="../assets/images/color pallete.jpg" onclick="myFunction(this);">
-                                        </div>
-                                        <div class="column">
-                                            <img src="../assets/images/Slide 1.jpg" onclick="myFunction(this);">
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class='col-md-4'>
-                                <div class="addtocart">
-                                    <h5>Pilih Size</h5>
-                                    <select name="size">
-                                        <option value="small">"S"</option>
-                                        <option value="medium">"M"</option>
-                                        <option value="large">"L"</option>
-                                        <option value="XL">"XL"</option>
-                                    </select>
-                                    <h5>Pilih Warna</h5>
-                                    <select name="size">
-                                        <option value="Pink">"Pink"</option>
-                                        <option value="Biru">"Biru"</option>
-                                        <option value="Kuning">"Kuning"</option>
-                                    </select>
-                                    <h5>Jumlah</h5>
-                                    <input type="number" min="1" max="4">
-                                    <br><br><br>
-                                    <button class="add btn btn-primary " onclick="showCheckout()"
-                                        data-dismiss="modal">Add
-                                        to
-                                        Cart</button>
-                                </div>
-                            </div>
-
-                        </div>
+                    <div id="contentview" class="modal-body">
+                       
                     </div>
                 </div>
             </div>
