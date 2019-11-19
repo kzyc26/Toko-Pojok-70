@@ -115,22 +115,7 @@ if (isset($_POST['cart'])){
 
   <!-- Dropdown grouped -->
   <div class="dropdown_group">
-    <div id="footwear" class="dropdown">
-      <button onclick="scrollWin()" class="btn btn-default dropdown-toggle tombol purple" type="button"
-        id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Footwear
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="../php/products.php">All Footwear Collection</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="../php/products.php">a</a></li>
-        <li><a href="../php/products.php">b</a></li>
-        <li><a href="../php/products.php">c</a></li>
-        <li><a href="../php/products.php">d</a></li>
-        <li><a href="../php/products.php">e</a></li>
-      </ul>
-    </div>
+    
     <div id="girl" class="dropdown">
       <button onclick="scrollWin()" class="btn btn-default dropdown-toggle tombol pink" type="button" id="dropdownMenu1"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -163,22 +148,7 @@ if (isset($_POST['cart'])){
         <li><a href="../php/products.php">Setelan</a></li>
       </ul>
     </div>
-    <div id="baby-gear" class="dropdown">
-      <button onclick="scrollWin()" class="btn btn-default dropdown-toggle tombol blue" type="button" id="dropdownMenu1"
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Baby Gear
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="../php/products.php">All Baby Gear Collection</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="../php/products.php">a</a></li>
-        <li><a href="../php/products.php">b</a></li>
-        <li><a href="../php/products.php">c</a></li>
-        <li><a href="../php/products.php">d</a></li>
-        <li><a href="../php/products.php">e</a></li>
-      </ul>
-    </div>
+    
   </div>
   <br><br><br><br><br><br>
 

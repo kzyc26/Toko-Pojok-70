@@ -77,33 +77,25 @@
 }
 
 /* button group */
-#footwear .dropdown-menu {
+#girl{
+    width: 100%;
+    left: 20%;
+}
+#girl .dropdown-menu{
     position: absolute;
+    width: 30%;
+    left: 20%;
     transform: translateY(80px);
-    width: 25%;
 }
 
-#girl .dropdown-menu {
-    position: absolute;
-    transform: translateY(80px);
-    width: 25%;
+#boy{
+    width: 100%;
     left: 25%;
-    transform: translateY(80px);
 }
-
 #boy .dropdown-menu {
     position: absolute;
-    transform: translateY(80px);
     width: 25%;
     left: 50%;
-    transform: translateY(80px);
-}
-
-#baby-gear .dropdown-menu {
-    position: absolute;
-    transform: translateY(80px);
-    width: 25%;
-    left: 75%;
     transform: translateY(80px);
 }
 
