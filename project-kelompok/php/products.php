@@ -75,41 +75,45 @@
 		}
     } 
     ?>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#"><img src="../assets/images/99818.png" class="logo-toko"></a>
-      </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="../assets/images/99818.png" class="logo-toko"></a>
+            </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">        
-        <form class="navbar-form navbar-left">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <a href="../php/products.php"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
-        </form>
-        <form action="index.php" method="post">
-        <ul class="nav navbar-nav navbar-right">
-          <li><span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input type="submit" class="btn btn-default" name="cart" value=""></span></li>
-          <li><span class="icon-input-btn"><span class="glyphicon glyphicon-user"></span> <input type="submit" class="btn btn-default posisi" name="user" value=""></span></li>
-          <li><span class="icon-input-btn"><span class="glyphicon glyphicon-usd"></span> <input type="submit" class="btn btn-default" name="trace" value=""></span></li>
-        </ul>
-        </form>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
-<div class="categories">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <a href="../php/products.php"><button type="button" class="btn btn-default"><span
+                                class="glyphicon glyphicon-search"></span></button></a>
+                </form>
+                <form action="index.php" method="post">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input
+                                    type="submit" class="btn btn-default" name="cart" value=""></span></li>
+                        <li><span class="icon-input-btn"><span class="glyphicon glyphicon-user"></span> <input
+                                    type="submit" class="btn btn-default posisi" name="user" value=""></span></li>
+                        <li><span class="icon-input-btn"><span class="glyphicon glyphicon-usd"></span> <input
+                                    type="submit" class="btn btn-default" name="trace" value=""></span></li>
+                    </ul>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="categories">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                   <div class="panel panel-default">
+            <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
@@ -154,12 +158,12 @@
             </div>
 
         </div>
-</div>
+    </div>
     <div class="container">
-        <div class="Categorytitle"> 
-        <?php if ($category==null){ ?>
-        <h1> All Products </h1>
-        <?php } 
+        <div class="Categorytitle">
+            <?php if ($category==null){ ?>
+            <h1> All Products </h1>
+            <?php } 
         else { ?> <h1> <?php echo $category_name[0];?></h1><?php }?>
         </div>
         <div class='row productsimg'>
@@ -180,19 +184,16 @@
 							?>
                 </p>
                 <div class="space-ten"></div>
+                <div class="space-ten"></div>
                 <div class="btn-ground text-center">
-                    <form action="" method="post">
-                    <label class ="prod_id"> <?php echo $id;?> </label>
-                    <button type="button" class="btn btn-primary" Name="add" value="<?php echo $id;?>"
-                        data-toggle="modal" data-target="#addtocarts"></i>
-                        Add To Cart</button>
-                    </form>
+
+                    <label class="prod_id"> <?php echo $id;?> </label>
+                    <button type="button" class="btn btn-primary btnview " data-toggle="modal" data-target="#view"></i>
+                        Quick View</button>
+
                     <div class="space-ten"></div>
-                    <form action="" method="post">
-                    <label class ="prod_id"> <?php echo $id;?> </label>
-                    <button type="button" class="btn btn-primary" Name="view" value="<?php echo $id;?>"
-                        data-toggle="modal" data-target="#product_view"> Quick View
-                    </form>
+
+
                 </div>
                 <div class="space-ten"></div>
             </div>
@@ -200,48 +201,7 @@
             <h2 class="warning"> Product Not Available </h2> <?php }
           ?>
         </div>
-
-        <div class="modal fade product_view" id="product_view">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <a href="#" data-dismiss="modal" class="class pull-right"><span
-                                class="glyphicon glyphicon-remove"></span></a>
-                        <h3 class="modal-title">Product Details</h3>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class='col-md-1'>
-
-                            </div>
-                            <div class='col-md-9'>
-                                <div class="imagecollection">
-                                    <img src="../assets/images/Slide 1.jpg" id="firstpreview" class="firstpic">
-                                    <div class="row">
-                                        <div class="column">
-                                            <img src="../assets/images/Slide 2.jpg" onclick="myFunction(this);">
-                                        </div>
-                                        <div class="column">
-                                            <img src="../assets/images/Slide 3.jpg" onclick="myFunction(this);">
-                                        </div>
-                                        <div class="column">
-                                            <img src="../assets/images/color pallete.jpg" onclick="myFunction(this);">
-                                        </div>
-                                        <div class="column">
-                                            <img src="../assets/images/Slide 1.jpg" onclick="myFunction(this);">
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class='col-md-2'>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade product_view" id="addtocarts">
+        <div class="modal fade product_view" id="view">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -254,7 +214,7 @@
                             <div class='col-md-3'>
                                 <h4>Product Description</h4>
                                 <p>
-                                <?php echo $cmd_extra_details?>
+                                    <?php echo $cmd_extra_details?>
                                 </p>
                             </div>
                             <div class='col-md-5'>
@@ -307,6 +267,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <div class="floatbutton">
         <a href="../php/" class="float">
@@ -416,5 +377,6 @@
     <link href="../css/product.css" rel="stylesheet">
     <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
     <script src="../js/productview.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Lato|Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Lato|Pacifico&display=swap"
+        rel="stylesheet">
 </body>

@@ -11,8 +11,8 @@
             var productId;
             
             
-            $(document).ready(function(){
-                $('.btn-view').on('click', function(){
+            $(document).ready(function showview(){
+                $('.btn-view').on('click', showview(){
                     productId = $(this).data('nomor_produk');
                     ///alert(productId);
 
@@ -21,8 +21,8 @@
                         method: "GET",
                         data: { id : productId },
                         dataType: "html",
-                        success: function(result){
-                            $("#modal").html(result);
+                        success: function showview(result){
+                            $("#modalview").html(result);
                         }
                     });
                 });

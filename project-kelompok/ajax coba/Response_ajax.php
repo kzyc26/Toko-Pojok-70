@@ -6,9 +6,6 @@
     }
 ?>
 
-<!--echo json_encode(arr);
-
---- -->
 
 <h1>Response</h1>
 <p><?php echo $id_barang ?></p>

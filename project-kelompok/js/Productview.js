@@ -13,12 +13,21 @@ function showCheckout() {
     document.querySelector('.floatbutton').style.display = 'block';
 }
 
-var xhr  = new XMLHttpRequest();
-xhr.onreadystatechange = function(){
-if(xhr.readyState == 4 && xhr.status== 200){
-    
-}
+var productId;
+$(document).ready(function showview(){
+    $('.btnview').on('click', function showview(){
+        productId = $(this).data('id');
+        ///alert(productId);
 
-}
-xhr.open('GET','ajax/productdetails.php',true);
-xhr.send();
+        $.ajax({
+            url: "productdetails.php",
+            method: "GET",
+            data: { id : productId },
+            dataType: "html",
+            success: function(result){
+                $("#modalview").html(result);
+            }
+        });
+    });
+    
+});
