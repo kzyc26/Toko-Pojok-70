@@ -17,7 +17,7 @@ var productId;
 $(document).ready(function(){
     $('.btnview').on('click', function(){
         productId = $(this).data('id');
-        alert(productId);
+       
 
         $.ajax({
             url: "productdetails.php",
