@@ -22,19 +22,12 @@ $id = "Null";
           $cmd_limit = $cmd_product_details."LIMIT $pick";
           $Limit_details_execute =mysqli_query($con,$cmd_limit) or die(mysqli_error($con));
           $limit_details = mysqli_fetch_assoc($Limit_details_execute);
-        
- 
-        
-          
-  
-
   ?>
 
 <div class="row">
     <div class='col-md-3'>
         <h4>Product Description</h4>
         <p>
-
             <?php echo $product_details['product_desc'];?>
         </p>
     </div>
