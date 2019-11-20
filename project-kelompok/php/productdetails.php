@@ -1,9 +1,11 @@
 <?php 
+  session_start();
   require_once('db.php');
 $g = $_GET;
 $id_barang = null;
 if(isset($g['id'])){
     $id_barang = $g['id'];
+    $_SESSION['id_prod'] = $id_barang;
     $cmd_extra_details="AND d.id_product ='".$id_barang."'";
 }else{
     $cmd_extra_details="";
@@ -22,6 +24,7 @@ $id = "Null";
           $cmd_limit = $cmd_product_details."LIMIT $pick";
           $Limit_details_execute =mysqli_query($con,$cmd_limit) or die(mysqli_error($con));
           $limit_details = mysqli_fetch_assoc($Limit_details_execute);
+          
   ?>
 
 <div class="row">
@@ -78,10 +81,9 @@ $id = "Null";
             <h5>Jumlah</h5>
             <input type="number" min="1" max="4">
             <br><br><br>
-            <button class="add btn btn-primary " onclick="showCheckout()" data-dismiss="modal">Add
-                to
-                Cart</button>
+            <form action="action-buy.php" method="post">
+            <button type="submit" class="add btn btn-primary btnaddcart" onclick="showCheckout()" name="btnaddcart">Add to Cart</button>
+            </form>
         </div>
     </div>
-
 </div>
