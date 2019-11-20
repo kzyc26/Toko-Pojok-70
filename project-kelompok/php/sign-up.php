@@ -37,9 +37,6 @@ header("location: accountsetting.php");
       require('db.php');
             // If form submitted, insert values into the database.
             if (isset($_POST['register'])){
-                // $username = stripslashes($_REQUEST['username']); // removes backslashes
-                // $username = mysqli_real_escape_string($con,$username); //escapes special characters in a string
-                
                 $email = mysqli_real_escape_string($con, $_POST['email']);
                 $username = mysqli_real_escape_string($con, $_POST['username']);
                 $pass = mysqli_real_escape_string($con, $_POST['password']);
@@ -54,8 +51,6 @@ header("location: accountsetting.php");
                 $kelurahan = mysqli_real_escape_string($con, $_POST['kelurahan']);
                 $kodepos = mysqli_real_escape_string($con, $_POST['kodepos']);
                 $alamat = mysqli_real_escape_string($con, $_POST['alamat']);
-
-                // $trn_date = date("Y-m-d H:i:s");
                 $query = "INSERT into customer (`username`, `password`, `jenis_kelamin`, `fullname`, `email`, `telepon`, `provinsi`, `kab_kota`, `kecamatan`, `kelurahan`, `kode_pos`, `alamat`) values ('$username', '".sha1($pass)."', '$gender', '$fullname', '$email', '$phone', '$prov', '$kabkota', '$kecamatan', '$kelurahan', '$kodepos', '$alamat');";                
                 mysqli_query($con, $query);
                 $_SESSION['username'] = $username;

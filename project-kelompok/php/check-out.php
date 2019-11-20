@@ -196,85 +196,17 @@ if (isset($_POST['cart'])){
                   <td class="pic"><img src="../assets/images/Slide 1.jpg" alt="" width="100%" height="auto"></td>
                   <td>
                     <div>Size: </div>
-                    <select name="size" id="size" class="form-control">
-                      <option value="s">S</option>
-                      <option value="m">M</option>
-                      <option value="l">L</option>
+                    <select name="size" id="size" class="form-control" disabled>                      
                     </select>
                   </td>
                   <td class="pref">
                     <div>Color: </div>
-                    <select name="color" id="color" class="form-control">
-                      <option value="pink">Pink</option>
-                      <option value="white">White</option>
-                      <option value="baby blue">Baby Blue</option>
+                    <select name="color" id="color" class="form-control" disabled>
                     </select>
                   </td>
                   <td class="qty pref">
                     <div>Qty: </div>
-                    <input type="number" class="form-control" min="1" value="1">
-                  </td>
-                </tr>
-              </table>
-          </div>
-          <div>
-            <div class="col-md-1 product"><input type="checkbox" checked="true"></div>
-            <div class="col-md-1 product">
-              <button type="submit form-control"><span class="glyphicon glyphicon-trash"></span></button>
-            </div>
-              <table>
-                <tr>
-                  <td class="pic"><img src="../assets/images/Slide 2.jpg" alt="" width="100%" height="auto"></td>
-                  <td>
-                    <div>Size: </div>
-                    <select name="size" id="size" class="form-control">
-                      <option value="s">S</option>
-                      <option value="m">M</option>
-                      <option value="l">L</option>
-                    </select>
-                  </td>
-                  <td class="pref">
-                    <div>Color: </div>
-                    <select name="color" id="color" class="form-control">
-                      <option value="pink">Pink</option>
-                      <option value="white">White</option>
-                      <option value="baby blue">Baby Blue</option>
-                    </select>
-                  </td>
-                  <td class="qty pref">
-                    <div>Qty: </div>
-                    <input type="number" class="form-control" min="1" value="1">
-                  </td>
-                </tr>
-              </table>
-          </div>
-          <div>
-            <div class="col-md-1 product"><input type="checkbox" checked="true"></div>
-            <div class="col-md-1 product">
-              <button type="submit form-control"><span class="glyphicon glyphicon-trash"></span></button>
-            </div>
-              <table>
-                <tr>
-                  <td class="pic"><img src="../assets/images/Slide 3.jpg" alt="" width="100%" height="auto"></td>
-                  <td>
-                    <div>Size: </div>
-                    <select name="size" id="size" class="form-control">
-                      <option value="s">S</option>
-                      <option value="m">M</option>
-                      <option value="l">L</option>
-                    </select>
-                  </td>
-                  <td class="pref">
-                    <div>Color: </div>
-                    <select name="color" id="color" class="form-control">
-                      <option value="pink">Pink</option>
-                      <option value="white">White</option>
-                      <option value="baby blue">Baby Blue</option>
-                    </select>
-                  </td>
-                  <td class="qty pref">
-                    <div>Qty: </div>
-                    <input type="number" class="form-control" min="1" value="1">
+                    <input type="number" class="form-control" min="1" value="1" disabled>
                   </td>
                 </tr>
               </table>
