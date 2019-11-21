@@ -173,7 +173,7 @@
             $id = $product['id_product'];
           
 				?>
-            <div class="thumbnail">
+            <div class="product-thumbnail">
                 <img src='../assets/images/products/<?php echo $id; ?>.jpg' class='img-responsive object-fit' />
                 <h5><?php echo $product['product_name']; ?></h5>
                 <p>
@@ -325,6 +325,8 @@
     <link href="../css/product.css" rel="stylesheet">
     <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
     <script src="../js/productview.js"></script>
+    <link href="../css/slider.css" rel="stylesheet">
+    <script src="../js/slider.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Lato|Pacifico&display=swap"
         rel="stylesheet">
 </body>
