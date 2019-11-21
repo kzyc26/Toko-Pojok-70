@@ -1,9 +1,11 @@
 <?php 
+  session_start();
   require_once('db.php');
 $g = $_GET;
 $id_barang = null;
 if(isset($g['id'])){
     $id_barang = $g['id'];
+    $_SESSION['id_prod'] = $id_barang;
     $cmd_extra_details="AND d.id_product ='".$id_barang."'";
 }else{
     $cmd_extra_details="";
@@ -22,6 +24,7 @@ $id = "Null";
           $cmd_limit = $cmd_product_details."LIMIT $pick";
           $Limit_details_execute =mysqli_query($con,$cmd_limit) or die(mysqli_error($con));
           $limit_details = mysqli_fetch_assoc($Limit_details_execute);
+          
   ?>
 
 <div class="row">
@@ -62,26 +65,18 @@ $id = "Null";
     </div>
     <div class='col-md-4'>
         <div class="addtocart">
+        <form action="action-buy.php" method="post">
             <h5>Pilih Size</h5>
-            <select name="size">
-                <option value="small">"S"</option>
-                <option value="medium">"M"</option>
-                <option value="large">"L"</option>
-                <option value="XL">"XL"</option>
+            <select name="size" id ="size" onchange="gantiwarna('<?php echo $g['id'];?>', 'color')">
             </select>
             <h5>Pilih Warna</h5>
-            <select name="size">
-                <option value="Pink">"Pink"</option>
-                <option value="Biru">"Biru"</option>
-                <option value="Kuning">"Kuning"</option>
+            <select name="color" id = "color" onchange="gantijumlah(this.id, 'jumlah')">
             </select>
             <h5>Jumlah</h5>
-            <input type="number" min="1" max="4">
-            <br><br><br>
-            <button class="add btn btn-primary " onclick="showCheckout()" data-dismiss="modal">Add
-                to
-                Cart</button>
+            <input type="number" min="1">
+            <br><br><br>            
+            <button type="submit" class="add btn btn-primary btnaddcart" onclick="showCheckout()" name="btnaddcart">Add to Cart</button>
+            </form>
         </div>
     </div>
-
 </div>

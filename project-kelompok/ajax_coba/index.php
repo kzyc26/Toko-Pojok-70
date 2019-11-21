@@ -12,7 +12,7 @@
             
             
             $(document).ready(function (){
-                $('.btn-view').on('click', (){
+                $('.btn-view').on('click', function(){
                     productId = $(this).data('nomor_produk');
                     ///alert(productId);
 

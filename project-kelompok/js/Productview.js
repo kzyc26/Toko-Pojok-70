@@ -32,5 +32,29 @@ $(document).ready(function(){
     
 });
 
+// checkboxes
+function gantiwarna(, sk){
+    var sp = document.getElementById(sp);
+    var sk = document.getElementById(sk);
+    sk.innerHTML = "";
 
+    switch(sp.value){
+        case "jawa-timur":
+            var arraypilihan = ["|", "surabaya|Surabaya", "malang|Malang"];
+            break;
+        case "jawa-tengah":
+            var arraypilihan = ["|", "semarang|Semarang", "boyolali|Boyolali"];
+            break;
+        case "jawa-barat":
+            var arraypilihan = ["|", "bandung|Bandung"];
+            break;
+    }
 
+    for(var pilihan in arraypilihan){
+        var pair = arraypilihan[pilihan].split("|");
+        var pilihanbaru = document.createElement("option");
+        pilihanbaru.value = pair[0];
+        pilihanbaru.innerHTML = pair[1];
+        sk.options.add(pilihanbaru);
+    }
+}
