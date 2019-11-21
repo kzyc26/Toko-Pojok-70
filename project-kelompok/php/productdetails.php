@@ -70,8 +70,7 @@ $id = "Null";
             <select name="size" id ="size" onchange="gantiwarna('<?php echo $g['id'];?>', 'color')">
             </select>
             <h5>Pilih Warna</h5>
-            <select name="provinsi" id="provinsi" class="form-control pendek" onchange="limit_jumlah(this.id, 'kabkota')">
-            <select name="color" id = "size" onchange="gantijumlah(this.id, 'jumlah')">
+            <select name="color" id = "color" onchange="gantijumlah(this.id, 'jumlah')">
             </select>
             <h5>Jumlah</h5>
             <input type="number" min="1">
