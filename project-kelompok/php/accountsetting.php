@@ -530,7 +530,7 @@ if(isset($_POST['logout'])) {
 
             <br><br>
 
-            </footer>
+         
         </div>
     </div>
     <footer class="footer">
@@ -550,6 +550,7 @@ if(isset($_POST['logout'])) {
             </div>
 
         </div>
+        </footer>
         <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
         <link href="../css/template.css" rel="stylesheet">
         <link href="../css/accountsetting.css" rel="stylesheet">
