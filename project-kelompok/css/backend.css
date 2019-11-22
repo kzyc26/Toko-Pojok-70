@@ -1,0 +1,17 @@
+.result{
+    position: absolute;
+    border-left:1px solid black ;
+}
+table tr,th,td{
+    border:1px solid black;
+    
+}
+table td,table th{
+    text-align:center;
+    padding:10px 10px 10px 10px;
+}
+table{
+  margin-top:20px;
+  
+}
+

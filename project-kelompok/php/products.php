@@ -173,7 +173,7 @@
             $id = $product['id_product'];
           
 				?>
-            <div class="thumbnail">
+            <div class="product-thumbnail">
                 <img src='../assets/images/products/<?php echo $id; ?>.jpg' class='img-responsive object-fit' />
                 <h5><?php echo $product['product_name']; ?></h5>
                 <p>
@@ -187,13 +187,8 @@
                 <div class="space-ten"></div>
                 <div class="btn-ground text-center">
 
-                    <label class="prod_id"> <?php echo $id;?> </label>
-                    <?php 
-                    $query = "SELECT ukuran FROM `product_detail` where id_product='$id'";
-                    $sql = mysqli_query($con, $query);
-                    $size_result= mysqli_fetch_array($sql);
-                    ?>
-                    <button type="button" class="btn btn-primary btnview " data-toggle="modal" data-target="#view" data-id="<?php echo $id;?>" onclick="gantiukuran(<?php $size_result ?>)"></i>
+                    <label class="prod_id"> <?php echo $id;?> </label>                    
+                    <button type="button" class="btn btn-primary btnview " data-toggle="modal" data-target="#view" data-id="<?php echo $id;?>"></i>
                         Quick View</button>
 
                     <div class="space-ten"></div>
@@ -330,6 +325,8 @@
     <link href="../css/product.css" rel="stylesheet">
     <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
     <script src="../js/productview.js"></script>
+    <link href="../css/slider.css" rel="stylesheet">
+    <script src="../js/slider.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Lato|Pacifico&display=swap"
         rel="stylesheet">
 </body>
