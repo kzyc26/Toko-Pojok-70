@@ -32,13 +32,14 @@ $(document).ready(function(){
     
 });
 
-// checkboxes
-function gantiwarna(, sk){
-    var sp = document.getElementById(sp);
-    var sk = document.getElementById(sk);
-    sk.innerHTML = "";
+function gantiwarna(cbsize, cbcolor){
+    var cbsize = document.getElementById(cbsize);
+    var cbcolor = document.getElementById(cbcolor);
+    cbcolor.innerHTML = "";
 
-    switch(sp.value){
+    
+
+    switch(idprod){
         case "jawa-timur":
             var arraypilihan = ["|", "surabaya|Surabaya", "malang|Malang"];
             break;

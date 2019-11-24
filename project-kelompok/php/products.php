@@ -196,13 +196,8 @@
                 <div class="space-ten"></div>
                 <div class="btn-ground text-center">
 
-                    <label class="prod_id"> <?php echo $id;?> </label>
-                    <?php 
-                    $query = "SELECT ukuran FROM `product_detail` where id_product='$id'";
-                    $sql = mysqli_query($con, $query);
-                    $size_result= mysqli_fetch_array($sql);
-                    ?>
-                    <button type="button" class="btn btn-primary btnview " data-toggle="modal" data-target="#view" data-id="<?php echo $id;?>" onclick="gantiukuran(<?php $size_result ?>)"></i>
+                    <label class="prod_id"> <?php echo $id;?> </label>                    
+                    <button type="button" class="btn btn-primary btnview " data-toggle="modal" data-target="#view" data-id="<?php echo $id;?>"></i>
                         Quick View</button>
 
                     <div class="space-ten"></div>

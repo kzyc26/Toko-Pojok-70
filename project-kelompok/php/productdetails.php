@@ -63,14 +63,26 @@ $id = "Null";
     <div class='col-md-4'>
         <div class="addtocart">
         <form action="action-buy.php" method="post">
-            <h5>Pilih Size</h5>
-            <select name="size" id ="size" onchange="gantiwarna('<?php echo $g['id'];?>', 'color')">
-            </select>
-            <h5>Pilih Warna</h5>
-            <select name="color" id = "color" onchange="gantijumlah(this.id, 'jumlah')">
-            </select>
+            <h5>Pilih Ukuran dan Warna</h5>                      
+            <select name="size" id ="size">
+            <?php 
+                    $query = "SELECT ukuran, warna, id_product_detail FROM `product_detail` where id_product='$g[id]'";         
+                    $sql = mysqli_query($con, $query)  or die(mysqli_error($con));
+                    $size_result= mysqli_fetch_all($sql);
+                    $row = mysqli_num_rows($sql);
+                    $x = 0;
+                    while ($x < $row) {
+                       echo "<option value=".$size_result[$x][2]."> ".$size_result[$x][0]." | ".$size_result[$x][1]." </option>";
+                        $x += 1;
+                        }
+                    ?>  
+            </select>            
             <h5>Jumlah</h5>
-            <input type="number" min="1">
+            <input type="number" min="1" id="jumlah" max="
+            <?php
+                
+            ?>
+            ">
             <br><br><br>            
             <button type="submit" class="add btn btn-primary btnaddcart" onclick="showCheckout()" name="btnaddcart">Add to Cart</button>
             </form>
