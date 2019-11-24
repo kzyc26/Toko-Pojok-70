@@ -93,7 +93,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="../assets/images/99818.png" class="logo-toko"></a>
+                <a class="navbar-brand" href="../php/index.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -132,7 +132,7 @@
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
                         <ul>
-                        <li><a href="products.php?gender=M">All Boy's Product</a></li>
+                            <li><a href="products.php?gender=M">All Boy's Collection</a></li>
                             <li><a href="products.php?id_category=st04">Setelan Panjang</a></li>
                             <li><a href="products.php?id_category=st03">Setelan Pendek</a></li>
                             <li><a href="products.php?id_category=ks02">Kaos</a></li>
@@ -154,7 +154,7 @@
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
                         <ul>
-                        <li><a href="products.php?gender=F">All Girl's Product</a></li>
+                            <li><a href="products.php?gender=F">All Girl's Collection</a></li>
                             <li><a href="products.php?id_category=ds02">Dress Lengan Panjang</a></li>
                             <li><a href="products.php?id_category=ds01">Dress Lengan Pendek</a></li>
                             <li><a href="products.php?id_category=st02">Setelan Lengan Panjang</a></li>
@@ -183,7 +183,8 @@
           
 				?>
             <div class="product-thumbnail">
-                <img src='../assets/images/products/<?php echo $id; ?>.jpg' class='img-responsive object-fit' style="height:200px;"/>
+                <img src='../assets/images/products/<?php echo $id; ?>.jpg' class='img-responsive object-fit'
+                    style="height:200px;" />
                 <h5><?php echo $product['product_name']; ?></h5>
                 <p>
                     Rp.
@@ -196,8 +197,14 @@
                 <div class="space-ten"></div>
                 <div class="btn-ground text-center">
 
-                    <label class="prod_id"> <?php echo $id;?> </label>                    
-                    <button type="button" class="btn btn-primary btnview " data-toggle="modal" data-target="#view" data-id="<?php echo $id;?>"></i>
+                    <label class="prod_id"> <?php echo $id;?> </label>
+                    <?php 
+                    $query = "SELECT ukuran FROM `product_detail` where id_product='$id'";
+                    $sql = mysqli_query($con, $query);
+                    $size_result= mysqli_fetch_array($sql);
+                    ?>
+                    <button type="button" class="btn btn-primary btnview " data-toggle="modal" data-target="#view"
+                        data-id="<?php echo $id;?>" onclick="gantiukuran(<?php $size_result ?>)"></i>
                         Quick View</button>
 
                     <div class="space-ten"></div>
@@ -219,7 +226,7 @@
                         <h3 class="modal-title">Product Details</h3>
                     </div>
                     <div id="contentview" class="modal-body">
-                       
+
                     </div>
                 </div>
             </div>
@@ -240,7 +247,7 @@
             if ($page>1){
                 $prev_page = $page-1;
                 //echo "Prev: ".$prev_page;
-        ?>
+            ?>
             <a href='products.php?page=<?php echo $prev_page; ?>' class="btn btn-default" title='Previous'>
                 <i class='glyphicon glyphicon-chevron-left'></i>
                 Previous
@@ -271,7 +278,40 @@
         
 
             }
-            else{
+            elseif(isset($_GET["gender"]) && !isset($_GET["id_category"])){
+                if ($page>1){
+                    $prev_page = $page-1;
+                    //echo "Prev: ".$prev_page;
+            ?>
+            <a href='products.php?gender=<?php echo $category; ?>&page=<?php echo $prev_page; ?>'
+                class="btn btn-default" title='Previous'>
+                <i class='glyphicon glyphicon-chevron-left'></i>
+                Previous
+            </a>
+            <?php } 
+                for ($i=1; $i<=$count_pages; $i++){
+                    $flag_class = "";
+                    if ($page==$i){
+                        $flag_class = "active";
+                    }
+                    if($i==1){
+                        echo "<a href='products.php?gender=$category&page=$i' class='btn btn-default $flag_class' title='First'>$i</a>";
+                    } else if($i==$count_pages) {
+                        echo "<a href='products.php?gender=$category&page=$i' class='btn btn-default $flag_class' title='Last'>$i</a>";
+                    } else {
+                        echo "<a href='products.php?gender=$category&page=$i' class='btn btn-default $flag_class' title='Page $i'>$i</a>";
+                    }
+                }
+                if ($page<$count_pages){
+                    $next_page = $page+1;
+                    //echo "Next: ".$next_page;
+                    echo "<a href='products.php?gender=$category&page=$next_page' class='btn btn-default' title='Next'>
+                                Next
+                                <i class='glyphicon glyphicon-chevron-right'></i>
+                            </a>";
+                }   
+            }
+            elseif (!isset($_GET["gender"]) && isset($_GET["id_category"])){
             if ($page>1){
                 $prev_page = $page-1;
                 //echo "Prev: ".$prev_page;
@@ -304,7 +344,8 @@
                             <i class='glyphicon glyphicon-chevron-right'></i>
                         </a>";
             }
-         } ?>
+         }
+         ?>
 
         </div>
     </div>

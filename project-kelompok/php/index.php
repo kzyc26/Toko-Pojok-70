@@ -13,7 +13,7 @@ session_start();
 </head>
 
 <body>
-<?php
+  <?php
 if (isset($_POST['user'])){
   if(isset($_SESSION['username'])){
     header("location: accountsetting.php");
@@ -43,19 +43,23 @@ if (isset($_POST['cart'])){
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">        
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <form class="navbar-form navbar-left">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>
-          <a href="../php/products.php"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
+          <a href="../php/products.php"><button type="button" class="btn btn-default"><span
+                class="glyphicon glyphicon-search"></span></button></a>
         </form>
         <form action="index.php" method="post">
-        <ul class="nav navbar-nav navbar-right">
-          <li><span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input type="submit" class="btn btn-default" name="cart" value=""></span></li>
-          <li><span class="icon-input-btn"><span class="glyphicon glyphicon-user"></span> <input type="submit" class="btn btn-default posisi" name="user" value=""></span></li>
-          <li><span class="icon-input-btn"><span class="glyphicon glyphicon-usd"></span> <input type="submit" class="btn btn-default" name="trace" value=""></span></li>
-        </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input
+                  type="submit" class="btn btn-default" name="cart" value=""></span></li>
+            <li><span class="icon-input-btn"><span class="glyphicon glyphicon-user"></span> <input type="submit"
+                  class="btn btn-default posisi" name="user" value=""></span></li>
+            <li><span class="icon-input-btn"><span class="glyphicon glyphicon-usd"></span> <input type="submit"
+                  class="btn btn-default" name="trace" value=""></span></li>
+          </ul>
         </form>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -115,7 +119,7 @@ if (isset($_POST['cart'])){
 
   <!-- Dropdown grouped -->
   <div class="dropdown_group">
-    
+
     <div id="girl" class="dropdown">
       <button onclick="scrollWin()" class="btn btn-default dropdown-toggle tombol pink" type="button" id="dropdownMenu1"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -123,13 +127,15 @@ if (isset($_POST['cart'])){
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="../php/products.php">All Girl's Collection</a></li>
+
+        <li><a href="products.php?gender=F">All Girl's Collection</a></li>
         <li role="separator" class="divider"></li>
-        <li><a href="../php/products.php">Celana Panjang</a></li>
-        <li><a href="../php/products.php">Celana Pendek</a></li>
-        <li><a href="../php/products.php">Kaos Lengan Panjang</a></li>
-        <li><a href="../php/products.php">Kaos Lengan Pendek</a></li>
-        <li><a href="../php/products.php">Setelan</a></li>
+        <li><a href="products.php?id_category=ds02">Dress Lengan Panjang</a></li>
+        <li><a href="products.php?id_category=ds01">Dress Lengan Pendek</a></li>
+        <li><a href="products.php?id_category=st02">Setelan Lengan Panjang</a></li>
+        <li><a href="products.php?id_category=st01">Setelan Lengan Pendek</a></li>
+        <li><a href="products.php?id_category=sp01">Sneakers</a></li>
+        <li><a href="products.php?id_category=sp02">Sepatu Sandal</a></li>
       </ul>
     </div>
     <div id="boy" class="dropdown">
@@ -139,16 +145,16 @@ if (isset($_POST['cart'])){
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="../php/products.php">All Boy's Collection</a></li>
+        <li><a href="products.php?gender=M">All Boy's Collection</a></li>
         <li role="separator" class="divider"></li>
-        <li><a href="../php/products.php">Celana Panjang</a></li>
-        <li><a href="../php/products.php">Celana Pendek</a></li>
-        <li><a href="../php/products.php">Kaos Lengan Panjang</a></li>
-        <li><a href="../php/products.php">Kaos Lengan Pendek</a></li>
-        <li><a href="../php/products.php">Setelan</a></li>
+        <li><a href="products.php?id_category=st04">Setelan Panjang</a></li>
+        <li><a href="products.php?id_category=st03">Setelan Pendek</a></li>
+        <li><a href="products.php?id_category=ks02">Kaos</a></li>
+        <li><a href="products.php?id_category=sp03">Sneakers</a></li>
+        <li><a href="products.php?id_category=sp04">Sepatu Sandal</a></li>
       </ul>
     </div>
-    
+
   </div>
   <br><br><br><br><br><br>
 
@@ -227,4 +233,5 @@ if (isset($_POST['cart'])){
   <script src="../js/template.js"></script>
   <script src="../js/homepage.js"></script>
 </body>
+
 </html>

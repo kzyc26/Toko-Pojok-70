@@ -84,6 +84,7 @@ body
 }
 .product-thumbnail img{
     width: 500px;
+    
 }
 .product-thumbnail h5{
  text-align:center;
@@ -112,7 +113,10 @@ body
 .modal-content {
     overflow: auto;
     width: 100%;
-    background-image: black;
+    
+}
+.modal-body{
+    background-color:lightyellow;
 }
 
 .addtocart>.btn {
@@ -143,12 +147,14 @@ body
 
 .imagecollection .row {
     position: relative;
-    margin-left: 10%;
+    margin-left: 25%;
     transform: translateX(-18%);
     width: 100%;
     padding-top: 10%;
 }
-
+.imagecollection img{
+    margin-top:10px;
+}
 .row .column {
     margin-left: 6%;
     
