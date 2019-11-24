@@ -34,13 +34,20 @@
   require('db.php');
 		// require_once('_includes/check-out.php'); //have $cart
 	// require_once('_includes/check_visitor.php'); //have $visitor
-    if (isset($_GET["id_category"])){
+    if (isset($_GET["id_category"]) && !isset($_GET["gender"])){
       $category = strtolower($_GET["id_category"]);
       $cmd_extra = "AND lower(p.id_category)='".$category."'";
       $cmd_category_name ="SELECT category_name FROM category WHERE id_category = '".$category."'";
       $category_name_result	= mysqli_query($con,$cmd_category_name) or die(mysqli_error($con));
       $category_name = mysqli_fetch_row($category_name_result);
-    } else{
+    } elseif (isset($_GET["gender"]) && !isset($_GET["id_category"]) ){
+        $category = strtolower($_GET["gender"]);
+        $cmd_extra = "AND lower(Gender)='".$category."'";  
+        $cmd_category_name ="SELECT if(gender='F','All Girls Product','All Boys Product') as `kelamin` FROM category WHERE Gender= '".$category."'";
+      $category_name_result	= mysqli_query($con,$cmd_category_name) or die(mysqli_error($con));
+      $category_name = mysqli_fetch_row($category_name_result);
+    }
+    else{
         $category=null;
       $cmd_extra = "";
     }
@@ -125,6 +132,7 @@
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
                         <ul>
+                        <li><a href="products.php?gender=M">All Boy's Product</a></li>
                             <li><a href="products.php?id_category=st04">Setelan Panjang</a></li>
                             <li><a href="products.php?id_category=st03">Setelan Pendek</a></li>
                             <li><a href="products.php?id_category=ks02">Kaos</a></li>
@@ -146,6 +154,7 @@
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
                         <ul>
+                        <li><a href="products.php?gender=F">All Girl's Product</a></li>
                             <li><a href="products.php?id_category=ds02">Dress Lengan Panjang</a></li>
                             <li><a href="products.php?id_category=ds01">Dress Lengan Pendek</a></li>
                             <li><a href="products.php?id_category=st02">Setelan Lengan Panjang</a></li>
@@ -174,7 +183,7 @@
           
 				?>
             <div class="product-thumbnail">
-                <img src='../assets/images/products/<?php echo $id; ?>.jpg' class='img-responsive object-fit' />
+                <img src='../assets/images/products/<?php echo $id; ?>.jpg' class='img-responsive object-fit' style="height:200px;"/>
                 <h5><?php echo $product['product_name']; ?></h5>
                 <p>
                     Rp.
