@@ -10,8 +10,7 @@ if(isset($g['id'])){
 }else{
     $cmd_extra_details="";
 }
-$id = "Null";
-  
+$id = "Null";  
  
   $cmd_product_details ="SELECT id_product_detail,ukuran,warna,jumlah, product_desc, jumlah_foto
           FROM product_detail d, product p
@@ -53,7 +52,6 @@ $id = "Null";
                 $i++;
                 }
                 }
-
                 ?>
 
             </div>
@@ -74,7 +72,7 @@ $id = "Null";
                     while ($x < $row) {
                        echo "<option value=".$size_result[$x][2]."> ".$size_result[$x][0]." | ".$size_result[$x][1]." </option>";
                         $x += 1;
-                        }
+                        }                    
                     ?>  
             </select>            
             <h5>Jumlah</h5>

@@ -23,7 +23,7 @@
           $result= mysqli_query($con, $query) or die(mysqli_error($con));
           $result_arr = mysqli_fetch_assoc($result); /* DO YOUR QUERY HERE AND GET THE OUTPUT YOU WANT */
           ?>
-            <input type="number" id="jumlah" min="1" id="jumlah" max="<?php echo $result_arr['jumlah'];?>">
+            <input name="jumlah" type="number" id="jumlah" min="1" id="jumlah" max="<?php echo $result_arr['jumlah'];?>" >
           <?php
            /* PRINT THE OUTPUT YOU WANT, IT WILL BE RETURNED TO THE ORIGINAL PAGE */
           }
