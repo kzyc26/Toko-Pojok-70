@@ -28,34 +28,20 @@ $(document).ready(function(){
                 $("#contentview").html(result);
             }
         });
-    });
-    
+    });    
 });
 
-function gantiwarna(cbsize, cbcolor){
-    var cbsize = document.getElementById(cbsize);
-    var cbcolor = document.getElementById(cbcolor);
-    cbcolor.innerHTML = "";
-
-    
-
-    switch(idprod){
-        case "jawa-timur":
-            var arraypilihan = ["|", "surabaya|Surabaya", "malang|Malang"];
-            break;
-        case "jawa-tengah":
-            var arraypilihan = ["|", "semarang|Semarang", "boyolali|Boyolali"];
-            break;
-        case "jawa-barat":
-            var arraypilihan = ["|", "bandung|Bandung"];
-            break;
-    }
-
-    for(var pilihan in arraypilihan){
-        var pair = arraypilihan[pilihan].split("|");
-        var pilihanbaru = document.createElement("option");
-        pilihanbaru.value = pair[0];
-        pilihanbaru.innerHTML = pair[1];
-        sk.options.add(pilihanbaru);
-    }
+function sizechange(){
+    var cbsize = document.getElementById("size");
+    a = cbsize.options[cbsize.selectedIndex].value;
+    console.log(a);
+            $.ajax({
+                url: "queryjumlah.php",
+                method: "GET",
+                data: { a },
+                dataType: "html",
+                success: function(result){
+                    $("#contentview").html(result);
+                }
+            });
 }

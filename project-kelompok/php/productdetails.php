@@ -64,7 +64,7 @@ $id = "Null";
         <div class="addtocart">
         <form action="action-buy.php" method="post">
             <h5>Pilih Ukuran dan Warna</h5>                      
-            <select name="size" id ="size">
+            <select name="size" id ="size" onchange="sizechange();">
             <?php 
                     $query = "SELECT ukuran, warna, id_product_detail FROM `product_detail` where id_product='$g[id]'";         
                     $sql = mysqli_query($con, $query)  or die(mysqli_error($con));
@@ -78,11 +78,7 @@ $id = "Null";
                     ?>  
             </select>            
             <h5>Jumlah</h5>
-            <input type="number" min="1" id="jumlah" max="
-            <?php
-                
-            ?>
-            ">
+            <input type="number" min="1" id="jumlah" name="jumlah">
             <br><br><br>            
             <button type="submit" class="add btn btn-primary btnaddcart" onclick="showCheckout()" name="btnaddcart">Add to Cart</button>
             </form>

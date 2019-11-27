@@ -1,7 +1,7 @@
 <?php 
 session_start();
 require_once('db.php');
-
+$td_id = 0;
 if(isset($_POST['btnaddcart'])){
     $query_add_cart = "select id_product_detail from product_detail d, product p where p.id_product=d.id_product and ukuran = 'S' and warna = 'Putih - Biru' and p.id_product='".$_SESSION['id_prod']."';";
     $add_to_cart_execute = mysqli_query($con, $query_add_cart) or die(mysqli_error($con));
@@ -24,10 +24,16 @@ $sql = mysqli_query($con, $query);
     if ($ketemu==0){
         // kalau barang belum ada, maka di jalankan perintah insert
         $id_transaction = date("Ymd");
+        $td_id++;
+        $id_transaction_detail = $id_transaction."-".$td_id;
         $curdate= date("Y-m-d");
-        $query="INSERT INTO transaction VALUES ('$id_transaction', '$sid', '$curdate', 400000, '$username', 0, 'CSH', 0);";
-        $sql;
-        $query="INSERT INTO transaction_detail VALUES ('$id_det_prod', '".$_SESSION['id_prod']."', 'S', 'Putih - Biru', 1);";
+        
+        $total = (double)$_POST['harga'] * (double)$_POST['jumlah'];
+        $query="INSERT INTO transaction VALUES ('$id_transaction', '$sid', '$curdate', 400000, '$username', 0, 'CSH', 0);";        
+        // $sql;
+        $query="INSERT INTO transaction_detail VALUES ('$id_transaction_detail', '$id_transaction', '$id_det_prod', (double)$_POST['harga'], (double)$_POST['jumlah'], $total);";
+        echo $query;
+        die();
         $sql;
     } else {
         //  kalau barang ada, maka di jalankan perintah update

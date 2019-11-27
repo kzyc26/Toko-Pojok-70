@@ -45,7 +45,8 @@
     
 //           $result= mysqli_query($con, $query) or die(mysqli_error($con));
 //           $result_arr = mysqli_fetch_assoc($result); 
-          echo $_GET['product_detail_id'];
+          echo $_GET['a'];
+          die();
           if(!empty($_GET["variasi"])){
             $iddetbar = $_GET["variasi"];
             $query = "SELECT id_product_detail, jumlah FROM product_detail WHERE id_product_detail = '$iddetbar'";

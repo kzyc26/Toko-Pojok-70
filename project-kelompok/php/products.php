@@ -186,7 +186,7 @@
                 <img src='../assets/images/products/<?php echo $id; ?>.jpg' class='img-responsive object-fit'
                     style="height:200px;" />
                 <h5><?php echo $product['product_name']; ?></h5>
-                <p>
+                <p name="harga">
                     Rp.
                     <?php 
 								$price = $product['Price'];
@@ -204,7 +204,7 @@
                     $size_result= mysqli_fetch_array($sql);
                     ?>
                     <button type="button" class="btn btn-primary btnview " data-toggle="modal" data-target="#view"
-                        data-id="<?php echo $id;?>" onclick="gantiukuran(<?php $size_result ?>)"></i>
+                        data-id="<?php echo $id;?>"></i>
                         Quick View</button>
 
                     <div class="space-ten"></div>
