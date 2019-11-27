@@ -78,7 +78,8 @@ $id = "Null";
                     ?>  
             </select>            
             <h5>Jumlah</h5>
-            <input type="number" min="1" id="jumlah" name="jumlah">
+            <div id="nud_jumlah">
+            </div>
             <br><br><br>            
             <button type="submit" class="add btn btn-primary btnaddcart" onclick="showCheckout()" name="btnaddcart">Add to Cart</button>
             </form>

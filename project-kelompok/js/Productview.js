@@ -16,8 +16,7 @@ function showCheckout() {
 var productId;
 $(document).ready(function(){
     $('.btnview').on('click', function(){
-        productId = $(this).data('id');
-       
+        productId = $(this).data('id');     
 
         $.ajax({
             url: "productdetails.php",
@@ -26,22 +25,24 @@ $(document).ready(function(){
             dataType: "html",
             success: function(result){
                 $("#contentview").html(result);
+                document.getElementById("size").selectedIndex = "-1";
             }
         });
     });    
 });
 
-function sizechange(){
+function sizechange(){    
     var cbsize = document.getElementById("size");
-    a = cbsize.options[cbsize.selectedIndex].value;
-    console.log(a);
+    var a = cbsize.options[cbsize.selectedIndex].value;
+    // alert(a);
             $.ajax({
                 url: "queryjumlah.php",
                 method: "GET",
                 data: { a },
                 dataType: "html",
                 success: function(result){
-                    $("#contentview").html(result);
+                    $("#nud_jumlah").html(result);
+                    document.getElementById("jumlah").value = "1";
                 }
             });
 }
