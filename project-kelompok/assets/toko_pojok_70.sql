@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2.1
--- http://www.phpmyadmin.net
+-- version 4.9.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 28, 2019 at 09:37 AM
--- Server version: 5.7.28-0ubuntu0.16.04.2
--- PHP Version: 7.0.33-6+ubuntu16.04.1+deb.sury.org+3
+-- Host: 127.0.0.1
+-- Generation Time: Nov 28, 2019 at 05:23 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `store18_2`
+-- Database: `toko_pojok_70`
 --
 
 -- --------------------------------------------------------
@@ -69,7 +71,7 @@ CREATE TABLE `customer` (
   `kecamatan` varchar(100) DEFAULT NULL,
   `kelurahan` varchar(100) DEFAULT NULL,
   `kode_pos` varchar(50) DEFAULT NULL,
-  `alamat` text,
+  `alamat` text DEFAULT NULL,
   `username` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -104,15 +106,26 @@ INSERT INTO `delivery` (`id_delivery`, `delivery_status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `delivery_tracking`
+-- Table structure for table `delivery_details`
 --
 
-CREATE TABLE `delivery_tracking` (
-  `Id_delivery` varchar(20) NOT NULL,
-  `date` datetime NOT NULL,
-  `Delivery_status` varchar(45) NOT NULL,
-  `Transaction_id` varchar(20) NOT NULL
+CREATE TABLE `delivery_details` (
+  `transaction_id` varchar(20) NOT NULL,
+  `id_delivery` varchar(20) NOT NULL,
+  `alamat` text NOT NULL,
+  `kode_pos` varchar(50) NOT NULL,
+  `kelurahan` varchar(100) NOT NULL,
+  `kecamatan` varchar(100) NOT NULL,
+  `kab_kota` varchar(100) NOT NULL,
+  `provinsi` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `delivery_details`
+--
+
+INSERT INTO `delivery_details` (`transaction_id`, `id_delivery`, `alamat`, `kode_pos`, `kelurahan`, `kecamatan`, `kab_kota`, `provinsi`) VALUES
+('201911201', '0', 'aaaaaaaaaaaaa', '80976', 'bbbbb', 'ccccccc', 'ddddd', 'eeeee');
 
 -- --------------------------------------------------------
 
@@ -155,10 +168,10 @@ INSERT INTO `payment_method` (`id_payment_method`, `payment_method`) VALUES
 CREATE TABLE `product` (
   `id_product` varchar(20) NOT NULL,
   `id_category` varchar(20) NOT NULL,
-  `bundling` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `bundling` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `Product_name` varchar(45) NOT NULL,
   `Product_desc` longtext NOT NULL,
-  `min_stock` tinyint(2) UNSIGNED NOT NULL DEFAULT '0',
+  `min_stock` tinyint(2) UNSIGNED NOT NULL DEFAULT 0,
   `Price` bigint(20) UNSIGNED NOT NULL,
   `jumlah_foto` int(11) NOT NULL,
   `Discount_price` int(11) DEFAULT NULL
@@ -457,10 +470,11 @@ ALTER TABLE `delivery`
   ADD PRIMARY KEY (`id_delivery`);
 
 --
--- Indexes for table `delivery_tracking`
+-- Indexes for table `delivery_details`
 --
-ALTER TABLE `delivery_tracking`
-  ADD PRIMARY KEY (`Id_delivery`);
+ALTER TABLE `delivery_details`
+  ADD KEY `transaction_id` (`transaction_id`),
+  ADD KEY `id_delivery` (`id_delivery`);
 
 --
 -- Indexes for table `ekspedisi`
@@ -549,10 +563,11 @@ ALTER TABLE `wishlist`
 --
 
 --
--- Constraints for table `delivery_tracking`
+-- Constraints for table `delivery_details`
 --
-ALTER TABLE `delivery_tracking`
-  ADD CONSTRAINT `Id_delivery` FOREIGN KEY (`Id_delivery`) REFERENCES `delivery` (`id_delivery`);
+ALTER TABLE `delivery_details`
+  ADD CONSTRAINT `delivery_details_ibfk_1` FOREIGN KEY (`transaction_id`) REFERENCES `transaction` (`transaction_id`),
+  ADD CONSTRAINT `delivery_details_ibfk_2` FOREIGN KEY (`id_delivery`) REFERENCES `delivery` (`id_delivery`);
 
 --
 -- Constraints for table `product`
@@ -593,6 +608,7 @@ ALTER TABLE `user_voucher`
 ALTER TABLE `wishlist`
   ADD CONSTRAINT `FK_wishlist_1` FOREIGN KEY (`username`) REFERENCES `customer` (`username`),
   ADD CONSTRAINT `FK_wishlist_2` FOREIGN KEY (`Id_product_detail`) REFERENCES `product_detail` (`id_product_detail`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
