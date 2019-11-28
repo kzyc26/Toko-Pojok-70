@@ -131,10 +131,8 @@ if(isset($_POST['logout'])) {
                                 aria-labelledby="headingOne">
                                 <div class="panel-body">
                                     <ul>
-                                        <li class="submenu">Profile</li>
-                                        <li class="submenu">Bank and Cards</li>
-                                        <li class="submenu">Address</li>
-                                        <li class="submenu">Change Password</li>
+                                        <li class="submenu"><a>Profile</a></li>
+                                        <li class="submenu"><a>Change Password</a></li>
                                     </ul>
                                 </div>
                             </div>

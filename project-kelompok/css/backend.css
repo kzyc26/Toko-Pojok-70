@@ -1,6 +1,9 @@
 .result{
     position: absolute;
-    border-left:1px solid black ;
+   
+}
+.result h2{
+    text-align: center;
 }
 table tr,th,td{
     border:1px solid black;
@@ -12,6 +15,9 @@ table td,table th{
 }
 table{
   margin-top:20px;
+  margin-left: 30%;
   
-}
-
+}.seperator {
+    border-left: 6px solid black;
+    height: auto;
+  }

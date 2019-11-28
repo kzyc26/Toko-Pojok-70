@@ -5,7 +5,6 @@ document.querySelector('.customer_subtotal').style.display = 'none';
 document.querySelector('.productdetails').style.display = 'none';
 document.querySelector('.itemcategory').style.display = 'none';
 document.querySelector('.cartdetails').style.display = 'none';
-document.querySelector('.SubTotal').style.display = 'none';
 document.querySelector('.Wishlist').style.display = 'none';
 document.querySelector('.vouchercustomer').style.display = 'none';
 document.querySelector('.orderhistory').style.display = 'none';
@@ -24,7 +23,7 @@ function showuser() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -44,7 +43,7 @@ function showaccumulated() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -64,7 +63,7 @@ function showreview() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -84,7 +83,7 @@ function showcustsubtotal() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -104,7 +103,7 @@ function showproductdetails() {
     document.querySelector('.productdetails').style.display = 'block';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -124,7 +123,7 @@ function showitemscategory() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'block';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -144,7 +143,7 @@ function showcartdetails() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'block';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -156,25 +155,7 @@ function showcartdetails() {
     document.querySelector('.Discount').style.display = 'none';
 };
 
-function showsubtotal() {
-    document.querySelector('.user').style.display = 'none';
-    document.querySelector('.accumulated').style.display = 'none';
-    document.querySelector('.customerreview').style.display = 'none';
-    document.querySelector('.customer_subtotal').style.display = 'none';
-    document.querySelector('.productdetails').style.display = 'none';
-    document.querySelector('.itemcategory').style.display = 'none';
-    document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'block';
-    document.querySelector('.Wishlist').style.display = 'none';
-    document.querySelector('.vouchercustomer').style.display = 'none';
-    document.querySelector('.orderhistory').style.display = 'none';
-    document.querySelector('.alamat').style.display = 'none';
-    document.querySelector('.biodata').style.display = 'none';
-    document.querySelector('.oldpassword').style.display = 'none';
-    document.querySelector('.userdelivdetails').style.display = 'none';
-    document.querySelector('.bestseller').style.display = 'none';
-    document.querySelector('.Discount').style.display = 'none';
-};
+
 
 function showwishlist() {
     document.querySelector('.user').style.display = 'none';
@@ -184,7 +165,7 @@ function showwishlist() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'block';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -204,7 +185,7 @@ function showvoucher() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'block';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -224,7 +205,7 @@ function showorderhistory() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'block';
@@ -244,7 +225,7 @@ function showalamat() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -264,7 +245,7 @@ function showbiodata() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -284,7 +265,7 @@ function showoldpass() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -304,7 +285,7 @@ function showuserdeliverydetails() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -324,7 +305,7 @@ function showbestseller() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
@@ -344,7 +325,7 @@ function showdiscount() {
     document.querySelector('.productdetails').style.display = 'none';
     document.querySelector('.itemcategory').style.display = 'none';
     document.querySelector('.cartdetails').style.display = 'none';
-    document.querySelector('.SubTotal').style.display = 'none';
+    
     document.querySelector('.Wishlist').style.display = 'none';
     document.querySelector('.vouchercustomer').style.display = 'none';
     document.querySelector('.orderhistory').style.display = 'none';
