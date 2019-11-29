@@ -238,7 +238,6 @@
             <img src="https://img.icons8.com/nolan/64/000000/shopping-cart.png">
             <h5>Checkout</h5>
         </a>
-
     </div>
 
     <div class='row text-center'>

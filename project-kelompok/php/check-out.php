@@ -1,5 +1,7 @@
 <?php
 session_start();
+$sid = session_id();
+require_once('db.php');
 ?>
 
 <!DOCTYPE html>
@@ -184,32 +186,50 @@ if (isset($_POST['cart'])){
         <div class="panel-heading">
           <h3 class="panel-title">Purchased Items</h3>
         </div>
+        <?php    //jalankan perintah inner join dari tabel keranjang dan produk
+        $query = "SELECT Product_name, p.id_product, dt.id_product_detail, ukuran, warna, jumlah_product, Price FROM transaction_detail dt, transaction t, product p, product_detail dp WHERE session_id='$sid' AND dt.transaction_id = t.transaction_id and dt.id_product_detail = dp.id_product_detail and dp.id_product = p.id_product;";
+          $sql = mysqli_query($con, $query) or die(mysqli_error($con)); 
+          $total = null;            
+while($r = mysqli_fetch_assoc($sql)){
+        $subtotal    = $r['Price']* $r['jumlah_product'];
+        $total       = $total + $subtotal;
+         } 
+         ?>
         <div class="panel-body">
-          <h3>Subtotal: Rp. 300.000,00</h3>
+          <h3>Subtotal: Rp. <?php echo number_format($total,2,",","."); ?></h3>
           <div>
+<?php 
+$query = "SELECT Product_name, p.id_product, dt.id_product_detail, ukuran, warna, jumlah_product, Price FROM transaction_detail dt, transaction t, product p, product_detail dp WHERE session_id='$sid' AND dt.transaction_id = t.transaction_id and dt.id_product_detail = dp.id_product_detail and dp.id_product = p.id_product;";
+$sql = mysqli_query($con, $query) or die(mysqli_error($con)); 
+
+while($r = mysqli_fetch_assoc($sql)){ 
+  $id = $r['id_product'];
+  $size = $r['ukuran'];
+  $warna = $r['warna'];
+  $jumlah = $r['jumlah_product'];
+  ?>
             <div class="col-md-1 product"><input type="checkbox" checked="true"></div>
             <div class="col-md-1 product">
               <button type="submit form-control"><span class="glyphicon glyphicon-trash"></span></button>
             </div>
               <table>
                 <tr>
-                  <td class="pic"><img src="../assets/images/Slide 1.jpg" alt="" width="100%" height="auto"></td>
-                  <td>
+                  <td class="pic"><img src='../assets/images/products/<?php echo $id; ?>.jpg' style="height:200px;" /></td>
+                  <td class="qty pref">
                     <div>Size: </div>
-                    <select name="size" id="size" class="form-control" disabled>                      
-                    </select>
+                    <input type="text" name="size" id="size" class="form-control" placeholder="<?php echo $size; ?>">
                   </td>
                   <td class="pref">
                     <div>Color: </div>
-                    <select name="color" id="color" class="form-control" disabled>
-                    </select>
+                    <input type="text" name="warna" id="warna" class="form-control" placeholder="<?php echo $warna; ?>">
                   </td>
                   <td class="qty pref">
                     <div>Qty: </div>
-                    <input type="number" class="form-control" min="1" value="1" disabled>
+                    <input type="number" class="form-control" min="1" value="<?php echo $jumlah; ?>" disabled>
                   </td>
                 </tr>
               </table>
+<?php } ?>
           </div>
         </div>
       </div>

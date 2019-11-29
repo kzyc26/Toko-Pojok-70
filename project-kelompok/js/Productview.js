@@ -25,7 +25,8 @@ $(document).ready(function(){
             dataType: "html",
             success: function(result){
                 $("#contentview").html(result);
-                document.getElementById("size").selectedIndex = "-1";
+                document.getElementById("size").selectedIndex = "-1";                
+                document.querySelector('.btnaddcart').style.display = 'none';
             }
         });
     });    
@@ -43,6 +44,7 @@ function sizechange(){
                 success: function(result){
                     $("#nud_jumlah").html(result);
                     document.getElementById("jumlah").value = "1";
+                    document.querySelector('.btnaddcart').style.display = 'block';
                 }
             });
 }

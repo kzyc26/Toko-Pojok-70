@@ -60,7 +60,7 @@ h2{
 }
 
 .qty{
-    width: 15%;
+    width: 12%;
 }
 #payment-but{
     display: block;
@@ -82,4 +82,3 @@ h2{
       bottom: 0;
       width: 100%;
     }
-}
