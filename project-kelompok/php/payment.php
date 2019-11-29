@@ -63,7 +63,7 @@ if (isset($_POST['cart'])){
 
     <div class="content">
         <div class="row">
-            <div class="col-md-6 choose">
+            <div class="choose">
                 <div class="total">
                     <h2>SUBTOTAL : Rp.150.000,-
                     </h2>
@@ -84,19 +84,6 @@ if (isset($_POST['cart'])){
                 <div class="cbpolicy">
 <input type="checkbox" name="policy" value="agree"> I agree to the <a href="#">Payment Terms and Conditions</a>
                 </div>
-            </div>
-            <div class="col-md-6 confirm">
-                <h3>PAYMENT CONFIRMATION</h3>
-                <div class="addimg">
-                        <img src="https://img.icons8.com/carbon-copy/100/000000/image.png">
-                     <p>Drop Your Payment Invoice Here</p>
-                     <button>Choose file from my device</button>
-                </div>
-                <div class="buttonss">
-                <button class="btnconfirm"><a href="../php/Trace and Track.php">Submit</a></button><br>
-                    <button class="btnpaylater"><a href="../php/Trace and Track.php">Confirm Later</a></button>
-                </div>
-          
             </div>
         </div>
     </div>
