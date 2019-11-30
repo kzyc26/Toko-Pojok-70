@@ -62,6 +62,7 @@ table{
 
 .submenu:hover{
     background-color: #E2EDFF;
+    cursor:pointer;
 }
 ul{
     list-style-type: none;
@@ -95,4 +96,5 @@ text-align: center;
     border:1px solid black;
     text-align: center;
 }
+.error p{color:pink;}
 

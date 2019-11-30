@@ -7,11 +7,6 @@ function myFunction(imgs) {
     expandImg.parentElement.style.display = "block";
     document.getElementsByClassName("column").style.borderColor = "blue";
 }
-document.querySelector('.floatbutton').style.display = 'none';
-
-function showCheckout() {
-    document.querySelector('.floatbutton').style.display = 'block';
-}
 
 var productId;
 $(document).ready(function(){
@@ -25,7 +20,8 @@ $(document).ready(function(){
             dataType: "html",
             success: function(result){
                 $("#contentview").html(result);
-                document.getElementById("size").selectedIndex = "-1";
+                document.getElementById("size").selectedIndex = "-1";                
+                document.querySelector('.btnaddcart').style.display = 'none';
             }
         });
     });    
@@ -43,6 +39,7 @@ function sizechange(){
                 success: function(result){
                     $("#nud_jumlah").html(result);
                     document.getElementById("jumlah").value = "1";
+                    document.querySelector('.btnaddcart').style.display = 'block';
                 }
             });
 }

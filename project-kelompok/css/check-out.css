@@ -1,5 +1,6 @@
 .content{
     font-family: 'Lato', sans-serif;
+min-height: 400px;
 }
 
 .row{
@@ -60,7 +61,7 @@ h2{
 }
 
 .qty{
-    width: 15%;
+    width: 12%;
 }
 #payment-but{
     display: block;
@@ -76,10 +77,19 @@ h2{
     font-size: medium;
     font-weight: bolder;
 }
+
+.total, .modal-body{
+    text-align: center;
+    top: 0;
+}
+
+h3 {
+    text-align: center;
+}
+
 .footer{
     background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
       left: 0;
       bottom: 0;
       width: 100%;
     }
-}

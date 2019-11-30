@@ -35,10 +35,10 @@ $id = "Null";
     </div>
     <div class='col-md-5'>
         <div class="imagecollection">
-            <img src="../assets/images/products/<?php echo $g['id'];?>.jpg" id="firstpreview" class="firstpic">
+            <img src="../assets/images/Products/<?php echo $g['id'];?>.jpg" id="firstpreview" class="firstpic">
             <div class="row">
                 <div class="column">
-                    <img src="../assets/images/products/<?php echo $g['id'];?>.jpg" onclick="myFunction(this);">
+                    <img src="../assets/images/Products/<?php echo $g['id'];?>.jpg" onclick="myFunction(this);">
                 </div>
                 <?php
                 $jumlahfoto= intval($limit_details['jumlah_foto']);
@@ -46,7 +46,7 @@ $id = "Null";
                 if($jumlahfoto>0){
                     while($jumlahfoto>=$i){?>
                 <div class="column">
-                    <img src="../assets/images/products/<?php echo $g['id'];?>-<?php echo $i;?>.jpg" onclick="myFunction(this);">
+                    <img src="../assets/images/Products/<?php echo $g['id'];?>-<?php echo $i;?>.jpg" onclick="myFunction(this);">
                 </div>
                 <?php 
                 $i++;
@@ -79,7 +79,7 @@ $id = "Null";
             <div id="nud_jumlah">
             </div>
             <br><br><br>            
-            <button type="submit" class="add btn btn-primary btnaddcart" onclick="showCheckout()" name="btnaddcart">Add to Cart</button>
+            <button type="submit" class="add btn btn-primary btnaddcart" name="btnaddcart">Add to Cart</button>
             </form>
         </div>
     </div>

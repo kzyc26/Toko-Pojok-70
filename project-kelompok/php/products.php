@@ -183,7 +183,7 @@
           
 				?>
             <div class="product-thumbnail">
-                <img src='../assets/images/products/<?php echo $id; ?>.jpg' class='img-responsive object-fit'
+                <img src='../assets/images/Products/<?php echo $id; ?>.jpg' class='img-responsive object-fit'
                     style="height:200px;" />
                 <h5><?php echo $product['product_name']; ?></h5>
                 <p name="harga">
@@ -234,11 +234,10 @@
 
     </div>
     <div class="floatbutton">
-        <a href="../php/" class="float">
+        <a href="../php/check-out.php" class="float">
             <img src="https://img.icons8.com/nolan/64/000000/shopping-cart.png">
             <h5>Checkout</h5>
         </a>
-
     </div>
 
     <div class='row text-center'>

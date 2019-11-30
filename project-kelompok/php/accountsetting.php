@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('db.php');
 if (isset($_POST['user'])){
     if(isset($_SESSION['username'])){
       header("location: accountsetting.php");
@@ -25,6 +26,10 @@ if(isset($_POST['logout'])) {
         header("Location: index.php"); // Redirecting To Home Page
     }
 }
+$cmd_profile ="SELECT fullname, telepon,jenis_kelamin,provinsi, kab_kota,kecamatan,kelurahan,kode_pos,alamat,PASSWORD
+from customer where username='".$_SESSION['username']."'";
+$profile_result= mysqli_query($con,$cmd_profile) or die(mysqli_error($con));
+$profile=mysqli_fetch_assoc($profile_result);
 ?>
 
 <!DOCTYPE html>
@@ -38,24 +43,25 @@ if(isset($_POST['logout'])) {
 </head>
 
 <body>
-<nav class="navbar navbar-default">
-                <div class="container-fluid">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                      data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="../php/index.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
-            
-                  </div>
-            
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <!-- <ul class="nav navbar-nav">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../php/index.php"><img src="../assets/images/99818.png"
+                        class="logo-toko"></a>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- <ul class="nav navbar-nav">
                       <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                       <li><a href="#">Link</a></li>
                       <li class="dropdown">
@@ -72,17 +78,18 @@ if(isset($_POST['logout'])) {
                         </ul>
                       </li>
                     </ul> -->
-                    <form class="navbar-form navbar-left">
-                      <div class="form-group">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
-                      </div>
-                      <a href="../php/products.php"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
-                    </form>
-                    <ul class="nav navbar-nav navbar-right">
-                      <li><a href="../php/check-out.php"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                      <li><a href="../php/login.php"><span class="glyphicon glyphicon-user"></span></a></li>
-                      <li><a href="../php/Trace and Track.php"><span class="glyphicon glyphicon-inbox"></span></a></li>
-                      <!-- <li class="dropdown">
+                    </div>
+                    <a href="../php/products.php"><button type="button" class="btn btn-default"><span
+                                class="glyphicon glyphicon-search"></span></button></a>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../php/check-out.php"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                    <li><a href="../php/login.php"><span class="glyphicon glyphicon-user"></span></a></li>
+                    <li><a href="../php/Trace and Track.php"><span class="glyphicon glyphicon-inbox"></span></a></li>
+                    <!-- <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                           aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -93,17 +100,17 @@ if(isset($_POST['logout'])) {
                           <li><a href="#">Separated link</a></li>
                         </ul>
                       </li> -->
-                    </ul>
-                  </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-              </nav>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
     <div class="content">
         <div class="row">
             <div class="col-md-3 profilemenu">
-                <div class="profilesetting">                    
+                <div class="profilesetting">
                     <img class="profpic" src="https://img.icons8.com/officel/80/000000/user-female-circle.png">
                     <h3>
-                    <?php 
+                        <?php 
                     require('db.php');
                     $query = "SELECT * from `customer` where `username`='".$_SESSION['username']."' LIMIT 1;";
                     $result = mysqli_query($con,$query) or die(mysqli_error());
@@ -111,10 +118,10 @@ if(isset($_POST['logout'])) {
                     echo $row['fullname'];
                     ?>
                     </h3>
-                <form method="post" action="accountsetting.php">
-                    <button type="submit" class="btn btn-info changepic" name="changepic">Change Picture</button>
-                    <button type="submit" class="btn btn-info logout" name="logout">Log Out</button>
-                </form>
+                    <form method="post" action="accountsetting.php">
+                        <button type="submit" class="btn btn-info changepic" name="changepic">Change Picture</button>
+                        <button type="submit" class="btn btn-info logout" name="logout">Log Out</button>
+                    </form>
                 </div>
                 <div class="categories">
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -122,7 +129,7 @@ if(isset($_POST['logout'])) {
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
                                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                        aria-expanded="true" aria-controls="collapseOne" onclick="changeaccount()">
+                                        aria-expanded="true" aria-controls="collapseOne">
                                         My Account
                                     </a>
                                 </h4>
@@ -131,8 +138,8 @@ if(isset($_POST['logout'])) {
                                 aria-labelledby="headingOne">
                                 <div class="panel-body">
                                     <ul>
-                                        <li class="submenu"><a>Profile</a></li>
-                                        <li class="submenu"><a>Change Password</a></li>
+                                        <li class="submenu"><a onclick="changeaccount()">Profile</a></li>
+                                        <li class="submenu"><a onclick="changepass()">Change Password</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -142,7 +149,7 @@ if(isset($_POST['logout'])) {
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
-                                        onclick="showhistory()">
+                                        >
                                         Order History
                                     </a>
                                 </h4>
@@ -151,10 +158,10 @@ if(isset($_POST['logout'])) {
                                 aria-labelledby="headingTwo">
                                 <div class="panel-body">
                                     <ul>
-                                        <li class="submenu"><a>All</a></li>
-                                        <li class="submenu"><a>Completed</a></li>
-                                        <li class="submenu"><a>Ongoing</a></li>
-                                        <li class="submenu"><a>Unpaid</a></li>
+                                        <li class="submenu"><a class="history"  data-status="3" >All</a></li>
+                                        <li class="submenu" ><a class="history"  data-status="2" >Completed</a></li>
+                                        <li class="submenu"><a class="history"  data-status="1"  >Ongoing</a></li>
+                                        <li class="submenu " ><a class="history" data-status="0" >Unpaid</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -215,7 +222,7 @@ if(isset($_POST['logout'])) {
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 informations">
+            <div class="col-md-8 informations" id="informations">
                 <div class="subcatprofile" id="subcatprofiles">
                     <div class="profiledetails">
                         <h2>Profile</h2>
@@ -225,22 +232,30 @@ if(isset($_POST['logout'])) {
                                     <div class="tulisan">Nama Lengkap</div>
                                 </td>
                                 <td><input type="type" id="nama-lengkap" class="form-control pendek"
-                                        placeholder="Nama Lengkap" disabled autofocus=""></td>
+                                      placeholder="<?php echo strval($profile['fullname']);?>"   disabled autofocus=""> </td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="tulisan">No. Telepon</div>
                                 </td>
                                 <td><input type="tel" id="no-telp" class="form-control pendek"
-                                        placeholder="+62 81637829xxx" disabled></td>
+                                        placeholder="<?php echo strval($profile['telepon']);?>" disabled></td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="tulisan">Jenis Kelamin</div>
                                 </td>
-                                <td><input class="gender" type="checkbox" value="female" disabled> Female
+                                <?php if(strtolower(strval($profile['jenis_kelamin']))=="female"){
+                                    $female="Checked";
+                                    $male ="";} else if (strtolower(strval($profile['jenis_kelamin']))=="male"){
+                                        $male="Checked";
+                                        $female ="";
+                                    }
+                                
+                                ?>
+                                <td><input class="gender" type="checkbox" value="female" disabled <?php echo $female;?>> Female
                                     <br>
-                                    <input class="gender" type="checkbox" value="male" disabled> Male
+                                    <input class="gender" type="checkbox" value="male" disabled <?php  echo $male;?>> Male
                                 </td>
                             </tr>
                             <tr>
@@ -253,7 +268,7 @@ if(isset($_POST['logout'])) {
                                 <td><select name="provinsi" id="provinsi" class="form-control pendek"
                                         onchange="gantikab(this.id, 'kabkota')" disabled>
                                         <option value=""></option>
-                                        <option value="jawa-timur">Jawa Timur</option>
+                                        <option value="jawa-timur" >Jawa Timur</option>
                                         <option value="jawa-tengah">Jawa Tengah</option>
                                         <option value="jawa-barat">Jawa Barat</option>
                                     </select></td>
@@ -283,62 +298,27 @@ if(isset($_POST['logout'])) {
                                 <td>
                                     <div class="tulisan">Kode Pos</div>
                                 </td>
-                                <td><input type="text" id="kodepos" class="form-control pendek" placeholder="Kodepos"
+                                <td><input type="text" id="kodepos" class="form-control pendek" placeholder="<?php echo $profile['kode_pos'];?>"
                                         required="" disabled></td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="tulisan">Alamat</div>
                                 </td>
-                                <td><input type="text" id="alamat" class="form-control panjang" placeholder="Alamat"
+                                <td><input type="text" id="alamat" class="form-control panjang" placeholder="<?php echo $profile['alamat'];?>"
                                         required="" disabled></td>
                             </tr>
                         </table>
 
                     </div>
-                    <div class="Bankdetails">
-                        banks
-                    </div>
-                    <div class="Addressdetails">
-                        address
-                    </div>
-                    <div class="changepass">
-                        nantinya berupa input
-                    </div>
+                    
                 </div>
-                <div class="subcatorderhistory">
-                    <h2>Order History</h2>
-                    <h4 class="historycat"></h4>
-                    <table class="histories">
-                        <tr>
-                            <th><a>Order ID</a></th>
-                            <th>Date/Time</th>
-                            <th>Description</th>
-                        </tr>
-                        <tr>
-                            <td>0e930423803</td>
-                            <td>09-10-2019 / 09:30</td>
-                            <td>Order Completed</td>
-                        </tr>
+                <div class ="subcatchangepass">
+                <H2> Change Your Password </h2>
+                </div>
 
-                        <tr>
-                            <td>0e930423803</td>
-                            <td>09-10-2019 / 09:30</td>
-                            <td>Order Completed</td>
-                        </tr>
-
-                        <tr>
-                            <td>0e930423803</td>
-                            <td>09-10-2019 / 09:30</td>
-                            <td>Order Completed</td>
-                        </tr>
-
-                        <tr>
-                            <td>0e930423803</td>
-                            <td>09-10-2019 / 09:30</td>
-                            <td>Order Completed</td>
-                        </tr>
-                    </table>
+                <div class="subcatorderhistory" id="historyinfo">
+                   
                 </div>
                 <div class="subcatnotifications">
                     <h2>Notifications</h2>
@@ -528,7 +508,7 @@ if(isset($_POST['logout'])) {
 
             <br><br>
 
-         
+
         </div>
     </div>
     <footer class="footer">
@@ -548,13 +528,14 @@ if(isset($_POST['logout'])) {
             </div>
 
         </div>
-        </footer>
-        <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
-        <link href="../css/template.css" rel="stylesheet">
-        <link href="../css/accountsetting.css" rel="stylesheet">
+    </footer>
+    <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/template.css" rel="stylesheet">
+    <link href="../css/accountsetting.css" rel="stylesheet">
 
-        <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
-        <script src="../js/accountsetting.js"></script>
+    <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+    <script src="../js/accountsetting.js"></script>
 
 </body>
+
 </html>
