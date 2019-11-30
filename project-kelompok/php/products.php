@@ -234,7 +234,7 @@
 
     </div>
     <div class="floatbutton">
-        <a href="../php/" class="float">
+        <a href="../php/check-out.php" class="float">
             <img src="https://img.icons8.com/nolan/64/000000/shopping-cart.png">
             <h5>Checkout</h5>
         </a>

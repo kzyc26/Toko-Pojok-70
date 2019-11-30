@@ -1,5 +1,6 @@
 .content{
     font-family: 'Lato', sans-serif;
+min-height: 400px;
 }
 
 .row{
@@ -80,6 +81,10 @@ h2{
 .total, .modal-body{
     text-align: center;
     top: 0;
+}
+
+h3 {
+    text-align: center;
 }
 
 .footer{

@@ -79,7 +79,7 @@ $id = "Null";
             <div id="nud_jumlah">
             </div>
             <br><br><br>            
-            <button type="submit" class="add btn btn-primary btnaddcart" onclick="showCheckout()" name="btnaddcart">Add to Cart</button>
+            <button type="submit" class="add btn btn-primary btnaddcart" name="btnaddcart">Add to Cart</button>
             </form>
         </div>
     </div>

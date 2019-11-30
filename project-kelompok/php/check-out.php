@@ -67,6 +67,11 @@ if (isset($_POST['cart'])){
     </div><!-- /.container-fluid -->
   </nav>
 
+  <?php 
+$query = "SELECT Product_name, p.id_product, dt.id_product_detail, ukuran, warna, jumlah_product, Price FROM transaction_detail dt, transaction t, product p, product_detail dp WHERE session_id='$sid' AND dt.transaction_id = t.transaction_id and dt.id_product_detail = dp.id_product_detail and dp.id_product = p.id_product;";
+$sql = mysqli_query($con, $query) or die(mysqli_error($con));
+$ketemu = mysqli_num_rows($sql);
+if($ketemu !== 0){ ?>
   <span class="col-md-6 col-sm-12 judulgeser">
     <h2>Delivery Details</h2>
   </span>
@@ -192,7 +197,7 @@ if (isset($_POST['cart'])){
       <div class="panel-heading">
         <h3 class="panel-title">Purchased Items</h3>
       </div>
-      <?php    //jalankan perintah inner join dari tabel keranjang dan produk
+      <?php   
         $query = "SELECT Product_name, p.id_product, dt.id_product_detail, ukuran, warna, jumlah_product, Price FROM transaction_detail dt, transaction t, product p, product_detail dp WHERE session_id='$sid' AND dt.transaction_id = t.transaction_id and dt.id_product_detail = dp.id_product_detail and dp.id_product = p.id_product;";
           $sql = mysqli_query($con, $query) or die(mysqli_error($con)); 
           $total = null;            
@@ -240,7 +245,6 @@ while($r = mysqli_fetch_assoc($sql)){
       </div>
     </div>
   </div>
-
   <button type="button" id="payment-but" data-toggle="modal" data-target="#pay"><img
       src="../assets/images/Cash.png">Payment</button>  
   <div class="modal fade product_view" id="pay">
@@ -278,6 +282,14 @@ while($r = mysqli_fetch_assoc($sql)){
       </div>
     </div>
   </div>
+  <?php } else {
+    ?>
+    <div class="content">
+<h2> Your cart is empty </h2>
+<h3><a href="products.php"> Click here </a> to shop <h3>
+</div>
+    <?php 
+  } ?>
   </form>
 
   <footer class="footer">

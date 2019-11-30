@@ -7,11 +7,6 @@ function myFunction(imgs) {
     expandImg.parentElement.style.display = "block";
     document.getElementsByClassName("column").style.borderColor = "blue";
 }
-document.querySelector('.floatbutton').style.display = 'none';
-
-function showCheckout() {
-    document.querySelector('.floatbutton').style.display = 'block';
-}
 
 var productId;
 $(document).ready(function(){
