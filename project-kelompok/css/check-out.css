@@ -76,6 +76,12 @@ h2{
     font-size: medium;
     font-weight: bolder;
 }
+
+.total, .modal-body{
+    text-align: center;
+    top: 0;
+}
+
 .footer{
     background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
       left: 0;
