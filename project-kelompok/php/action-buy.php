@@ -22,7 +22,7 @@ if ($ketemu == 0){
     $ketemu=mysqli_num_rows($sql);
     $t_id = $ketemu +1;
     $id_transaction = date("Ymd").$t_id;
-    $query="INSERT INTO transaction VALUES ('$id_transaction', '$sid', '$curdate', 0, '$username', 0, 'N', 0);";
+    $query="INSERT INTO transaction VALUES ('$id_transaction', '$sid', '$curdate', 0, '$username', 0, 'N', 0, 0);";
     $sql = mysqli_query($con, $query) or die(mysqli_error($con));
 }else{
     $get_id_t = mysqli_fetch_assoc($sql);
@@ -41,7 +41,7 @@ $sql = mysqli_query($con, $query);
         $harga = (double)$hasil['Price'];
         $subtotal = $harga * (double)$_POST['jumlah'];
 
-        $query = "SELECT * FROM `transaction_detail` WHERE transaction_id = '$id_transaction'" ;
+        $query = "SELECT * FROM `transaction_detail` td, transaction t WHERE td.transaction_id = '$id_transaction' and td.transaction_id = t.transaction_id and transaction_status = 0;" ;
         $sql = mysqli_query($con, $query) or die(mysqli_error($con));
         $ketemu=mysqli_num_rows($sql);
         $td_id = $ketemu + 1;
