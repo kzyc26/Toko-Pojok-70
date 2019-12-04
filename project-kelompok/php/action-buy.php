@@ -52,7 +52,8 @@ $sql = mysqli_query($con, $query);
         //  kalau barang ada, maka di jalankan perintah update
         $query="UPDATE transaction_detail d, transaction t SET jumlah_product = jumlah_product + $_POST[jumlah] WHERE session_id ='$sid' AND id_product_detail='$id_det_prod'";        
     }
-    $sql = mysqli_query($con, $query) or die(mysqli_error($con));   
+    $sql = mysqli_query($con, $query) or die(mysqli_error($con));
+    echo '<script> alert("Berhasil dimasukkan ke keranjang"); </script>';
     header('Location: products.php');    
 }
 ?>

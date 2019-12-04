@@ -37,7 +37,7 @@ if($ketemu !== 0){ ?>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">E-mail Penerima</div>
-            <div class="col-md-8"><input type="email" id="email" class="form-control pendek"
+            <div class="col-md-8"><input type="email" id="email" name="email" class="form-control pendek"
                 placeholder="email@mail.com"></div>
           </div>
         </div>
@@ -52,7 +52,7 @@ if($ketemu !== 0){ ?>
           <div class="row">
             <div class="col-md-4 tulisan">Opsi Pengiriman</div>
             <div class="col-md-8">
-              <select name="pengiriman" id="pengiriman" name="pengiriman" class="form-control pendek" required="">
+              <select name="pengiriman" id="pengiriman" class="form-control pendek" required="">
                 <option value=""></option>
                 <option value="jne-reg">JNE Reguler</option>
                 <option value="jne-eks">JNE Ekspress</option>
@@ -143,7 +143,9 @@ if($ketemu !== 0){ ?>
 while($r = mysqli_fetch_assoc($sql)){
         $subtotal    = $r['Price']* $r['jumlah_product'];
         $total       = $total + $subtotal;
-         } 
+         }
+         $query = "UPDATE transaction set total_transaction = $total";
+         $sql = mysqli_query($con, $query) or die(mysqli_error($con));
          ?>
       <div class="panel-body">
         <h3>Total: Rp. <?php echo number_format($total,2,",","."); ?></h3>
@@ -167,11 +169,11 @@ while($r = mysqli_fetch_assoc($sql)){
               <td class="pic"><img src='../assets/images/products/<?php echo $id; ?>.jpg' style="height:200px;" /></td>
               <td class="qty pref">
                 <div>Size: </div>
-                <input type="text" name="size" id="size" class="form-control" placeholder="<?php echo $size; ?>">
+                <input type="text" name="size" id="size" class="form-control" placeholder="<?php echo $size; ?>" disabled>
               </td>
               <td class="pref">
                 <div>Color: </div>
-                <input type="text" name="warna" id="warna" class="form-control" placeholder="<?php echo $warna; ?>">
+                <input type="text" name="warna" id="warna" class="form-control" placeholder="<?php echo $warna; ?>" disabled>
               </td>
               <td class="qty pref">
                 <div>Qty: </div>

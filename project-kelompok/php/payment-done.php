@@ -15,16 +15,20 @@ if(isset($_POST['button_pay'])){
     $kecamatan = $p['kecamatan'];
     $kabkota = $p['kabkota'];
     $provinsi = $p['provinsi'];
+    $ekspedisi = $p['pengiriman'];
+    $nama = $p['nama'];
+    $telp = $p['telp'];
+    $email = $p['email'];
 
     //insert delivery details
-    $query = "INSERT INTO delivery_details VALUES ('$t_id', 0, '$alamat', '$kodepos', '$kelurahan', '$kecamatan', '$kabkota', '$provinsi', '-');";
+    $query = "INSERT INTO delivery_details VALUES ('$t_id', 0, '$alamat', '$kodepos', '$kelurahan', '$kecamatan', '$kabkota', '$provinsi', '-', '$nama', '$telp', '$email', '$ekspedisi');";
     $sql = mysqli_query ($con, $query) or die(mysqli_error($con));
 
     //set the transaction_status
     $query="UPDATE transaction set transaction_status = 1 where transaction_id='$t_id'";
     $sql = mysqli_query ($con, $query) or die(mysqli_error($con));
-
-    echo "<script> alert('Pesanan berhasil dibuat, silakan tunggu pembayaran Anda dikonfirmasi!'); </script>";
+    echo '<script> alert("Pesanan berhasil dibuat, silakan tunggu pembayaran Anda dikonfirmasi!"); </script>';
+    session_regenerate_id();
     header("location: index.php");
     // echo $query;
     // die();
