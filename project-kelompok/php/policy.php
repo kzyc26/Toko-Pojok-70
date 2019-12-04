@@ -1,6 +1,5 @@
 
 <?php
-session_start();
 $page="User Terms and Conditions";
 require_once('navbar.php');
 ?>

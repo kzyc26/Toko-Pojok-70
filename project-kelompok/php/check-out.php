@@ -1,8 +1,6 @@
 <?php
-session_start();
 $sid = session_id();
 $page = "Check Out";
-require_once('db.php');
 require_once('navbar.php');
 ?>
 

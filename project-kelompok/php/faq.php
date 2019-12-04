@@ -1,5 +1,4 @@
 <?php
-session_start();
 $page="Frequently Asked Questions";
 require_once('navbar.php');
 ?>

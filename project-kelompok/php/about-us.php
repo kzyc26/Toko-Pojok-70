@@ -1,5 +1,4 @@
 <?php
-session_start();
 $page="About Us";
 require_once('navbar.php');
 ?>

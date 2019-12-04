@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once('db.php');
 if(isset($_POST['btnaddcart'])){    
@@ -22,7 +22,7 @@ if ($ketemu == 0){
     $ketemu=mysqli_num_rows($sql);
     $t_id = $ketemu +1;
     $id_transaction = date("Ymd").$t_id;
-    $query="INSERT INTO transaction VALUES ('$id_transaction', '$sid', '$curdate', 0, '$username', 0, 'N', 0, 0);";
+    $query="INSERT INTO transaction VALUES ('$id_transaction', '$sid', '$curdate', 0, '$username', 0, 'N', 0, 0, 20000);";
     $sql = mysqli_query($con, $query) or die(mysqli_error($con));
 }else{
     $get_id_t = mysqli_fetch_assoc($sql);

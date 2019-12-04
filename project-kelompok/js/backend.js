@@ -336,6 +336,7 @@ function showdiscount() {
     document.querySelector('.bestseller').style.display = 'none';
     document.querySelector('.Discount').style.display = 'block';
 };
+
 function categorychange(){    
     var cbcat = document.getElementById("listcategory");
     var cat = cbcat.options[cbcat.selectedIndex].value;

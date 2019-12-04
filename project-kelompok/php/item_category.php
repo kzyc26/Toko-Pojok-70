@@ -1,10 +1,8 @@
 <?php
 session_start();
 require_once('db.php');
-$g=$_GET;
 if(isset($g['cat'])){
     $cat_id=$g['cat'];
-
 }
 ?> <script> alert(<?php echo  $cat_id ?>);</script><?php
 $Cmd_items_category ="SELECT id_product,product_name,price,category_name
