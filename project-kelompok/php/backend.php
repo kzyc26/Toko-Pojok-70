@@ -123,54 +123,24 @@ where t.username=c.username and payment_status <> 0";
    $voucher_count = mysqli_num_rows($voucher_result);
 
    if (isset($_POST['search'])){
-    function search($hasil){
+    $hasil = $_POST['keyword'];
       $query = "SELECT * FROM product WHERE Product_name LIKE '%$hasil%'";
       $sql_prod = mysqli_query($con, $query) or die(mysqli_error($con));
-      $hitung_prod = mysqli_num_rows($sql);
-      $prod = mysqli_fetch_assoc($sql);
+      $hitung_prod = mysqli_num_rows($sql_prod);
+      $prod = mysqli_fetch_all($sql_prod);
   
       $query = "SELECT * FROM category WHERE category_name LIKE '%$hasil%'";
       $sql_cat = mysqli_query($con, $query) or die(mysqli_error($con));
-      $hitung_cat = mysqli_num_rows($sql);
-      $cat = mysqli_fetch_assoc($sql);
+      $hitung_cat = mysqli_num_rows($sql_cat);
+      $cat = mysqli_fetch_all($sql_cat);
       if ($hitung_prod !== 0){ ?>
-        <h2>Result</h2>
-                <table class="search">
-                    <tr>
-                        <th>Id Product</th>
-                        <th>Product Name</th>
-                        <th>Price</th>
-                    </tr>
-                    <?php                        
-                        $i=1;
-                        if ($hitung_prod>0){while($i <= $hitung_prod){ ?>
-                    <tr>
-                        <td> <?php echo $prod[$i-1][0];?></td>
-                        <td> <?php echo $prod[$i-1][3];?></td>
-                        <td> <?php echo $prod[$i-1][6];?></td>
-                    </tr>
-                    <?php $i++; }
-                         } ?>
-
-                </table>
-                <?php
-      } elseif ($hitung_cat !== 0){
-        
-      } else {
-        
-        echo '<script> alert("Sorry, keyword does not match."); </script>';
-      }
-    }
-    
-    search($_POST['keyword']);
-    
-  }
-    ?>
+          
     <form action="" method="post">
-    <div class="form-group">
+    <br/><br/>
+    <div class="search">
             <input type="text" name="keyword" class="form-control" placeholder="Search" autofocus autocomplete="off">
           </div>
-          <button type="submit" name="search" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+          <button type="submit" name="search" class="btn btn-default" onclick="showsearchresult()"><span class="glyphicon glyphicon-search"></span></button>
     </form>
     <div class="container">
         <div class="row">
@@ -215,6 +185,51 @@ where t.username=c.username and payment_status <> 0";
             </div>
             <div class="col-md-9 result">
                 <h2>Result</h2>
+                <table class="hasil_search">
+                <tr>
+                    <th>Id Product</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                </tr>
+                <?php                        
+                    $i=0;
+                    if ($hitung_prod>0){while($i <= $hitung_prod-1){ ?>
+                <tr>
+                    <td> <?php echo $prod[$i][0];?></td>
+                    <td> <?php echo $prod[$i][3];?></td>
+                    <td> <?php echo $prod[$i][6];?></td>
+                </tr>
+                <?php $i++; }
+                     } ?>
+
+            </table>
+            <?php
+  } elseif ($hitung_cat !== 0){ ?>
+    <table class="hasil_search">
+        <tr>
+            <th>Id Category</th>
+            <th>Category Name</th>
+            <th>Gender</th>
+        </tr>
+        <?php                        
+            $i=0;
+            if ($hitung_cat>0){while($i <= $hitung_cat-1){ ?>
+        <tr>
+            <td> <?php echo $cat[$i][0];?></td>
+            <td> <?php echo $cat[$i][1];?></td>
+            <td> <?php echo $cat[$i][2];?></td>
+        </tr>
+        <?php $i++; }
+             } ?>
+
+    </table> 
+    <?php
+  } else {
+    
+    echo '<script> alert("Sorry, keyword does not match."); </script>';
+  }
+}
+?>
                 <table class="user">
                     <tr>
                         <th>Username</th>

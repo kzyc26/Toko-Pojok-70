@@ -19,9 +19,8 @@ require_once('db.php');
 <?php
 if (isset($_POST['search'])){  
   $_SESSION['keyword'] = $_POST['keyword'];
-
+  $hasil = $_POST['keyword'];
   
-  function search($hasil){
     $query = "SELECT * FROM product WHERE Product_name LIKE '%$hasil%'";
     $sql_prod = mysqli_query($con, $query) or die(mysqli_error($con));
     $hitung_prod = mysqli_num_rows($sql);
@@ -41,11 +40,7 @@ if (isset($_POST['search'])){
       unset($_SESSION['hasil_search']);
       unset($_SESSION['rows']);
       echo '<script> alert("Sorry, keyword does not match."); </script>';
-    }
-  }
-  
-  search($_POST['keyword']);
-  
+    } 
 }
 
 if (isset($_POST['user'])){
@@ -84,7 +79,7 @@ if (isset($_POST['cart'])){
           </div>
           <button type="submit" name="search" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
         </form>
-        <form action="index.php" method="post">
+        <form action="index.php" method="POST">
         <ul class="nav navbar-nav navbar-right">
           <li><span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input type="submit" class="btn btn-default" name="cart" value=""></span></li>
           <li><span class="icon-input-btn"><span class="glyphicon glyphicon-user"></span> <input type="submit" class="btn btn-default posisi" name="user" value=""></span></li>
