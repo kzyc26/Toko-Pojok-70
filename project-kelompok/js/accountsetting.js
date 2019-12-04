@@ -1,12 +1,14 @@
-document.getElementById('provinsi').value= <?php echo $profile['provinsi'];?>;
+
+
 document.querySelector('.subcatchangepass').style.display='none';
 document.querySelector('.subcatwish').style.display = 'none';
 document.querySelector('.subcatprofile').style.display = 'none';
 document.querySelector('.subcatnotifications').style.display = 'none';
-document.querySelector('.subcatorderhistory').style.display = 'none';
+document.querySelector('.subcatorderhistory').style.display = 'block';
 document.querySelector('.subcatvoucher').style.display = 'none';
 document.querySelector('.subcatpolicy').style.display = 'none';
 
+var passwordmatch
 
 function changeaccount(){
     document.querySelector('.subcatchangepass').style.display='none';
@@ -16,7 +18,7 @@ function changeaccount(){
     document.querySelector('.subcatorderhistory').style.display = 'none';
     document.querySelector('.subcatvoucher').style.display = 'none';
     document.querySelector('.subcatpolicy').style.display = 'none';
-    
+
 };
 function changetovoucher(){
     document.querySelector('.subcatchangepass').style.display='none';
@@ -29,6 +31,7 @@ function changetovoucher(){
     document.querySelector('.subcatchangepass').style.display='none';
 }
 function shownotif(){
+    document.querySelector('.subcatchangepass').style.display='none';
     document.querySelector('.subcatwish').style.display = 'none';
     document.querySelector('.subcatprofile').style.display = 'none';
     document.querySelector('.subcatnotifications').style.display = 'block';
@@ -67,33 +70,21 @@ function showhistory(){
     document.querySelector('.subcatpolicy').style.display = 'none';
     document.querySelector('.subcatchangepass').style.display='none';
 }
-var historystatus;
-$(document).ready(function (){
-    $('.history').on('click', function(){
-       
-       historystatus = $(this).data('status');
-        alert(historystatus);
 
-        $.ajax({
-            url: "history.php",
-            method: "GET",
-            data: { status : historystatus },
-            dataType: "html",
-            success: function (result){
-                $("#historyinfo").html(result);
-            }
-        });
-    });
-    
-});
 
-function confirmpassword(){
-    var newpass = document.getElementById("newpass").nodeValue;
-    var conpass = document.getElementById("conpass").nodeValue;
-if(newpass == conpass) {
-    document.querySelector('.error').style.display='none';
-}else { document.querySelector('.error').style.display='block'; }
+function confirmcheck(){
+var newpass = document.getElementById("newpass").value;
+var confpass = document.getElementById("confirmpass").value;
+if(newpass == confpass){
+    $("#pwmatch").removeClass("glyphicon-remove");
+    $("#pwmatch").addClass("glyphicon-ok");
+    $("#pwmatch").css("color","#00A41E");
+
+} else {
+    $("#pwmatch").removeClass("glyphicon-ok");
+		$("#pwmatch").addClass("glyphicon-remove");
+		$("#pwmatch").css("color","#FF0004");
 }
-
+}
 
 

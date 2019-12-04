@@ -98,3 +98,14 @@ text-align: center;
 }
 .error p{color:pink;}
 
+.alamat{
+    background-color: #fff2db;
+    border: 5px dashed pink;
+
+}
+.alamat td, .alamat th{
+    padding-left: 10px;
+}
+.orderdetail{
+    border-bottom:1px solid gray;
+}
