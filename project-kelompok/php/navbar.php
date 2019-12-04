@@ -41,11 +41,11 @@ if (isset($_POST['cart'])){
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">        
-        <form class="navbar-form navbar-left">
+        <form class="navbar-form navbar-left" action="" method="POST">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" name="keyword" class="form-control" placeholder="Search" autofocus autocomplete="">
           </div>
-          <a href="../php/products.php"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
+          <a href="../php/products.php"><button type="button" name="search" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
         </form>
         <form action="index.php" method="post">
         <ul class="nav navbar-nav navbar-right">
