@@ -1,13 +1,10 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>Homepage</title>
+  <title><?php echo $page; ?></title>
   <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
@@ -39,7 +36,7 @@ if (isset($_POST['cart'])){
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><img src="../assets/images/99818.png" class="logo-toko"></a>
+        <a class="navbar-brand" href="index.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,29 +57,3 @@ if (isset($_POST['cart'])){
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-        
-  <footer class="footer">
-      <div class="footer-container">
-          <ul class="footer-list">
-              <li><a href="../php/about-us.php">About Us</a></li>
-              <li><a href="../php/faq.php">FAQs</a></li>
-              <li><a href="../php/policy.php">Our Policy</a></li>
-          </ul>
-          <div class="contact-container">
-              <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
-                      <p>@baybees.wardrobe</p>
-                  </a></div>
-              <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
-                      <p>+62 81638495xx7</p>
-                  </a></div>
-          </div>
-
-      </div>
-  </footer>
-</div>  
-  <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
-  <link href="../css/template.css" rel="stylesheet">
-  <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
-  <script src="../js/template.js"></script>
-</body>
-</html>

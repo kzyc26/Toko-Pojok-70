@@ -89,7 +89,7 @@ INSERT INTO `customer` (`password`, `jenis_kelamin`, `fullname`, `email`, `telep
 --
 
 CREATE TABLE `delivery` (
-  `id_delivery` varchar(20) NOT NULL,
+  `id_deliverystatus` varchar(20) NOT NULL,
   `delivery_status` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -97,7 +97,7 @@ CREATE TABLE `delivery` (
 -- Dumping data for table `delivery`
 --
 
-INSERT INTO `delivery` (`id_delivery`, `delivery_status`) VALUES
+INSERT INTO `delivery` (`id_deliverystatus`, `delivery_status`) VALUES
 ('0', 'Undelivered'),
 ('1', 'Delivered'),
 ('2', 'On Delivery'),
@@ -111,20 +111,25 @@ INSERT INTO `delivery` (`id_delivery`, `delivery_status`) VALUES
 
 CREATE TABLE `delivery_details` (
   `transaction_id` varchar(20) NOT NULL,
-  `id_delivery` varchar(20) NOT NULL,
+  `id_deliverystatus` varchar(20) NOT NULL,
   `alamat` text NOT NULL,
   `kode_pos` varchar(50) NOT NULL,
   `kelurahan` varchar(100) NOT NULL,
   `kecamatan` varchar(100) NOT NULL,
   `kab_kota` varchar(100) NOT NULL,
-  `provinsi` varchar(100) NOT NULL
+  `provinsi` varchar(100) NOT NULL,
+  `resi` varchar(100) NOT NULL,
+  `Receiver` varchar(100) NOT NULL,
+  `notelp` int(50) NOT NULL,
+  `email` varchar(55),
+  `id_ekspedisi` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `delivery_details`
 --
 
-INSERT INTO `delivery_details` (`transaction_id`, `id_delivery`, `alamat`, `kode_pos`, `kelurahan`, `kecamatan`, `kab_kota`, `provinsi`) VALUES
+INSERT INTO `delivery_details` (`transaction_id`, `id_deliverystatus`, `alamat`, `kode_pos`, `kelurahan`, `kecamatan`, `kab_kota`, `provinsi`) VALUES
 ('201911201', '0', 'aaaaaaaaaaaaa', '80976', 'bbbbb', 'ccccccc', 'ddddd', 'eeeee');
 
 -- --------------------------------------------------------
@@ -134,7 +139,7 @@ INSERT INTO `delivery_details` (`transaction_id`, `id_delivery`, `alamat`, `kode
 --
 
 CREATE TABLE `ekspedisi` (
-  `Id_ekspedisi` varchar(20) NOT NULL,
+  `id_ekspedisi` varchar(20) NOT NULL,
   `Nama_ekspedisi` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -467,20 +472,21 @@ ALTER TABLE `customer`
 -- Indexes for table `delivery`
 --
 ALTER TABLE `delivery`
-  ADD PRIMARY KEY (`id_delivery`);
+  ADD PRIMARY KEY (`id_deliverystatus`);
 
 --
 -- Indexes for table `delivery_details`
 --
 ALTER TABLE `delivery_details`
   ADD KEY `transaction_id` (`transaction_id`),
-  ADD KEY `id_delivery` (`id_delivery`);
+  ADD KEY `id_deliverystatus` (`id_deliverystatus`),
+  ADD KEY `id_ekspedisi` (`id_ekspedisi`);
 
 --
 -- Indexes for table `ekspedisi`
 --
 ALTER TABLE `ekspedisi`
-  ADD PRIMARY KEY (`Id_ekspedisi`) USING BTREE;
+  ADD PRIMARY KEY (`id_ekspedisi`) USING BTREE;
 
 --
 -- Indexes for table `payment_method`
@@ -567,7 +573,8 @@ ALTER TABLE `wishlist`
 --
 ALTER TABLE `delivery_details`
   ADD CONSTRAINT `delivery_details_ibfk_1` FOREIGN KEY (`transaction_id`) REFERENCES `transaction` (`transaction_id`),
-  ADD CONSTRAINT `delivery_details_ibfk_2` FOREIGN KEY (`id_delivery`) REFERENCES `delivery` (`id_delivery`);
+  ADD CONSTRAINT `delivery_details_ibfk_2` FOREIGN KEY (`id_deliverystatus`) REFERENCES `delivery` (`id_deliverystatus`),
+  ADD CONSTRAINT `delivery_details_ibfk_3` FOREIGN KEY (`id_ekspedisi`) REFERENCES `ekspedisi` (`id_ekspedisi`);
 
 --
 -- Constraints for table `product`

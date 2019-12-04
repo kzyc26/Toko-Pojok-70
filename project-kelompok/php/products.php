@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <?php
     session_start();
-?>
-<html>
-
-<head>
-    <title>Products</title>
-    <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
-    <link href="../css/template.css" rel="stylesheet">
-    <link href="../css/product.css" rel="stylesheet">
-</head>
-
-<body>
-    <?php
     
     if (isset($_POST['user'])){
         if(isset($_SESSION['username'])){
@@ -30,8 +16,7 @@
         header("location: check-out.php");
       }
       
-  require_once('config.php');
-  require('db.php');
+  require_once('db.php');
 		// require_once('_includes/check-out.php'); //have $cart
 	// require_once('_includes/check_visitor.php'); //have $visitor
     if (isset($_GET["id_category"]) && !isset($_GET["gender"])){
@@ -80,44 +65,10 @@
 		while($row = mysqli_fetch_assoc($limit_result)) {
 			$products[] = $row;
 		}
-    } 
-    ?>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="../php/index.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <a href="../php/products.php"><button type="button" class="btn btn-default"><span
-                                class="glyphicon glyphicon-search"></span></button></a>
-                </form>
-                <form action="index.php" method="post">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input
-                                    type="submit" class="btn btn-default" name="cart" value=""></span></li>
-                        <li><span class="icon-input-btn"><span class="glyphicon glyphicon-user"></span> <input
-                                    type="submit" class="btn btn-default posisi" name="user" value=""></span></li>
-                        <li><span class="icon-input-btn"><span class="glyphicon glyphicon-usd"></span> <input
-                                    type="submit" class="btn btn-default" name="trace" value=""></span></li>
-                    </ul>
-                </form>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+    }     
+$page="Products";
+require_once('navbar.php');
+?>
     <div class="categories">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
@@ -349,30 +300,8 @@
         </div>
     </div>
 
-
-
-    <footer class="footer">
-        <div class="footer-container">
-            <ul class="footer-list">
-                <li><a href="../html/about-us.html">About Us</a></li>
-                <li><a href="../html/faq.html">FAQs</a></li>
-                <li><a href="../html/policy.html">Our Policy</a></li>
-            </ul>
-            <div class="contact-container">
-                <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
-                        <p>@baybees.wardrobe</p>
-                    </a></div>
-                <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
-                        <p>+62 81638495xx7</p>
-                    </a></div>
-            </div>
-
-        </div>
-    </footer>
-    <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
-    <link href="../css/template.css" rel="stylesheet">
+    <?php require_once('footer.php'); ?>
     <link href="../css/product.css" rel="stylesheet">
-    <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
     <script src="../js/productview.js"></script>
     <link href="../css/slider.css" rel="stylesheet">
     <script src="../js/slider.js"></script>
