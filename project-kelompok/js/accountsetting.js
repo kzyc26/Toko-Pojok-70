@@ -4,7 +4,7 @@ document.querySelector('.subcatchangepass').style.display='none';
 document.querySelector('.subcatwish').style.display = 'none';
 document.querySelector('.subcatprofile').style.display = 'none';
 document.querySelector('.subcatnotifications').style.display = 'none';
-document.querySelector('.subcatorderhistory').style.display = 'block';
+document.querySelector('.subcatorderhistory').style.display = 'none';
 document.querySelector('.subcatvoucher').style.display = 'none';
 document.querySelector('.subcatpolicy').style.display = 'none';
 

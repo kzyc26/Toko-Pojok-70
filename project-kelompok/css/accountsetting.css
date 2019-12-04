@@ -107,5 +107,24 @@ text-align: center;
     padding-left: 10px;
 }
 .orderdetail tr {
-    border-bottom: 2px solid grey;
+    border-bottom: 1px solid lightgrey;
+}
+.totals td, .totals tr{
+    border: 1px solid lightgrey;
+    
+
+}
+.title{
+  text-align:right;
+    padding : 10px;
+}
+.totalcontent{
+    text-align:right;
+    font-size: large;
+    padding-right: 10px;
+  
+}
+.totalprice{
+    font-size: x-large;
+    color: hotpink;
 }

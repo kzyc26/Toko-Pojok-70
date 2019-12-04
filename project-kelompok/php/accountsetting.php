@@ -28,20 +28,60 @@ if(isset($_POST['logout'])) {
     }
 }
 if(isset($g['status'])){
+    $stats="showhistory()";
     if($g['status'] == "ongoing"){
-        $historycmd_extra="AND (Deliv_details = 1 or Deliv_details = 2 or Deliv_details = 0) ";
+        $historycmd_extra="AND (dd.id_deliverystatus = 1 or dd.id_deliverystatus = 2) ";
+        $title="Ongoing";
+    
     }
     elseif ($g['status'] == "completed"){
-        $historycmd_extra="AND Deliv_details = 3 ";
+        $historycmd_extra="AND dd.id_deliverystatus = 3 ";
+        $title="Completed";
     }
     elseif ($g['status'] == "all"){
         $historycmd_extra="";
+        $title="All";
     }
-}else{ $historycmd_extra="";}
+    elseif ($g['status'] == "need"){
+        $historycmd_extra="AND dd.id_deliverystatus = 0";
+        $title="Need to be Delivered";
+    }
+}else{ $historycmd_extra="";
+$title="";
+$stats="showhistory()";}
+if(isset($_POST['changepass'])){
+    if(!isset($_POST['oldpass'])){
+        $oldpass = '';
+    } else{
+        $oldpass = isset($_POST['oldpass']);
+    }
+    $cmd_check="select fullname, password from customer where username='".$_SESSION['username']."' and password ='".sha1($oldpass)."'";
+    $check_result= mysqli_query($con,$cmd_check) or die(mysqli_error($con));
+    $check_count=mysqli_num_rows($check_result);
+    
+    if($check_count==1){
+        $cmd_newpass = "UPDATE customer set password='".sha1($_POST['newpass'])."' where username='".$_SESSION['username']."'";
+        $newpass_result= mysqli_query($con,$cmd_newpass) or die(mysqli_error($con));
+        ?><script>alert("Your Password Has Changed Please Relog")</script><?php
+        if(session_destroy()) // Destroying All Sessions
+        {
+            header("Location: login.php"); // Redirecting To Home Page
+        }
+    } else 
+      ?> <script>alert("Your Current Password is Incorrect Please Input your Current Password") ;
+      </script><?php $stats="changepass()";
+}
 
-$cmd_orderhistory="SELECT t.transaction_id as `Transaction ID`, receiver,notelp,dd.alamat,dd.kab_kota,dd.kecamatan,dd.kelurahan,dd.provinsi,dd.kode_pos,total_transaction, d.delivery_status,ongkir,nama_ekspedisi,payment_method 
-from transaction t, customer c, delivery_details dd,delivery d, ekspedisi e,payment_method p
-where t.username= c.username and dd.transaction_id = t.transaction_id and d.id_deliverystatus = dd.id_deliverystatus and dd.id_ekspedisi = e.id_ekspedisi and t.id_payment_method= p.id_payment_method and t.username = '".$_SESSION['username']."' $historycmd_extra";
+$cmd_orderhistory="SELECT t.transaction_id as `Transaction ID`,
+ receiver,notelp,dd.alamat,dd.kab_kota,dd.kecamatan,dd.kelurahan,
+ dd.provinsi,dd.kode_pos,total_transaction, d.delivery_status,
+ ongkir,nama_ekspedisi,payment_method 
+from transaction t, customer c, delivery_details dd,delivery d, ekspedisi e,
+payment_method p
+where t.username= c.username and dd.transaction_id = t.transaction_id 
+and d.id_deliverystatus = dd.id_deliverystatus and dd.id_ekspedisi = e.id_ekspedisi 
+and t.id_payment_method= p.id_payment_method and t.username = '".$_SESSION['username']."' 
+$historycmd_extra;";
 $orderhistory_result= mysqli_query($con,$cmd_orderhistory) or die(mysqli_error($con));
 $orderhistory=mysqli_fetch_all($orderhistory_result);
 $orderhistory_count=mysqli_num_rows($orderhistory_result);
@@ -53,6 +93,7 @@ $profile=mysqli_fetch_assoc($profile_result);
 $page = "Account";
 require_once('navbar.php');
 ?>
+<body onload = "<?php echo $stats?>">
 <div class="content">
     <div class="row">
         <div class="col-md-3 profilemenu">
@@ -106,10 +147,14 @@ require_once('navbar.php');
                             aria-labelledby="headingTwo">
                             <div class="panel-body">
                                 <ul>
-                                    <li class="submenu"><a class="history" data-status="3">All</a></li>
-                                    <li class="submenu"><a class="history" data-status="2">Completed</a></li>
-                                    <li class="submenu"><a class="history" data-status="1">Ongoing</a></li>
-                                    <li class="submenu "><a class="history" data-status="0">Unpaid</a></li>
+                                    <li class="submenu"><a class="history" href="accountsetting.php?status=all"
+                                            >All</a></li>
+                                    <li class="submenu"><a class="history" href="accountsetting.php?status=completed"
+                                            >Completed</a></li>
+                                    <li class="submenu"><a class="history" href="accountsetting.php?status=ongoing"
+                                            >Ongoing</a></li>
+                                    <li class="submenu "><a class="history" href="accountsetting.php?status=need"
+                                            >Need to be Delivered</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -288,13 +333,13 @@ require_once('navbar.php');
             <div class="subcatchangepass">
                 <H2> Change Your Password </h2>
                 <form method="post" id="passwordForm">
-                    <input type="password" class="input-lg form-control" name="password1" id="oldpass"
+                    <input type="password" class="input-lg form-control" name="oldpass" id="oldpass"
                         placeholder="Current Password" required>
                     <br><br>
-                    <input type="password" class="input-lg form-control" name="password1" id="newpass"
+                    <input type="password" class="input-lg form-control" name="newpass" id="newpass"
                         placeholder="New Password" required>
                     <br><br>
-                    <input type="password" class="input-lg form-control" name="password2" id="confirmpass"
+                    <!-- <input type="password" class="input-lg form-control" name="password2" id="confirmpass"
                         placeholder="Repeat Password" onkeyup="confirmcheck()" required>
                     <br><br>
                     <div class="row">
@@ -302,7 +347,7 @@ require_once('navbar.php');
                             <span id="pwmatch" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span>
                             Passwords Match
                         </div>
-                    </div>
+                    </div> -->
                     <br><br>
 
                     <input type="submit" class="col-xs-12 btn btn-primary btn-load btn-lg"
@@ -311,6 +356,8 @@ require_once('navbar.php');
             </div>
 
             <div class="subcatorderhistory" id="historyinfo">
+                <h2><?php echo $title;?> Order History</h2>
+
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <?php for($i=0; $i<=$orderhistory_count-1; $i++){
                         ?> <div class="panel panel-default">
@@ -326,18 +373,20 @@ require_once('navbar.php');
                         <?php 
                             $cmd_orderdetail = "SELECT  pd.id_product,category_name, product_name, jumlah_product,harga_jual_satuan,total_harga
                             from transaction_detail td, transaction t, product p, product_detail pd, customer c,category ct
-                            where ct.id_category = p.id_category and pd.id_product_detail = td.id_product_detail and p.id_product = pd.id_product and t.username = c.username and t.transaction_id = td.transaction_id and t.username = '".$_SESSION['username']."' $historycmd_extra
+                            where ct.id_category = p.id_category and pd.id_product_detail = td.id_product_detail and p.id_product = pd.id_product and t.username = c.username and t.transaction_id = td.transaction_id and t.username = '".$_SESSION['username']."'
                             and t.transaction_id='".$orderhistory[$i][0]."'";
                             $orderdetail_result= mysqli_query($con,$cmd_orderdetail) or die(mysqli_error($con));
                             $orderdetail=mysqli_fetch_all($orderdetail_result);
                             $orderdetail_count=mysqli_num_rows($orderdetail_result);
-                            if ($orderdetail_count>1){
-                                for($a=0; $a<=$orderdetail_count-1; $a++){
-                            $subtotal = 0;
-                            $subtotal = $subtotal + intval($orderdetail[$a][5]);
-                                }
-                            }
-                            ?>
+                            if ($orderdetail_count>=1){
+                                $subtotal=0;
+                             for($a=0; $a<=$orderdetail_count-1; $a++){
+                                 $price = intval($orderdetail[$a][5]);
+                                 
+                                 $subtotal = $subtotal + $price;
+                         
+                             }
+                         }?>
                         <div id="collapse-<?php echo $i;?>" class="panel-collapse collapse in" role="tabpanel"
                             aria-labelledby="heading-<?php echo $i;?>">
                             <div class="panel-body">
@@ -367,7 +416,7 @@ require_once('navbar.php');
                                 </table>
                                 <br>
                                 <?php for($x=0; $x<=$orderdetail_count-1; $x++){?>
-                                <table class="orderdetails">
+                                <table class="orderdetail">
                                     <tr>
                                         <td><img src="../assets/images/products/<?php echo $orderdetail[$x][0];?>.jpg"
                                                 style="width:100px; height:100px;"></td>
@@ -382,23 +431,37 @@ require_once('navbar.php');
 
                                     </tr>
                                 </table>
+                                <br><br>
                                 <table class="totals">
-                                    <tr>
-                                    <td> Subtotal Untuk Produk </td>
-                                    <td> <?php echo $subtotal?> </td>
-                                    </tr>
-                                    <tr>
-                                    <td> Pengiriman - <?php echo $orderhistory[$i][11];?> </td>
-                                    <td> <?php  
-                                            $ongkir = $orderhistory[$i][12];
-                                            echo number_format($price,2,",","."); 
-                                            ?> 
-                                    </td>  
-                                    </tr>
-                                    <tr>
 
+                                    <tr>
+                                        <td class="title"> Subtotal Untuk Produk </td>
+                                        <td class="totalcontent"> Rp. <?php  
+                                            echo number_format($subtotal,2,",","."); 
+                                            ?> </td>
                                     </tr>
-                                    </table>
+                                    <tr>
+                                        <td class="title"> Pengiriman - <?php echo $orderhistory[$i][12];?> </td>
+                                        <td class="totalcontent"> Rp. <?php  
+                                            $ongkir = intval($orderhistory[$i][11]);
+                                            echo number_format($ongkir,2,",","."); 
+                                            ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title"> TOTAL PESANAN </td>
+                                        <td class="totalcontent totalprice"> Rp. <?php  
+                                            $total = intval($orderhistory[$i][9]);
+                                            echo number_format($total,2,",","."); 
+                                            ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title"> Metode Pembayaran </td>
+                                        <td class="totalcontent"> <?php  echo $orderhistory[$i][13]; ?>
+                                        </td>
+                                    </tr>
+                                </table>
 
 
                             </div>
