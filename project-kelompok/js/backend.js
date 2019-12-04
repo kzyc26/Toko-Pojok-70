@@ -336,3 +336,17 @@ function showdiscount() {
     document.querySelector('.bestseller').style.display = 'none';
     document.querySelector('.Discount').style.display = 'block';
 };
+function categorychange(){    
+    var cbcat = document.getElementById("listcategory");
+    var cat = cbcat.options[cbcat.selectedIndex].value;
+    // alert(cat);
+            $.ajax({
+                url: "item_category.php",
+                method: "GET",
+                data: { cat },
+                dataType: "html",
+                success: function(result){
+                    $("#listitem").html(result);
+                }
+            });
+}

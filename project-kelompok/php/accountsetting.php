@@ -32,34 +32,39 @@ if(isset($g['status'])){
     if($g['status'] == "ongoing"){
         $historycmd_extra="AND (dd.id_deliverystatus = 1 or dd.id_deliverystatus = 2) ";
         $title="Ongoing";
+        $review=0;
     
     }
     elseif ($g['status'] == "completed"){
         $historycmd_extra="AND dd.id_deliverystatus = 3 ";
         $title="Completed";
+        $review=1;
     }
     elseif ($g['status'] == "all"){
         $historycmd_extra="";
         $title="All";
+        $review=0;
     }
     elseif ($g['status'] == "need"){
         $historycmd_extra="AND dd.id_deliverystatus = 0";
         $title="Need to be Delivered";
+        $review=0;
     }
 }else{ $historycmd_extra="";
 $title="";
-$stats="showhistory()";}
+$stats="firstload()";
+$review=0;}
 if(isset($_POST['changepass'])){
     if(!isset($_POST['oldpass'])){
         $oldpass = '';
     } else{
-        $oldpass = isset($_POST['oldpass']);
+        $oldpass = $_POST['oldpass'];
     }
     $cmd_check="select fullname, password from customer where username='".$_SESSION['username']."' and password ='".sha1($oldpass)."'";
     $check_result= mysqli_query($con,$cmd_check) or die(mysqli_error($con));
     $check_count=mysqli_num_rows($check_result);
-    
-    if($check_count==1){
+    ?> <script>alert('<?php echo $check_count?>');</script><?php
+    if($check_count>0){
         $cmd_newpass = "UPDATE customer set password='".sha1($_POST['newpass'])."' where username='".$_SESSION['username']."'";
         $newpass_result= mysqli_query($con,$cmd_newpass) or die(mysqli_error($con));
         ?><script>alert("Your Password Has Changed Please Relog")</script><?php
@@ -343,14 +348,14 @@ require_once('navbar.php');
                         placeholder="Repeat Password" onkeyup="confirmcheck()" required>
                     <br><br>
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm2">
                             <span id="pwmatch" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span>
                             Passwords Match
                         </div>
                     </div> -->
                     <br><br>
 
-                    <input type="submit" class="col-xs-12 btn btn-primary btn-load btn-lg"
+                    <input type="submit" class="col-xs2 btn btn-primary btn-load btn-lg"
                         data-loading-text="Changing Password..." name="changepass" value="Change Password">
                 </form>
             </div>
@@ -380,7 +385,7 @@ require_once('navbar.php');
                             $orderdetail_count=mysqli_num_rows($orderdetail_result);
                             if ($orderdetail_count>=1){
                                 $subtotal=0;
-                             for($a=0; $a<=$orderdetail_count-1; $a++){
+                             for($a=1; $a<=$orderdetail_count; $a++){
                                  $price = intval($orderdetail[$a][5]);
                                  
                                  $subtotal = $subtotal + $price;
@@ -462,7 +467,11 @@ require_once('navbar.php');
                                         </td>
                                     </tr>
                                 </table>
+                            <?php
 
+                            if($review == 1){
+
+                            }?>
 
                             </div>
                         </div>
