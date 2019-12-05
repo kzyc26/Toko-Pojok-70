@@ -31,9 +31,6 @@
     <br>
     <a href="#" onclick="showbestseller()">Best Seller Products</a>
     <br>
-    <a href="#" onclick="showdiscount()">Product dengan Diskon</a>
+    <a href="discount.php" onclick="showdiscount()">Product dengan Diskon</a>
 </div>
-<div class="seperator">
-</div>
-<div class="col-md-9 result">
-    <h2>Result</h2>
+

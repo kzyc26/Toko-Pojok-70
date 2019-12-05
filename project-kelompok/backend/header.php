@@ -17,11 +17,11 @@
                 <h2>Report</h2>
                 <a href="user.php">Login Details Pengguna</a>
                 <br>
-                <a href="#" onclick="showaccumulated()">Customer Review Accumulated per Product</a>
+                <a href="#" >Customer Review Accumulated per Product</a>
                 <br>
-                <a href="#" onclick="showreview()">Individual Customer Review</a>
+                <a href="#" >Individual Customer Review</a>
                 <br>
-                <a href="#" onclick="showcustsubtotal()">Customer Subtotal</a>
+                <a href="#">Customer Subtotal</a>
                 <br>
                 <a href="#" onclick="showproductdetails()">Product Details</a>
                 <br>
@@ -46,7 +46,7 @@
                 <br>
                 <a href="#" onclick="showbestseller()">Best Seller Products</a>
                 <br>
-                <a href="#" onclick="showdiscount()">Product dengan Diskon</a>
+                <a href="discount.php" onclick="showdiscount()">Product dengan Diskon</a>
             </div>
             <div class="seperator">
             </div>
