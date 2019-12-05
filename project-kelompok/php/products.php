@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <?php
-    session_start();
-    
     if (isset($_POST['user'])){
         if(isset($_SESSION['username'])){
           header("location: accountsetting.php");
@@ -17,8 +15,6 @@
       }
       
   require_once('db.php');
-		// require_once('_includes/check-out.php'); //have $cart
-	// require_once('_includes/check_visitor.php'); //have $visitor
     if (isset($_GET["id_category"]) && !isset($_GET["gender"])){
       $category = strtolower($_GET["id_category"]);
       $cmd_extra = "AND lower(p.id_category)='".$category."'";
@@ -45,7 +41,11 @@
 
     
     $all_result 	= mysqli_query($con,$cmd) or die(mysqli_error($con));
-	$count_all_item = mysqli_num_rows($all_result);
+    $count_all_item = mysqli_num_rows($all_result);
+    
+    if(isset($_SESSION['rows'])){
+        $count_all_item = $_SESSION['rows'];
+    }
     
 	$max_item 		= 9; //Max item in one page
 	$page 			= isset($_GET['page'])? (int)$_GET["page"]:1; //contoh IF INLINE
@@ -61,7 +61,12 @@
  
   
 	$products = null;
-	if ($count_all_item >= 1){
+    if(isset($_SESSION['rows'])){
+        while($row = $_SESSION['hasil_search']) {
+			$products[] = $row;
+		}
+    }
+    elseif ($count_all_item >= 1){
 		while($row = mysqli_fetch_assoc($limit_result)) {
 			$products[] = $row;
 		}
@@ -124,7 +129,11 @@ require_once('navbar.php');
             <?php if ($category==null){ ?>
             <h1> All Products </h1>
             <?php } 
-        else { ?> <h1> <?php echo $category_name[0];?></h1><?php }?>
+            elseif (isset($_SESSION['rows'])) {
+                ?> <h1> <?php echo 'Search Result for "'.$_SESSION['keyword'].'"';?></h1><?php
+
+            }
+        else { ?> <h1> <?php echo $category_name[0];?> </h1><?php }?>
         </div>
         <div class='row productsimg'>
             <?php 

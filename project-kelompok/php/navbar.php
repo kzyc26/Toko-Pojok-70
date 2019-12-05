@@ -1,3 +1,9 @@
+<?phpif(!isset($sid)){
+session_start();
+}
+require_once('db.php');
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -11,6 +17,32 @@
 
 <body>
 <?php
+if (isset($_POST['search'])){  
+  $_SESSION['keyword'] = $_POST['keyword'];
+  $hasil = $_POST['keyword'];
+  
+    $query = "SELECT * FROM product WHERE Product_name LIKE '%$hasil%'";
+    $sql_prod = mysqli_query($con, $query) or die(mysqli_error($con));
+    $hitung_prod = mysqli_num_rows($sql);
+
+    $query = "SELECT * FROM category WHERE category_name LIKE '%$hasil%'";
+    $sql_cat = mysqli_query($con, $query) or die(mysqli_error($con));
+    $hitung_cat = mysqli_num_rows($sql);
+    if ($hitung_prod !== 0){
+      $_SESSION['hasil_search'] = mysqli_fetch_assoc($sql_prod);
+      $_SESSION['rows'] = $hitung_prod;
+      header("location: products.php");
+    } elseif ($hitung_cat !== 0){
+      $_SESSION['hasil_search'] = mysqli_fetch_assoc($sql_cat);
+      $_SESSION['rows'] = $hitung_cat;
+      header("location: products.php");
+    } else {
+      unset($_SESSION['hasil_search']);
+      unset($_SESSION['rows']);
+      echo '<script> alert("Sorry, keyword does not match."); </script>';
+    } 
+}
+
 if (isset($_POST['user'])){
   if(isset($_SESSION['username'])){
     header("location: accountsetting.php");
@@ -43,11 +75,11 @@ if (isset($_POST['cart'])){
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">        
         <form class="navbar-form navbar-left" action="" method="POST">
           <div class="form-group">
-            <input type="text" name="keyword" class="form-control" placeholder="Search" autofocus autocomplete="">
+            <input type="text" name="keyword" class="form-control" placeholder="Search" autofocus autocomplete="off">
           </div>
-          <a href="../php/products.php"><button type="button" name="search" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
+          <button type="submit" name="search" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
         </form>
-        <form action="index.php" method="post">
+        <form action="index.php" method="POST">
         <ul class="nav navbar-nav navbar-right">
           <li><span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input type="submit" class="btn btn-default" name="cart" value=""></span></li>
           <li><span class="icon-input-btn"><span class="glyphicon glyphicon-user"></span> <input type="submit" class="btn btn-default posisi" name="user" value=""></span></li>

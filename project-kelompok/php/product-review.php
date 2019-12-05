@@ -1,6 +1,5 @@
 
 <?php
-session_start();
 $page="Review";
 require_once('navbar.php');
 ?>

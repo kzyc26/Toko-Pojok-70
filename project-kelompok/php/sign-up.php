@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$sid = session_id();
 if(isset($_SESSION['username'])){
   header("location: accountsetting.php");
         }else{

@@ -1,6 +1,6 @@
 <?php
-session_start();
 $page="Homepage";
+$curpage = "index.php";
 require_once('navbar.php');
 ?>
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

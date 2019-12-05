@@ -1,5 +1,4 @@
 <?php
-session_start();
 $page="Order Track";
 require_once('navbar.php');
 ?>

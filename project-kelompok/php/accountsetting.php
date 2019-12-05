@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('db.php');
 $g = $_GET;
 if (isset($_POST['user'])){

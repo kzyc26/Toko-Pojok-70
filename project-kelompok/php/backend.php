@@ -122,6 +122,99 @@
 
 <body>
 
+ <?php 
+  
+  $cmd_category = "SELECT id_category,category_name from category";
+  $category_result  = mysqli_query($con,$cmd_category) or die(mysqli_error($con));
+  $category=mysqli_fetch_all($category_result);
+  $category_count = mysqli_num_rows($category_result);
+
+   
+  $cmd_cart_detail="SELECT fullname ,td.transaction_id,p.id_product,ukuran,warna, jumlah_product,harga_jual_satuan,total_harga
+  from customer c, transaction t, transaction_detail td, product_detail p
+  where c.username=t.username and td.transaction_id=t.transaction_id and td.id_product_detail = p.id_product_detail";
+  $cart_detail_result  = mysqli_query($con,$cmd_cart_detail) or die(mysqli_error($con));
+  $cart_detail=mysqli_fetch_all($cart_detail_result);
+  $cart_detail_count = mysqli_num_rows($cart_detail_result);
+
+
+   
+  $cmd_wishlist="SELECT fullname, pd.id_product, ukuran,warna, price
+  from product_detail pd, customer c, wishlist w, product p 
+  where pd.id_product_detail=w.Id_product_detail and c.username = w.username and p.id_product = pd.id_product";
+  $wishlist_result  = mysqli_query($con,$cmd_wishlist) or die(mysqli_error($con));
+  $wishlist=mysqli_fetch_all($wishlist_result);
+  $wishlist_count = mysqli_num_rows($wishlist_result);
+ 
+  $cmd_orderhistory="SELECT fullname,t.date, total_transaction
+from customer c, transaction t
+where t.username=c.username and payment_status <> 0";
+  $orderhistory_result  = mysqli_query($con,$cmd_orderhistory) or die(mysqli_error($con));
+  $orderhistory=mysqli_fetch_all($orderhistory_result);
+  $orderhistory_count = mysqli_num_rows($orderhistory_result);
+
+ 
+  $cmd_userdelivdetails="SELECT * FROM delivery_details;";
+  $userdelivdetails_result  = mysqli_query($con,$cmd_userdelivdetails) or die(mysqli_error($con));
+  $userdelivdetails=mysqli_fetch_all($userdelivdetails_result);
+  $userdelivdetails_count = mysqli_num_rows($userdelivdetails_result);
+
+
+  $cmd_alamat="SELECT username, provinsi, kab_kota,kecamatan,kelurahan,kode_pos,alamat
+  from customer";
+   $alamat_result  = mysqli_query($con,$cmd_alamat) or die(mysqli_error($con));
+   $alamat=mysqli_fetch_all($alamat_result);
+   $alamat_count = mysqli_num_rows($alamat_result);
+   
+   $cmd_biodata="SELECT fullname, telepon,jenis_kelamin
+   from customer";
+   $biodata_result  = mysqli_query($con,$cmd_biodata) or die(mysqli_error($con));
+   $biodata=mysqli_fetch_all($biodata_result);
+   $biodata_count = mysqli_num_rows($biodata_result);
+
+   $cmd_bestseller="SELECT d.id_product,sum(jumlah_product) as`best seller`
+   from product p, product_detail d, transaction_detail td,transaction t
+   where td.id_product_detail=d.id_product_detail and d.id_product=p.id_product and t.transaction_id = td.transaction_id and t.payment_status =0
+   group by td.id_product_detail
+   order by `best seller`
+   limit 5";
+   $bestseller_result  = mysqli_query($con,$cmd_bestseller) or die(mysqli_error($con));
+   $bestseller=mysqli_fetch_all($bestseller_result);
+   $bestseller_count = mysqli_num_rows($bestseller_result);
+  
+   $cmd_discount="SELECT id_product, if(Discount_price=null,Discount_price,'Normal Price') as `Discount`
+   from product";
+   $discount_result  = mysqli_query($con,$cmd_discount) or die(mysqli_error($con));
+   $discount=mysqli_fetch_all($discount_result);
+   $discount_count = mysqli_num_rows($discount_result);
+   
+   $cmd_voucher="SELECT uv.username , voucher_name
+   from user_voucher uv,voucher v, customer c
+   where uv.username = c.username and uv.id_voucher = v.id_voucher";
+   $voucher_result  = mysqli_query($con,$cmd_voucher) or die(mysqli_error($con));
+   $voucher=mysqli_fetch_all($voucher_result);
+   $voucher_count = mysqli_num_rows($voucher_result);
+
+   if (isset($_POST['search'])){
+    $hasil = $_POST['keyword'];
+      $query = "SELECT * FROM product WHERE Product_name LIKE '%$hasil%'";
+      $sql_prod = mysqli_query($con, $query) or die(mysqli_error($con));
+      $hitung_prod = mysqli_num_rows($sql_prod);
+      $prod = mysqli_fetch_all($sql_prod);
+  
+      $query = "SELECT * FROM category WHERE category_name LIKE '%$hasil%'";
+      $sql_cat = mysqli_query($con, $query) or die(mysqli_error($con));
+      $hitung_cat = mysqli_num_rows($sql_cat);
+      $cat = mysqli_fetch_all($sql_cat);
+      if ($hitung_prod !== 0){ ?>
+          
+    <form action="" method="post">
+    <br/><br/>
+    <div class="search">
+            <input type="text" name="keyword" class="form-control" placeholder="Search" autofocus autocomplete="off">
+          </div>
+          <button type="submit" name="search" class="btn btn-default" onclick="showsearchresult()"><span class="glyphicon glyphicon-search"></span></button>
+    </form>
     <div class="container">
         <div class="row">
             <div class="col-md-3 report">
@@ -165,6 +258,51 @@
             </div>
             <div class="col-md-9 result">
                 <h2>Result</h2>
+                <table class="hasil_search">
+                <tr>
+                    <th>Id Product</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                </tr>
+                <?php                        
+                    $i=0;
+                    if ($hitung_prod>0){while($i <= $hitung_prod-1){ ?>
+                <tr>
+                    <td> <?php echo $prod[$i][0];?></td>
+                    <td> <?php echo $prod[$i][3];?></td>
+                    <td> <?php echo $prod[$i][6];?></td>
+                </tr>
+                <?php $i++; }
+                     } ?>
+
+            </table>
+            <?php
+  } elseif ($hitung_cat !== 0){ ?>
+    <table class="hasil_search">
+        <tr>
+            <th>Id Category</th>
+            <th>Category Name</th>
+            <th>Gender</th>
+        </tr>
+        <?php                        
+            $i=0;
+            if ($hitung_cat>0){while($i <= $hitung_cat-1){ ?>
+        <tr>
+            <td> <?php echo $cat[$i][0];?></td>
+            <td> <?php echo $cat[$i][1];?></td>
+            <td> <?php echo $cat[$i][2];?></td>
+        </tr>
+        <?php $i++; }
+             } ?>
+
+    </table> 
+    <?php
+  } else {
+    
+    echo '<script> alert("Sorry, keyword does not match."); </script>';
+  }
+}
+?>
                 <table class="user">
                     <tr>
                         <th>Username</th>
@@ -282,7 +420,7 @@
                              <h5> </h5>
                              <h5> </h5>
                              <h5> </h5>
-                             
+
                              </div>
                             </div>
                         </div>

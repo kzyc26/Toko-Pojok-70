@@ -29,3 +29,9 @@ border:1px solid black
 #itemcategory{
     margin-left: 20%;
 }
+
+.search{
+ width: 40%;
+ margin: 0 0 0 20%;
+ float: left;
+}
