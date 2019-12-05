@@ -1,5 +1,4 @@
 <?php include("header.php") ?>
-<?php include("menu.php") ?>
 
 <?php 
   $cmd_user="SELECT username, password FROM customer";

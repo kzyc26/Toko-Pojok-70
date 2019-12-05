@@ -35,3 +35,7 @@ border:1px solid black
  margin: 0 0 0 20%;
  float: left;
 }
+
+.report{
+    overflow: auto;
+}
