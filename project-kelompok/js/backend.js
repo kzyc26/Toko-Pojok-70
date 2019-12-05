@@ -2,7 +2,7 @@ document.querySelector('.user').style.display = 'none';
 document.querySelector('.accumulated').style.display = 'none';
 document.querySelector('.customerreview').style.display = 'none';
 document.querySelector('.customer_subtotal').style.display = 'none';
-document.querySelector('.productdetails').style.display = 'none';
+document.querySelector('.productdetails').style.display = 'block';
 document.querySelector('.itemcategory').style.display = 'none';
 document.querySelector('.cartdetails').style.display = 'none';
 document.querySelector('.Wishlist').style.display = 'none';
@@ -346,7 +346,7 @@ function categorychange(){
                 data: { cat },
                 dataType: "html",
                 success: function(result){
-                    $("#listitem").html(result);
+                    $("#categoryfill").html(result);
                 }
             });
 }

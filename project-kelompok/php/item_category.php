@@ -14,24 +14,26 @@ $items_category_result  = mysqli_query($con,$Cmd_items_category) or die(mysqli_e
 $items_category=mysqli_fetch_all($items_category_result);
 $items_category_count = mysqli_num_rows($items_category_result);
 ?>
-                    <tr>
+              <table id="listitem">
+              <tr class="title">
                         <th> Picture </th>
                         <th> Product Name</th>
                         <th> Product ID </th>
                         <th> Price </th>
                     </tr>
                     <?php 
-                    $i=1;
+                  
                 
-                    if($items_category_count>0){
-                        while($i<$items_category_count){?>
-                    <tr>
-                        <td><img src="../assets/images/products/<?php echo $items_category[$i-1][0];?>.jpg"></td>
-                        <td><?php echo $items_category[$i-1][1];?></td>
-                        <td><?php echo $items_category[$i-1][0];?></td>
-                        <td><?php echo $items_category[$i-1][3] ;echo $items_category[$i-1][2];?></td>
+                  for($i=0; $i<=$items_category_count-1; $i++){?>
+                    <tr class="details">
+                        <td ><img style="widht:100px; height:100px;" src="../assets/images/products/<?php echo $items_category[$i][0];?>.jpg"></td>
+                        <td><?php echo $items_category[$i][3] ;?> <?php echo $items_category[$i][1];?></td>
+                        <td><?Php echo $items_category[$i][0];?></td>
+                        <td><?php echo $items_category[$i][2];?></td>
                     </tr>
-                    <?php   $i++;}
+                    <?php 
                      
                     }
                     ?>
+</table>       
+                  
