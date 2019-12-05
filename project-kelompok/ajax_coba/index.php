@@ -8,9 +8,7 @@
         <div id="modal">
         </div>
         <script>
-            var productId;
-            
-            
+            var productId;       
             $(document).ready(function (){
                 $('.btn-view').on('click', function(){
                     productId = $(this).data('nomor_produk');

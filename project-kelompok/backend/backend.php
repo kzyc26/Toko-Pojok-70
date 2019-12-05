@@ -6,14 +6,14 @@
 
 <head>
     <title> Report </title>
-
+    <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
 </head>
 
 <body>
     <?php
   require_once('db.php');
   $cmd_user="SELECT username, password FROM customer";
-  $user_result	= mysqli_query($con,$cmd_user) or die(mysqli_error($con));
+  $user_result  = mysqli_query($con,$cmd_user) or die(mysqli_error($con));
   $user=mysqli_fetch_all($user_result);
   $user_count = mysqli_num_rows($user_result);
   
@@ -32,7 +32,6 @@
   $customerreview_result  = mysqli_query($con,$cmd_customerreview) or die(mysqli_error($con));
   $customerreview=mysqli_fetch_all($customerreview_result);
   $customerreview_count = mysqli_num_rows($customerreview_result);
-
 
   $cmd_customer_subtotal="SELECT fullname,td.transaction_id, sum(total_harga) as `subtotal`
   from transaction t, transaction_detail td, customer c
@@ -64,7 +63,6 @@
   $cart_detail=mysqli_fetch_all($cart_detail_result);
   $cart_detail_count = mysqli_num_rows($cart_detail_result);
 
-
    
   $cmd_wishlist="SELECT fullname, pd.id_product, ukuran,warna, price
   from product_detail pd, customer c, wishlist w, product p 
@@ -85,7 +83,6 @@ where t.username=c.username and payment_status <> 0";
   $userdelivdetails_result  = mysqli_query($con,$cmd_userdelivdetails) or die(mysqli_error($con));
   $userdelivdetails=mysqli_fetch_all($userdelivdetails_result);
   $userdelivdetails_count = mysqli_num_rows($userdelivdetails_result);
-
 
   $cmd_alamat="SELECT username, provinsi, kab_kota,kecamatan,kelurahan,kode_pos,alamat
   from customer";
@@ -133,11 +130,12 @@ where t.username=c.username and payment_status <> 0";
       $sql_cat = mysqli_query($con, $query) or die(mysqli_error($con));
       $hitung_cat = mysqli_num_rows($sql_cat);
       $cat = mysqli_fetch_all($sql_cat);
-      if ($hitung_prod !== 0){ ?>
+      if ($hitung_prod !== 0){ 
+          ?>
           
     <form action="" method="post">
     <br/><br/>
-    <div class="search">
+        <div class="search">
             <input type="text" name="keyword" class="form-control" placeholder="Search" autofocus autocomplete="off">
           </div>
           <button type="submit" name="search" class="btn btn-default" onclick="showsearchresult()"><span class="glyphicon glyphicon-search"></span></button>
@@ -179,7 +177,6 @@ where t.username=c.username and payment_status <> 0";
                 <br>
                 <a href="#" onclick="showdiscount()">Product dengan Diskon</a>
 
-
             </div>
             <div class="seperator">
             </div>
@@ -195,16 +192,25 @@ where t.username=c.username and payment_status <> 0";
                     $i=0;
                     if ($hitung_prod>0){while($i <= $hitung_prod-1){ ?>
                 <tr>
-                    <td> <?php echo $prod[$i][0];?></td>
-                    <td> <?php echo $prod[$i][3];?></td>
-                    <td> <?php echo $prod[$i][6];?></td>
+                    <td> <?php 
+                    echo $prod[$i][0];
+                    ?></td>
+                    <td> <?php 
+                    echo $prod[$i][3];
+                    ?></td>
+                    <td> <?php 
+                    echo $prod[$i][6];
+                    ?></td>
                 </tr>
-                <?php $i++; }
-                     } ?>
+                <?php 
+                $i++; }
+                     } 
+                     ?>
 
             </table>
             <?php
-  } elseif ($hitung_cat !== 0){ ?>
+  } elseif ($hitung_cat !== 0){ 
+      ?>
     <table class="hasil_search">
         <tr>
             <th>Id Category</th>
@@ -213,14 +219,23 @@ where t.username=c.username and payment_status <> 0";
         </tr>
         <?php                        
             $i=0;
-            if ($hitung_cat>0){while($i <= $hitung_cat-1){ ?>
+            if ($hitung_cat>0){while($i <= $hitung_cat-1){ 
+                ?>
         <tr>
-            <td> <?php echo $cat[$i][0];?></td>
-            <td> <?php echo $cat[$i][1];?></td>
-            <td> <?php echo $cat[$i][2];?></td>
+            <td> <?php 
+            echo $cat[$i][0];
+            ?></td>
+            <td> <?php 
+            echo $cat[$i][1];
+            ?></td>
+            <td> <?php 
+            echo $cat[$i][2];
+            ?></td>
         </tr>
-        <?php $i++; }
-             } ?>
+        <?php 
+        $i++; }
+             } 
+             ?>
 
     </table> 
     <?php
@@ -350,7 +365,6 @@ where t.username=c.username and payment_status <> 0";
 
                     </table>
                 </div>
-
 
               
                 <table class="cartdetails">
@@ -583,7 +597,6 @@ where t.username=c.username and payment_status <> 0";
             </div>
         </div>
     </div>
-
 
     <link href="../css/backend.css" rel="stylesheet">
     <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>

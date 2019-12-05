@@ -1,19 +1,19 @@
-document.querySelector('.user').style.display = 'none';
-document.querySelector('.accumulated').style.display = 'none';
-document.querySelector('.customerreview').style.display = 'none';
-document.querySelector('.customer_subtotal').style.display = 'none';
-document.querySelector('.productdetails').style.display = 'none';
-document.querySelector('.itemcategory').style.display = 'none';
-document.querySelector('.cartdetails').style.display = 'none';
-document.querySelector('.Wishlist').style.display = 'none';
-document.querySelector('.vouchercustomer').style.display = 'none';
-document.querySelector('.orderhistory').style.display = 'none';
-document.querySelector('.alamat').style.display = 'none';
-document.querySelector('.biodata').style.display = 'none';
-document.querySelector('.oldpassword').style.display = 'none';
-document.querySelector('.userdelivdetails').style.display = 'none';
-document.querySelector('.bestseller').style.display = 'none';
-document.querySelector('.Discount').style.display = 'none';
+// document.querySelector('.user').style.display = 'none';
+// document.querySelector('.accumulated').style.display = 'none';
+// document.querySelector('.customerreview').style.display = 'none';
+// document.querySelector('.customer_subtotal').style.display = 'none';
+// document.querySelector('.productdetails').style.display = 'none';
+// document.querySelector('.itemcategory').style.display = 'none';
+// document.querySelector('.cartdetails').style.display = 'none';
+// document.querySelector('.Wishlist').style.display = 'none';
+// document.querySelector('.vouchercustomer').style.display = 'none';
+// document.querySelector('.orderhistory').style.display = 'none';
+// document.querySelector('.alamat').style.display = 'none';
+// document.querySelector('.biodata').style.display = 'none';
+// document.querySelector('.oldpassword').style.display = 'none';
+// document.querySelector('.userdelivdetails').style.display = 'none';
+// document.querySelector('.bestseller').style.display = 'none';
+// document.querySelector('.Discount').style.display = 'none';
 // document.querySelector('.hasil_search').style.display = 'none';
 
 function showuser() {
@@ -391,24 +391,24 @@ function categorychange(){
 }
 
 
-// var query;            
-//         $(document).ready(function (){
-//             $('.isi').click(function(event){
-//                 event.preventDefault();
-//                 query = $(this).data('query');
-//                 var array_judul;
-//                 if (query == "SELECT username, password FROM customer"){
-//                     array_judul = ["Username", "Password"];
-//                 }
-//                 $.ajax({
-//                     url: "hasil-ajax-backend.php",
-//                     method: "GET",
-//                     data: { query, array_judul },
-//                     dataType: "html",
-//                     success: function (result){
-//                         $("#hasil").html(result);
-//                     }
-//                 });
-//             });
+var query;            
+        $(document).ready(function (){
+            $('.isi').click(function(event){
+                event.preventDefault();
+                query = $(this).data('query');
+                var array_judul;
+                if (query == "SELECT username, password FROM customer"){
+                    array_judul = ["Username", "Password"];
+                }
+                $.ajax({
+                    url: "hasil-ajax-backend.php",
+                    method: "GET",
+                    data: { query, array_judul },
+                    dataType: "html",
+                    success: function (result){
+                        $("#hasil").html(result);
+                    }
+                });
+            });
             
-//         });
+        });
