@@ -15,12 +15,20 @@ table td,table th{
 }
 table{
   margin-top:20px;
-  margin-left: 30%;
+  margin-left: 25%;
   
 }.seperator {
     border-left: 6px solid black;
     height: auto;
   }
+#listitem td, #listitem tr, #listitem th{
+padding:10px;
+text-align: center;
+border:1px solid black
+}
+#itemcategory{
+    margin-left: 20%;
+}
 
 .search{
  width: 40%;

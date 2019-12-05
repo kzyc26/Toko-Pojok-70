@@ -385,7 +385,7 @@ function categorychange(){
                 data: { cat },
                 dataType: "html",
                 success: function(result){
-                    $("#listitem").html(result);
+                    $("#categoryfill").html(result);
                 }
             });
 }

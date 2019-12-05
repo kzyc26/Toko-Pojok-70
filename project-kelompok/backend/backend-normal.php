@@ -13,7 +13,7 @@
     <?php
   require_once('db.php');
   $cmd_user="SELECT username, password FROM customer";
-  $user_result	= mysqli_query($con,$cmd_user) or die(mysqli_error($con));
+  $user_result  = mysqli_query($con,$cmd_user) or die(mysqli_error($con));
   $user=mysqli_fetch_all($user_result);
   $user_count = mysqli_num_rows($user_result);
   
@@ -32,7 +32,6 @@
   $customerreview_result  = mysqli_query($con,$cmd_customerreview) or die(mysqli_error($con));
   $customerreview=mysqli_fetch_all($customerreview_result);
   $customerreview_count = mysqli_num_rows($customerreview_result);
-
 
   $cmd_customer_subtotal="SELECT fullname,td.transaction_id, sum(total_harga) as `subtotal`
   from transaction t, transaction_detail td, customer c
@@ -64,7 +63,6 @@
   $cart_detail=mysqli_fetch_all($cart_detail_result);
   $cart_detail_count = mysqli_num_rows($cart_detail_result);
 
-
    
   $cmd_wishlist="SELECT fullname, pd.id_product, ukuran,warna, price
   from product_detail pd, customer c, wishlist w, product p 
@@ -85,7 +83,6 @@ where t.username=c.username and payment_status <> 0";
   $userdelivdetails_result  = mysqli_query($con,$cmd_userdelivdetails) or die(mysqli_error($con));
   $userdelivdetails=mysqli_fetch_all($userdelivdetails_result);
   $userdelivdetails_count = mysqli_num_rows($userdelivdetails_result);
-
 
   $cmd_alamat="SELECT username, provinsi, kab_kota,kecamatan,kelurahan,kode_pos,alamat
   from customer";
@@ -178,7 +175,6 @@ where t.username=c.username and payment_status <> 0";
                 <a href="#" onclick="showbestseller()">Best Seller Products</a>
                 <br>
                 <a href="#" onclick="showdiscount()">Product dengan Diskon</a>
-
 
             </div>
             <div class="seperator">
@@ -350,7 +346,6 @@ where t.username=c.username and payment_status <> 0";
 
                     </table>
                 </div>
-
 
               
                 <table class="cartdetails">
@@ -584,7 +579,6 @@ where t.username=c.username and payment_status <> 0";
         </div>
     </div>
 
-
     <link href="../css/backend.css" rel="stylesheet">
     <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
     <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
@@ -592,3 +586,4 @@ where t.username=c.username and payment_status <> 0";
 </body>
 
 </html>
+
