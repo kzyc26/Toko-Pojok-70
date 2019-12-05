@@ -23,30 +23,30 @@
                 <br>
                 <a href="#">Customer Subtotal</a>
                 <br>
-                <a href="#" onclick="showproductdetails()">Product Details</a>
+                <a href="#" >Product Details</a>
                 <br>
-                <a href="#" onclick="showitemscategory()">Items Per Category</a>
+                <a href="#">Items Per Category</a>
                 <br>
-                <a href="#" onclick="showcartdetails()">Item Details in Cart</a>
+                <a href="#" >Item Details in Cart</a>
                 <br>
 
-                <a href="#" onclick="showwishlist()">Wishlist</a>
+                <a href="#" >Wishlist</a>
                 <br>
-                <a href="#" onclick="showvoucher()">Voucher Customer</a>
+                <a href="voucher.php" >Voucher Customer</a>
                 <br>
-                <a href="#" onclick="showorderhistory()">User Order History</a>
+                <a href="orderhistory.php" >User Order History</a>
                 <br>
-                <a href="#" onclick="showalamat()">Alamat User</a>
+                <a href="alamat.php">Alamat User</a>
                 <br>
-                <a href="#" onclick="showbiodata()">Biodata</a>
+                <a href="biodata.php" >Biodata</a>
                 <br>
-                <a href="#" onclick="showoldpass()">Old Password</a>
+                <a href="oldpass.php" >Old Password</a>
                 <br>
-                <a href="#" onclick="showuserdeliverydetails()">User Delivery Details</a>
+                <a href="userdelivdetails.php" >User Delivery Details</a>
                 <br>
-                <a href="#" onclick="showbestseller()">Best Seller Products</a>
+                <a href="bestseller.php">Best Seller Products</a>
                 <br>
-                <a href="discount.php" onclick="showdiscount()">Product dengan Diskon</a>
+                <a href="discount.php" >Product dengan Diskon</a>
             </div>
             <div class="seperator">
             </div>
