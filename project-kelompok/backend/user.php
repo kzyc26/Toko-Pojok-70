@@ -27,4 +27,4 @@
 
 
 
-<?php include("footer_backend.php") ?>
+<?php include("footer.php") ?>
