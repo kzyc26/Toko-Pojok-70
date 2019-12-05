@@ -1,6 +1,7 @@
 <?php
 if(!isset($sid)){
 session_start();
+}
 require_once('db.php');
 ?>
 
