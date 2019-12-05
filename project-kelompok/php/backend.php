@@ -1,128 +1,54 @@
 <!DOCTYPE html>
 <?php
     session_start();
-    require_once('db.php');
-    $cmd_user="SELECT username, password FROM customer";
-    $user_result	= mysqli_query($con,$cmd_user) or die(mysqli_error($con));
-    $user=mysqli_fetch_all($user_result);
-    $user_count = mysqli_num_rows($user_result);
-    
-    $cmd_accumulated="SELECT Id_product,ukuran,warna, avg(Star_rating) as `Rating` 
-    from review r, product_detail p
-    where r.id_product_detail = p.id_product_detail
-    group by r.id_product_detail";
-    $accumulated_result  = mysqli_query($con,$cmd_accumulated) or die(mysqli_error($con));
-    $accumulated=mysqli_fetch_all($accumulated_result);
-    $accumulated_count = mysqli_num_rows($accumulated_result);
-  
-    $cmd_customerreview="SELECT fullname, r.id_product_detail,star_rating, review
-    from review r, transaction t, customer c
-    where r.Id_transaction = t.transaction_id and c.username = t.username
-    ";
-    $customerreview_result  = mysqli_query($con,$cmd_customerreview) or die(mysqli_error($con));
-    $customerreview=mysqli_fetch_all($customerreview_result);
-    $customerreview_count = mysqli_num_rows($customerreview_result);
-  
-  
-    $cmd_customer_subtotal="SELECT fullname,td.transaction_id, sum(total_harga) as `subtotal`
-    from transaction t, transaction_detail td, customer c
-    where c.username=t.username and td.transaction_id = t.transaction_id and t.payment_status = 0
-    group by transaction_detail_id ";
-    $customer_subtotal_result  = mysqli_query($con,$cmd_customer_subtotal) or die(mysqli_error($con));
-    $customer_subtotal=mysqli_fetch_all($customer_subtotal_result);
-    $customer_subtotal_count = mysqli_num_rows($customer_subtotal_result);
-  
-    $cmd_product_details="SELECT id_product,concat(category_name,' ',Product_name) as `Product Name`, Product_desc, price 
-    from product p , category c
-    where c.id_category = p.id_category ";
-    $product_details_result  = mysqli_query($con,$cmd_product_details) or die(mysqli_error($con));
-    $product_details=mysqli_fetch_all($product_details_result);
-    $product_details_count = mysqli_num_rows($product_details_result);
-  
-    
-    
-    $cmd_category = "SELECT id_category,category_name from category";
-    $category_result  = mysqli_query($con,$cmd_category) or die(mysqli_error($con));
-    $category=mysqli_fetch_all($category_result);
-    $category_count = mysqli_num_rows($category_result);
-  
-     
-    $cmd_cart_detail="SELECT fullname ,td.transaction_id,p.id_product,ukuran,warna, jumlah_product,harga_jual_satuan,total_harga
-    from customer c, transaction t, transaction_detail td, product_detail p
-    where c.username=t.username and td.transaction_id=t.transaction_id and td.id_product_detail = p.id_product_detail";
-    $cart_detail_result  = mysqli_query($con,$cmd_cart_detail) or die(mysqli_error($con));
-    $cart_detail=mysqli_fetch_all($cart_detail_result);
-    $cart_detail_count = mysqli_num_rows($cart_detail_result);
-  
-  
-     
-    $cmd_wishlist="SELECT fullname, pd.id_product, ukuran,warna, price
-    from product_detail pd, customer c, wishlist w, product p 
-    where pd.id_product_detail=w.Id_product_detail and c.username = w.username and p.id_product = pd.id_product";
-    $wishlist_result  = mysqli_query($con,$cmd_wishlist) or die(mysqli_error($con));
-    $wishlist=mysqli_fetch_all($wishlist_result);
-    $wishlist_count = mysqli_num_rows($wishlist_result);
-   
-    $cmd_orderhistory="SELECT fullname,t.date, total_transaction
-  from customer c, transaction t
-  where t.username=c.username and payment_status <> 0";
-    $orderhistory_result  = mysqli_query($con,$cmd_orderhistory) or die(mysqli_error($con));
-    $orderhistory=mysqli_fetch_all($orderhistory_result);
-    $orderhistory_count = mysqli_num_rows($orderhistory_result);
-  
-   
-    $cmd_userdelivdetails="SELECT * FROM delivery_details;";
-    $userdelivdetails_result  = mysqli_query($con,$cmd_userdelivdetails) or die(mysqli_error($con));
-    $userdelivdetails=mysqli_fetch_all($userdelivdetails_result);
-    $userdelivdetails_count = mysqli_num_rows($userdelivdetails_result);
-  
-  
-    $cmd_alamat="SELECT username, provinsi, kab_kota,kecamatan,kelurahan,kode_pos,alamat
-    from customer";
-     $alamat_result  = mysqli_query($con,$cmd_alamat) or die(mysqli_error($con));
-     $alamat=mysqli_fetch_all($alamat_result);
-     $alamat_count = mysqli_num_rows($alamat_result);
-     
-     $cmd_biodata="SELECT fullname, telepon,jenis_kelamin
-     from customer";
-     $biodata_result  = mysqli_query($con,$cmd_biodata) or die(mysqli_error($con));
-     $biodata=mysqli_fetch_all($biodata_result);
-     $biodata_count = mysqli_num_rows($biodata_result);
-  
-     $cmd_bestseller="SELECT d.id_product,sum(jumlah_product) as`best seller`
-     from product p, product_detail d, transaction_detail td,transaction t
-     where td.id_product_detail=d.id_product_detail and d.id_product=p.id_product and t.transaction_id = td.transaction_id and t.payment_status =0
-     group by td.id_product_detail
-     order by `best seller`
-     limit 5";
-     $bestseller_result  = mysqli_query($con,$cmd_bestseller) or die(mysqli_error($con));
-     $bestseller=mysqli_fetch_all($bestseller_result);
-     $bestseller_count = mysqli_num_rows($bestseller_result);
-    
-     $cmd_discount="SELECT id_product, if(Discount_price=null,Discount_price,'Normal Price') as `Discount`
-     from product";
-     $discount_result  = mysqli_query($con,$cmd_discount) or die(mysqli_error($con));
-     $discount=mysqli_fetch_all($discount_result);
-     $discount_count = mysqli_num_rows($discount_result);
-     
-     $cmd_voucher="SELECT uv.username , voucher_name
-     from user_voucher uv,voucher v, customer c
-     where uv.username = c.username and uv.id_voucher = v.id_voucher";
-     $voucher_result  = mysqli_query($con,$cmd_voucher) or die(mysqli_error($con));
-     $voucher=mysqli_fetch_all($voucher_result);
-     $voucher_count = mysqli_num_rows($voucher_result);
-  
 ?>
 <html>
 
 <head>
     <title> Report </title>
-    <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
+
 </head>
 
 <body>
+    <?php
+  require_once('db.php');
+  $cmd_user="SELECT username, password FROM customer";
+  $user_result  = mysqli_query($con,$cmd_user) or die(mysqli_error($con));
+  $user=mysqli_fetch_all($user_result);
+  $user_count = mysqli_num_rows($user_result);
+  
+  $cmd_accumulated="SELECT Id_product,ukuran,warna, avg(Star_rating) as `Rating` 
+  from review r, product_detail p
+  where r.id_product_detail = p.id_product_detail
+  group by r.id_product_detail";
+  $accumulated_result  = mysqli_query($con,$cmd_accumulated) or die(mysqli_error($con));
+  $accumulated=mysqli_fetch_all($accumulated_result);
+  $accumulated_count = mysqli_num_rows($accumulated_result);
 
- <?php 
+  $cmd_customerreview="SELECT fullname, r.id_product_detail,star_rating, review
+  from review r, transaction t, customer c
+  where r.Id_transaction = t.transaction_id and c.username = t.username
+  ";
+  $customerreview_result  = mysqli_query($con,$cmd_customerreview) or die(mysqli_error($con));
+  $customerreview=mysqli_fetch_all($customerreview_result);
+  $customerreview_count = mysqli_num_rows($customerreview_result);
+
+  $cmd_customer_subtotal="SELECT fullname,td.transaction_id, sum(total_harga) as `subtotal`
+  from transaction t, transaction_detail td, customer c
+  where c.username=t.username and td.transaction_id = t.transaction_id and t.payment_status = 0
+  group by transaction_detail_id ";
+  $customer_subtotal_result  = mysqli_query($con,$cmd_customer_subtotal) or die(mysqli_error($con));
+  $customer_subtotal=mysqli_fetch_all($customer_subtotal_result);
+  $customer_subtotal_count = mysqli_num_rows($customer_subtotal_result);
+
+  $cmd_product_details="SELECT d.Id_product,ukuran,warna,jumlah 
+                        from product_detail d, product p
+                        where p.id_product = d.id_product ";
+  $product_details_result  = mysqli_query($con,$cmd_product_details) or die(mysqli_error($con));
+  $product_details=mysqli_fetch_all($product_details_result);
+  $product_details_count = mysqli_num_rows($product_details_result);
+
+  
   
   $cmd_category = "SELECT id_category,category_name from category";
   $category_result  = mysqli_query($con,$cmd_category) or die(mysqli_error($con));
@@ -136,7 +62,6 @@
   $cart_detail_result  = mysqli_query($con,$cmd_cart_detail) or die(mysqli_error($con));
   $cart_detail=mysqli_fetch_all($cart_detail_result);
   $cart_detail_count = mysqli_num_rows($cart_detail_result);
-
 
    
   $cmd_wishlist="SELECT fullname, pd.id_product, ukuran,warna, price
@@ -158,7 +83,6 @@ where t.username=c.username and payment_status <> 0";
   $userdelivdetails_result  = mysqli_query($con,$cmd_userdelivdetails) or die(mysqli_error($con));
   $userdelivdetails=mysqli_fetch_all($userdelivdetails_result);
   $userdelivdetails_count = mysqli_num_rows($userdelivdetails_result);
-
 
   $cmd_alamat="SELECT username, provinsi, kab_kota,kecamatan,kelurahan,kode_pos,alamat
   from customer";
@@ -251,7 +175,6 @@ where t.username=c.username and payment_status <> 0";
                 <a href="#" onclick="showbestseller()">Best Seller Products</a>
                 <br>
                 <a href="#" onclick="showdiscount()">Product dengan Diskon</a>
-
 
             </div>
             <div class="seperator">
@@ -387,64 +310,44 @@ where t.username=c.username and payment_status <> 0";
                     }
                     ?>
                 </table>
-                <div class="productdetails">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                    <?php for($i=0; $i<=$product_details_count-1; $i++){
-                        ?> <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="heading-<?php echo $i;?>">
-                            <h4 class="panel-title">
-                                <a style="text-align:center;"role="button" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapse-<?php echo $i;?>" aria-expanded="true"
-                                    aria-controls="collapse-<?php echo $i;?>">
-                                    <?php echo $product_details[$i][0]?>
-                                </a>
-                            </h4>
-                        </div>
-                        <?php 
-                        $cmd_prod_details="SELECT id_product_detail,ukuran,warna, jumlah
-                        from product p, product_detail pd
-                        where p.id_product= pd.id_product and pd.id_product = '".$product_details[$i][0]."'";
-                        $prod_details_result  = mysqli_query($con,$cmd_prod_details) or die(mysqli_error($con));
-                        $prod_details=mysqli_fetch_all($prod_details_result);
-                        $prod_details_count = mysqli_num_rows($prod_details_result);?>
-                        
-                        <div id="collapse-<?php echo $i;?>" class="panel-collapse collapse in" role="tabpanel"
-                            aria-labelledby="heading-<?php echo $i;?>">
-                            <div class="panel-body">
-                             <div class="row">
-                             <div class="col-md-4">
-                             <img style="width:200px; height:200px;" src="../assets/images/products/<?php echo $product_details[$i][0]?>.jpg">
-                             </div>
-                             <div class="col-md-8">
-                             <h5> </h5>
-                             <h5> </h5>
-                             <h5> </h5>
-                             <h5> </h5>
+                <table class="productdetails">
+                    <tr>
+                        <th> ID Product </th>
+                        <th> Ukuran</th>
+                        <th> Warna </th>
+                        <th> Jumlah</th>
+                    </tr>
+                    <?php 
+                    $i=1;
+                
+                    if($product_details_count>0){
+                        while($i<$product_details_count){?>
+                    <tr>
+                        <td><?php echo $product_details[$i-1][0];?></td>
+                        <td><?php echo $product_details[$i-1][1];?></td>
+                        <td><?php echo $product_details[$i-1][2];?></td>
+                        <td><?php echo $product_details[$i-1][3];?></td>
+                    </tr>
+                    <?php   $i++;}
+                     
+                    }
+                    ?>
 
-                             </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <?php }?>
-
-                </div>
-
-                </div>
+                </table>
                 <div class="itemcategory" id="itemcategory">
                     <p> Select Category: </p>
                     <select name="category" id="listcategory" onchange="categorychange()">
                         <option value=""></option>
-                        <?php for($i=0; $i<=$category_count-1; $i++){?>
+                        <?php for($i=0; $i<=$category_count-1; $i++){?> 
                         <option value="<?php echo $category[$i][0];?>"><?php echo $category[$i][1];?></option>
                         <?php }?>
                     </select>
-                    <br>
-                    <div id="categoryfill">
-                    </div>
+                    <table id="listitem">
 
+                    </table>
                 </div>
 
+              
                 <table class="cartdetails">
                     <tr>
                         <th>Name</th>
@@ -676,7 +579,6 @@ where t.username=c.username and payment_status <> 0";
         </div>
     </div>
 
-
     <link href="../css/backend.css" rel="stylesheet">
     <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
     <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
@@ -684,3 +586,4 @@ where t.username=c.username and payment_status <> 0";
 </body>
 
 </html>
+

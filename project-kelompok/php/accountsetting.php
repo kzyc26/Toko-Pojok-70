@@ -469,7 +469,17 @@ require_once('navbar.php');
                             <?php
 
                             if($review == 1){
-
+                                $cmd_check_review="SELECT * from review where id_product = '".$orderhistory[$i][0]."'";
+                                $check_review_result= mysqli_query($con,$cmd_check_review) or die(mysqli_error($con));
+                                $check_review=mysqli_fetch_all($check_review_result);
+                                $check_review_count=mysqli_num_rows($check_review_result);
+                                if($check_review_count==0){ ?>
+                                    <form method="post" id="product" action="product-review.php">
+                                    <input type="submit" class="col-xs2 btn btn-primary btn-load btn-lg"
+                                    data-loading-text="Changing Password..." name="" value="Change Password">
+                                    </form> 
+                                <?php }
+                               
                             }?>
 
                             </div>
