@@ -17,7 +17,7 @@
                 <h2>Report</h2>
                 <a href="user.php">Login Details Pengguna</a>
                 <br>
-                <a href="#" onclick="showaccumulated()">Customer Review Accumulated per Product</a>
+                <a href="accumulated.php">Customer Review Accumulated per Product</a>
                 <br>
                 <a href="#" onclick="showreview()">Individual Customer Review</a>
                 <br>
