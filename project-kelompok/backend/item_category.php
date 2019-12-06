@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('db.php');
+$g=$_GET;
 if(isset($g['cat'])){
     $cat_id=$g['cat'];
 }

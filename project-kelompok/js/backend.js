@@ -8,7 +8,7 @@ function categorychange(){
                 data: { cat },
                 dataType: "html",
                 success: function(result){
-                    $("#categoryfill").html(result);
+                    $("#listitem").html(result);
                 }
             });
 }

@@ -19,18 +19,21 @@
                 <br>
                 <a href="accumulated.php">Customer Review Accumulated per Product</a>
                 <br>
-                <a href="#" onclick="showreview()">Individual Customer Review</a>
+                <a href="customer_review.php">Individual Customer Review</a>
                 <br>
-                <a href="#" onclick="showcustsubtotal()">Customer Subtotal</a>
+                <a href="customer_subtotal.php">Customer Subtotal</a>
                 <br>
-                <a href="#" onclick="showproductdetails()">Product Details</a>
+                <a href="product_details.php">Product Details</a>
                 <br>
-                <a href="#" onclick="showitemscategory()">Items Per Category</a>
+                <a href="items_per_category.php">Items Per Category</a>
                 <br>
-                <a href="#" onclick="showcartdetails()">Item Details in Cart</a>
+                <a href="item_details_in_cart.php">Item Details in Cart</a>
                 <br>
-
-                <a href="#" onclick="showwishlist()">Wishlist</a>
+                <a href="wishlist.php">Wishlist</a>
+                <br>
+                <a href="penjualan_perhari.php">Penjualan per Hari</a>
+                <br>
+                <a href="jumlah_penjualan_perhari.php">Jumlah Penjualan per Hari</a>
                 <br>
                 <a href="#" onclick="showvoucher()">Voucher Customer</a>
                 <br>
