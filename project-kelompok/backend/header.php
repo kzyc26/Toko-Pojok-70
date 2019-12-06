@@ -35,21 +35,21 @@
                 <br>
                 <a href="jumlah_penjualan_perhari.php">Jumlah Penjualan per Hari</a>
                 <br>
-                <a href="#" onclick="showvoucher()">Voucher Customer</a>
+                <a href="voucher.php" >Voucher Customer</a>
                 <br>
-                <a href="#" onclick="showorderhistory()">User Order History</a>
+                <a href="orderhistory.php" >User Order History</a>
                 <br>
-                <a href="#" onclick="showalamat()">Alamat User</a>
+                <a href="alamat.php">Alamat User</a>
                 <br>
-                <a href="#" onclick="showbiodata()">Biodata</a>
+                <a href="biodata.php" >Biodata</a>
                 <br>
-                <a href="#" onclick="showoldpass()">Old Password</a>
+                <a href="oldpass.php" >Old Password</a>
                 <br>
-                <a href="#" onclick="showuserdeliverydetails()">User Delivery Details</a>
+                <a href="userdelivdetails.php" >User Delivery Details</a>
                 <br>
-                <a href="#" onclick="showbestseller()">Best Seller Products</a>
+                <a href="bestseller.php">Best Seller Products</a>
                 <br>
-                <a href="#" onclick="showdiscount()">Product dengan Diskon</a>
+                <a href="discount.php" >Product dengan Diskon</a>
             </div>
             <div class="seperator">
             </div>
