@@ -35,6 +35,8 @@
                 <br>
                 <a href="jumlah_penjualan_perhari.php">Jumlah Penjualan per Hari</a>
                 <br>
+                <a href="jumlah_penjualan_perbulan.php">Jumlah Penjualan per Bulan</a>
+                <br>
                 <a href="voucher.php" >Voucher Customer</a>
                 <br>
                 <a href="orderhistory.php" >User Order History</a>
@@ -48,6 +50,8 @@
                 <a href="userdelivdetails.php" >User Delivery Details</a>
                 <br>
                 <a href="bestseller.php">Best Seller Products</a>
+                <br>
+                <a href="mostwanted.php">Most Wanted Products</a>
                 <br>
                 <a href="discount.php" >Product dengan Diskon</a>
             </div>

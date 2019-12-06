@@ -12,3 +12,17 @@ function categorychange(){
                 }
             });
 }
+function monthchange(){    
+    var cbmonth = document.getElementById("monthlist");
+    var month = cbmonth.options[cbmonth.selectedIndex].value;
+    // alert(cat);
+            $.ajax({
+                url: "monthly_revenue.php",
+                method: "GET",
+                data: { month },
+                dataType: "html",
+                success: function(result){
+                    $("#monthlyrev").html(result);
+                }
+            });
+}

@@ -56,13 +56,7 @@
   $category_count = mysqli_num_rows($category_result);
 
    
-  $cmd_cart_detail="SELECT fullname ,td.transaction_id,p.id_product,ukuran,warna, jumlah_product,harga_jual_satuan,total_harga
-  from customer c, transaction t, transaction_detail td, product_detail p
-  where c.username=t.username and td.transaction_id=t.transaction_id and td.id_product_detail = p.id_product_detail";
-  $cart_detail_result  = mysqli_query($con,$cmd_cart_detail) or die(mysqli_error($con));
-  $cart_detail=mysqli_fetch_all($cart_detail_result);
-  $cart_detail_count = mysqli_num_rows($cart_detail_result);
-
+ 
    
   $cmd_wishlist="SELECT fullname, pd.id_product, ukuran,warna, price
   from product_detail pd, customer c, wishlist w, product p 
@@ -71,12 +65,7 @@
   $wishlist=mysqli_fetch_all($wishlist_result);
   $wishlist_count = mysqli_num_rows($wishlist_result);
  
-  $cmd_orderhistory="SELECT fullname,t.date, total_transaction
-from customer c, transaction t
-where t.username=c.username and payment_status <> 0";
-  $orderhistory_result  = mysqli_query($con,$cmd_orderhistory) or die(mysqli_error($con));
-  $orderhistory=mysqli_fetch_all($orderhistory_result);
-  $orderhistory_count = mysqli_num_rows($orderhistory_result);
+
 
  
   $cmd_userdelivdetails="SELECT * FROM delivery_details;";
@@ -84,40 +73,13 @@ where t.username=c.username and payment_status <> 0";
   $userdelivdetails=mysqli_fetch_all($userdelivdetails_result);
   $userdelivdetails_count = mysqli_num_rows($userdelivdetails_result);
 
-  $cmd_alamat="SELECT username, provinsi, kab_kota,kecamatan,kelurahan,kode_pos,alamat
-  from customer";
-   $alamat_result  = mysqli_query($con,$cmd_alamat) or die(mysqli_error($con));
-   $alamat=mysqli_fetch_all($alamat_result);
-   $alamat_count = mysqli_num_rows($alamat_result);
-   
-   $cmd_biodata="SELECT fullname, telepon,jenis_kelamin
-   from customer";
-   $biodata_result  = mysqli_query($con,$cmd_biodata) or die(mysqli_error($con));
-   $biodata=mysqli_fetch_all($biodata_result);
-   $biodata_count = mysqli_num_rows($biodata_result);
 
-   $cmd_bestseller="SELECT d.id_product,sum(jumlah_product) as`best seller`
-   from product p, product_detail d, transaction_detail td,transaction t
-   where td.id_product_detail=d.id_product_detail and d.id_product=p.id_product and t.transaction_id = td.transaction_id and t.payment_status =0
-   group by td.id_product_detail
-   order by `best seller`
-   limit 5";
-   $bestseller_result  = mysqli_query($con,$cmd_bestseller) or die(mysqli_error($con));
-   $bestseller=mysqli_fetch_all($bestseller_result);
-   $bestseller_count = mysqli_num_rows($bestseller_result);
-  
-   $cmd_discount="SELECT id_product, if(Discount_price=null,Discount_price,'Normal Price') as `Discount`
-   from product";
-   $discount_result  = mysqli_query($con,$cmd_discount) or die(mysqli_error($con));
-   $discount=mysqli_fetch_all($discount_result);
-   $discount_count = mysqli_num_rows($discount_result);
    
-   $cmd_voucher="SELECT uv.username , voucher_name
-   from user_voucher uv,voucher v, customer c
-   where uv.username = c.username and uv.id_voucher = v.id_voucher";
-   $voucher_result  = mysqli_query($con,$cmd_voucher) or die(mysqli_error($con));
-   $voucher=mysqli_fetch_all($voucher_result);
-   $voucher_count = mysqli_num_rows($voucher_result);
+   
+
+  
+
+  
 
    if (isset($_POST['search'])){
     $hasil = $_POST['keyword'];
@@ -366,38 +328,7 @@ where t.username=c.username and payment_status <> 0";
                     </table>
                 </div>
 
-              
-                <table class="cartdetails">
-                    <tr>
-                        <th>Name</th>
-                        <th> Transaction Id </th>
-                        <th> Product ID </th>
-                        <th> Ukuran </th>
-                        <th> Warna </th>
-                        <th> Jumlah </th>
-                        <th> Harga </th>
-                        <th> Total </th>
-                    </tr>
-                    <?php 
-                    $i=1;
-                
-                    if($cart_detail_count>0){
-                        while($i<$cart_detail_count){?>
-                    <tr>
-                        <td><?php echo $cart_detail[$i-1][0];?></td>
-                        <td><?php echo $cart_detail[$i-1][1];?></td>
-                        <td><?php echo $cart_detail[$i-1][2];?></td>
-                        <td><?php echo $cart_detail[$i-1][3];?></td>
-                        <td><?php echo $cart_detail[$i-1][4];?></td>
-                        <td><?php echo $cart_detail[$i-1][5];?></td>
-                        <td><?php echo $cart_detail[$i-1][6];?></td>
-                        <td><?php echo $cart_detail[$i-1][7];?></td>
-                    </tr>
-                    <?php   $i++;}
-                     
-                    }
-                    ?>
-                </table>
+            
                 <table class="Wishlist">
                     <tr>
                         <th>Name</th>
@@ -421,113 +352,10 @@ where t.username=c.username and payment_status <> 0";
                     }
                     ?>
                 </table>
-                <table class="vouchercustomer">
-                    <tr>
-                        <th>Username</th>
-                        <th>Voucher</th>
-                    </tr>
-                    <?php 
-                        $i=1;
-                        if ($voucher_count>0){
-                            while($i <= $voucher_count){ ?>
-                    <tr>
-                        <td> <?php echo $voucher[$i-1][0];?></td>
-                        <td> <?php echo $voucher[$i-1][1];?></td>
-                    </tr>
-                    <?php 
-                    $i++; }
-                         }
-                        ?>
-                </table>
-                <table class="orderhistory">
-                    <tr>
-                        <th> Name </th>
-                        <th> Date </th>
-                        <th> Total </th>
-                    </tr>
-                    <?php
-                    $i=1;
-                    if($orderhistory_count>0){
-                    while($i<=$orderhistory_count){?>
-                    <tr>
-                        <td><?php echo $orderhistory[$i-1][0];?></td>
-                        <td><?php echo $orderhistory[$i-1][1];?></td>
-                        <td><?php echo $orderhistory[$i-1][2];?></td>
-                    </tr>
-                    <?php 
-                    $i++;
-                    }
-                    };
-                
-                     ?>
-                </table>
-                <table class="alamat">
-                    <tr>
-                        <th> Username </th>
-                        <th> Provinsi </th>
-                        <th> Kabupaten/Kota </th>
-                        <th> Kecamatan </th>
-                        <th> Kelurahan </th>
-                        <th> Kode Pos </th>
-                        <th> Alamat </th>
-                    </tr>
-                    <?php
-                     $i=1;
-                    if ($alamat_count>0){
-                    while ($i<=$alamat_count){?>
-                    <tr>
-                        <td><?php echo $alamat[$i-1][0];?></td>
-                        <td><?php echo $alamat[$i-1][1];?></td>
-                        <td><?php echo $alamat[$i-1][2];?></td>
-                        <td><?php echo $alamat[$i-1][3];?></td>
-                        <td><?php echo $alamat[$i-1][4];?></td>
-                        <td><?php echo $alamat[$i-1][5];?></td>
-                        <td><?php echo $alamat[$i-1][6];?></td>
-                    </tr>
-                    <?php 
-                  $i++;
-                    }
-                    }
-                    ?>
-                </table>
-                <table class="biodata">
-                    <tr>
-                        <th> Nama Lengkap</th>
-                        <th> Nomor Telepon</th>
-                        <th> Jenis Kelamin</th>
-                    </tr>
-                    <?php
-                    $i=1;
-                    if($biodata_count>0){
-                    while($i<=$biodata_count){?>
-                    <tr>
-                        <td><?php echo $biodata[$i-1][0];?></td>
-                        <td><?php echo $biodata[$i-1][1];?></td>
-                        <td><?php echo $biodata[$i-1][2];?></td>
-                    </tr>
-                    <?php 
-                    $i++;
-                    }
-                    };
-                
-                     ?>
-                </table>
-                <table class="oldpassword">
-                    <tr>
-                        <th>Username</th>
-                        <th>Old Password</th>
-                    </tr>
-                    <?php 
-                        $count = intval($user_count);
-                        $i=1;
-                        if ($user_count>0){while($i <= $user_count){ ?>
-                    <tr>
-                        <td> <?php echo $user[$i-1][0];?></td>
-                        <td> <?php echo $user[$i-1][1];?></td>
-                    </tr>
-                    <?php $i++; }
-                         } ?>
-                </table>
+            
+               
+              
+               
                 <table class="userdelivdetails">
                     <tr>
                         <th>Transaction ID</th>
@@ -558,42 +386,8 @@ where t.username=c.username and payment_status <> 0";
                             }
                             ?>
                 </table>
-                <table class="bestseller">
-                    <tr>
-                        <th>Product ID</th>
-                        <th>Jumlah Terjual</th>
-                    </tr>
-                    <?php 
-                        $i=1;
-                        if ($bestseller_count>0){
-                            while($i <= $bestseller_count){ ?>
-                    <tr>
-                        <td> <?php echo $bestseller[$i-1][0];?></td>
-                        <td> <?php echo $bestseller[$i-1][1];?></td>
-                    </tr>
-                    <?php 
-                    $i++; }
-                         }
-                        ?>
-                </table>
-                <table class="Discount">
-
-                    <tr>
-                        <th>Product ID</th>
-                        <th>Discount Price</th>
-                    </tr>
-                    <?php 
-                        $i=1;
-                        if ($discount_count>0){
-                            while($i <= $discount_count){ ?>
-                    <tr>
-                        <td> <?php echo $discount[$i-1][0];?></td>
-                        <td> <?php echo $discount[$i-1][1];?></td>
-                    </tr>
-                    <?php $i++; }
-                         }; ?>
-
-                </table>
+                
+               
             </div>
         </div>
     </div>
