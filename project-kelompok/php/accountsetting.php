@@ -371,7 +371,7 @@ require_once('navbar.php');
                             $orderdetail_count=mysqli_num_rows($orderdetail_result);
                             if ($orderdetail_count>=1){
                                 $subtotal=0;
-                             for($a=1; $a<=$orderdetail_count; $a++){
+                             for($a=1; $a<=$orderdetail_count-1; $a++){
                                  $price = intval($orderdetail[$a][5]);
                                  
                                  $subtotal = $subtotal + $price;
@@ -406,8 +406,9 @@ require_once('navbar.php');
                                     </tr>
                                 </table>
                                 <br>
-                                <?php for($x=0; $x<=$orderdetail_count-1; $x++){?>
                                 <table class="orderdetail">
+                                <?php for($x=0; $x<=$orderdetail_count-1; $x++){?>
+                                
                                     <tr>
                                         <td><img src="../assets/images/products/<?php echo $orderdetail[$x][0];?>.jpg"
                                                 style="width:100px; height:100px;"></td>
@@ -453,17 +454,19 @@ require_once('navbar.php');
                                         </td>
                                     </tr>
                                 </table>
+                                <br>
+                               
                             <?php
 
                             if($review == 1){
-                                $cmd_check_review="SELECT * from review where id_product = '".$orderhistory[$i][0]."'";
+                                $cmd_check_review="SELECT * from review where id_transaction = '".$orderhistory[$i][0]."'";
                                 $check_review_result= mysqli_query($con,$cmd_check_review) or die(mysqli_error($con));
                                 $check_review=mysqli_fetch_all($check_review_result);
                                 $check_review_count=mysqli_num_rows($check_review_result);
                                 if($check_review_count==0){ ?>
                                     <form method="post" id="product" action="product-review.php">
-                                    <input type="submit" class="col-xs2 btn btn-primary btn-load btn-lg"
-                                    data-loading-text="Changing Password..." name="" value="Change Password">
+                                    <button type="submit" name="review" class="col-xs2 btn btn-primary btn-load btn-lg" value="<?php echo $orderhistory[$i][0]?> "> Add Review </button>
+                                     
                                     </form> 
                                 <?php }
                                
