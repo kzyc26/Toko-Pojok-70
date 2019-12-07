@@ -1,18 +1,30 @@
 <?php
 $halaman="Review";
+session_start();
 require_once('navbar.php');
 require_once('db.php');
 if(isset($_POST['review'])){
   $transactionid= $_POST['review'];
+  $_SESSION['transactionid'] = $_POST['review'];
 }
+
 $cmd_review = "select td.transaction_id, td.id_product_detail,pd.id_product,concat(category_name,' ',product_name), ukuran, warna from transaction_detail td, transaction t, product p , product_detail pd, category c where td.transaction_id = t.transaction_id and td.id_product_detail = pd.id_product_detail and p.id_product = pd.id_product and c.id_category = p.id_category and td.transaction_id = '".$transactionid."'";
 $review_result= mysqli_query($con,$cmd_review) or die(mysqli_error($con));
 $review=mysqli_fetch_all($review_result);
 $review_count=mysqli_num_rows($review_result);
+for($i=0; $i<=$review_count-1; $i++){
+  $idproduct[$i]= $review[$i][1];
+  
+} 
+$_SESSION["productdetail"]= $idproduct;
+$_SESSION["reviewcount"]=$review_count;
+?><script> alert('<?php echo $_SESSION["reviewcount"]?>');</script> <?php
+
 ?>
 
 <div class="content">
   <h1>PRODUCT REVIEW</h1>
+  <form action ="submit-review.php" method ="post">
   <div class="reviews">
     <table>
       <?php for($i=0; $i<=$review_count-1; $i++){?>
@@ -21,7 +33,7 @@ $review_count=mysqli_num_rows($review_result);
         <td style="padding:20px; margin-top:10%;">
           <br>
           <h4><?php echo $review[$i][3]?> - <?php echo $review[$i][4]?></h4>
-          <fieldset class="rating">
+          <fieldset class="rating" name ="rating-<?php echo $i;?>">
             <input type="radio" id="star5<?php echo $i?>" name="rating<?php echo $i?>" value="5" /><label class="full"
               for="star5<?php echo $i?>" title="Awesome - 5 stars"></label>
             <input type="radio" id="star4half<?php echo $i?>" name="rating<?php echo $i?>" value="4.5" /><label
@@ -44,7 +56,7 @@ $review_count=mysqli_num_rows($review_result);
               class="half" for="starhalf<?php echo $i?>" title="Sucks big time - 0.5 stars"></label>
           </fieldset>
           <br>
-          <textarea rows="10" cols="50" name="comment"></textarea>
+          <textarea rows="10" cols="50" name="comment-<?php echo $i?>"></textarea>
         </td>
 
       </tr>
@@ -52,14 +64,12 @@ $review_count=mysqli_num_rows($review_result);
       <?php }?>
 
     </table>
-
-    <a href="#" class="float">
-      <img src="https://img.icons8.com/nolan/100/000000/star.png">
-      <h6>Submit Review</h6>
-    </a>
-
   </div>
+  <br>
+  <button type="submit" name="subreview" class="col-xs2 btn btn-primary btn-load btn-lg" > Submit Review </button>
 
+  </form>
+  <br>
   <?php require_once('footer.php'); ?>
 
   <link href="../css/product review.css" rel="stylesheet">
