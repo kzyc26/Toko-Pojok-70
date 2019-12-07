@@ -8,7 +8,7 @@ if(isset($_SESSION['username'])){
         // print_r($_POST);
         // echo "</pre>";
         // die();
-        require('db.php');
+        require_once('db.php');
               // If form submitted, insert values into the database.
               if (isset($_POST['register'])){
                   $email = mysqli_real_escape_string($con, $_POST['email']);

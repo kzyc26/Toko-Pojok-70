@@ -1,20 +1,7 @@
 <?php
 require_once('db.php');
+session_start();
 $g = $_GET;
-if (isset($_POST['user'])){
-    if(isset($_SESSION['username'])){
-      header("location: accountsetting.php");
-  exit;
-            }else{
-              header("location: login.php");
-  exit;
-            }
-  }
-  
-  if (isset($_POST['cart'])){
-    header("location: check-out.php");
-  }
-
 if(!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must login first to view this page";
     header("location : login.php");

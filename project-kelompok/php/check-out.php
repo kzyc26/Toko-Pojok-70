@@ -2,6 +2,7 @@
 $sid = session_id();
 $page = "Check Out";
 require_once('navbar.php');
+require_once('db.php');
 ?>
 
   <?php 

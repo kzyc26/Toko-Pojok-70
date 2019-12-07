@@ -2,6 +2,7 @@
 <?php
 $page="Review";
 require_once('navbar.php');
+require_once('db.php');
 ?>
 
 <div class="content">

@@ -1,6 +1,7 @@
 <?php
 $page="Order Track";
 require_once('navbar.php');
+require_once('db.php');
 ?>
       <div class="content">
         <h4>Input Your Order ID Here</h4>

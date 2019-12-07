@@ -1,7 +1,7 @@
 <?php
 session_start();
 $sid = session_id();
-    require('db.php');	    
+require_once('db.php');    
     
     if (isset($_POST['user'])){
       if(isset($_SESSION['username'])){
