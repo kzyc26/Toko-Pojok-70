@@ -1,5 +1,5 @@
 <?php
-ini_set('memory_limit', '-1');
+// ini_set('memory_limit', '-1');
 session_start();
     if (isset($_POST['user'])){
         if(isset($_SESSION['username'])){
@@ -65,13 +65,13 @@ session_start();
    if ($count_all_item >= 1){
     if (isset($_SESSION['baris'])){
         $barang_display = $_SESSION['hasil_search'];
+        $row = $_SESSION['baris'];
     } else{
-        $barang_display = mysqli_fetch_assoc($limit_result);
+        $barang_display = mysqli_fetch_all($limit_result);
+        $row = mysqli_num_rows($limit_result);
     }
-		while($row = $barang_display) {            
-			$products[] = $row;
-		}
-    }     
+		
+}     
 $halaman="Products";
 require_once('navbar.php');
 ?>
