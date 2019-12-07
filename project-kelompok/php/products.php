@@ -1,4 +1,5 @@
 <?php
+// ini_set('memory_limit', '-1');
 session_start();
     if (isset($_POST['user'])){
         if(isset($_SESSION['username'])){
@@ -43,8 +44,8 @@ session_start();
     $all_result 	= mysqli_query($con,$cmd) or die(mysqli_error($con));
     $count_all_item = mysqli_num_rows($all_result);
     
-    if(isset($_SESSION['rows'])){        
-        $count_all_item = $_SESSION['rows'];
+    if(isset($_SESSION['baris'])){
+        $count_all_item = $_SESSION['baris'];
     }
     
 	$max_item 		= 9; //Max item in one page
@@ -61,16 +62,16 @@ session_start();
  
   
 	$products = null;
-    if(isset($_SESSION['rows'])){
-        while($row = $_SESSION['hasil_search']) {
-			$products[] = $row;
-		}
+   if ($count_all_item >= 1){
+    if (isset($_SESSION['baris'])){
+        $barang_display = $_SESSION['hasil_search'];
+        $row = $_SESSION['baris'];
+    } else{
+        $barang_display = mysqli_fetch_all($limit_result);
+        $row = mysqli_num_rows($limit_result);
     }
-    elseif ($count_all_item >= 1){
-		while($row = mysqli_fetch_assoc($limit_result)) {
-			$products[] = $row;
-		}
-    }     
+		
+}     
 $halaman="Products";
 require_once('navbar.php');
 ?>
@@ -126,13 +127,14 @@ require_once('navbar.php');
     </div>
     <div class="container">
         <div class="Categorytitle">
-            <?php if ($category==null){ ?>
+            <?php if ($category==null){ if (isset($_SESSION['baris'])) {
+                ?> 
+                <h1> <?php echo 'Search Result for "'.$_SESSION['keyword'].'"';?></h1>
+                <?php
+            }else{?>
             <h1> All Products </h1>
-            <?php } 
-            elseif (isset($_SESSION['rows'])) {
-                ?> <h1> <?php echo 'Search Result for "'.$_SESSION['keyword'].'"';?></h1><?php
-
-            }
+            <?php }  
+            }           
         else { ?> <h1> <?php echo $category_name[0];?> </h1><?php }?>
         </div>
         <div class='row productsimg'>

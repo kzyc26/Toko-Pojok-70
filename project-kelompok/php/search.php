@@ -13,11 +13,11 @@ if (isset($_POST['search'])){
       $sql_cat = mysqli_query($con, $query) or die(mysqli_error($con));
       $hitung_cat = mysqli_num_rows($sql_cat);
       if ($hitung_prod !== 0){
-        $_SESSION['hasil_search'] = mysqli_fetch_assoc($sql_prod);
+        $_SESSION['hasil_search'] = mysqli_fetch_all($sql_prod);
         $_SESSION['baris'] = $hitung_prod;
         header("location: products.php");
       } elseif ($hitung_cat !== 0){
-        $_SESSION['hasil_search'] = mysqli_fetch_assoc($sql_cat);
+        $_SESSION['hasil_search'] = mysqli_fetch_all($sql_cat);
         $_SESSION['baris'] = $hitung_cat;        
         header("location: products.php");
       } else {
