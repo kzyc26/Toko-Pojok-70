@@ -1,3 +1,4 @@
 <?php 
 session_start();
-echo $_SESSION['bar']; ?>
+echo $_SESSION['test']; 
+?>
