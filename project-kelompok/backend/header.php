@@ -31,7 +31,7 @@
                 <br>
                 <a href="wishlist.php">Wishlist</a>
                 <br>
-                <a href="penjualan_perhari.php">Penjualan per Hari</a>
+                <a href="invoice.php">Invoice per Hari</a>
                 <br>
                 <a href="jumlah_penjualan_perhari.php">Jumlah Penjualan per Hari</a>
                 <br>

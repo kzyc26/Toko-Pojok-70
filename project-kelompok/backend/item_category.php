@@ -25,7 +25,7 @@ $items_category_count = mysqli_num_rows($items_category_result);
                 
                   for($i=0; $i<=$items_category_count-1; $i++){?>
                     <tr class="details">
-                        <td ><img style="widht:100px; height:100px;" src="../assets/images/products/<?php echo $items_category[$i][0];?>.jpg"></td>
+                        <td ><img style="width:100px; height:100px;" src="../assets/images/products/<?php echo $items_category[$i][0];?>.jpg"></td>
                         <td><?php echo $items_category[$i][3] ;?> <?php echo $items_category[$i][1];?></td>
                         <td><?Php echo $items_category[$i][0];?></td>
                         <td><?php echo $items_category[$i][2];?></td>
