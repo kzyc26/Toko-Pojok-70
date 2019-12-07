@@ -1,6 +1,6 @@
 
 <?php
-$page="Review";
+$halaman="Review";
 require_once('navbar.php');
 require_once('db.php');
 ?>

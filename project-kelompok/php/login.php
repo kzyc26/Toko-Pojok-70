@@ -37,7 +37,7 @@ require_once('db.php');
 					echo "<script type='text/javascript'> alert('$errmessage');</script>";
 				}
       }
-      $page="Log In";
+      $halaman="Log In";
 require_once('navbar.php');
 		?> 
     

@@ -1,5 +1,5 @@
 <?php
-$page="Frequently Asked Questions";
+$halaman="Frequently Asked Questions";
 require_once('navbar.php');
 ?>
         

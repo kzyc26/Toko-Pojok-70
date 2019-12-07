@@ -1,6 +1,6 @@
 
 <?php
-$page="User Terms and Conditions";
+$halaman="User Terms and Conditions";
 require_once('navbar.php');
 ?>
       <div class="subcatpolicy">

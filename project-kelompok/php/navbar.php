@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title><?php echo $page; ?></title>
+  <title><?php echo $halaman; ?></title>
   <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">        
-        <form class="navbar-form navbar-left" action="" method="POST">
+        <form class="navbar-form navbar-left" action="search.php" method="POST">
           <div class="form-group">
             <input type="text" name="keyword" class="form-control" placeholder="Search" autofocus autocomplete="off">
           </div>

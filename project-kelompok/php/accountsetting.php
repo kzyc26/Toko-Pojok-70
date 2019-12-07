@@ -81,7 +81,7 @@ $cmd_profile ="SELECT fullname, telepon,jenis_kelamin,provinsi, kab_kota,kecamat
 from customer where username='".$_SESSION['username']."'";
 $profile_result= mysqli_query($con,$cmd_profile) or die(mysqli_error($con));
 $profile=mysqli_fetch_assoc($profile_result);
-$page = "Account";
+$halaman = "Account";
 require_once('navbar.php');
 ?>
 <body onload = "<?php echo $stats?>">
