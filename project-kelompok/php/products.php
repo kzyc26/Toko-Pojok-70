@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <?php
+session_start();
     if (isset($_POST['user'])){
         if(isset($_SESSION['username'])){
           header("location: accountsetting.php");
@@ -43,7 +43,7 @@
     $all_result 	= mysqli_query($con,$cmd) or die(mysqli_error($con));
     $count_all_item = mysqli_num_rows($all_result);
     
-    if(isset($_SESSION['rows'])){
+    if(isset($_SESSION['rows'])){        
         $count_all_item = $_SESSION['rows'];
     }
     
@@ -71,7 +71,7 @@
 			$products[] = $row;
 		}
     }     
-$page="Products";
+$halaman="Products";
 require_once('navbar.php');
 ?>
     <div class="categories">

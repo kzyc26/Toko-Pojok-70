@@ -1,5 +1,5 @@
 <?php
-$page="About Us";
+$halaman="About Us";
 require_once('navbar.php');
 ?>
 

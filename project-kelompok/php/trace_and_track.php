@@ -1,5 +1,5 @@
 <?php
-$page="Order Track";
+$halaman="Order Track";
 require_once('navbar.php');
 require_once('db.php');
 ?>
