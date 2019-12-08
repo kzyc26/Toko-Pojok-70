@@ -14,33 +14,6 @@ if(isset($_POST['logout'])) {
     }
 }
 
-if(isset($_POST['changepass'])){
-    if(!isset($_POST['oldpass'])){
-        $oldpass = '';
-    } else{
-        $oldpass = $_POST['oldpass'];
-    }
-    $cmd_check="select fullname, password from customer where username='".$_SESSION['username']."' and password ='".sha1($oldpass)."'";
-    $check_result= mysqli_query($con,$cmd_check) or die(mysqli_error($con));
-    $check_count=mysqli_num_rows($check_result);
-    ?> <script>
-    alert('<?php echo $check_count?>');
-</script><?php
-    if($check_count>0){
-        $cmd_newpass = "UPDATE customer set password='".sha1($_POST['newpass'])."' where username='".$_SESSION['username']."'";
-        $newpass_result= mysqli_query($con,$cmd_newpass) or die(mysqli_error($con));
-        ?><script>
-    alert("Your Password Has Changed Please Relog")
-</script><?php
-        if(session_destroy()) // Destroying All Sessions
-        {
-            header("Location: login.php"); // Redirecting To Home Page
-        }
-    } else 
-      ?> <script>
-    alert("Your Current Password is Incorrect Please Input your Current Password");
-</script><?php $stats="changepass()";
-}
 
 
 
@@ -103,8 +76,7 @@ require_once('navbar.php');
                                 <div class="panel-body">
                                     <ul>
                                         <li class="submenu"><a class="history" data-status="all">All</a></li>
-                                        <li class="submenu "><a class="history" data-status="need">Need to be
-                                                Delivered</a></li>
+                                        <li class="submenu "><a class="history" data-status="need">Need to be Delivered</a></li>
                                         <li class="submenu"><a class="history" data-status="ongoing">Ongoing</a></li>
                                         <li class="submenu"><a class="history" data-status="completed">Completed</a>
                                         </li>
@@ -118,7 +90,7 @@ require_once('navbar.php');
                                 <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
-                                        onclick="shownotif()">
+                                        data-notif="notif">
                                         Notifications
                                     </a>
                                 </h4>

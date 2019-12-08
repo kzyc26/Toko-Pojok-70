@@ -1,14 +1,4 @@
-function firstload(){document.querySelector('.subcatchangepass').style.display='none';
-document.querySelector('.subcatwish').style.display = 'none';
-document.querySelector('.subcatprofile').style.display = 'none';
-document.querySelector('.subcatnotifications').style.display = 'none';
-document.querySelector('.subcatorderhistory').style.display = 'none';
-document.querySelector('.subcatvoucher').style.display = 'none';
-document.querySelector('.subcatpolicy').style.display = 'none';}
 
-
-
-var passwordmatch
 
     $(document).ready(function(){
         $('.profile').on('click', function(){
@@ -27,47 +17,8 @@ var passwordmatch
     });
 
 
-function changetovoucher(){
-    document.querySelector('.subcatchangepass').style.display='none';
-    document.querySelector('.subcatwish').style.display = 'none';
-    document.querySelector('.subcatprofile').style.display = 'none';
-    document.querySelector('.subcatnotifications').style.display = 'none';
-    document.querySelector('.subcatorderhistory').style.display = 'none';
-    document.querySelector('.subcatvoucher').style.display = 'block';
-    document.querySelector('.subcatpolicy').style.display = 'none';
-    document.querySelector('.subcatchangepass').style.display='none';
-}
-function shownotif(){
-    document.querySelector('.subcatchangepass').style.display='none';
-    document.querySelector('.subcatwish').style.display = 'none';
-    document.querySelector('.subcatprofile').style.display = 'none';
-    document.querySelector('.subcatnotifications').style.display = 'block';
-    document.querySelector('.subcatorderhistory').style.display = 'none';
-    document.querySelector('.subcatvoucher').style.display = 'none';
-    document.querySelector('.subcatpolicy').style.display = 'none';
-
-}
-function showwish(){
-    document.querySelector('.subcatchangepass').style.display='none';
-    document.querySelector('.subcatwish').style.display = 'block';
-    document.querySelector('.subcatprofile').style.display = 'none';
-    document.querySelector('.subcatnotifications').style.display = 'none';
-    document.querySelector('.subcatorderhistory').style.display = 'none';
-    document.querySelector('.subcatvoucher').style.display = 'none';
-    document.querySelector('.subcatpolicy').style.display = 'none';
-
-}
-function changepass(){
-    document.querySelector('.subcatchangepass').style.display='block';
-    document.querySelector('.subcatwish').style.display = 'none';
-    document.querySelector('.subcatprofile').style.display = 'none';
-    document.querySelector('.subcatnotifications').style.display = 'none';
-    document.querySelector('.subcatorderhistory').style.display = 'none';
-    document.querySelector('.subcatvoucher').style.display = 'none';
-    document.querySelector('.subcatpolicy').style.display = 'none';
 
 
-}
     $(document).ready(function(){
         $('.history').on('click', function(){
             status = $(this).data('status');     

@@ -7,15 +7,38 @@ $g = $_GET;
     from customer where username='".$_SESSION['username']."'";
     $profile_result= mysqli_query($con,$cmd_profile) or die(mysqli_error($con));
     $profile=mysqli_fetch_assoc($profile_result);
-if(isset($g['profile']) == "profile"){
-    $stats ="profile";
-}else {$stats = "password";}
+    if(isset($_POST['changepass'])){
+        if(!isset($_POST['oldpass'])){
+            $oldpass = '';
+        } else{
+            $oldpass = $_POST['oldpass'];
+        }
+        $cmd_check="select fullname, password from customer where username='".$_SESSION['username']."' and password ='".sha1($oldpass)."'";
+        $check_result= mysqli_query($con,$cmd_check) or die(mysqli_error($con));
+        $check_count=mysqli_num_rows($check_result);
+        ?> <script>
+        alert('<?php echo $check_count?>');
+    </script><?php
+        if($check_count>0){
+            $cmd_newpass = "UPDATE customer set password='".sha1($_POST['newpass'])."' where username='".$_SESSION['username']."'";
+            $newpass_result= mysqli_query($con,$cmd_newpass) or die(mysqli_error($con));
+            ?><script>
+        alert("Your Password Has Changed Please Relog")
+    </script><?php
+            if(session_destroy()) // Destroying All Sessions
+            {
+                header("Location: login.php"); // Redirecting To Home Page
+            }
+        } else 
+          ?> <script>
+        alert("Your Current Password is Incorrect Please Input your Current Password");
+    </script><?php $stats="changepass()";
+    }
 
 
 
 
-if($stats == "profile"){?> 
-<script>alert('<?php echo $stats?> ');</script>
+if($g['profile'] == "profile"){?> 
 <div class="subcatprofile" id="subcatprofiles">
                 <div class="profiledetails">
                     <h2>Profile</h2>
@@ -132,7 +155,7 @@ if($stats == "profile"){?>
             </div>
 
 <?php }
-elseif($stats=="password"){?> 
+elseif(isset($g['profile']) == "password"){?> 
   <div class="subcatchangepass">
                 <H2> Change Your Password </h2>
                 <form method="post" id="passwordForm">
