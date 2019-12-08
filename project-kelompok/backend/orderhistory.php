@@ -1,12 +1,14 @@
 <?php include("header.php") ?>
 
-<?php   $cmd_orderhistory="SELECT fullname,t.date, total_transaction
+<?php  
+ $cmd_orderhistory="SELECT fullname,t.date, total_transaction
 from customer c, transaction t
-where t.username=c.username and payment_status <> 0";
+where t.username=c.username";
   $orderhistory_result  = mysqli_query($con,$cmd_orderhistory) or die(mysqli_error($con));
   $orderhistory=mysqli_fetch_all($orderhistory_result);
   $orderhistory_count = mysqli_num_rows($orderhistory_result);
    ?>
+
 <table class="orderhistory">
     <tr>
         <th> Name </th>

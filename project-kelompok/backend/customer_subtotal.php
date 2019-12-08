@@ -19,7 +19,7 @@
                     $i=1;
                 
                     if($customer_subtotal_count>0){
-                        while($i<$customer_subtotal_count){?>
+                        while($i<=$customer_subtotal_count){?>
     <tr>
         <td><?php echo $customer_subtotal[$i-1][0];?></td>
         <td><?php echo $customer_subtotal[$i-1][1];?></td>

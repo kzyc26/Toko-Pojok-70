@@ -20,7 +20,7 @@
                     $i=1;
                 
                     if($customerreview_count>0){
-                        while($i<$customerreview_count){?>
+                        while($i<=$customerreview_count){?>
     <tr>
         <td><?php echo $customerreview[$i-1][0];?></td>
         <td><?php echo $customerreview[$i-1][1];?></td>

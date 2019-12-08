@@ -18,7 +18,7 @@ for($i=0; $i<=$review_count-1; $i++){
 } 
 $_SESSION["productdetail"]= $idproduct;
 $_SESSION["reviewcount"]=$review_count;
-?><script> alert('<?php echo $_SESSION["reviewcount"]?>');</script> <?php
+
 
 ?>
 
