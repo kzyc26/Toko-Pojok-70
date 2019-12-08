@@ -56,7 +56,7 @@ require_once('navbar.php');
                                 aria-labelledby="headingOne">
                                 <div class="panel-body">
                                     <ul>
-                                        <li class="submenu"><<a class="profile" data-profile="profile">Profile</a></li>
+                                        <li class="submenu"><a class="profile" data-profile="profile">Profile</a></li>
                                         <li class="submenu"><a class="profile" data-profile="password">Change Password</a></li>
                                     </ul>
                                 </div>
@@ -85,46 +85,13 @@ require_once('navbar.php');
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
-                                        data-notif="notif">
-                                        Notifications
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
-                                aria-labelledby="headingThree">
-                                <div class="panel-body">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFour">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"
-                                        onclick="changetovoucher()">
-                                        My Vouchers
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
-                                aria-labelledby="headingFour">
-                                <div class="panel-body">
-
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingFive">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    <a class="collapsed wishlist" role="button" data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"
-                                        onclick="showwish()">
+                                        data-wish="wish">
                                         Wishlist
                                     </a>
                                 </h4>

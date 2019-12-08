@@ -154,7 +154,7 @@ if(isset($g['status'])){
                             <?php
                             if($orderhistory[$i][10] == "On Delivery"){
                                 ?><form method="post" id="accept" action="accountsetting.php">
-                                <button type="submit" name="accept" class="col-xs2 btn btn-primary btn-load btn-lg" value="<?php echo $orderhistory[$i][0]?> "> Pesanan Diterima </button>
+                                <button type="submit" name="accept" class="col-xs2 btn btn-primary btn-load btn-lg" value="<?php echo $orderhistory[$i][0]?>" onclick="diterima(recieve);"> Pesanan Diterima </button>
                                 </form>  
                                 <?php   
                             }
