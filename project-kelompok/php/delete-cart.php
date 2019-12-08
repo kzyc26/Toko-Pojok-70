@@ -16,15 +16,15 @@ $sql = mysqli_query($con, $query) or die(mysqli_error($con));
           $sql = mysqli_query($con, $query) or die(mysqli_error($con));
           $rowhasil=mysqli_num_rows($sql);
           if($rowhasil!==0){
-          $total = null;           
+          $_SESSION['total'] = null;           
 while($r = mysqli_fetch_assoc($sql)){
         $subtotal    = $r['Price']* $r['jumlah_product'];
-        $total       = $total + $subtotal;
+        $_SESSION['total']       = $_SESSION['total'] + $subtotal;
          }
-         $query = "UPDATE transaction set total_transaction = $total";
+         $query = "UPDATE transaction set total_transaction = ".$_SESSION['total']." WHERE session_id = '$sid'";
          $sql = mysqli_query($con, $query) or die(mysqli_error($con));
          ?>
-<h3>Total: Rp. <?php echo number_format($total,2,",","."); ?></h3>
+<h3>Total: Rp. <?php echo number_format($_SESSION['total'],2,",","."); ?></h3>
 <?php
 $query = "SELECT Product_name, p.id_product, dt.id_product_detail, ukuran, warna, jumlah_product, Price FROM transaction_detail dt, transaction t, product p, product_detail dp WHERE session_id='$sid' AND dt.transaction_id = t.transaction_id and dt.id_product_detail = dp.id_product_detail and dp.id_product = p.id_product;";
 $sql = mysqli_query($con, $query) or die(mysqli_error($con)); 
@@ -36,9 +36,8 @@ while($r = mysqli_fetch_assoc($sql)){
   $jumlah = $r['jumlah_product'];
   $id_pd = $r['id_product_detail'];
   ?>
-          <div id="<?php echo $id_pd; ?>">
-            <div class="col-md-1 product"><input type="checkbox" checked="true"></div>
-            <div class="col-md-1 product">
+          <div id="<?php echo $id_pd; ?>">            
+            <div class="col-md-2 product">
             <button class="form-control delete" type="button" onclick="hapus('<?php echo $id_pd; ?>', '<?php echo $sid?>')"><span class="glyphicon glyphicon-trash"></span></button>
             </div>
             <table>
