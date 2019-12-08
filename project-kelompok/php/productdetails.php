@@ -10,8 +10,7 @@ if(isset($g['id'])){
 }else{
     $cmd_extra_details="";
 }
-$id = "Null";  
- 
+$id = "Null"; 
   $cmd_product_details ="SELECT id_product_detail,ukuran,warna,jumlah, product_desc, jumlah_foto
           FROM product_detail d, product p
           WHERE d.id_product = p.id_product and jumlah > 0 $cmd_extra_details";

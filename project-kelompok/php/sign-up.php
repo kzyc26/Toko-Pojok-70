@@ -32,7 +32,7 @@ if(isset($_SESSION['username'])){
                   header('location: index.php');
                   mysqli_close($con);
               }                
-$halaman="Sign Up";
+$_SESSION['prevpage']="Sign Up";
 require_once('navbar.php');
 ?>
 

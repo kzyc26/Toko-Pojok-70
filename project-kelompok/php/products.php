@@ -1,6 +1,9 @@
 <?php
 // ini_set('memory_limit', '-1');
 session_start();
+if(isset($_POST['checkout'])){
+    header("location: check-out.php");
+}
     if (isset($_POST['user'])){
         if(isset($_SESSION['username'])){
           header("location: accountsetting.php");
@@ -71,7 +74,7 @@ session_start();
         $row = mysqli_num_rows($limit_result);
     }		
 }     
-$halaman="Products";
+$_SESSION['prevpage']="Products";
 require_once('navbar.php');
 ?>
     <div class="categories">
@@ -130,6 +133,8 @@ require_once('navbar.php');
                 ?> 
                 <h1> <?php echo 'Search Result for "'.$_SESSION['keyword'].'"';?></h1>
                 <?php
+            unset($_SESSION['hasil_search']);
+            unset($_SESSION['baris']);
             }else{?>
             <h1> All Products </h1>
             <?php }  
@@ -166,7 +171,7 @@ require_once('navbar.php');
                     ?>
                     <button type="button" class="btn btn-primary btnview " data-toggle="modal" data-target="#view"
                         data-id="<?php echo $id;?>"></i>
-                        Quick View</button>
+                        Buy</button>
 
                     <div class="space-ten"></div>
 
@@ -194,12 +199,10 @@ require_once('navbar.php');
         </div>
 
     </div>
-    <div class="floatbutton">
-        <a href="../php/check-out.php" class="float">
-            <img src="https://img.icons8.com/nolan/64/000000/shopping-cart.png">
-            <h5>Checkout</h5>
-        </a>
-    </div>
+    <form action="products.php" method="post">
+    <button type="submit" id="floatbutton" name="checkout"><img
+      src="https://img.icons8.com/nolan/64/000000/shopping-cart.png">Checkout</button>
+      </form>
 
     <div class='row text-center'>
         <div class="btn-group">

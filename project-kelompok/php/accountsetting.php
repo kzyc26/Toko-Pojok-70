@@ -15,9 +15,11 @@ if(isset($_POST['logout'])) {
 }
 
 
-
-
-$halaman = "Account";
+$cmd_profile ="SELECT fullname, telepon,jenis_kelamin,provinsi, kab_kota,kecamatan,kelurahan,kode_pos,alamat
+from customer where username='".$_SESSION['username']."'";
+$profile_result= mysqli_query($con,$cmd_profile) or die(mysqli_error($con));
+$profile=mysqli_fetch_assoc($profile_result);
+$_SESSION['prevpage'] = "Account";
 require_once('navbar.php');
 ?>
 

@@ -15,8 +15,9 @@ if (isset($_POST['search'])){
       } else {
         unset($_SESSION['hasil_search']);
         unset($_SESSION['baris']);
-        echo '<script> alert("Sorry, keyword does not match."); </script>';
-        header("location: index.php");
+        echo '<script> alert("Sorry, keyword does not match."); 
+        window.location.replace("products.php");
+        </script>';
       } 
   }
 ?>  

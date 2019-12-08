@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title><?php echo $halaman; ?></title>
+  <title><?php echo $_SESSION['prevpage']; ?></title>
   <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">

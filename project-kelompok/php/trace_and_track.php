@@ -1,5 +1,5 @@
 <?php
-$halaman="Order Track";
+$_SESSION['prevpage']="Order Track";
 require_once('navbar.php');
 require_once('db.php');
 ?>

@@ -58,9 +58,9 @@
     padding-top: 1%;
 }
 
-body
-{ background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);}
-
+body{
+    background-color: #F3FFE3;
+}
 
 .productsimg {
 
@@ -200,7 +200,6 @@ body
     width: 100%;
 }
 
-
 .space-ten {
     padding: 10px 0;
 }
@@ -238,6 +237,22 @@ a.float:hover+div.label-container {
     visibility: visible;
     opacity: 1;
 }
+
+#floatbutton{
+    display: block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color:  #F3FFE3;
+    top: 75%;
+    right: 5%;
+    position: fixed;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-size: medium;
+    font-weight: bolder;
+}
+
 .warning h2{
     margin-left: 30%;
 }
@@ -251,4 +266,8 @@ a.float:hover+div.label-container {
 }
 .panel-body li{
     font-family: 'Lato', sans-serif;
+}
+
+#headingOne, #headingTwo{
+    background-color: #DBD3FF;
 }

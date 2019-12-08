@@ -78,6 +78,11 @@ h2{
     font-weight: bolder;
 }
 
+.delete{
+    border: none;
+    background-color: transparent;
+}
+
 .total, .modal-body{
     text-align: center;
     top: 0;

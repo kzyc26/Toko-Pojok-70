@@ -1,5 +1,5 @@
 <?php
-$halaman="Review";
+$_SESSION['prevpage']="Review";
 session_start();
 require_once('navbar.php');
 require_once('db.php');
