@@ -69,8 +69,7 @@ session_start();
     } else{
         $barang_display = mysqli_fetch_all($limit_result);
         $row = mysqli_num_rows($limit_result);
-    }
-		
+    }		
 }     
 $halaman="Products";
 require_once('navbar.php');
@@ -140,18 +139,18 @@ require_once('navbar.php');
         <div class='row productsimg'>
             <?php 
             if ($count_all_item>0){
-					foreach($products as $product){
-            $id = $product['id_product'];
-          
+                $i=0;
+					while($i < $row){
+            $id = $barang_display[$i][0];          
 				?>
             <div class="product-thumbnail">
                 <img src='../assets/images/Products/<?php echo $id; ?>.jpg' class='img-responsive object-fit'
                     style="height:200px;" />
-                <h5><?php echo $product['product_name']; ?></h5>
+                <h5><?php echo $barang_display[$i][1]; ?></h5>
                 <p name="harga">
                     Rp.
                     <?php 
-								$price = $product['Price'];
+								$price = $barang_display[$i][3];
 								echo number_format($price,2,",","."); 
 							?>
                 </p>
@@ -175,7 +174,7 @@ require_once('navbar.php');
                 </div>
                 <div class="space-ten"></div>
             </div>
-            <?php } } else { ?>
+            <?php $i++;} } else { ?>
             <h2 class="warning"> Product Not Available </h2> <?php }
           ?>
         </div>
