@@ -13,4 +13,8 @@ exit;
 if (isset($_POST['cart'])){
   header("location: check-out.php");
 }
+
+if (isset($_POST['home'])){
+  header("location: index.php");
+}
 ?>
