@@ -1,5 +1,4 @@
 
-
     $(document).ready(function(){
         $('.profile').on('click', function(){
             profile = $(this).data('profile');     
@@ -15,8 +14,6 @@
             });
         });    
     });
-
-
 
 
     $(document).ready(function(){
@@ -35,8 +32,36 @@
         });    
     });
     
-
-
+    $(document).ready(function(){
+        $('.history').on('click', function(){
+            status = $(this).data('status');     
+    // alert(status);
+            $.ajax({
+                url: "AS-history.php",
+                method: "GET",
+                data: { status : status },
+                dataType: "html",
+                success: function(result){
+                    $("#informations").html(result);
+                }
+            });
+        });    
+    });
+    $(document).ready(function(){
+        $('.wishlist').on('click', function(){
+            wish = $(this).data('wish');     
+    // alert(status);
+            $.ajax({
+                url: "AS-wishlist.php",
+                method: "GET",
+                data: { wish : wish },
+                dataType: "html",
+                success: function(result){
+                    $("#informations").html(result);
+                }
+            });
+        });    
+    });
 
 function confirmcheck(){
 var newpass = document.getElementById("newpass").value;
