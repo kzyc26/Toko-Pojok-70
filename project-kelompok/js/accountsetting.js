@@ -10,16 +10,23 @@ document.querySelector('.subcatpolicy').style.display = 'none';}
 
 var passwordmatch
 
-function changeaccount(){
-    document.querySelector('.subcatchangepass').style.display='none';
-    document.querySelector('.subcatwish').style.display = 'none';
-    document.querySelector('.subcatprofile').style.display = 'block';
-    document.querySelector('.subcatnotifications').style.display = 'none';
-    document.querySelector('.subcatorderhistory').style.display = 'none';
-    document.querySelector('.subcatvoucher').style.display = 'none';
-    document.querySelector('.subcatpolicy').style.display = 'none';
+    $(document).ready(function(){
+        $('.profile').on('click', function(){
+            profile = $(this).data('profile');     
+            // alert(profile);
+            $.ajax({
+                url: "AS-profile.php",
+                method: "GET",
+                data: {profile : profile },
+                dataType: "html",
+                success: function(result){
+                    $("#informations").html(result);
+                }
+            });
+        });    
+    });
 
-};
+
 function changetovoucher(){
     document.querySelector('.subcatchangepass').style.display='none';
     document.querySelector('.subcatwish').style.display = 'none';
@@ -61,16 +68,23 @@ function changepass(){
 
 
 }
-function showhistory(){
-    document.querySelector('.subcatchangepass').style.display='none';
-    document.querySelector('.subcatwish').style.display = 'none';
-    document.querySelector('.subcatprofile').style.display = 'none';
-    document.querySelector('.subcatnotifications').style.display = 'none';
-    document.querySelector('.subcatorderhistory').style.display = 'block';
-    document.querySelector('.subcatvoucher').style.display = 'none';
-    document.querySelector('.subcatpolicy').style.display = 'none';
+    $(document).ready(function(){
+        $('.history').on('click', function(){
+            status = $(this).data('status');     
+    // alert(status);
+            $.ajax({
+                url: "AS-history.php",
+                method: "GET",
+                data: { status : status },
+                dataType: "html",
+                success: function(result){
+                    $("#informations").html(result);
+                }
+            });
+        });    
+    });
     
-}
+
 
 
 function confirmcheck(){
