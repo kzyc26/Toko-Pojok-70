@@ -3,7 +3,6 @@ require_once('../php/config.php');
 ?>
 <html>
 <head>
-<base href='<?php echo $base_url; ?>'/>
 <title> belajar AJAX </title>
 <script src='jquery-3.4.1.min.js'></script>
 </head>
@@ -19,10 +18,11 @@ $(document).ready(function(){
 // alert('jquery siap!');
 $('.btn-refresh').on('click', function(){
     alert('saya ditekan!');
+    var A = ['a', 'b', 'c']
     $.ajax({
         url:"response_ajax_priscil.php",
-        method: "GET",
-        //data: ,
+        method: "POST",
+        data: {A},
         dataType: "html",
         success: function(result){
             $('#refresh').html(result);
