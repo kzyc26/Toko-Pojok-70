@@ -171,7 +171,7 @@ require_once('navbar.php');
                     ?>
                     <button type="button" class="btn btn-primary btnview " data-toggle="modal" data-target="#view"
                         data-id="<?php echo $id;?>"></i>
-                        Quick View</button>
+                        Buy</button>
 
                     <div class="space-ten"></div>
 
