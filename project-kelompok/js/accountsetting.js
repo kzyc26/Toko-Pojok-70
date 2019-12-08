@@ -77,13 +77,5 @@ if(newpass == confpass){
 		$("#pwmatch").css("color","#FF0004");
 }
 }
-function diterima(recieve){
-    recieve.preventDefault();
-    var r=confirm("Konfirmasi Pesanan Diterima?");
-    if (r==true) {
-      window.location="accountsetting.php";
-      form.submit();
-    }
 
-}
 

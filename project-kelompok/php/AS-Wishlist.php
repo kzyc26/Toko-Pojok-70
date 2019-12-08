@@ -21,14 +21,14 @@ $wishlist_count=mysqli_num_rows($wishlist_result);
             
         </tr>
         <?php
-        $i=0; 
+        $i=1; 
         if($wishlist_count>0){
-                        while($i<$wishlist_count){?>
+                        while($i<=$wishlist_count){?>
       <tr>
-      <td><img style= "width:150px; height:150px;"src="../assets/images/Products/<?php echo $wishlist[$i][0];?>.jpg"></td>
-      <td><?php echo $wishlist[$i][1];?></td>
-      <td><?php echo $wishlist[$i][2];?></td>
-      <td><?php echo $wishlist[$i][3];?></td>
+      <td><img style= "width:150px; height:150px;"src="../assets/images/Products/<?php echo $wishlist[$i-1][0];?>.jpg"></td>
+      <td><?php echo $wishlist[$i-1][1];?></td>
+      <td><?php echo $wishlist[$i-1][2];?></td>
+      <td><?php echo $wishlist[$i-1][3];?></td>
       
       </tr>
       <?php   $i++;}

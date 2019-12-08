@@ -19,7 +19,7 @@
                     $i=1;
                 
                     if($accumulated_count>0){
-                        while($i<$accumulated_count){?>
+                        while($i<=$accumulated_count){?>
     <tr>
         <td><?php echo $accumulated[$i-1][0];?></td>
         <td><?php echo $accumulated[$i-1][1];?></td>

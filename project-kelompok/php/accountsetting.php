@@ -13,7 +13,11 @@ if(isset($_POST['logout'])) {
         header("Location: index.php"); // Redirecting To Home Page
     }
 }
-
+if(isset($_POST['accept'])){
+    $proid=$_POST['accept'];
+    $cmd_accept="update delivery_details set id_deliverystatus = 3 where transaction_id='".$proid."'";
+    $orderhistory_result= mysqli_query($con,$cmd_accept) or die(mysqli_error($con));
+}
 
 $cmd_profile ="SELECT fullname, telepon,jenis_kelamin,provinsi, kab_kota,kecamatan,kelurahan,kode_pos,alamat
 from customer where username='".$_SESSION['username']."'";

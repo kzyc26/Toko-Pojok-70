@@ -25,6 +25,7 @@ if(isset($g['status'])){
         $review=0;
     }
 }
+
     $cmd_orderhistory="SELECT t.transaction_id as `Transaction ID`,
     receiver,notelp,dd.alamat,dd.kab_kota,dd.kecamatan,dd.kelurahan,
     dd.provinsi,dd.kode_pos,total_transaction, d.delivery_status,
@@ -153,7 +154,7 @@ if(isset($g['status'])){
                                
                             <?php
                             if($orderhistory[$i][10] == "On Delivery"){
-                                ?><form method="post" id="accept" action="accountsetting.php">
+                                ?><form method="post" name="accept" action="accountsetting.php" onsubmit="return confirm('Do you really want to submit the form?');"> 
                                 <button type="submit" name="accept" class="col-xs2 btn btn-primary btn-load btn-lg" value="<?php echo $orderhistory[$i][0]?>" onclick="diterima(recieve);"> Pesanan Diterima </button>
                                 </form>  
                                 <?php   
