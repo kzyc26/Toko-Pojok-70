@@ -1,5 +1,5 @@
 <?php
-$halaman="Frequently Asked Questions";
+$_SESSION['prevpage']="Frequently Asked Questions";
 require_once('navbar.php');
 ?>
         

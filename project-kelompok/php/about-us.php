@@ -1,5 +1,5 @@
 <?php
-$halaman="About Us";
+$_SESSION['prevpage']="About Us";
 require_once('navbar.php');
 ?>
 

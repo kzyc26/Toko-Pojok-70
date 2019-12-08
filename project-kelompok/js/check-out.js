@@ -1,3 +1,25 @@
+$.ajax({
+    url: "cart.php",
+    method: "POST",
+    // data:{},
+    dataType: "html",
+    success: function(result){
+        $("#display").html(result);
+    }
+})
+
+function hapus(idbar, sid){
+    $.ajax({
+        url: "delete-cart.php",
+        method: "POST",
+        data:{idbar},
+        dataType: "html",
+        success: function(result, sid){
+            $("#display").html(result);
+        }
+    })
+}
+
 function gantikab(sp, sk){
     var sp = document.getElementById(sp);
     var sk = document.getElementById(sk);

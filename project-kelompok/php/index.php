@@ -1,5 +1,5 @@
 <?php
-$halaman="Homepage";
+$_SESSION['prevpage']="Homepage";
 require_once('navbar.php');
 ?>
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

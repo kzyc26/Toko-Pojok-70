@@ -1,21 +1,22 @@
 <?php
+session_start();
 $sid = session_id();
-$halaman = "Check Out";
+$_SESSION['prevpage'] = "Check Out";
 require_once('navbar.php');
 require_once('db.php');
 ?>
 
-  <?php 
+<?php 
 $query = "SELECT Product_name, p.id_product, dt.id_product_detail, ukuran, warna, jumlah_product, Price FROM transaction_detail dt, transaction t, product p, product_detail dp WHERE session_id='$sid' AND dt.transaction_id = t.transaction_id and dt.id_product_detail = dp.id_product_detail and dp.id_product = p.id_product and transaction_status = 0;";
 $sql = mysqli_query($con, $query) or die(mysqli_error($con));
 $ketemu = mysqli_num_rows($sql);
 if($ketemu !== 0){ ?>
-  <span class="col-md-6 col-sm-12 judulgeser">
-    <h2>Delivery Details</h2>
-  </span>
-  <span class="col-md-6 col-sm-12 judul">
-    <h2>Cart</h2>
-  </span>
+<span class="col-md-6 col-sm-12 judulgeser">
+  <h2>Delivery Details</h2>
+</span>
+<span class="col-md-6 col-sm-12 judul">
+  <h2>Cart</h2>
+</span>
 <form action="payment-done.php" method="post">
   <div class="col-md-6">
     <div class="col-md-12 col-sm-12">
@@ -74,7 +75,8 @@ if($ketemu !== 0){ ?>
           <div class="row">
             <div class="col-md-4 tulisan">Provinsi</div>
             <div class="col-md-8">
-              <select name="provinsi" id="provinsi" class="form-control pendek" onchange="gantikab(this.id, 'kabkota')" required="">
+              <select name="provinsi" id="provinsi" class="form-control pendek" onchange="gantikab(this.id, 'kabkota')"
+                required="">
                 <option value=""></option>
                 <option value="jawa-timur">Jawa Timur</option>
                 <option value="jawa-tengah">Jawa Tengah</option>
@@ -105,13 +107,15 @@ if($ketemu !== 0){ ?>
           <div class="row">
             <div class="col-md-4 tulisan">Kode Pos</div>
             <div class="col-md-8">
-              <input type="text" id="kodepos" name="kodepos" class="form-control pendek" placeholder="Kodepos" required="">
+              <input type="text" id="kodepos" name="kodepos" class="form-control pendek" placeholder="Kodepos"
+                required="">
             </div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Alamat</div>
             <div class="col-md-8">
-              <input type="text" id="alamat" name="alamat" class="form-control panjang" placeholder="Alamat" required="">
+              <input type="text" id="alamat" name="alamat" class="form-control panjang" placeholder="Alamat"
+                required="">
             </div>
           </div>
           <div class="row">
@@ -135,58 +139,13 @@ if($ketemu !== 0){ ?>
       <div class="panel-heading">
         <h3 class="panel-title">Purchased Items</h3>
       </div>
-      <?php   
-        $query = "SELECT Product_name, p.id_product, dt.id_product_detail, ukuran, warna, jumlah_product, Price FROM transaction_detail dt, transaction t, product p, product_detail dp WHERE session_id='$sid' AND dt.transaction_id = t.transaction_id and dt.id_product_detail = dp.id_product_detail and dp.id_product = p.id_product;";
-          $sql = mysqli_query($con, $query) or die(mysqli_error($con)); 
-          $total = null;            
-while($r = mysqli_fetch_assoc($sql)){
-        $subtotal    = $r['Price']* $r['jumlah_product'];
-        $total       = $total + $subtotal;
-         }
-         $query = "UPDATE transaction set total_transaction = $total";
-         $sql = mysqli_query($con, $query) or die(mysqli_error($con));
-         ?>
-      <div class="panel-body">
-        <h3>Total: Rp. <?php echo number_format($total,2,",","."); ?></h3>
-        <div>
-          <?php 
-$query = "SELECT Product_name, p.id_product, dt.id_product_detail, ukuran, warna, jumlah_product, Price FROM transaction_detail dt, transaction t, product p, product_detail dp WHERE session_id='$sid' AND dt.transaction_id = t.transaction_id and dt.id_product_detail = dp.id_product_detail and dp.id_product = p.id_product;";
-$sql = mysqli_query($con, $query) or die(mysqli_error($con)); 
-
-while($r = mysqli_fetch_assoc($sql)){ 
-  $id = $r['id_product'];
-  $size = $r['ukuran'];
-  $warna = $r['warna'];
-  $jumlah = $r['jumlah_product'];
-  ?>
-          <div class="col-md-1 product"><input type="checkbox" checked="true"></div>
-          <div class="col-md-1 product">
-            <button type="submit form-control"><span class="glyphicon glyphicon-trash"></span></button>
-          </div>
-          <table>
-            <tr>
-              <td class="pic"><img src='../assets/images/products/<?php echo $id; ?>.jpg' style="height:200px;" /></td>
-              <td class="qty pref">
-                <div>Size: </div>
-                <input type="text" name="size" id="size" class="form-control" placeholder="<?php echo $size; ?>" disabled>
-              </td>
-              <td class="pref">
-                <div>Color: </div>
-                <input type="text" name="warna" id="warna" class="form-control" placeholder="<?php echo $warna; ?>" disabled>
-              </td>
-              <td class="qty pref">
-                <div>Qty: </div>
-                <input type="number" class="form-control" min="1" value="<?php echo $jumlah; ?>" disabled>
-              </td>
-            </tr>
-          </table>
-          <?php } ?>
-        </div>
+      <div id="display" class="panel-body">
+        
       </div>
     </div>
   </div>
   <button type="button" id="payment-but" data-toggle="modal" data-target="#pay"><img
-      src="../assets/images/Cash.png">Payment</button>  
+      src="../assets/images/Cash.png">Payment</button>
   <div class="modal fade product_view" id="pay">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -214,9 +173,11 @@ while($r = mysqli_fetch_assoc($sql)){
                 </div>
               </div>
               <div class="cbpolicy">
-                <input type="checkbox" name="policy" value="agree" required> I agree to the <a href="#">Payment Terms and
+                <input type="checkbox" name="policy" value="agree" required> I agree to the <a href="#">Payment Terms
+                  and
                   Conditions</a>
-              </div><button type="submit" name="button_pay">Pay</button></div>
+              </div><button type="submit" name="button_pay">Pay</button>
+            </div>
           </div>
         </div>
       </div>
@@ -224,17 +185,17 @@ while($r = mysqli_fetch_assoc($sql)){
   </div>
   <?php } else {
     ?>
-    <div class="content">
-<h2> Your cart is empty </h2>
-<h3><a href="products.php"> Click here </a> to shop <h3>
-</div>
-    <?php 
+  <div class="content">
+    <h2> Your cart is empty </h2>
+    <h3><a href="products.php"> Click here </a> to shop <h3>
+  </div>
+  <?php 
   } ?>
-  </form>
+</form>
 
-  <?php require_once('footer.php'); ?>  
-  <link href="../css/check-out.css" rel="stylesheet">
-  <script src="../js/check-out.js"></script>
+<?php require_once('footer.php'); ?>
+<link href="../css/check-out.css" rel="stylesheet">
+<script src="../js/check-out.js"></script>
 </body>
 
 </html>
