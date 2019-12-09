@@ -58,7 +58,7 @@ require_once('navbar.php');
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>
-            <button onClick="window.location.href='../php/sign-up.php'" class="btn btn-lg btn-primary btn-block" type="submit">Register Now!</button>
+            <button onClick="window.location.href='../php/sign-up.php'" class="btn btn-lg btn-primary btn-block">Register Now!</button>
         </form>
     </div>
     <br><br>
