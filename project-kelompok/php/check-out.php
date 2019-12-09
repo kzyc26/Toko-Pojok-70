@@ -157,7 +157,8 @@ if($ketemu !== 0){ ?>
           <div class="row">
             <div class="choose">
               <div class="total">
-                <h3>Total: Rp. <?php echo number_format($total,2,",","."); ?>
+                <h3>Total: Rp. <?php $total = $_SESSION['total'];
+                echo number_format($total,2,",","."); ?>
                 </h3>
                 <h4>Order ID : <?php echo $sid;?> </h4>
               </div>
@@ -173,9 +174,7 @@ if($ketemu !== 0){ ?>
                 </div>
               </div>
               <div class="cbpolicy">
-                <input type="checkbox" name="policy" value="agree" required> I agree to the <a href="#">Payment Terms
-                  and
-                  Conditions</a>
+                <input type="checkbox" name="policy" value="agree" required> I agree to the <a href="#">Payment Terms and Conditions</a>
               </div><button type="submit" name="button_pay">Pay</button>
             </div>
           </div>
