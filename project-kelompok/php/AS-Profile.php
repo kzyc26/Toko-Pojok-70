@@ -70,10 +70,10 @@ if($g['profile'] == "profile"){?>
                                     }
                                 
                                 ?>
-                            <td><input class="gender" type="checkbox" value="female" disabled <?php echo $female;?>>
+                            <td><input class="gender" type="radio" value="female" disabled <?php echo $female;?>>
                                 Female
                                 <br>
-                                <input class="gender" type="checkbox" value="male" disabled <?php  echo $male;?>>
+                                <input class="gender" type="radio" value="male" disabled <?php  echo $male;?>>
                                 Male
                             </td>
                         </tr>
@@ -81,6 +81,7 @@ if($g['profile'] == "profile"){?>
                             <td colspan="2" class="subjudul">Alamat</td>
                             <script type="text/javascript">
                                 var isiprovinsi = "<?php echo $fillalamat[0];?>";
+                            alert(isiprovinsi);
                             </script>
                         </tr>
                         <tr>
@@ -89,7 +90,7 @@ if($g['profile'] == "profile"){?>
 
                             </td>
                             <td><select name="provinsi" id="provinsi" class="form-control pendek" disabled>
-                                    <option value=""></option>
+                            <option><?php echo ucfirst($profile['provinsi']);?></option>
                                     <option value="jawa-timur">Jawa Timur</option>
                                     <option value="jawa-tengah">Jawa Tengah</option>
                                     <option value="jawa-barat">Jawa Barat</option>
