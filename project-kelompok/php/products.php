@@ -200,10 +200,7 @@ require_once('navbar.php');
         </div>
 
     </div>
-    <form action="products.php" method="post">
-        <button type="submit" class="float" name="checkout"><img
-                src="https://img.icons8.com/nolan/64/000000/shopping-cart.png"> Checkout </button>
-    </form>
+ 
 
     <div class='row text-center'>
         <div class="btn-group">
@@ -318,6 +315,10 @@ require_once('navbar.php');
 <Br>
 <br>
 <?php require_once('footer.php'); ?>
+<form action="products.php" method="post">
+        <button type="submit" class="float" name="checkout"><img
+                src="https://img.icons8.com/nolan/64/000000/shopping-cart.png"> Checkout </button>
+    </form>
 <link href="../css/product.css" rel="stylesheet">
 <script src="../js/productview.js"></script>
 <link href="../css/slider.css" rel="stylesheet">

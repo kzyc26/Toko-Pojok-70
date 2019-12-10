@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer" >
       <div class="footer-container">
           <ul class="footer-list">
               <li><a href="../php/about-us.php">About Us</a></li>

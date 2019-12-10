@@ -209,11 +209,12 @@ body{
 
 /* float button */
 .float {
-    position: absolute;
+    display: block;
+    position: fixed;
     width: 100px;
     height: 100px;
-    bottom: 40px;
-    right: 40px;
+    top: 75%;
+    right: 5%;
     background-color:  #F3FFE3;
     color: black;
     font-family: 'Dancing Script', cursive;
