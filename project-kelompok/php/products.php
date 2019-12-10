@@ -200,7 +200,7 @@ require_once('navbar.php');
 
     </div>
     <form action="products.php" method="post">
-    <button type="submit" id="floatbutton" name="checkout"><img
+    <button type="submit" class="float" name="checkout"><img
       src="https://img.icons8.com/nolan/64/000000/shopping-cart.png">Checkout</button>
       </form>
 
