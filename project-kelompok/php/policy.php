@@ -3,6 +3,7 @@
 $_SESSION['prevpage']="User Terms and Conditions";
 require_once('navbar.php');
 ?>
+<div class="content">
       <div class="subcatpolicy">
         <h2>Policy</h2>
         <div class="policycontent">
@@ -24,7 +25,7 @@ require_once('navbar.php');
             </ol>
             
         </div>
-
+</div>
         <?php require_once('footer.php'); ?>
   
   <link href="../css/policy.css" rel="stylesheet">

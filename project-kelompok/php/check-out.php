@@ -11,6 +11,7 @@ $query = "SELECT Product_name, p.id_product, dt.id_product_detail, ukuran, warna
 $sql = mysqli_query($con, $query) or die(mysqli_error($con));
 $ketemu = mysqli_num_rows($sql);
 if($ketemu !== 0){ ?>
+<div class="content">
 <span class="col-md-6 col-sm-12 judulgeser">
   <h2>Delivery Details</h2>
 </span>
@@ -191,7 +192,10 @@ if($ketemu !== 0){ ?>
   <?php 
   } ?>
 </form>
+</div>
 
+<Br>
+<br>
 <?php require_once('footer.php'); ?>
 <link href="../css/check-out.css" rel="stylesheet">
 <script src="../js/check-out.js"></script>

@@ -63,7 +63,8 @@ require_once('navbar.php');
                                 <div class="panel-body">
                                     <ul>
                                         <li class="submenu"><a class="profile" data-profile="profile">Profile</a></li>
-                                        <li class="submenu"><a class="profile" data-profile="password">Change Password</a></li>
+                                        <li class="submenu"><a class="profile" data-profile="password">Change
+                                                Password</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -82,7 +83,8 @@ require_once('navbar.php');
                                 <div class="panel-body">
                                     <ul>
                                         <li class="submenu"><a class="history" data-status="all">All</a></li>
-                                        <li class="submenu "><a class="history" data-status="need">Need to be Delivered</a></li>
+                                        <li class="submenu "><a class="history" data-status="need">Need to be
+                                                Delivered</a></li>
                                         <li class="submenu"><a class="history" data-status="ongoing">Ongoing</a></li>
                                         <li class="submenu"><a class="history" data-status="completed">Completed</a>
                                         </li>
@@ -91,13 +93,13 @@ require_once('navbar.php');
                                 </div>
                             </div>
                         </div>
-                       
+
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingFive">
                                 <h4 class="panel-title">
-                                    <a class="collapsed wishlist" role="button" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"
-                                        data-wish="wish">
+                                    <a class="collapsed wishlist" role="button" data-toggle="collapse"
+                                        data-parent="#accordion" href="#collapseFive" aria-expanded="false"
+                                        aria-controls="collapseFive" data-wish="wish">
                                         Wishlist
                                     </a>
                                 </h4>
@@ -121,10 +123,12 @@ require_once('navbar.php');
 
         </div>
     </div>
+    <Br>
+    <br>
     <?php require_once('footer.php'); ?>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Solway&display=swap" rel="stylesheet">
     <link href="../css/accountsetting.css" rel="stylesheet">
     <script src="../js/accountsetting.js"></script>
 </body>
 
 </html>
-

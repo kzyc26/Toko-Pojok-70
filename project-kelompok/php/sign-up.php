@@ -148,7 +148,8 @@ require_once('navbar.php');
   <?php
       }
   ?>
-
+<Br>
+<br>
 <?php require_once('footer.php'); ?>
   
   <link href="../css/sign-up.css" rel="stylesheet">

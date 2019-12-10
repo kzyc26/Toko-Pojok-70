@@ -39,9 +39,13 @@
 }
 .informations{
     overflow:auto;
-    border-left:1px solid black;
     height:100%;
+   font-family:font-family: 'Lato', sans-serif;
    
+}
+.informations h2{
+    text-align: center;
+    font-family: 'Solway', serif;
 }
 .profiledetails > h3{
     float:left;
@@ -116,6 +120,7 @@ text-align: center;
 }
 .alamat td, .alamat th{
     padding-left: 10px;
+    
 }
 .orderdetail tr {
     border-bottom: 1px solid lightgrey;

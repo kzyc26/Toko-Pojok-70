@@ -77,6 +77,7 @@ if(isset($_POST['checkout'])){
 $_SESSION['prevpage']="Products";
 require_once('navbar.php');
 ?>
+<div class="content">
     <div class="categories">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
@@ -130,9 +131,9 @@ require_once('navbar.php');
     <div class="container">
         <div class="Categorytitle">
             <?php if ($category==null){ if (isset($_SESSION['baris'])) {
-                ?> 
-                <h1> <?php echo 'Search Result for "'.$_SESSION['keyword'].'"';?></h1>
-                <?php
+                ?>
+            <h1> <?php echo 'Search Result for "'.$_SESSION['keyword'].'"';?></h1>
+            <?php
             unset($_SESSION['hasil_search']);
             unset($_SESSION['baris']);
             }else{?>
@@ -200,9 +201,9 @@ require_once('navbar.php');
 
     </div>
     <form action="products.php" method="post">
-    <button type="submit" class="float" name="checkout"><img
-      src="https://img.icons8.com/nolan/64/000000/shopping-cart.png">Checkout</button>
-      </form>
+        <button type="submit" class="float" name="checkout"><img
+                src="https://img.icons8.com/nolan/64/000000/shopping-cart.png"> Checkout </button>
+    </form>
 
     <div class='row text-center'>
         <div class="btn-group">
@@ -312,12 +313,15 @@ require_once('navbar.php');
 
         </div>
     </div>
+</div>
 
-    <?php require_once('footer.php'); ?>
-    <link href="../css/product.css" rel="stylesheet">
-    <script src="../js/productview.js"></script>
-    <link href="../css/slider.css" rel="stylesheet">
-    <script src="../js/slider.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Lato|Pacifico&display=swap"
-        rel="stylesheet">
+<Br>
+<br>
+<?php require_once('footer.php'); ?>
+<link href="../css/product.css" rel="stylesheet">
+<script src="../js/productview.js"></script>
+<link href="../css/slider.css" rel="stylesheet">
+<script src="../js/slider.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Lato|Pacifico&display=swap"
+    rel="stylesheet">
 </body>

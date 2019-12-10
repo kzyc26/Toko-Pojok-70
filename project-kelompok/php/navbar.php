@@ -34,6 +34,7 @@
         </form>
         <form action="navbar-redirect.php" method="POST">
         <ul class="nav navbar-nav navbar-right">
+
           <li><span class="icon-input-btn"><span class="glyphicon glyphicon-home"></span> <input type="submit" class="btn btn-default" name="home" value=""></span></li>
           <li><span class="icon-input-btn"><span class="glyphicon glyphicon-shopping-cart"></span> <input type="submit" class="btn btn-default" name="cart" value=""></span></li>
           <li><span class="icon-input-btn"><span class="glyphicon glyphicon-user"></span> <input type="submit" class="btn btn-default posisi" name="user" value=""></span></li>

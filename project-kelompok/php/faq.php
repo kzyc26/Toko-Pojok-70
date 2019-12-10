@@ -2,7 +2,7 @@
 $_SESSION['prevpage']="Frequently Asked Questions";
 require_once('navbar.php');
 ?>
-        
+<div class="content">  
       <h1>FAQs</h1>
       <div class="accordion" id="faq">
         <div class="card">
@@ -65,7 +65,9 @@ require_once('navbar.php');
           </div>
         </div>
       </div>
-
+</div>      
+      <Br>
+<br>
       <?php require_once('footer.php'); ?>  
   <link href="../css/faq.css" rel="stylesheet">
 </body>

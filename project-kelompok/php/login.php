@@ -39,51 +39,55 @@ require_once('db.php');
       }
       $halaman="Log In";
 require_once('navbar.php');
-		?> 
-    
+		?>
+<div class="content">
     <img class="foto" src="../assets/images/User.png">
     <br><br><br>
-    <div class="container">       
+    <div class="container">
         <form class="form-signin" method="post" action="login.php">
-       
+
             <h2 class="form-signin-heading">Please sign in</h2><br>
             <label for="username">Username</label>
-            <input type="text" id="username" class="form-control" placeholder="Username" required=""
-                autofocus="" name="username"><br>
+            <input type="text" id="username" class="form-control" placeholder="Username" required="" autofocus=""
+                name="username"><br>
             <label for="inputPassword">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" name="password">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""
+                name="password">
             <div class="checkbox">
                 <label>
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>
-            <button onClick="window.location.href='../php/sign-up.php'" class="btn btn-lg btn-primary btn-block">Register Now!</button>
+            <button onClick="window.location.href='../php/sign-up.php'"
+                class="btn btn-lg btn-primary btn-block">Register Now!</button>
         </form>
     </div>
-    <br><br>
-    <footer class="footer">
-        <div class="footer-container">
-            <ul class="footer-list">
-                <li><a href="../php/about-us.php">About Us</a></li>
-                <li><a href="../php/faq.php">FAQs</a></li>
-                <li><a href="../php/policy.php">Our Policy</a></li>
-            </ul>
-            <div class="contact-container">
-                <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
-                        <p>@baybees.wardrobe</p>
-                    </a></div>
-                <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
-                        <p>+62 81638495xx7</p>
-                    </a></div>
-            </div>
-        </div>
-    </footer>
+</div>
+<br><br>
 
-    <link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
-    <link href="../css/template.css" rel="stylesheet">
-    <link href="../css/login.css" rel="stylesheet">
-    <script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+<footer class="footer">
+    <div class="footer-container">
+        <ul class="footer-list">
+            <li><a href="../php/about-us.php">About Us</a></li>
+            <li><a href="../php/faq.php">FAQs</a></li>
+            <li><a href="../php/policy.php">Our Policy</a></li>
+        </ul>
+        <div class="contact-container">
+            <div class="contact"><a href="#"><img src="../assets/images/instagram logo.png">
+                    <p>@baybees.wardrobe</p>
+                </a></div>
+            <div class="contact"><a href="#"><img src="../assets/images/Whatsapp.png">
+                    <p>+62 81638495xx7</p>
+                </a></div>
+        </div>
+    </div>
+</footer>
+
+<link href="../assets/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">
+<link href="../css/template.css" rel="stylesheet">
+<link href="../css/login.css" rel="stylesheet">
+<script src="../assets/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
 </body>
 
 </html>

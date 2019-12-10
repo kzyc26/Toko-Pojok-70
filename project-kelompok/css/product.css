@@ -67,10 +67,13 @@ body{
     min-height: 500px;
     overflow: auto;
 }
-
+.content{
+    min-height: calc(100vh - 70px);
+}
 .container {
     width: 800px;
     margin: 0 auto;
+ 
 }
 
 .product-thumbnail {
@@ -206,16 +209,19 @@ body{
 
 /* float button */
 .float {
-    position: fixed;
+    position: absolute;
     width: 100px;
     height: 100px;
     bottom: 40px;
     right: 40px;
     background-color:  #F3FFE3;
-    color: #FFF;
+    color: black;
+    font-family: 'Dancing Script', cursive;
     border-radius: 50%;
     text-align: center;
     box-shadow: 2px 2px 3px #999;
+    font-size: medium;
+    font-weight: bolder;
 }
 
 .my-float {

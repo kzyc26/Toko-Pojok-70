@@ -41,7 +41,7 @@ $g = $_GET;
 if($g['profile'] == "profile"){?> 
 <div class="subcatprofile" id="subcatprofiles">
                 <div class="profiledetails">
-                    <h2>Profile</h2>
+                   <h2  style="margin-left:50%;">Profile</h2>
                     <table>
                         <tr>
                             <td>
@@ -158,7 +158,7 @@ if($g['profile'] == "profile"){?>
 <?php }
 elseif(isset($g['profile']) == "password"){?> 
   <div class="subcatchangepass">
-                <H2> Change Your Password </h2>
+               <h2> Change Your Password </h2>
                 <form method="post" id="passwordForm">
                     <input type="password" class="input-lg form-control" name="oldpass" id="oldpass"
                         placeholder="Current Password" required>

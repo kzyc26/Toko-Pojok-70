@@ -28,7 +28,7 @@ $wishlist_count=mysqli_num_rows($wishlist_result);
       <td><img style= "width:150px; height:150px;"src="../assets/images/Products/<?php echo $wishlist[$i-1][0];?>.jpg"></td>
       <td><?php echo $wishlist[$i-1][1];?></td>
       <td><?php echo $wishlist[$i-1][2];?></td>
-      <td><?php echo $wishlist[$i-1][3];?></td>
+      <td>Rp. <?php echo number_format($wishlist[$i-1][3],2,",",".");?></td>
       
       </tr>
       <?php   $i++;}

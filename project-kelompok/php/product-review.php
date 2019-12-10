@@ -24,18 +24,18 @@ $_SESSION["reviewcount"]=$review_count;
 
 <div class="content">
   <h1>PRODUCT REVIEW</h1>
-  <form action ="submit-review.php" method ="post">
-  <div class="reviews">
-    <table>
-      <?php for($i=0; $i<=$review_count-1; $i++){?>
-      <tr>
-        <td><img src="../assets/images/products/<?php echo $review[$i][2]?>.jpg"></td>
-        <td style="padding:20px; margin-top:10%;">
-          <br>
-          <h4><?php echo $review[$i][3]?> - <?php echo $review[$i][4]?></h4>
-          <fieldset class="rating" ">
-            <input type="radio" id="star5-<?php echo $i?>" name="rating-<?php echo $i?>" value="5" /><label class="full"
-              for="star5-<?php echo $i?>" title="Awesome - 5 stars"></label>
+  <form action="submit-review.php" method="post">
+    <div class="reviews">
+      <table>
+        <?php for($i=0; $i<=$review_count-1; $i++){?>
+        <tr>
+          <td><img src="../assets/images/products/<?php echo $review[$i][2]?>.jpg"></td>
+          <td style="padding:20px; margin-top:10%;">
+            <br>
+            <h4><?php echo $review[$i][3]?> - <?php echo $review[$i][4]?></h4>
+            <fieldset class="rating" ">
+            <input type=" radio" id="star5-<?php echo $i?>" name="rating-<?php echo $i?>" value="5" /><label
+              class="full" for="star5-<?php echo $i?>" title="Awesome - 5 stars"></label>
             <input type="radio" id="star4half-<?php echo $i?>" name="rating-<?php echo $i?>" value="4.5" /><label
               class="half" for="star4half-<?php echo $i?>" title="Pretty good - 4.5 stars"></label>
             <input type="radio" id="star4-<?php echo $i?>" name="rating-<?php echo $i?>" value="4" /><label class="full"
@@ -54,26 +54,29 @@ $_SESSION["reviewcount"]=$review_count;
               for="star1-<?php echo $i?>" title="Sucks big time - 1 star"></label>
             <input type="radio" id="starhalf-<?php echo $i?>" name="rating-<?php echo $i?>" value="half" /><label
               class="half" for="starhalf-<?php echo $i?>" title="Sucks big time - 0.5 stars"></label>
-          </fieldset>
-          <br>
-          <textarea rows="10" cols="50" name="comment--<?php echo $i?>"></textarea>
-        </td>
+            </fieldset>
+            <br>
+            <textarea rows="10" cols="50" name="comment--<?php echo $i?>"></textarea>
+          </td>
 
-      </tr>
+        </tr>
 
-      <?php }?>
+        <?php }?>
 
-    </table>
-  </div>
-  <br>
-  <button type="submit" name="subreview" class="col-xs2 btn btn-primary btn-load btn-lg" > Submit Review </button>
+      </table>
+    </div>
+
+    <br>
+    <button type="submit" name="subreview" class="col-xs2 btn btn-primary btn-load btn-lg"> Submit Review </button>
 
   </form>
-  <br>
-  <?php require_once('footer.php'); ?>
+</div>
 
-  <link href="../css/product review.css" rel="stylesheet">
-  <link href="../css/font-awesome.css" rel="stylesheet">
-  </body>
+<br>
+<?php require_once('footer.php'); ?>
 
-  </html>
+<link href="../css/product review.css" rel="stylesheet">
+<link href="../css/font-awesome.css" rel="stylesheet">
+</body>
+
+</html>

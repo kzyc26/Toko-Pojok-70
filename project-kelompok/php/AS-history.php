@@ -42,8 +42,17 @@ if(isset($g['status'])){
 ?>
  <div class="subcatorderhistory" id="historyinfo">
                 <h2><?php echo $title;?> Order History</h2>
-
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<?php if($orderhistory_count == 0){?>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2> No Order History Available </h2>
+<?php } 
+else{?>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <?php for($i=0; $i<=$orderhistory_count-1; $i++){
                         ?> <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="heading-<?php echo $i;?>">
@@ -65,7 +74,7 @@ if(isset($g['status'])){
                             $orderdetail_count=mysqli_num_rows($orderdetail_result);
                             if ($orderdetail_count>=1){
                                 $subtotal=0;
-                             for($a=1; $a<=$orderdetail_count-1; $a++){
+                             for($a=0; $a<=$orderdetail_count-1; $a++){
                                  $price = intval($orderdetail[$a][5]);
                                  
                                  $subtotal = $subtotal + $price;
@@ -78,14 +87,15 @@ if(isset($g['status'])){
                                 <table class="alamat">
                                     <tr>
                                         <th>Alamat Pengiriman</th>
-                                        <th style="text-align:right;"> Status: <?php echo $orderhistory[$i][10];?> </th>
+                                        <th style="text-align:right; padding-right:10px;"> Status: <?php echo $orderhistory[$i][10];?> </th>
                                     </tr>
-                                    <tr>
+                                 
                                     <tr>
                                         <th> <?php echo $orderhistory[$i][1];?>
                                             <br></th>
-                                        
+                                        <td rowspan="2"></td>
                                     </tr>
+                                    <tr>
                                     <td>
                                         <?php echo $orderhistory[$i][2];?>
                                         <br>
@@ -109,7 +119,7 @@ if(isset($g['status'])){
                                         <td><img src="../assets/images/products/<?php echo $orderdetail[$x][0];?>.jpg"
                                                 style="width:100px; height:100px;"></td>
                                         <td style="float:left;">
-                                            <?php echo $orderdetail[$x][1];?><?php echo $orderdetail[$x][2];?><br> x
+                                            <?php echo $orderdetail[$x][1];?> <?php echo $orderdetail[$x][2];?><br> x
                                             <?php echo $orderdetail[$x][3];?></td>
                                         <td style="float:right;"> Rp.
                                             <?php 
@@ -180,4 +190,6 @@ if(isset($g['status'])){
                     <?php }?>
 
                 </div>
+<?php }?>
+            
             </div>
