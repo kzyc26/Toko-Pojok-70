@@ -6,7 +6,7 @@ $cmd_alamat="SELECT username, provinsi, kab_kota,kecamatan,kelurahan,kode_pos,al
    $alamat_result  = mysqli_query($con,$cmd_alamat) or die(mysqli_error($con));
    $alamat=mysqli_fetch_all($alamat_result);
    $alamat_count = mysqli_num_rows($alamat_result);?>
- <table class="alamat">
+ <table class="standard">
                     <tr>
                         <th> Username </th>
                         <th> Provinsi </th>

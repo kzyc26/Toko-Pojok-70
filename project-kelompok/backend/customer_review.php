@@ -9,7 +9,7 @@
   $customerreview=mysqli_fetch_all($customerreview_result);
   $customerreview_count = mysqli_num_rows($customerreview_result);
   ?>
-<table class="customerreview">
+<table class="standard">
     <tr>
         <th>Name</th>
         <th> ID Product </th>

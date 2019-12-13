@@ -8,8 +8,9 @@
   $accumulated_result  = mysqli_query($con,$cmd_accumulated) or die(mysqli_error($con));
   $accumulated=mysqli_fetch_all($accumulated_result);
   $accumulated_count = mysqli_num_rows($accumulated_result);?>
-<table class="accumulated">
+<table class="standard">
     <tr>
+    <th>Gambar</th>
         <th>ID Product</th>
         <th> Ukuran </th>
         <th>Warna</th>
@@ -21,6 +22,7 @@
                     if($accumulated_count>0){
                         while($i<=$accumulated_count){?>
     <tr>
+<td><img style="width:100px; height:100px;"src="../assets/images/products/<?php echo $accumulated[$i-1][0];?>.jpg"</td>
         <td><?php echo $accumulated[$i-1][0];?></td>
         <td><?php echo $accumulated[$i-1][1];?></td>
         <td><?php echo $accumulated[$i-1][2];?></td>

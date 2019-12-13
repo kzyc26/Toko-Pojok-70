@@ -5,7 +5,7 @@
   $userdelivdetails=mysqli_fetch_all($userdelivdetails_result);
   $userdelivdetails_count = mysqli_num_rows($userdelivdetails_result);?>
 
-<table class="userdelivdetails">
+<table class="standard">
                     <tr>
                         <th>Transaction ID</th>
                         <th>Delivery ID</th>

@@ -36,7 +36,7 @@ display($jenis, $i, $row, $result, 0);
 <?php if($jenis == "tanggal"){ ?>
 <h3>TOTAL = <?php echo number_format($total['sum(total_transaction)'], 2, ",", "."); ?></h3>
 <?php } ?>
-<table class="invoice">
+<table class="standard">
   <tr>
     <th>ID Transaksi</th>
     <th>Order ID</th>

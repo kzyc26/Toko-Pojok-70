@@ -6,7 +6,7 @@
    $discount=mysqli_fetch_all($discount_result);
    $discount_count = mysqli_num_rows($discount_result);
    ?>
-<table class="Discount">
+<table class="standard">
 
     <tr>
         <th>Product ID</th>
