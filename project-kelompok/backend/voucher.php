@@ -8,7 +8,7 @@ $cmd_voucher="SELECT uv.username , voucher_name
    $voucher=mysqli_fetch_all($voucher_result);
    $voucher_count = mysqli_num_rows($voucher_result); ?>
 
-<table class="vouchercustomer">
+<table class="standard">
                     <tr>
                         <th>Username</th>
                         <th>Voucher</th>

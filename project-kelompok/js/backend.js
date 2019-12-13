@@ -26,3 +26,17 @@ function monthchange(){
                 }
             });
 }
+function deliverychange(){    
+    var cbdel = document.getElementById("listdelivery");
+    var delivery = cbdel.options[cbdel.selectedIndex].value;
+    // alert(status);
+            $.ajax({
+                url: "delivery.php",
+                method: "GET",
+                data: { delivery},
+                dataType: "html",
+                success: function(result){
+                    $("#delivery").html(result);
+                }
+            });
+}

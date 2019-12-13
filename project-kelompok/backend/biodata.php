@@ -7,7 +7,7 @@ $biodata_result  = mysqli_query($con,$cmd_biodata) or die(mysqli_error($con));
 $biodata=mysqli_fetch_all($biodata_result);
 $biodata_count = mysqli_num_rows($biodata_result);
  ?>
-  <table class="biodata">
+  <table class="standard">
                     <tr>
                         <th> Nama Lengkap</th>
                         <th> Nomor Telepon</th>

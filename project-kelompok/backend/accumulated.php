@@ -8,7 +8,7 @@
   $accumulated_result  = mysqli_query($con,$cmd_accumulated) or die(mysqli_error($con));
   $accumulated=mysqli_fetch_all($accumulated_result);
   $accumulated_count = mysqli_num_rows($accumulated_result);?>
-<table class="accumulated">
+<table class="standard">
     <tr>
     <th>Gambar</th>
         <th>ID Product</th>

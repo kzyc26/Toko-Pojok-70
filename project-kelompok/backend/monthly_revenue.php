@@ -18,7 +18,7 @@ for($i=0; $i<=$bulanan_count-1; $i++){
 ?>
 
 
-<table id="monthlyrev">
+<table id="monthlyrev" class="standard">
     <tr class="title">
         <th> Gambar </th>
         <th> Product Detail ID </th>

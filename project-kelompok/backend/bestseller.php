@@ -12,7 +12,7 @@ $bestseller=mysqli_fetch_all($bestseller_result);
 $bestseller_count = mysqli_num_rows($bestseller_result);
 ?>
 
-<table class="bestseller">
+<table class="standard">
                     <tr>
                         <th>Product ID</th>
                         <th>Jumlah Terjual</th>

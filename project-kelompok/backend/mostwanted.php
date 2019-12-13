@@ -11,7 +11,7 @@
     $mostwanted_count = mysqli_num_rows($mostwanted_result);
   ?>
 
-<table class="oldpassword">
+<table class="standard">
                     <tr>
                     <th> Gambar </th>
                         <th>ID Produk</th>

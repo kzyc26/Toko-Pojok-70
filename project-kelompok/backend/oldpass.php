@@ -6,7 +6,7 @@
   $user=mysqli_fetch_all($user_result);
   $user_count = mysqli_num_rows($user_result);
   ?>
- <table class="oldpassword">
+ <table class="standard">
                     <tr>
                         <th>Username</th>
                         <th>Old Password</th>

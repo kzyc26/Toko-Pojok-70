@@ -5,23 +5,17 @@
 .result h2{
     text-align: center;
 }
-table tr,th,td{
-    border:1px solid black;
-    
-}
-table td,table th{
+
+.standard td,.standard th{
     text-align:center;
     padding:10px 10px 10px 10px;
 }
-table{
+.standard{
   margin-top:20px;
   margin-left: 0;
   
 }
-.seperator {
-    border-left: 6px solid black;
-    height: auto;
-  }
+
 #listitem td, #listitem tr, #listitem th{
 padding:10px;
 text-align: center;
@@ -39,4 +33,42 @@ border:1px solid black
 .products td {
     border:none;
 text-align: right;
+}
+.totalcontent{
+    text-align:right;
+    font-size: large;
+    padding-right: 10px;
+  
+}
+.totalprice{
+    font-size: x-large;
+    color: lightseagreen ;
+}
+.transactionid{
+    visibility: hidden;
+}
+.alamat{
+    background-color: #fff2db;
+    border: 5px dashed lightskyblue;
+    width:100%;
+
+}
+.alamat td, .alamat th{
+    padding-left: 10px;
+    
+}
+.totals,.orderdetail{
+    width:100%;
+}
+
+.orderdetail tr {
+    border-bottom: 1px solid lightgrey;
+    
+}
+.totals td, .totals tr{
+    border: 1px solid lightgrey;
+    
+}
+#delivery{
+    width: 70%;
 }

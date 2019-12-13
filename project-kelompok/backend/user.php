@@ -5,7 +5,7 @@
   $user_result  = mysqli_query($con,$cmd_user) or die(mysqli_error($con));
   $user=mysqli_fetch_all($user_result);
   $user_count = mysqli_num_rows($user_result);?>
-<table class="user">
+<table class="standard">
     <tr>
         <th>Username</th>
         <th>Password</th>

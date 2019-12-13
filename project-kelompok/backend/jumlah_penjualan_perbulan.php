@@ -10,7 +10,7 @@
         <option value="<?php echo $i?>"><?php echo $month_name;?></option>
         <?php }?>
     </select>
-    <table id="monthlyrev">
+    <table id="monthlyrev" class="standard">
 
     </table>
 </div>

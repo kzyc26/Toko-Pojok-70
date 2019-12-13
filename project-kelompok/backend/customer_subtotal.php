@@ -9,7 +9,7 @@
   $customer_subtotal=mysqli_fetch_all($customer_subtotal_result);
   $customer_subtotal_count = mysqli_num_rows($customer_subtotal_result);
   ?>
-<table class="customer_subtotal">
+<table class="standard">
     <tr>
         <th>Name</th>
         <th> ID transaction </th>
