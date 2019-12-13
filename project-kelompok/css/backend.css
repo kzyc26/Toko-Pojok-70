@@ -9,6 +9,7 @@
 .standard td,.standard th{
     text-align:center;
     padding:10px 10px 10px 10px;
+    border:1px solid black;
 }
 .standard{
   margin-top:20px;
