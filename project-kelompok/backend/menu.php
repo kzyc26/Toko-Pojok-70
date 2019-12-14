@@ -14,7 +14,6 @@
     <br>
     <a href="#" onclick="showcartdetails()">Item Details in Cart</a>
     <br>
-
     <a href="#" onclick="showwishlist()">Wishlist</a>
     <br>
     <a href="#" onclick="showvoucher()">Voucher Customer</a>

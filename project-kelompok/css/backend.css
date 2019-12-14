@@ -73,3 +73,15 @@ text-align: right;
 #delivery{
     width: 70%;
 }
+.cart_total{
+    font-size: x-large;
+    color: lightseagreen ;
+    margin-left: 60%;
+}
+.cart_title{
+    text-align: left;
+    padding-right:20px;
+}
+.cart_totalcontent{
+text-align: right;
+}

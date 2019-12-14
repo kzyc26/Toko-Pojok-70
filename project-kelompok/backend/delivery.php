@@ -21,7 +21,7 @@ if(isset($g['delivery'])){
    $orderhistory_count=mysqli_num_rows($orderhistory_result);
   
 ?>
-<?php if($orderhistory_count == 0){?>
+<?php if($orderhistory_count == 0 || $orderhistory_count == null){?>
     <br>
     <br>
     <br>

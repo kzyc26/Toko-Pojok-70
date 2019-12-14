@@ -14,6 +14,8 @@
         <option value="<?php echo $category[$i][0];?>"><?php echo $category[$i][1];?></option>
         <?php }?>
     </select>
+    <br>
+    <br>
     <table id="listitem">
 
     </table>
