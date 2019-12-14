@@ -85,3 +85,11 @@ text-align: right;
 .cart_totalcontent{
 text-align: right;
 }
+.chooseuser{
+    position: absolute;
+    margin-left: 20%;
+    margin-top: -54px;
+}
+#btnsearch{
+    margin-left: 25%;
+}

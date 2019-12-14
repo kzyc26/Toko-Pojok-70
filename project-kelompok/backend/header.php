@@ -47,8 +47,8 @@
                 <br>
                 <a href="oldpass.php" >Old Password</a>
                 <br>
-                <a href="userdelivdetails.php" >User Delivery Details</a>
-                <br>
+                <!-- <a href="userdelivdetails.php" >User Delivery Details</a>
+                <br> -->
                 <a href="bestseller.php">Best Seller Products</a>
                 <br>
                 <a href="mostwanted.php">Most Wanted Products</a>
