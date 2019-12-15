@@ -16,7 +16,7 @@ require_once('navbar.php');
       <!-- decoration -->
       <img src="../assets/images/orange-watercolor.png" class="garland">
       <div class="item active">
-        <a href="../php/products.php">
+        <a href="products.php">
           <img src="../assets/images/Slide 1.jpg" alt="...">
           <div class="carousel-caption">
             Shoes
