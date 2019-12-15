@@ -4,24 +4,37 @@
 $g = $_GET;
 if(isset($g['delivery'])){
     $stats=$g['delivery'];
-        $historycmd_extra="and dd.id_deliverystatus = ".$stats." ";
-        
-    } else{
-    $historycmd_extra="";}
+    if($stats !== "none"){
+        $historycmd_extra="and dd.id_deliverystatus = ".$stats." ";}
+        else{
+            $historycmd_extra=""; }   
+ } else{
+    $historycmd_extra="";
+}
 
+if(isset($g['user'])){
+$userid= $g['user'];
+if($userid !== "none"){
+    $historycmd_extra2="and t.username = '".$userid."'";}
+    else{
+        $historycmd_extra2="";} 
+}
+else{
+    $historycmd_extra2="";
+}
     $cmd_orderhistory="SELECT t.transaction_id as `Transaction ID`,
     receiver,notelp,dd.alamat,dd.kab_kota,dd.kecamatan,dd.kelurahan,
     dd.provinsi,dd.kode_pos,total_transaction, d.delivery_status,
     ongkir,nama_ekspedisi,payment_method 
    from transaction t, customer c, delivery_details dd,delivery d, ekspedisi e,
    payment_method p where  dd.transaction_id = t.transaction_id and d.id_deliverystatus = dd.id_deliverystatus and dd.id_ekspedisi = e.id_ekspedisi 
-   and t.id_payment_method= p.id_payment_method $historycmd_extra;";
+   and t.id_payment_method= p.id_payment_method $historycmd_extra $historycmd_extra2 ;";
    $orderhistory_result= mysqli_query($con,$cmd_orderhistory) or die(mysqli_error($con));
    $orderhistory=mysqli_fetch_all($orderhistory_result);
    $orderhistory_count=mysqli_num_rows($orderhistory_result);
   
 ?>
-<?php if($orderhistory_count == 0){?>
+<?php if($orderhistory_count == 0 || $orderhistory_count == null){?>
     <br>
     <br>
     <br>

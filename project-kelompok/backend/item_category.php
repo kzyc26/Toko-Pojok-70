@@ -35,7 +35,7 @@ for($i=0; $i<=$items_category_count-1; $i++){?>
        <br>
        Category: <?php echo $items_category[$i][3];?>
        <br>
-       Price: <?php echo number_format($items_category[$i][2],2,",",".");?>,-
+       Price: Rp.<?php echo number_format($items_category[$i][2],2,",",".");?>,-
        <br>
        </td>
        </tr>

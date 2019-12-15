@@ -23,8 +23,8 @@
                 <br>
                 <a href="customer_subtotal.php">Customer Subtotal</a>
                 <br>
-                <a href="product_details.php">Product Details</a>
-                <br>
+                <!-- <a href="product_details.php">Product Details</a>
+                <br> -->
                 <a href="items_per_category.php">Items Per Category</a>
                 <br>
                 <a href="item_details_in_cart.php">Item Details in Cart</a>
@@ -47,8 +47,8 @@
                 <br>
                 <a href="oldpass.php" >Old Password</a>
                 <br>
-                <a href="userdelivdetails.php" >User Delivery Details</a>
-                <br>
+                <!-- <a href="userdelivdetails.php" >User Delivery Details</a>
+                <br> -->
                 <a href="bestseller.php">Best Seller Products</a>
                 <br>
                 <a href="mostwanted.php">Most Wanted Products</a>
@@ -57,5 +57,5 @@
             </div>
             <div class="seperator">
             </div>
-            <div class="col-md-9 result">
+            <div class="col-md-8 result">
                 <h2>Result</h2>

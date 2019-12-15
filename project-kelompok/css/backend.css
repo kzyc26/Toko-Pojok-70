@@ -9,6 +9,7 @@
 .standard td,.standard th{
     text-align:center;
     padding:10px 10px 10px 10px;
+    border:1px solid black;
 }
 .standard{
   margin-top:20px;
@@ -71,4 +72,24 @@ text-align: right;
 }
 #delivery{
     width: 70%;
+}
+.cart_total{
+    font-size: x-large;
+    color: lightseagreen ;
+    margin-left: 60%;
+}
+.cart_title{
+    text-align: left;
+    padding-right:20px;
+}
+.cart_totalcontent{
+text-align: right;
+}
+.chooseuser{
+    position: absolute;
+    margin-left: 20%;
+    margin-top: -54px;
+}
+#btnsearch{
+    margin-left: 25%;
 }
