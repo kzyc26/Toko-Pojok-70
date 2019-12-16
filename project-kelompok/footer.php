@@ -2,9 +2,9 @@
 <footer class="footer" >
       <div class="footer-container">
           <ul class="footer-list">
-              <li><a href="php/about-us.php">About Us</a></li>
-              <li><a href="php/faq.php">FAQs</a></li>
-              <li><a href="php/policy.php">Our Policy</a></li>
+              <li><a href="about-us.php">About Us</a></li>
+              <li><a href="faq.php">FAQs</a></li>
+              <li><a href="policy.php">Our Policy</a></li>
           </ul>
           <div class="contact-container">
               <div class="contact"><a href="#"><img src="assets/images/instagram logo.png">
