@@ -32,7 +32,7 @@ while($r = mysqli_fetch_assoc($sql)){
             </div>
             <table>
               <tr>
-                <td class="pic"><img src='../assets/images/products/<?php echo $id; ?>.jpg' style="height:200px;" />
+                <td class="pic"><img src='assets/images/products/<?php echo $id; ?>.jpg' style="height:200px;" />
                 </td>
                 <td class="qty pref">
                   <div>Size: </div>

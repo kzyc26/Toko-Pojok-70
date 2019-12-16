@@ -31,12 +31,12 @@ require_once('db.php');
                   </tr>
             </table>  
             </div>
-            <a href="../php/Product Review.php"><button type="button" class="reviewbtn">Give us a review!</button></a>
+            <a href="php/Product Review.php"><button type="button" class="reviewbtn">Give us a review!</button></a>
       </div>
 
       <?php require_once('footer.php'); ?>  
       
-          <link href="../css/Trace and track.css"rel="stylesheet">
+          <link href="css/Trace and track.css"rel="stylesheet">
     
         </body>
     <script>

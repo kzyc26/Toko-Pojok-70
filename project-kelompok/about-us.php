@@ -5,7 +5,7 @@ require_once('navbar.php');
 
 <div class="content">
   <h1>About Us</h1>
-  <img src="../assets/images/foto toko.jpg">
+  <img src="assets/images/foto toko.jpg">
   <p class="col-md-4 tengah">
     Demi pelayanan yang lebih baik dan kenyamanan konsumen, kami sangat membutuhkan kritik dan saran anda yang bisa di
     kirimkan melalui form yang ada di bawah. Selain online shop Toko pojok 70 juga memiliki offline store yang berada di
@@ -29,7 +29,7 @@ require_once('navbar.php');
 <br>
 <?php require_once('footer.php'); ?>
 
-<link href="../css/about-us.css" rel="stylesheet">
+<link href="css/about-us.css" rel="stylesheet">
 </body>
 
 </html>

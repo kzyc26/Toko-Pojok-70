@@ -28,6 +28,6 @@ require_once('navbar.php');
 </div>
         <?php require_once('footer.php'); ?>
   
-  <link href="../css/policy.css" rel="stylesheet">
+  <link href="css/policy.css" rel="stylesheet">
 </body>
 </html>

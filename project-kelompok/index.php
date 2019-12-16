@@ -14,26 +14,26 @@ require_once('navbar.php');
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <!-- decoration -->
-      <img src="../assets/images/orange-watercolor.png" class="garland">
+      <img src="assets/images/orange-watercolor.png" class="garland">
       <div class="item active">
-        <a href="../php/products.php">
-          <img src="../assets/images/Slide 1.jpg" alt="...">
+        <a href="products.php">
+          <img src="assets/images/Slide 1.jpg" alt="...">
           <div class="carousel-caption">
             Shoes
           </div>
         </a>
       </div>
       <div class="item">
-        <a href="../php/products.php">
-          <img src="../assets/images/Slide 2.jpg" alt="...">
+        <a href="php/products.php">
+          <img src="assets/images/Slide 2.jpg" alt="...">
           <div class="carousel-caption">
             GIRL's Outfit
           </div>
         </a>
       </div>
       <div class="item">
-        <a href="../php/products.php">
-          <img src="../assets/images/Slide 3.jpg" alt="...">
+        <a href="php/products.php">
+          <img src="assets/images/Slide 3.jpg" alt="...">
           <div class="carousel-caption">
             BOY's Outfit
           </div>
@@ -144,8 +144,8 @@ require_once('navbar.php');
 
   <?php require_once('footer.php'); ?>
   
-  <link href="../css/homepage.css" rel="stylesheet">
-  <script src="../js/homepage.js"></script>
+  <link href="css/homepage.css" rel="stylesheet">
+  <script src="js/homepage.js"></script>
 </body>
 
 </html>

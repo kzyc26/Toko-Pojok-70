@@ -29,7 +29,7 @@ $_SESSION["reviewcount"]=$review_count;
       <table>
         <?php for($i=0; $i<=$review_count-1; $i++){?>
         <tr>
-          <td><img src="../assets/images/products/<?php echo $review[$i][2]?>.jpg"></td>
+          <td><img src="assets/images/products/<?php echo $review[$i][2]?>.jpg"></td>
           <td style="padding:20px; margin-top:10%;">
             <br>
             <h4><?php echo $review[$i][3]?> - <?php echo $review[$i][4]?></h4>
@@ -75,8 +75,8 @@ $_SESSION["reviewcount"]=$review_count;
 <br>
 <?php require_once('footer.php'); ?>
 
-<link href="../css/product review.css" rel="stylesheet">
-<link href="../css/font-awesome.css" rel="stylesheet">
+<link href="css/product review.css" rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
 </body>
 
 </html>

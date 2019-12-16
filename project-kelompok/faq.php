@@ -45,7 +45,7 @@ require_once('navbar.php');
           <div id="answer-3" class="collapse answer" aria-labelledby="question-3" data-parent="#faq">
             <div class="card-body">
               Metode pembayaran dapat dilakukan dengan transfer ke BCA virtual account 538401982xxx. Kami juga menerima pembayaran via OVO dengan memindai <i>QR code</i> di bawah ini:
-              <br><img src="../assets/images/qr code.png"><br>
+              <br><img src="assets/images/qr code.png"><br>
               Harap memasukkan screenshot bukti transaksi ke halaman <i>check-out</i> apabila Anda sudah melakukan pembayaran.
             </div>
           </div>
@@ -69,6 +69,6 @@ require_once('navbar.php');
       <Br>
 <br>
       <?php require_once('footer.php'); ?>  
-  <link href="../css/faq.css" rel="stylesheet">
+  <link href="css/faq.css" rel="stylesheet">
 </body>
 </html>

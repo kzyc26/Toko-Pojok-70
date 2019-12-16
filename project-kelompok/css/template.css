@@ -56,6 +56,12 @@ body{
     margin-bottom: 10px;
 }
 
+.nav-buttons button{ 
+    padding-top: 15px;    
+    border: none;
+    background-color: transparent;   
+}
+
 /* footer */
 .footer{
     flex-shrink: 0;
