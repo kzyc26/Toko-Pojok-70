@@ -34,7 +34,7 @@ display($jenis, $i, $row, $result, 0);
   function display($jenis, $i, $row, $result, $total){
 ?>
 <?php if($jenis == "tanggal"){ ?>
-<h3>TOTAL = <?php echo number_format($total['sum(total_transaction)'], 2, ",", "."); ?></h3>
+<h3>TOTAL = Rp.<?php echo number_format($total['sum(total_transaction)'], 2, ",", "."); ?></h3>
 <?php } ?>
 <table class="standard">
   <tr>
