@@ -8,11 +8,22 @@ $.ajax({
     }
 })
 
+function paymodal(total, sid){(
+    $.ajax({
+    url: "payment-modal.php",
+    method: "POST",
+    data:{ total, sid },
+    dataType: "html",
+    success: function(result){
+        $("#modalpay-content").html(result);
+    }
+}))}
+
 function hapus(idbar, sid){
     $.ajax({
         url: "delete-cart.php",
         method: "POST",
-        data:{idbar},
+        data:{idbar, sid},
         dataType: "html",
         success: function(result, sid){
             $("#display").html(result);
