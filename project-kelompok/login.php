@@ -31,7 +31,7 @@ require_once('db.php');
 				$rows = mysqli_num_rows($result);
 				if($rows==1){
 					$_SESSION['username'] = $username;
-					header("Location: index.php"); // Redirect user to index.php
+					header("Location: accountsetting.php"); // Redirect user
 				} else {
           $errmessage = "Username/Password is incorrect";
 					echo "<script type='text/javascript'> alert('$errmessage');</script>";
