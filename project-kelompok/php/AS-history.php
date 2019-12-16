@@ -116,7 +116,7 @@ else{?>
                                 <?php for($x=0; $x<=$orderdetail_count-1; $x++){?>
                                 
                                     <tr>
-                                        <td><img src="../assets/images/products/<?php echo $orderdetail[$x][0];?>.jpg"
+                                        <td><img src="../assets/images/Products/<?php echo $orderdetail[$x][0];?>.jpg"
                                                 style="width:100px; height:100px;"></td>
                                         <td style="float:left;">
                                             <?php echo $orderdetail[$x][1];?> <?php echo $orderdetail[$x][2];?><br> x
