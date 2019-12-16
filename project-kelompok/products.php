@@ -150,7 +150,7 @@ require_once('navbar.php');
             $id = $barang_display[$i][0];          
 				?>
             <div class="product-thumbnail">
-                <img src='../assets/images/Products/<?php echo $id; ?>.jpg' class='img-responsive object-fit'
+                <img src='assets/images/Products/<?php echo $id; ?>.jpg' class='img-responsive object-fit'
                     style="height:200px;" />
                 <h5><?php echo $barang_display[$i][1]; ?></h5>
                 <p name="harga">
@@ -319,10 +319,10 @@ require_once('navbar.php');
         <button type="submit" class="float" name="checkout"><img
                 src="https://img.icons8.com/nolan/64/000000/shopping-cart.png"> Checkout </button>
     </form>
-<link href="../css/product.css" rel="stylesheet">
-<script src="../js/productview.js"></script>
-<link href="../css/slider.css" rel="stylesheet">
-<script src="../js/slider.js"></script>
+<link href="css/product.css" rel="stylesheet">
+<script src="js/productview.js"></script>
+<link href="css/slider.css" rel="stylesheet">
+<script src="js/slider.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Lato|Pacifico&display=swap"
     rel="stylesheet">
 </body>

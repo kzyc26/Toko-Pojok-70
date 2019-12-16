@@ -146,7 +146,7 @@ if($ketemu !== 0){ ?>
     </div>
   </div>
   <button type="button" id="payment-but" data-toggle="modal" data-target="#pay"><img
-      src="../assets/images/Cash.png">Payment</button>
+      src="assets/images/Cash.png">Payment</button>
   <div class="modal fade product_view" id="pay">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -197,8 +197,8 @@ if($ketemu !== 0){ ?>
 <Br>
 <br>
 <?php require_once('footer.php'); ?>
-<link href="../css/check-out.css" rel="stylesheet">
-<script src="../js/check-out.js"></script>
+<link href="css/check-out.css" rel="stylesheet">
+<script src="js/check-out.js"></script>
 </body>
 
 </html>

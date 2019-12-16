@@ -127,8 +127,8 @@ require_once('navbar.php');
     <br>
     <?php require_once('footer.php'); ?>
     <link href="https://fonts.googleapis.com/css?family=Lato|Solway&display=swap" rel="stylesheet">
-    <link href="../css/accountsetting.css" rel="stylesheet">
-    <script src="../js/accountsetting.js"></script>
+    <link href="css/accountsetting.css" rel="stylesheet">
+    <script src="js/accountsetting.js"></script>
 </body>
 
 </html>

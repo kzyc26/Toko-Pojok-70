@@ -3,7 +3,7 @@
 
 <head>
   <title><?php echo $_SESSION['prevpage']; ?></title>
-  <script src="../assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
+  <script src="assets/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>        
-        <a class="navbar-brand" href="index.php"><img src="../assets/images/99818.png" class="logo-toko"></a>
+        <a class="navbar-brand" href="index.php"><img src="assets/images/99818.png" class="logo-toko"></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->

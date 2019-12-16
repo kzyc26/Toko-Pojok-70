@@ -28,8 +28,8 @@ if(isset($_POST['subreview'])){
 
 <?php require_once('footer.php'); ?>
 
-<link href="../css/product review.css" rel="stylesheet">
-<link href="../css/font-awesome.css" rel="stylesheet">
+<link href="css/product review.css" rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
 </body>
 
 </html>
