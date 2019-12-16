@@ -59,7 +59,7 @@ require_once('navbar.php');
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Sign in</button>
-            <button onClick="window.location.href='php/sign-up.php'"
+            <button onClick="window.location.href='sign-up.php'"
                 class="btn btn-lg btn-primary btn-block">Register Now!</button>
         </form>
     </div>
@@ -69,9 +69,9 @@ require_once('navbar.php');
 <footer class="footer">
     <div class="footer-container">
         <ul class="footer-list">
-            <li><a href="php/about-us.php">About Us</a></li>
-            <li><a href="php/faq.php">FAQs</a></li>
-            <li><a href="php/policy.php">Our Policy</a></li>
+            <li><a href="about-us.php">About Us</a></li>
+            <li><a href="faq.php">FAQs</a></li>
+            <li><a href="policy.php">Our Policy</a></li>
         </ul>
         <div class="contact-container">
             <div class="contact"><a href="#"><img src="assets/images/instagram logo.png">

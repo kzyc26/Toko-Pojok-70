@@ -31,7 +31,7 @@ require_once('db.php');
                   </tr>
             </table>  
             </div>
-            <a href="php/Product Review.php"><button type="button" class="reviewbtn">Give us a review!</button></a>
+            <a href="product-review.php"><button type="button" class="reviewbtn">Give us a review!</button></a>
       </div>
 
       <?php require_once('footer.php'); ?>  

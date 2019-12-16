@@ -24,7 +24,7 @@ require_once('navbar.php');
         </a>
       </div>
       <div class="item">
-        <a href="php/products.php">
+        <a href="products.php">
           <img src="assets/images/Slide 2.jpg" alt="...">
           <div class="carousel-caption">
             GIRL's Outfit
@@ -32,7 +32,7 @@ require_once('navbar.php');
         </a>
       </div>
       <div class="item">
-        <a href="php/products.php">
+        <a href="products.php">
           <img src="assets/images/Slide 3.jpg" alt="...">
           <div class="carousel-caption">
             BOY's Outfit

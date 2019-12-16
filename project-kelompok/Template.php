@@ -48,7 +48,7 @@ if (isset($_POST['cart'])){
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>
-          <a href="php/products.php"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
+          <a href="products.php"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></a>
         </form>
         <form action="index.php" method="post">
         <ul class="nav navbar-nav navbar-right">
@@ -64,9 +64,9 @@ if (isset($_POST['cart'])){
   <footer class="footer">
       <div class="footer-container">
           <ul class="footer-list">
-              <li><a href="php/about-us.php">About Us</a></li>
-              <li><a href="php/faq.php">FAQs</a></li>
-              <li><a href="php/policy.php">Our Policy</a></li>
+              <li><a href="about-us.php">About Us</a></li>
+              <li><a href="faq.php">FAQs</a></li>
+              <li><a href="policy.php">Our Policy</a></li>
           </ul>
           <div class="contact-container">
               <div class="contact"><a href="#"><img src="assets/images/instagram logo.png">
