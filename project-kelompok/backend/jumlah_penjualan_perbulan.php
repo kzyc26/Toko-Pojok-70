@@ -10,9 +10,9 @@
         <option value="<?php echo $i?>"><?php echo $month_name;?></option>
         <?php }?>
     </select>
-    <table id="monthlyrev" class="standard">
+    <div id="monthlyrev" >
 
-    </table>
+    </div>
 </div>
 
 <?php include("footer.php") ?>

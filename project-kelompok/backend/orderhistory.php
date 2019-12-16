@@ -12,7 +12,7 @@
    ?>
 <p> Select Delivery Status: </p>
     <select name="delivery" id="listdelivery" >
-        <option value="none"></option>
+        <option value="none">All</option>
         <?php for($i=0; $i<=$delivery_count-1; $i++){?>
         <option value="<?php echo $delivery[$i][0];?>"><?php echo $delivery[$i][1];?></option>
         <?php }?>
@@ -20,7 +20,7 @@
     <div class = "chooseuser">
     <p> Select User: </p>
     <select name="user" id="listuser">
-    <option value="none"></option>
+    <option value="none">All</option>
     <?php for($i=0; $i<=$user_count-1; $i++){?>
         <option value="<?php echo $user[$i][0];?>"><?php echo $user[$i][0];?></option>
         <?php }?>

@@ -13,12 +13,13 @@ $bulanan=mysqli_fetch_all($bulanan_result);
 $bulanan_count = mysqli_num_rows($bulanan_result);
 ?> <script> alert(<?php echo $bulanan_count?>); </script><?php
 $subtotal = 0;
+$baris= $bulanan_count;
 for($i=0; $i<=$bulanan_count-1; $i++){
     $subtotal = $subtotal + intval($bulanan[$i][3]);}
 ?>
 
 
-<table id="monthlyrev" class="standard">
+<table class="standard">
     <tr class="title">
         <th> Gambar </th>
         <th> Product Detail ID </th>
@@ -27,7 +28,6 @@ for($i=0; $i<=$bulanan_count-1; $i++){
         <th> Total Harga </th>
     </tr>
     <?php 
-                  if($bulanan_count !== 0){ 
                     for($i=0; $i<=$bulanan_count-1; $i++){
                     $price = $bulanan[$i][3];?>
                 <tr class="details">
@@ -49,15 +49,9 @@ for($i=0; $i<=$bulanan_count-1; $i++){
         <td colspan="4"> Total </td>
         <td> Rp. <?php echo  number_format($subtotal,2,",",".");?> </td>
     <tr> 
-    <?php}
+ 
                  
-    elseif($bulanan_count == 0 ){ ?>
-    <tr>
-        <td colspan="5">No Transaction Available at this Month</td>
-    </tr>
-    <?php
-                 }
-                ?>
+  
 
 
 

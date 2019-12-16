@@ -3,9 +3,9 @@
 <?php 
 $cmd_bestseller="SELECT d.id_product,sum(jumlah_product) as`best seller`
 from product p, product_detail d, transaction_detail td,transaction t
-where td.id_product_detail=d.id_product_detail and d.id_product=p.id_product and t.transaction_id = td.transaction_id and t.payment_status =0
+where td.id_product_detail=d.id_product_detail and d.id_product=p.id_product and t.transaction_id = td.transaction_id and t.payment_status =1
 group by d.id_product
-order by `best seller`
+order by `best seller` desc
 limit 5";
 $bestseller_result  = mysqli_query($con,$cmd_bestseller) or die(mysqli_error($con));
 $bestseller=mysqli_fetch_all($bestseller_result);

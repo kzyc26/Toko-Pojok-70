@@ -45,7 +45,7 @@
                 <br>
                 <a href="biodata.php" >Biodata</a>
                 <br>
-                <a href="oldpass.php" >Old Password</a>
+                <a href="oldpass.php" >Frequently Used Ekspedisi</a>
                 <br>
                 <!-- <a href="userdelivdetails.php" >User Delivery Details</a>
                 <br> -->
