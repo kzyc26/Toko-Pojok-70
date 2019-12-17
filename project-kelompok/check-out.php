@@ -4,6 +4,7 @@ $sid = session_id();
 $_SESSION['prevpage'] = "Check Out";
 require_once('navbar.php');
 require_once('db.php');
+$_SESSION['ongkir'] = 0;
 ?>
 
 <?php 
@@ -43,29 +44,7 @@ if($ketemu !== 0){ ?>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-12 col-sm-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Delivery Details</h3>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-4 tulisan">Opsi Pengiriman</div>
-            <div class="col-md-8">
-              <select name="pengiriman" id="pengiriman" class="form-control pendek" required="">
-                <option value=""></option>
-                <option value="jne-reg">JNE Reguler</option>
-                <option value="jne-eks">JNE Ekspress</option>
-                <option value="jnt-reg">J&T Reguler</option>
-                <option value="jnt-eks">J&T Ekspress</option>
-                <option value="cod">Cash on Delivery (Kota Malang)</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </div>    
 
     <div class="col-md-12 col-sm-12">
       <div class="panel panel-default">
@@ -73,51 +52,31 @@ if($ketemu !== 0){ ?>
           <h3 class="panel-title">Alamat Pengiriman</h3>
         </div>
         <div class="panel-body">
-          <div class="row">
+        <div class="row">
             <div class="col-md-4 tulisan">Provinsi</div>
-            <div class="col-md-8">
-              <select name="provinsi" id="provinsi" class="form-control pendek" onchange="gantikab(this.id, 'kabkota')"
-                required="">
-                <option value=""></option>
-                <option value="jawa-timur">Jawa Timur</option>
-                <option value="jawa-tengah">Jawa Tengah</option>
-                <option value="jawa-barat">Jawa Barat</option>
-              </select>
+            <div class="col-md-8" id="sel_province">
+            <select name="provinsi" id="select_provinsi" class="form-control pendek" onchange="gantikab(this.id, 'select_kabkota')"></select>
             </div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Kabupaten/Kota</div>
-            <div class="col-md-8">
-              <select name="kabkota" id="kabkota" class="form-control pendek"
-                onchange="gantikecamatan(this.id, 'kecamatan')" required=""></select>
-            </div>
+            <div class="col-md-8"id="sel_kabkota"><select name="kabkota" id="select_kabkota" class="form-control pendek"></select></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Kecamatan</div>
-            <div class="col-md-8">
-              <select name="kecamatan" id="kecamatan" class="form-control pendek"
-                onchange="gantikelurahan(this.id, 'kelurahan')" required=""></select>
-            </div>
+            <div class="col-md-8"><input type="text" placeholder="Kecamatan" name="kecamatan" class="form-control pendek"></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Kelurahan</div>
-            <div class="col-md-8">
-              <select name="kelurahan" id="kelurahan" class="form-control pendek" required=""></select>
-            </div>
+            <div class="col-md-8"><input type="text" placeholder="Kelurahan" name="kelurahan" class="form-control pendek"></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Kode Pos</div>
-            <div class="col-md-8">
-              <input type="text" id="kodepos" name="kodepos" class="form-control pendek" placeholder="Kodepos"
-                required="">
-            </div>
+            <div class="col-md-8"><input type="text" id="kodepos" class="form-control pendek" placeholder="Kodepos" required="" name="kodepos"></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Alamat</div>
-            <div class="col-md-8">
-              <input type="text" id="alamat" name="alamat" class="form-control panjang" placeholder="Alamat"
-                required="">
-            </div>
+            <div class="col-md-8"><input type="text" id="alamat" class="form-control panjang" placeholder="Alamat" required="" name="alamat"></div>
           </div>
           <div class="row">
             <div class="col-md-6"><input type="checkbox" id="send-details" onclick="nyala()"> Send my order details
@@ -128,6 +87,28 @@ if($ketemu !== 0){ ?>
                 <option value="sms">SMS</option>
                 <option value="email">E-Mail</option>
               </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Delivery Details</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4 tulisan">Opsi Pengiriman</div>
+            <div class="col-md-8">
+              <select name="pengiriman" id="pengiriman" class="form-control pendek" required="" onchange="cekongkir(this.id, 'select_kabkota')">
+                <option value="jne">JNE</option>
+                <option value="pos">Pos Indonesia</option>
+                <option value="tiki">TIKI</option>
+                <option value="cod">Cash on Delivery (Kota Malang)</option>
+              </select>
+              <div id="ongkir"></div>
             </div>
           </div>
         </div>
@@ -168,6 +149,7 @@ if($ketemu !== 0){ ?>
 <?php require_once('footer.php'); ?>
 <link href="css/check-out.css" rel="stylesheet">
 <script src="js/check-out.js"></script>
+<script src="js/rajaongkir.js"></script>
 </body>
 
 </html>

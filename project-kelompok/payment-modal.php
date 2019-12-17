@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('db.php');
-$total = $_POST['total'];
+$_SESSION['total'] = $_POST['total'] + $_SESSION['ongkir'];
 $sid = $_POST['sid'];
 ?>
 
@@ -13,8 +13,8 @@ $sid = $_POST['sid'];
           <div class="row">
             <div class="choose">
               <div class="total">
-                <h3>Total: Rp. <?php echo number_format($total,2,",","."); ?></h3>
-                <h4>Order ID : <?php echo $sid;?> </h4>
+                <h4>Ongkir : Rp. <?php echo number_format($_SESSION['ongkir'],2,",",".");?> </h4>               
+                <h3>Total: Rp. <?php echo number_format($_SESSION['total'],2,",","."); ?></h3>                
               </div>
               <div class="panel panel-default">
                 <div class="panel-heading">Select Your Payment Method</div>
