@@ -33,8 +33,8 @@ $_SESSION["reviewcount"]=$review_count;
           <td style="padding:20px; margin-top:10%;">
             <br>
             <h4><?php echo $review[$i][3]?> - <?php echo $review[$i][4]?></h4>
-            <fieldset class="rating" ">
-            <input type=" radio" id="star5-<?php echo $i?>" name="rating-<?php echo $i?>" value="5" /><label
+            <fieldset class="rating">
+          <input type="radio" id="star5-<?php echo $i?>" name="rating-<?php echo $i?>" value="5" /><label
               class="full" for="star5-<?php echo $i?>" title="Awesome - 5 stars"></label>
             <input type="radio" id="star4half-<?php echo $i?>" name="rating-<?php echo $i?>" value="4.5" /><label
               class="half" for="star4half-<?php echo $i?>" title="Pretty good - 4.5 stars"></label>
@@ -52,11 +52,11 @@ $_SESSION["reviewcount"]=$review_count;
               class="half" for="star1half-<?php echo $i?>" title="Meh - 1.5 stars"></label>
             <input type="radio" id="star1-<?php echo $i?>" name="rating-<?php echo $i?>" value="1" /><label class="full"
               for="star1-<?php echo $i?>" title="Sucks big time - 1 star"></label>
-            <input type="radio" id="starhalf-<?php echo $i?>" name="rating-<?php echo $i?>" value="half" /><label
+            <input type="radio" id="starhalf-<?php echo $i?>" name="rating-<?php echo $i?>" value="0.5" /><label
               class="half" for="starhalf-<?php echo $i?>" title="Sucks big time - 0.5 stars"></label>
             </fieldset>
             <br>
-            <textarea rows="10" cols="50" name="comment--<?php echo $i?>"></textarea>
+            <textarea rows="10" cols="50" name="comment-<?php echo $i?>"></textarea>
           </td>
 
         </tr>
@@ -76,7 +76,7 @@ $_SESSION["reviewcount"]=$review_count;
 <?php require_once('footer.php'); ?>
 
 <link href="css/product review.css" rel="stylesheet">
-<link href="css/font-awesome.css" rel="stylesheet">
+<!-- <link href="css/font-awesome.css" rel="stylesheet"> -->
 </body>
 
 </html>
