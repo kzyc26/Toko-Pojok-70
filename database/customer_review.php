@@ -14,7 +14,8 @@
   $customer = mysqli_fetch_all($customer_result);
   $customer_count = mysqli_num_rows($customer_result);  
   ?>
-
+ <h2> Individual Customer Review </h2>
+   <br>
 <select name="customer" id="select_customer" class="form-control select" onchange="custrevchange(this.id)">
     <?php
   for ($c=0; $c < $customer_count; $c++){
@@ -25,8 +26,7 @@
 ?>
 </select>
 
-   <h2> Individual Customer Review </h2>
-   <br>
+  
 
 <table class="standard" id="display_custreview">
     <tr>
