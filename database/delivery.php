@@ -15,15 +15,13 @@ if(isset($g['delivery'])){
 if(isset($g['user'])){
 $userid= $g['user'];
 if($userid !== "none"){
-    $historycmd_extra2="and t.username = '".$userid."'";
-    ?> <script> alert('<?php echo $historycmd_extra2?>');</script><?php
-}
-    
+    $historycmd_extra2="and t.username = '".$userid."'";}
     else{
         $historycmd_extra2="";} 
-        
 }
-
+else{
+    $historycmd_extra2="";
+}
 
     $cmd_orderhistory="SELECT DISTINCT t.transaction_id as `Transaction ID`,
     receiver,notelp,dd.alamat,dd.kab_kota,dd.kecamatan,dd.kelurahan,
