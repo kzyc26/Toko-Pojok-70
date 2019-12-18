@@ -20,7 +20,7 @@ $(document).ready(function(){
             dataType: "html",
             success: function(result){
                 $("#contentview").html(result);
-                document.getElementById("size").selectedIndex = "-1";                
+                document.getElementById("size").selectedIndex = "-1";
                 document.querySelector('.btnaddcart').style.display = 'none';
             }
         });

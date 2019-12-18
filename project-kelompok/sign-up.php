@@ -109,26 +109,19 @@ require_once('navbar.php');
         <div class="panel-body">
           <div class="row">
             <div class="col-md-4 tulisan">Provinsi</div>
-            <div class="col-md-8"><select name="provinsi" id="provinsi" class="form-control pendek" onchange="gantikab(this.id, 'kabkota')">
-              <option value=""></option>
-              <option value="jawa-timur">Jawa Timur</option>
-              <option value="jawa-tengah">Jawa Tengah</option>
-              <option value="jawa-barat">Jawa Barat</option>
-            </select></div>
+            <div class="col-md-8" id="sel_province"></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Kabupaten/Kota</div>
-            <div class="col-md-8"><select name="kabkota" id="kabkota" class="form-control pendek"
-              onchange="gantikecamatan(this.id, 'kecamatan')"></select></div>
+            <div class="col-md-8"id="sel_kabkota"><select name="kabkota" id="select_kabkota" class="form-control pendek"></select></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Kecamatan</div>
-            <div class="col-md-8"><select name="kecamatan" id="kecamatan" class="form-control pendek"
-              onchange="gantikelurahan(this.id, 'kelurahan')"></select></div>
+            <div class="col-md-8"><input type="text" placeholder="Kecamatan" name="kecamatan" class="form-control pendek"></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Kelurahan</div>
-            <div class="col-md-8"><select name="kelurahan" id="kelurahan" class="form-control pendek"></select></div>
+            <div class="col-md-8"><input type="text" placeholder="Kelurahan" name="kelurahan" class="form-control pendek"></div>
           </div>
           <div class="row">
             <div class="col-md-4 tulisan">Kode Pos</div>
@@ -153,7 +146,7 @@ require_once('navbar.php');
 <?php require_once('footer.php'); ?>
   
   <link href="css/sign-up.css" rel="stylesheet">
-  <script src="js/sign-up.js"></script>
+  <script src="js/rajaongkir.js"></script>
   
 </body>
 </html>

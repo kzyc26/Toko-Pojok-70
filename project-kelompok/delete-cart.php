@@ -1,8 +1,9 @@
 <?php 
 session_start();
-$sid = session_id();
+// $sid = session_id();
 require_once('db.php');
 $id = $_POST['idbar'];
+$sid = $_POST['sid'];
 
 $query="SELECT t.transaction_id FROM transaction_detail td, transaction t WHERE t.transaction_id = td.transaction_id and t.session_id = '$sid' and id_product_detail = '$id';";
 $sql = mysqli_query($con, $query) or die(mysqli_error($con));
@@ -61,7 +62,10 @@ while($r = mysqli_fetch_assoc($sql)){
               </tr>
             </table>
           </div>
-          <?php }          
+          <?php } ?>
+          <button type="button" id="payment-but" data-toggle="modal" data-target="#pay" onclick="paymodal(<?php echo $_SESSION['total'];?>, '<?php echo $sid; ?>')"><img
+          src="assets/images/Cash.png">Payment</button>
+          <?php    
         } else{
             ?>
 <h2> Your cart is empty </h2>
