@@ -93,10 +93,18 @@ else{?>
                                         <br>
                                         <?php echo $orderhistory[$i][3];?>,
                                         <br>
-                                        <?php echo $orderhistory[$i][4];?>, <?php echo $orderhistory[$i][5];?>,
+                                        <?php 
+                                        $_SESSION['kota_id']= $orderhistory[$i][4];
+                                        include('display_kabkota.php');
+                                        echo $_SESSION['kota'];
+                                        ?>, <?php echo $orderhistory[$i][5];                                        ?>,
                                         <?php echo $orderhistory[$i][6];?>,
                                         <br>
-                                        <?php echo $orderhistory[$i][7];?>,ID,<?php echo $orderhistory[$i][8];?>
+                                        <?php 
+                                        $_SESSION['prov_id']= $orderhistory[$i][7];
+                                        include('display_province.php');
+                                        echo $_SESSION['prov'];
+                                        ?>, ID, <?php echo $orderhistory[$i][8];?>
                                         <br>
 
                                         <br>
