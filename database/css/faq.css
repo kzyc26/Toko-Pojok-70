@@ -1,0 +1,24 @@
+
+h1{
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+}
+
+.accordion{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    min-height: 400px;
+}
+
+.question, .answer{
+    width: 50%;
+    margin: auto;
+    clear: both;
+}
+.question{    
+    background-color: #FFEBD7;
+}
+
+.question:hover{
+    background-color: #E2EDFF;
+}

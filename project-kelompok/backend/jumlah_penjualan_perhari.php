@@ -28,7 +28,7 @@ $sqltgl = mysqli_query($con, $querytgl) or die(mysqli_error($con));
 $tanggal = mysqli_fetch_all($sqltgl);
 echo $tanggal[0][0];
 ?></h4>
-<table class="perhari">
+<table class="perhari standard">
   <tr>
     <th>ID Transaksi</th>
     <th>Gambar</th>

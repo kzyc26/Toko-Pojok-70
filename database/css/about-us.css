@@ -1,0 +1,24 @@
+
+.content{
+    text-align: justify;
+}
+
+.content h1{
+    text-align: center;
+}
+
+.tengah{
+    left: 20%;
+    float: left;
+}
+.content img{
+    margin-left:30%;
+
+}
+.footer{
+
+    position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

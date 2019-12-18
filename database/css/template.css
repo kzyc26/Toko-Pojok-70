@@ -1,0 +1,122 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    overflow-x:hidden;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    flex: 1 0 auto;
+}
+/* color selection  */
+.pink{
+    background-color: #FFDEF1;
+}
+.purple{
+    background-color: #F2E2FF
+}
+.blue{
+    background-color: #E2EDFF;
+}
+.cyan{
+    background-color: #DCFFFB;
+}
+.cream{
+    background-color: #FFFFE3;
+}
+
+/* nav */
+.logo-toko {
+    height: 150%;
+    width: auto;
+}
+
+.navbar-form {
+    margin-left: 35%;
+}
+
+.tombol {
+    /* position: relative; */
+    float: left;
+    width: 25%;
+    height: 80px;
+    margin-top: 10px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+}
+
+.navbar-right {
+    margin-right: 10%;
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
+    margin-bottom: 10px;
+}
+
+.nav-buttons button{ 
+    padding-top: 15px;    
+    border: none;
+    background-color: transparent;   
+}
+
+/* footer */
+.footer{
+    flex-shrink: 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    clear: both;
+    font-size: medium;
+    font-family: 'Lato', sans-serif;
+    background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
+}
+.footer ul li {display: inline-block;
+    position: relative;}
+
+.footer ul li a {padding: 10px 20px;
+text-decoration: none;}
+
+.footer .contact{
+    margin: 20px;
+    float: left;
+}
+
+.footer img{
+    height: 32px;
+    width: auto;
+}
+
+.contact-container{
+    position: relative;
+    left: 38%;
+}
+
+.icon-input-btn{
+    display: inline-block;
+    position: relative;
+}
+.icon-input-btn input[type="submit"]{
+    padding-left: 2em;
+    padding-bottom: 2em;
+    background-color: transparent;
+    border: none;
+}
+.icon-input-btn .glyphicon{
+    display: inline-block;
+    position: absolute;
+    left: 0.65em;
+    top: 45%;
+}
+.logo-toko{
+    width:200px;
+    height: 50px;
+    margin-top:-14px;
+    margin-left: 30px;
+
+}
+

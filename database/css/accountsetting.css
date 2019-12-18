@@ -1,0 +1,149 @@
+
+.vl{
+    
+    width:5px;
+    height: auto;
+}
+.content{
+    
+    min-height: 100%;
+
+    /* Equal to height of footer */
+    /* But also accounting for potential margin-bottom of last child */
+    margin-bottom: -50px;
+}
+
+.profilemenu{
+    height:100%;
+    margin-left:3%; 
+    /* border-right:1px solid black;   */
+}
+.profpic{
+    float:left;
+    position: relative;
+
+}
+.changepic,.logout{
+    position: relative;
+    margin-top:5%;
+    
+}
+.categories{
+    width:80%;
+    position: relative;
+    margin-top:5%;
+}
+
+.profiledetails > h2{
+    float: left;
+}
+.informations{
+    overflow:auto;
+    height:100%;
+   font-family:font-family: 'Lato', sans-serif;
+   
+}
+.informations h2{
+    text-align: center;
+    font-family: 'Solway', serif;
+}
+.profiledetails > h3{
+    float:left;
+}
+label{
+margin-left:2%;
+}
+table{
+    width: 100%;
+}
+.subcatvoucher > h2{
+    margin-left:50%;
+
+}
+table{
+    border-collapse: collapse;
+}
+.subcatvoucher img{
+    margin-left:20%;
+}
+.subcatvoucher button{
+    float:right;
+    margin-top:2%;
+   
+}
+.subcatpolicy h2{
+    margin-left:50%;
+}
+
+.submenu:hover{
+    background-color: #E2EDFF;
+    cursor:pointer;
+}
+ul{
+    list-style-type: none;
+}
+.subcatorderhistory h2{
+text-align: center;
+}
+
+.histories td, .histories th{
+border: 1px solid black;
+text-align: center;
+}
+.subcatnotifications h2{
+    text-align: center;
+}
+.notif h4{
+    text-align: center;
+}
+.notif p{
+    text-align: justify;
+}
+.subcatwish h2{
+text-align: center;
+}
+.wishes img{
+   width:100px;
+   height:100px;
+
+}
+.wishes tr,.wishes td,.wishes th{
+    border:1px solid black;
+    text-align: center;
+}
+.error p{color:pink;}
+
+.alamat{
+    background-color: #fff2db;
+    border: 5px dashed pink;
+
+}
+.alamat td, .alamat th{
+    padding-left: 10px;
+    
+}
+.orderdetail tr {
+    border-bottom: 1px solid lightgrey;
+}
+.totals td, .totals tr{
+    border: 1px solid lightgrey;
+    
+
+}
+.title{
+  text-align:right;
+    padding : 10px;
+}
+.totalcontent{
+    text-align:right;
+    font-size: large;
+    padding-right: 10px;
+  
+}
+.totalprice{
+    font-size: x-large;
+    color: hotpink;
+}
+.transactionid{
+    visibility: hidden;
+}

@@ -1,0 +1,47 @@
+.content{
+    widows: 100%;
+}
+.search{
+     margin-left:30%;
+     position:relative
+}
+.srchbar{
+    width:50%;
+    top:10%;
+}
+.content > h4{
+    margin-left:40%;
+    margin-top: 5%;
+}
+.content > p {
+    margin-left:38%;
+    position:relative;
+}
+.ordertable>h3{
+    margin-right:5%;
+    text-align: center;
+    position: relative;
+padding-top:2%;
+}
+table{
+    width:50%;
+    margin-left:22%;
+    border: 1px;
+    padding-top:5%;
+}
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+
+  }
+.reviewbtn{
+    background-color: lightgreen;
+    border-color: lightgreen;
+    position: relative;
+    margin-left:80%;
+    text-decoration: none;
+}
+
+.footer{
+    position: absolute;
+}

@@ -1,0 +1,95 @@
+
+.result{
+    position: relative;   
+}
+.result h2{
+    text-align: center;
+}
+
+.standard td,.standard th{
+    text-align:center;
+    padding:10px 10px 10px 10px;
+    border:1px solid black;
+}
+.standard{
+  margin-top:20px;
+  margin-left: 0;
+  
+}
+
+#listitem td, #listitem tr, #listitem th{
+padding:10px;
+text-align: center;
+border:1px solid black
+}
+#itemcategory{
+    margin-left: 20%;
+}
+
+.search{
+ width: 40%;
+ margin: 0 0 0 20%;
+ float: left;
+}
+.products td {
+    border:none;
+text-align: right;
+}
+.totalcontent{
+    text-align:right;
+    font-size: large;
+    padding-right: 10px;
+  
+}
+.totalprice{
+    font-size: x-large;
+    color: lightseagreen ;
+}
+.transactionid{
+    visibility: hidden;
+}
+.alamat{
+    background-color: #fff2db;
+    border: 5px dashed lightskyblue;
+    width:100%;
+
+}
+.alamat td, .alamat th{
+    padding-left: 10px;
+    
+}
+.totals,.orderdetail{
+    width:100%;
+}
+
+.orderdetail tr {
+    border-bottom: 1px solid lightgrey;
+    
+}
+.totals td, .totals tr{
+    border: 1px solid lightgrey;
+    
+}
+#delivery{
+    width: 70%;
+}
+.cart_total{
+    font-size: x-large;
+    color: lightseagreen ;
+    margin-left: 60%;
+}
+.cart_title{
+    text-align: left;
+    padding-right:20px;
+}
+.cart_totalcontent{
+text-align: right;
+}
+.chooseuser{
+    position: absolute;
+    margin-left: 20%;
+    margin-top: -54px;
+}
+#btnsearch{
+    margin-left: 25%;
+}

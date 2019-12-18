@@ -1,0 +1,147 @@
+
+.pink {
+    background-color: #FFDEF1;
+}
+
+.purple {
+    background-color: #F2E2FF
+}
+
+.blue {
+    background-color: #E2EDFF;
+}
+
+.cyan {
+    background-color: #DCFFFB;
+}
+
+.cream {
+    background-color: #FFFFE3;
+}
+
+/* nav */
+
+
+.navbar-form {
+    margin-left: 35%;
+}
+
+.tombol {
+    /* position: relative; */
+    float: left;
+    width: 25%;
+    height: 80px;
+    margin-top: 10px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+}
+
+.navbar-right {
+    margin-right: 10%;
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #EEE4FF, #EDFFF3, #FFF0F8, #FFEBD7);
+    margin-bottom: 10px;
+}
+
+/* carousel */
+.garland {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+}
+
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: 30%;
+    height: auto;
+}
+
+.carousel-caption {
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    color: black;
+    background: rgba(255, 255, 255, 0.5);
+    bottom: 30px;
+    padding: 2px;
+}
+
+.carousel-control {
+    opacity: 0.5;
+}
+
+/* button group */
+#girl{
+    width: 100%;
+    left: 20%;
+}
+#girl .dropdown-menu{
+    position: absolute;
+    width: 30%;
+    left: 20%;
+    transform: translateY(80px);
+}
+
+#boy{
+    width: 100%;
+    left: 25%;
+}
+#boy .dropdown-menu {
+    position: absolute;
+    width: 25%;
+    left: 50%;
+    transform: translateY(80px);
+}
+
+.panel-font{
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;    
+    text-align: center;
+    padding: 0;
+}
+
+.panel-heading{
+    background-image: linear-gradient( to right,#EEE4FF, #EDFFF3, #FFF0F8,#FFEBD7);
+}
+
+/* review */
+.rating{
+    text-align: center;
+}
+
+.col-lg-4{
+    padding: 50px;
+}
+
+.col-lg-4 h2, .col-lg-4 p{
+    text-align: center;
+}
+
+/* footer */
+.footer{
+    text-align: center;
+}
+.footer ul li {display: inline-block;
+    position: relative;}
+
+.footer ul li a {padding: 10px 20px;
+text-decoration: none;}
+
+.footer .contact{
+    margin: 20px;
+    float: left;
+}
+
+.footer img{
+    height: 32px;
+    width: auto;
+}
+
+.contact-container{
+    position: relative;
+    left: 39%;
+}

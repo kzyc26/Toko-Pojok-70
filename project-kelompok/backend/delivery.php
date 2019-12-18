@@ -22,7 +22,7 @@ if($userid !== "none"){
 else{
     $historycmd_extra2="";
 }
-    $cmd_orderhistory="SELECT t.transaction_id as `Transaction ID`,
+    $cmd_orderhistory="SELECT DISTINCT t.transaction_id as `Transaction ID`,
     receiver,notelp,dd.alamat,dd.kab_kota,dd.kecamatan,dd.kelurahan,
     dd.provinsi,dd.kode_pos,total_transaction, d.delivery_status,
     ongkir,nama_ekspedisi,payment_method 
