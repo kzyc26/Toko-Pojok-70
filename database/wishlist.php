@@ -1,17 +1,31 @@
 <?php include("header.php") ?>
 
 <?php 
+if (!isset($_SESSION['hasil_search'])){  
   $cmd_wishlist="SELECT fullname, p.id_product, price
   from  customer c, wishlist w, product p 
-  where p.id_product=w.Id_product and c.username = w.username ";
+  where p.id_product = w.Id_product and c.username = w.username ";
   $wishlist_result  = mysqli_query($con,$cmd_wishlist) or die(mysqli_error($con));
   $wishlist=mysqli_fetch_all($wishlist_result);
   $wishlist_count = mysqli_num_rows($wishlist_result);
-  ?>
-  <h2>Wishlist</h2>
-  <br>
+} else {
+  $wishlist = $_SESSION['hasil_search'];
+  $wishlist_count= $_SESSION['baris'];
+  unset($_SESSION['hasil_search']);
+  unset($_SESSION['baris']);
+} 
 
-<table class="standard">
+  ?>
+
+  <h2>Wishlist</h2>
+  <form class="select" action="customer_wishlist_display.php" method="POST">
+  <div class="form-group">
+    <input type="text" name="keyword" class="form-control" placeholder="Search" autofocus autocomplete="off">
+  </div>
+  <button type="submit" name="search" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+</form>
+
+<table class="standard" id="display_custwishlist">
     <tr>
         <th>Name</th>
         <th>ID Product</th>

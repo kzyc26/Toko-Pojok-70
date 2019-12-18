@@ -1,3 +1,5 @@
+document.getElementById("select_customer").selectedIndex = "-1";
+
 function categorychange(){    
     var cbcat = document.getElementById("listcategory");
     var cat = cbcat.options[cbcat.selectedIndex].value;
@@ -41,4 +43,30 @@ function deliverychange(){
                     $("#delivery").html(result);
                 }
             });
+}
+function custrevchange(username){
+    var cbcust = document.getElementById(username);
+    var username = cbcust.options[cbcust.selectedIndex].value;
+    $.ajax({
+        url: "customer_review_display.php",
+        method: "GET",
+        data: {username},
+        dataType: "html",
+        success: function(result){
+            $("#display_custreview").html(result);
+        }
+    });
+}
+function discountchange(id){
+    var cbdisc = document.getElementById(id);
+    var terpilih = cbdisc.options[cbdisc.selectedIndex].value;
+    $.ajax({
+        url: "discount_display.php",
+        method: "GET",
+        data: {terpilih},
+        dataType: "html",
+        success: function(result){
+            $("#display_discount").html(result);
+        }
+    });
 }

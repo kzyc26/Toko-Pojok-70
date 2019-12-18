@@ -5,7 +5,7 @@
   <div class="col-md-3"><input class="form-control" type="date" id="tanggal" date-format="yyyy-MM-dd" name="tanggal">
   </div>
   <button type="submit" name="cari">Cari</button>
-  <button type="submit" name="all">Show All Invoice</button>
+  <button type="submit" name="all">Show All Invoices</button>
 </form>
 <?php
 if(isset($_POST['cari'])){
@@ -25,7 +25,7 @@ if(isset($_POST['cari'])){
 display($jenis, $i, $row, $result, $total);
 }elseif(isset($_POST['all'])){
     $jenis = "semua";
-    $query = "SELECT transaction_id, session_id, concat(day(`date`), ' ', monthname(`date`), ' ', year(`date`)), total_transaction, username, total_discount, payment_method, IF(payment_status = 1, 'Lunas', 'Belum dibayar'), IF(transaction_status = 1, 'Sudah Checkout', 'Belum Checkout') FROM `transaction` t, payment_method p where t.id_payment_method = p.id_payment_method ";
+    $query = "SELECT transaction_id, session_id, concat(day(`date`), ' ', monthname(`date`), ' ', year(`date`)), total_transaction, username, total_discount, payment_method, IF(payment_status = 1, 'Lunas', 'Belum dibayar'), IF(transaction_status = 1, 'Sudah Checkout', 'Belum Checkout') FROM `transaction` t, payment_method p where t.id_payment_method = p.id_payment_method  ORDER BY `date` asc";
   $sql = mysqli_query($con, $query) or die(mysqli_error($con));
   $result = mysqli_fetch_all($sql);
   $row = mysqli_num_rows($sql);
@@ -42,7 +42,7 @@ display($jenis, $i, $row, $result, 0);
 
 <table class="standard">
   <tr>
-    <th>ID Transaksi</th>
+    <th>ID Invoice</th>
     <th>Order ID</th>
     <th>Tanggal</th>
     <th>Total Transaksi</th>

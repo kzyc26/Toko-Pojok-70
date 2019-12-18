@@ -1,3 +1,9 @@
+.select{
+ width: 40%;
+}
+.select .form-group{
+    float: left;
+}
 
 .result{
     position: relative;   

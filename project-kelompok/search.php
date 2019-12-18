@@ -15,7 +15,7 @@ if (isset($_POST['search'])){
       } else {
         unset($_SESSION['hasil_search']);
         unset($_SESSION['baris']);
-        echo '<script> alert("Sorry, keyword does not match."); 
+        echo '<script> alert("Maaf, barang tidak ditemukan."); 
         window.location.replace("products.php");
         </script>';
       } 

@@ -82,9 +82,9 @@
                             <div class="panel-body">
                                 <a href="invoice.php">Invoice per Hari</a>
                                 <br>
-                                <a href="jumlah_penjualan_perhari.php">Jumlah Penjualan per Hari</a>
+                                <a href="detail_penjualan_perhari.php"> Detail Penjualan per Hari</a>
                                 <br>
-                                <a href="jumlah_penjualan_perbulan.php">Jumlah Penjualan per Bulan</a>
+                                <a href="jumlah_penjualan_perbulan.php">Detail Penjualan per Bulan</a>
                                 <br>
                                 <a href="item_details_in_cart.php">Item Details in Cart</a>
                                 <br>

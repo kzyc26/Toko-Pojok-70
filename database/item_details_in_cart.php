@@ -7,6 +7,7 @@
   $cart_count = mysqli_num_rows($cart_result);
   ?>
 <h2>Item Details in Cart</h2>
+<p>Menampilkan semua barang yang ada dalam cart user (belum terjadi proses check-out)</p>
 <br>
 
 

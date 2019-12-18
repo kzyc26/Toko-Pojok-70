@@ -1,7 +1,7 @@
 <?php include("header.php") ?>
-<h2>Jumlah Penjualan Per Hari</h2>
+<h2>Detail Penjualan Per Hari</h2>
   <br>
-<form action="jumlah_penjualan_perhari.php" method="post">
+<form action="detail_penjualan_perhari.php" method="post">
   <div class="col-md-3"><input class="form-control" type="date" id="tanggal" date-format="yyyy-MM-dd" name="tanggal">
   </div>
   <button type="submit" name="cari">Cari</button>
@@ -34,7 +34,7 @@ echo $tanggal[0][0];
 
 <table class="perhari standard">
   <tr>
-    <th>ID Transaksi</th>
+    <th>ID Invoice</th>
     <th>Gambar</th>
     <th>Ukuran</th>
     <th>Warna</th>
