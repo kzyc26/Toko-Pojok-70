@@ -1,6 +1,7 @@
 
 .result{
     position: relative;   
+  
 }
 .result h2{
     text-align: center;
@@ -13,7 +14,7 @@
 }
 .standard{
   margin-top:20px;
-  margin-left: 0;
+  margin-left: 20%;
   
 }
 
