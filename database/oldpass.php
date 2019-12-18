@@ -10,6 +10,9 @@
   $user=mysqli_fetch_all($user_result);
   $user_count = mysqli_num_rows($user_result);
   ?>
+  <h2> Frequently Used Ekspedisi</h2>
+  <br>
+
  <table class="standard">
                     <tr>
                         <th>Nama Ekspedisi</th>

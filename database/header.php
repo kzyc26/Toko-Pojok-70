@@ -111,4 +111,4 @@
             </div>
 
             <div class="col-md-8 result">
-                <h2>Result</h2>
+               

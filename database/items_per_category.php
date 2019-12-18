@@ -6,6 +6,9 @@
   $category=mysqli_fetch_all($category_result);
   $category_count = mysqli_num_rows($category_result);
   ?>
+  <h2>Items Per Category</h2>
+  <br>
+
 <div class="itemcategory" id="itemcategory">
     <p> Select Category: </p>
     <select name="category" id="listcategory" onchange="categorychange()">

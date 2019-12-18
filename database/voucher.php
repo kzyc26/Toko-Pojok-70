@@ -1,17 +1,20 @@
 <?php include("header.php") ?>
 
 <?php 
-$cmd_voucher="SELECT uv.username , voucher_name
+$cmd_voucher="SELECT uv.username , voucher_desc,qty
    from user_voucher uv,voucher v, customer c
    where uv.username = c.username and uv.id_voucher = v.id_voucher";
    $voucher_result  = mysqli_query($con,$cmd_voucher) or die(mysqli_error($con));
    $voucher=mysqli_fetch_all($voucher_result);
    $voucher_count = mysqli_num_rows($voucher_result); ?>
+<h2>Voucher Customer</h2>
+  <br>
 
 <table class="standard">
                     <tr>
                         <th>Username</th>
                         <th>Voucher</th>
+                        <th>Qty</th>
                     </tr>
                     <?php 
                         $i=1;
@@ -20,6 +23,7 @@ $cmd_voucher="SELECT uv.username , voucher_name
                     <tr>
                         <td> <?php echo $voucher[$i-1][0];?></td>
                         <td> <?php echo $voucher[$i-1][1];?></td>
+                        <td> <?php echo $voucher[$i-1][2];?></td>
                     </tr>
                     <?php 
                     $i++; }

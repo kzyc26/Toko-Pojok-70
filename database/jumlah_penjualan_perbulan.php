@@ -1,5 +1,7 @@
 <?php include("header.php") ?>
 
+<h2>Jumlah Penjualan Per Bulan</h2>
+  <br>
 
 <div class="month" id="monthrev">
     <p> Select Month: </p>

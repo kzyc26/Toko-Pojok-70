@@ -10,6 +10,9 @@
   $user=mysqli_fetch_all($user_result);
   $user_count = mysqli_num_rows($user_result);
    ?>
+   <h2>User Order History</h2>
+  <br>
+
 <p> Select Delivery Status: </p>
     <select name="delivery" id="listdelivery" >
         <option value="none">All</option>

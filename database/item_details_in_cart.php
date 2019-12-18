@@ -1,12 +1,13 @@
 <?php include("header.php") ?>
 
 <?php 
-  $cmd_cart="SELECT transaction_id from transaction where transaction_status = 0 and payment_status=0 ";
+  $cmd_cart="SELECT transaction_id, if(username ='-','Guest',username) as `user` from transaction where transaction_status = 0 and payment_status=0";
   $cart_result  = mysqli_query($con,$cmd_cart) or die(mysqli_error($con));
   $cart=mysqli_fetch_all($cart_result);
   $cart_count = mysqli_num_rows($cart_result);
   ?>
-
+<h2>Item Details in Cart</h2>
+<br>
 
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -17,7 +18,7 @@
                                 <a role="button" data-toggle="collapse" data-parent="#accordion"
                                     href="#collapse-<?php echo $i;?>" aria-expanded="true"
                                     aria-controls="collapse-<?php echo $i;?>">
-                                    Transaction ID : <?php echo $cart[$i][0];?>
+                                    Transaction ID : <?php echo $cart[$i][0];?> | User: <?php echo $cart[$i][1];?> 
                                 </a>
                             </h4>
                         </div>

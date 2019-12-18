@@ -6,6 +6,9 @@
   $user=mysqli_fetch_all($user_result);
   $user_count = mysqli_num_rows($user_result);?>
 <table class="standard">
+<h2>Login Details Pengguna</h2>
+  <br>
+
     <tr>
         <th>Username</th>
         <th>Password</th>

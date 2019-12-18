@@ -11,7 +11,6 @@ where td.transaction_id = t.transaction_id and td.id_product_detail=pd.id_produc
 $bulanan_result  = mysqli_query($con,$Cmd_bulanan) or die(mysqli_error($con));
 $bulanan=mysqli_fetch_all($bulanan_result);
 $bulanan_count = mysqli_num_rows($bulanan_result);
-?> <script> alert(<?php echo $bulanan_count?>); </script><?php
 $subtotal = 0;
 $baris= $bulanan_count;
 for($i=0; $i<=$bulanan_count-1; $i++){
