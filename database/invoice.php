@@ -1,4 +1,6 @@
 <?php include("header.php") ?>
+<h2>Invoice Per Hari</h2>
+ <br>
 <form action="invoice.php" method="post">
   <div class="col-md-3"><input class="form-control" type="date" id="tanggal" date-format="yyyy-MM-dd" name="tanggal">
   </div>
@@ -33,9 +35,11 @@ display($jenis, $i, $row, $result, 0);
 
   function display($jenis, $i, $row, $result, $total){
 ?>
+
 <?php if($jenis == "tanggal"){ ?>
 <h3>TOTAL = Rp.<?php echo number_format($total['sum(total_transaction)'], 2, ",", "."); ?></h3>
 <?php } ?>
+
 <table class="standard">
   <tr>
     <th>ID Transaksi</th>
@@ -56,7 +60,7 @@ display($jenis, $i, $row, $result, 0);
     <td> <?php echo $result[$i][0];?></td>
     <td> <?php echo $result[$i][1];?></td>
     <td> <?php echo $result[$i][2];?></td>
-    <td> <?php echo $result[$i][3];?></td>
+    <td> Rp.<?php echo number_format($result[$i][3],2,',','.');?></td>
     <td> <?php echo $result[$i][4];?></td>
     <td> <?php echo $result[$i][5];?></td>
     <td> <?php echo $result[$i][6];?></td>

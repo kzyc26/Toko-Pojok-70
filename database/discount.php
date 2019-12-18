@@ -6,6 +6,9 @@
    $discount=mysqli_fetch_all($discount_result);
    $discount_count = mysqli_num_rows($discount_result);
    ?>
+   <h2>Product Dengan Diskon</h2>
+
+ <br>
 <table class="standard">
 
     <tr>

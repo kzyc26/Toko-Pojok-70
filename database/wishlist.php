@@ -8,6 +8,9 @@
   $wishlist=mysqli_fetch_all($wishlist_result);
   $wishlist_count = mysqli_num_rows($wishlist_result);
   ?>
+  <h2>Wishlist</h2>
+  <br>
+
 <table class="standard">
     <tr>
         <th>Name</th>

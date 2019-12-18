@@ -1,4 +1,6 @@
 <?php include("header.php") ?>
+<h2>Jumlah Penjualan Per Hari</h2>
+  <br>
 <form action="jumlah_penjualan_perhari.php" method="post">
   <div class="col-md-3"><input class="form-control" type="date" id="tanggal" date-format="yyyy-MM-dd" name="tanggal">
   </div>
@@ -28,6 +30,8 @@ $sqltgl = mysqli_query($con, $querytgl) or die(mysqli_error($con));
 $tanggal = mysqli_fetch_all($sqltgl);
 echo $tanggal[0][0];
 ?></h4>
+
+
 <table class="perhari standard">
   <tr>
     <th>ID Transaksi</th>
@@ -48,8 +52,8 @@ echo $tanggal[0][0];
     <td> <?php echo $result[$i][2];?></td>
     <td> <?php echo $result[$i][3];?></td>
     <td> <?php echo $result[$i][4];?></td>
-    <td> <?php echo $result[$i][5];?></td>
-    <td> <?php echo $result[$i][6];?></td>
+    <td> Rp.<?php echo number_format($result[$i][5],2,',','.');?></td>
+    <td> Rp.<?php echo number_format($result[$i][6],2,',','.');?></td>
   </tr>
   <?php
     $i++;

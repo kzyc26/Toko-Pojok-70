@@ -8,6 +8,9 @@ $product_details_result  = mysqli_query($con,$cmd_product_details) or die(mysqli
 $product_details=mysqli_fetch_all($product_details_result);
 $product_details_count = mysqli_num_rows($product_details_result);
 ?>
+<h2>Product Details</h2>
+  <br>
+
 <table class="productdetails">
     <tr>
         <th> ID Product </th>

@@ -10,6 +10,8 @@
     $mostwanted=mysqli_fetch_all($mostwanted_result);
     $mostwanted_count = mysqli_num_rows($mostwanted_result);
   ?>
+<h2>Most Wanted Products</h2>
+  <br>
 
 <table class="standard">
                     <tr>

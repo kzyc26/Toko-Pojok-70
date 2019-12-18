@@ -11,7 +11,9 @@ $bestseller_result  = mysqli_query($con,$cmd_bestseller) or die(mysqli_error($co
 $bestseller=mysqli_fetch_all($bestseller_result);
 $bestseller_count = mysqli_num_rows($bestseller_result);
 ?>
-
+ <h2> Best Seller Products  </h2>
+ <br>
+ 
 <table class="standard">
                     <tr>
                         <th>Product ID</th>

@@ -9,6 +9,9 @@
   $customerreview=mysqli_fetch_all($customerreview_result);
   $customerreview_count = mysqli_num_rows($customerreview_result);
   ?>
+   <h2> Individual Customer Review </h2>
+   <br>
+
 <table class="standard">
     <tr>
         <th>Name</th>
