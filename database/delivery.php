@@ -95,14 +95,14 @@ else{?>
                                         <br>
                                         <?php 
                                         $_SESSION['kota_id']= $orderhistory[$i][4];
-                                        include('display_kabkota.php');
+                                        require('display_kabkota.php');
                                         echo $_SESSION['kota'];
                                         ?>, <?php echo $orderhistory[$i][5];                                        ?>,
                                         <?php echo $orderhistory[$i][6];?>,
                                         <br>
                                         <?php 
                                         $_SESSION['prov_id']= $orderhistory[$i][7];
-                                        include('display_province.php');
+                                        require('display_province.php');
                                         echo $_SESSION['prov'];
                                         ?>, ID, <?php echo $orderhistory[$i][8];?>
                                         <br>

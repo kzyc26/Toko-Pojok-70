@@ -17,7 +17,7 @@ if (!isset($_SESSION['hasil_search'])){
 <h2>Login Details Pengguna</h2>
 <form class="select" action="search_user.php" method="POST">
   <div class="form-group">
-    <input type="text" name="keyword" class="form-control" placeholder="Search" autofocus autocomplete="off">
+    <input type="text" name="keyword" class="form-control" placeholder="Masukkan Username/Nama" autofocus autocomplete="off">
   </div>
   <button type="submit" name="search" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
 </form>

@@ -1,4 +1,4 @@
-<?php include("header.php") ?>
+<?php require("header.php") ?>
 
 <?php
 if (!isset($_SESSION['hasil_search'])){
@@ -18,7 +18,7 @@ $biodata_count = mysqli_num_rows($biodata_result);
   <br>
   <form class="select" action="search_biodata.php" method="POST">
   <div class="form-group">
-    <input type="text" name="keyword" class="form-control" placeholder="Search" autofocus autocomplete="off">
+    <input type="text" name="keyword" class="form-control" placeholder="Masukkan Username/Nama" autofocus autocomplete="off">
   </div>
   <button type="submit" name="search" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
 </form>
@@ -37,9 +37,9 @@ $biodata_count = mysqli_num_rows($biodata_result);
                     if($biodata_count>0){
                     while($i<=$biodata_count){                        
   $_SESSION['kota_id']=$biodata[$i-1][5];
-  include('display_kabkota.php');
+  require('display_kabkota.php');
   $_SESSION['prov_id']=$biodata[$i-1][6];
-  include('display_province.php');
+  require('display_province.php');
 
   ?>
                     <tr>
@@ -58,5 +58,5 @@ $biodata_count = mysqli_num_rows($biodata_result);
                 
                      ?>
                 </table>
-<?php include("footer.php") ?>
+<?php require("footer.php") ?>
 

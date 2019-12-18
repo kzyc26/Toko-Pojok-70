@@ -30,8 +30,6 @@
                             <div class="panel-body">
                                 <a href="user.php">Login Details Pengguna</a>
                                 <br>
-                                <a href="alamat.php">Alamat User</a>
-                                <br>
                                 <a href="biodata.php">Biodata</a>
                                 <br>
                                 <a href="wishlist.php">Wishlist</a>
