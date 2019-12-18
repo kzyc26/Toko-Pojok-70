@@ -29,6 +29,8 @@ if(isset($_POST['button_pay'])){
     $sql = mysqli_query ($con, $query) or die(mysqli_error($con));
     $query="UPDATE transaction set total_transaction = ".$_SESSION['total']." where transaction_id='$t_id'";
     $sql = mysqli_query ($con, $query) or die(mysqli_error($con));
+    $query="UPDATE transaction set ongkir = ".$_SESSION['ongkir']." where transaction_id='$t_id'";
+    $sql = mysqli_query ($con, $query) or die(mysqli_error($con));
     echo '<script> alert("Pesanan berhasil dibuat, silakan tunggu pembayaran Anda dikonfirmasi!"); 
     window.location.replace("index.php");
     </script>';
