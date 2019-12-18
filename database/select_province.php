@@ -23,10 +23,16 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  echo $response;
-  echo "<br> <pre>";
-  $arrayku = json_decode($response, true);
-  echo "</pre>";
-  echo $arrayku['rajaongkir']['results']['province'];
+    $c=0;
+    $arr_prov = json_decode($response, true);
+    ?>
+<select name="provinsi" id="select_provinsi" class="form-control pendek" onchange="gantikab(this.id, 'select_kabkota')">
+    <?php
+  for ($c; $c < count($arr_prov['rajaongkir']['results']); $c++){
+    ?>
+    <option value="<?php echo $arr_prov['rajaongkir']['results'][$c]['province_id'];?>"><?php echo $arr_prov['rajaongkir']['results'][$c]['province'];?></option>
+    <?php
+  }
 }
 ?>
+</select>
