@@ -12,6 +12,15 @@
         <option value="<?php echo $i?>"><?php echo $month_name;?></option>
         <?php }?>
     </select>
+
+    <p> Select Year: </p>
+    <select name="year" id="yearlist" onchange="monthchange()">
+        <option value=""></option>
+        <?php for($i=1; $i<=20; $i++){
+            $year = 2018 +$i;?>
+        <option value="<?php echo $year?>"><?php echo $year;?></option>
+        <?php }?>
+    </select>
     <div id="monthlyrev" >
 
     </div>

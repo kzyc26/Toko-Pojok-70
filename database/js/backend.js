@@ -17,11 +17,13 @@ function categorychange(){
 function monthchange(){    
     var cbmonth = document.getElementById("monthlist");
     var month = cbmonth.options[cbmonth.selectedIndex].value;
+    var cbyear = document.getElementById("yearlist");
+    var year = cbyear.options[cbyear.selectedIndex].value;
     // alert(cat);
             $.ajax({
                 url: "monthly_revenue.php",
                 method: "GET",
-                data: { month },
+                data: { month, year },
                 dataType: "html",
                 success: function(result){
                     $("#monthlyrev").html(result);
