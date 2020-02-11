@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 18, 2019 at 11:37 AM
--- Server version: 5.7.28-0ubuntu0.16.04.2
+-- Generation Time: Feb 09, 2020 at 02:33 PM
+-- Server version: 5.7.29-0ubuntu0.16.04.1
 -- PHP Version: 7.0.33-6+ubuntu16.04.1+deb.sury.org+3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -75,16 +75,16 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`password`, `jenis_kelamin`, `fullname`, `email`, `telepon`, `provinsi`, `kab_kota`, `kecamatan`, `kelurahan`, `kode_pos`, `alamat`, `username`) VALUES
-('33b1eac210971fb02a3b90afce9dbff758be794d', 'female', 'Aisyah', 'aisyah12@gmail.com', '0226030341', 'jawa-tengah', 'semarang', 'bawen', 'harjosari', '61256', 'Jl. Raya Berbek 46 ', 'aisyah12'),
-('33b1eac210971fb02a3b90afce9dbff758be794d', 'male', 'Ammar', 'ammar001@student.ciputra.ac.id', '08291019283', 'jawa-tengah', 'semarang', 'bawen', 'harjosari', '62710', 'Jl  Semanggi Raya  No. 29', 'ammar01'),
-('33b1eac210971fb02a3b90afce9dbff758be794d', 'male', 'Bevan', 'bevan01@gmail.com', '0897654323', 'jawa-timur', 'surabaya', 'tenggilis-mejoyo', 'prapen', '65432', 'Jl. Pegunungan Indah no 19', 'bevankevin'),
-('33b1eac210971fb02a3b90afce9dbff758be794d', 'female', 'Kezia Yovita', 'kchandra04@gmail.com', '08219283782', 'jawa-timur', 'malang', 'blimbing', 'purwantoro', '60233', 'Jl raya tumpang no 28', 'kzyc26'),
-('7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'female', 'Priscilla', 'r.tanamal@ciputra.ac.id', '089787687', 'jawa-timur', 'surabaya', 'tenggilis-mejoyo', 'prapen', '12345', 'sndckjabshdbfasc', 'pvannyamelia'),
-('33b1eac210971fb02a3b90afce9dbff758be794d', 'female', 'Fanny Widjaja', 'fann11@gmail.com', '021 88952246', 'jawa-timur', 'surabaya', 'tenggilis-mejoyo', 'prapen', '629093', 'Jl Rambutan Bl GB-1/12,Kalibaru', 'Thimande'),
-('33b1eac210971fb02a3b90afce9dbff758be794d', 'male', 'Iman Handoko', 'Iman29@gmail.om', '021 7237864', 'jawa-timur', 'surabaya', 'tenggilis-mejoyo', 'prapen', '60233', 'Jl RS Fatmawati 39 Ruko Duta Mas Fatmawati Bl A-1/38,Cipete Utara', 'Thrervoich'),
-('33b1eac210971fb02a3b90afce9dbff758be794d', 'male', 'Setiawan Bima Widjaja', 'setaiwan112@gmail.com', '+62 361 9230800', 'jawa-timur', 'surabaya', 'tenggilis-mejoyo', 'panjang-jiwo', '80871', 'Jalan Raya Candi Dasa', 'Weare1980'),
-('33b1eac210971fb02a3b90afce9dbff758be794d', 'female', 'Indah Bulan', 'werlyj39@gmail.com', '021 8354086', 'jawa-tengah', 'semarang', 'bawen', 'harjosari', '271620', 'Jl HR Rasuna Said Kav 1 Menara Imperium Lt 26 Suite B,Guntur', 'Werly1979'),
-('33b1eac210971fb02a3b90afce9dbff758be794d', 'male', 'Susilo Irwan', 'susz29@gmail.com', '021 5264850', 'jawa-tengah', 'semarang', 'susukan', 'tawang', '60912', 'Jl Jend Gatot Subroto Kav 56 Ged Adhi Graha Lt 15 Suite 1501', 'Withery1987');
+('33b1eac210971fb02a3b90afce9dbff758be794d', 'female', 'Aisyah', 'aisyah12@gmail.com', '0226030341', '5', '55', 'bawen', 'harjosari', '61256', 'Jl. Raya Berbek 46 ', 'aisyah12'),
+('33b1eac210971fb02a3b90afce9dbff758be794d', 'male', 'Ammar', 'ammar001@student.ciputra.ac.id', '08291019283', '6', '66', 'bawen', 'harjosari', '62710', 'Jl  Semanggi Raya  No. 29', 'ammar01'),
+('33b1eac210971fb02a3b90afce9dbff758be794d', 'male', 'Bevan', 'bevan01@gmail.com', '0897654323', '4', '44', 'tenggilis-mejoyo', 'prapen', '65432', 'Jl. Pegunungan Indah no 19', 'bevankevin'),
+('33b1eac210971fb02a3b90afce9dbff758be794d', 'female', 'Kezia Yovita', 'kchandra04@gmail.com', '08219283782', '4', '43', 'blimbing', 'purwantoro', '60233', 'Jl raya tumpang no 28', 'kzyc26'),
+('7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'female', 'Priscilla', 'r.tanamal@ciputra.ac.id', '089787687', '4', '44', 'tenggilis-mejoyo', 'prapen', '12345', 'sndckjabshdbfasc', 'pvannyamelia'),
+('33b1eac210971fb02a3b90afce9dbff758be794d', 'female', 'Fanny Widjaja', 'fann11@gmail.com', '021 88952246', '4', '44', 'tenggilis-mejoyo', 'prapen', '629093', 'Jl Rambutan Bl GB-1/12,Kalibaru', 'Thimande'),
+('33b1eac210971fb02a3b90afce9dbff758be794d', 'male', 'Iman Handoko', 'Iman29@gmail.om', '021 7237864', '17', '106', 'tenggilis-mejoyo', 'prapen', '60233', 'Jl RS Fatmawati 39 Ruko Duta Mas Fatmawati Bl A-1/38,Cipete Utara', 'Thrervoich'),
+('33b1eac210971fb02a3b90afce9dbff758be794d', 'male', 'Setiawan Bima Widjaja', 'setaiwan112@gmail.com', '+62 361 9230800', '4', '111', 'tenggilis-mejoyo', 'panjang-jiwo', '80871', 'Jalan Raya Candi Dasa', 'Weare1980'),
+('33b1eac210971fb02a3b90afce9dbff758be794d', 'female', 'Indah Bulan', 'werlyj39@gmail.com', '021 8354086', '12', '213', 'bawen', 'harjosari', '271620', 'Jl HR Rasuna Said Kav 1 Menara Imperium Lt 26 Suite B,Guntur', 'Werly1979'),
+('33b1eac210971fb02a3b90afce9dbff758be794d', 'male', 'Susilo Irwan', 'susz29@gmail.com', '021 5264850', '13', '321', 'susukan', 'tawang', '60912', 'Jl Jend Gatot Subroto Kav 56 Ged Adhi Graha Lt 15 Suite 1501', 'Withery1987');
 
 -- --------------------------------------------------------
 
@@ -134,16 +134,15 @@ CREATE TABLE `delivery_details` (
 --
 
 INSERT INTO `delivery_details` (`transaction_id`, `id_deliverystatus`, `alamat`, `kode_pos`, `kelurahan`, `kecamatan`, `kab_kota`, `provinsi`, `resi`, `Receiver`, `notelp`, `email`, `id_ekspedisi`) VALUES
-('201911201', '2', 'aaaaaaaaaaaaa', '80976', 'bbbbb', 'ccccccc', 'ddddd', 'eeeee', '', '', '0', NULL, ''),
-('201912041', '3', 'jl soekarno hatta no 18', '62247', 'penjaringan-sari', 'rungkut', 'surabaya', 'jawa-timur', '-', 'Alvin Haryono', '0818644738', 'alvinhariyono1227@gmail.com', 'jne-eks'),
-('201912042', '3', 'jl pekalongansari no 89', '92836', 'jatilawang', 'wonosegoro', 'boyolali', 'jawa-tengah', '-', 'Priscilla Vanny', '085140680955', 'priscilla.vanny@gmail.com', 'jne-eks'),
-('201912141', '3', 'Jl Raya Tempura no 29 ', '65112', 'prapen', 'tenggilis-mejoyo', 'surabaya', 'jawa-timur', '-', 'Shanen Pramono', '082304998688', 'sahn90@gmail.com', 'jnt-eks'),
-('201912142', '3', 'Jl Raya Hujung Kamar no 20', '64267', 'panjang-jiwo', 'tenggilis-mejoyo', 'surabaya', 'jawa-timur', '-', 'Kezia Y.', '081240580822', 'kchandra04@gmail.com', 'jne-reg'),
-('201912143', '3', 'Jl Kemangi No 21', '617261', 'doplang', 'bawen', 'semarang', 'jawa-tengah', '-', 'Lovena Wijaya', '09281019281', 'Lovee21@gmail.com', 'cod'),
-('201912162', '0', 'Jl. Sambikerep mo. 90', '49382', 'Lontar', 'Lontar', '65', '4', '-', 'Priscilla Syantiek', '089680557493', 'priscilla.vanny@gmail.com', 'pos'),
-('201912181', '0', 'Jl. Sambikerep no. 90', '49382', 'Lontar', 'Lontar', '164', '11', '-', 'Priscilla Syantiek', '089680557493', 'priscilla.vanny@gmail.com', 'pos'),
-('201912182', '0', 'Jl. Sambikerep no. 90', '49382', 'Lontar', 'Lontar', '250', '10', '-', 'Priscilla A.', '089680557493', 'pvannyamelia@student.ciputra.ac.id', 'tiki'),
-('201912182', '0', 'Jl. Sambikerep no. 90', '49382', 'Lontar', 'Lontar', '250', '10', '-', 'Priscilla A.', '089680557493', 'pvannyamelia@student.ciputra.ac.id', 'tiki');
+('201912041', '3', 'jl soekarno hatta no 18', '62247', 'penjaringan-sari', 'rungkut', '4', '9', '-', 'Alvin Haryono', '0818644738', 'alvinhariyono1227@gmail.com', 'jne'),
+('201912042', '3', 'jl pekalongansari no 89', '92836', 'jatilawang', 'wonosegoro', '50', '9', '-', 'Priscilla Vanny', '085140680955', 'priscilla.vanny@gmail.com', 'jne'),
+('201912141', '3', 'Jl Raya Tempura no 29 ', '65112', 'prapen', 'tenggilis-mejoyo', '4', '9', '-', 'Shanen Pramono', '082304998688', 'sahn90@gmail.com', 'jnt-eks'),
+('201912142', '3', 'Jl Raya Hujung Kamar no 20', '64267', 'panjang-jiwo', 'tenggilis-mejoyo', '4', '9', '-', 'Kezia Y.', '081240580822', 'kchandra04@gmail.com', 'jne'),
+('201912143', '3', 'Jl Kemangi No 21', '617261', 'doplang', 'bawen', '43', '9', '-', 'Lovena Wijaya', '09281019281', 'Lovee21@gmail.com', 'cod'),
+('201912162', '3', 'Jl. Sambikerep mo. 90', '49382', 'Lontar', 'Lontar', '65', '4', '-', 'Priscilla Syantiek', '089680557493', 'priscilla.vanny@gmail.com', 'pos'),
+('201912181', '3', 'Jl. Sambikerep no. 90', '49382', 'Lontar', 'Lontar', '164', '11', '-', 'Priscilla Syantiek', '089680557493', 'priscilla.vanny@gmail.com', 'pos'),
+('201912182', '3', 'Jl. Sambikerep no. 90', '49382', 'Lontar', 'Lontar', '250', '10', '-', 'Priscilla A.', '089680557493', 'pvannyamelia@student.ciputra.ac.id', 'tiki'),
+('201912182', '3', 'Jl. Sambikerep no. 90', '49382', 'Lontar', 'Lontar', '250', '10', '-', 'Priscilla A.', '089680557493', 'pvannyamelia@student.ciputra.ac.id', 'tiki');
 
 -- --------------------------------------------------------
 
@@ -162,10 +161,9 @@ CREATE TABLE `ekspedisi` (
 
 INSERT INTO `ekspedisi` (`id_ekspedisi`, `Nama_ekspedisi`) VALUES
 ('cod', 'Cash on Delivery'),
-('jne-eks', 'JNE Ekspress'),
-('jne-reg', 'JNE Reguler'),
-('jnt-eks', 'J&T Ekspres'),
-('jnt-reg', 'J&T Reguler');
+('jne', 'JNE'),
+('pos', 'Pos Indonesia'),
+('tiki', 'TIKI');
 
 -- --------------------------------------------------------
 
@@ -204,25 +202,25 @@ CREATE TABLE `product` (
   `min_stock` tinyint(2) UNSIGNED NOT NULL DEFAULT '0',
   `Price` bigint(20) UNSIGNED NOT NULL,
   `jumlah_foto` int(11) NOT NULL,
-  `Discount_price` int(11) DEFAULT NULL
+  `discount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id_product`, `id_category`, `bundling`, `Product_name`, `Product_desc`, `min_stock`, `Price`, `jumlah_foto`, `Discount_price`) VALUES
-('D4851', 'ST01', 0, 'Sailor', 'Bahan : 95 % Katun 5 % Spandex', 0, 120000, 4, NULL),
+INSERT INTO `product` (`id_product`, `id_category`, `bundling`, `Product_name`, `Product_desc`, `min_stock`, `Price`, `jumlah_foto`, `discount`) VALUES
+('D4851', 'ST01', 0, 'Sailor', 'Bahan : 95 % Katun 5 % Spandex', 0, 120000, 4, 30),
 ('D4852', 'ST01', 0, 'Love Birds', 'Bahan: Katun', 0, 120000, 3, NULL),
-('D6302', 'SP02', 0, 'Floral', 'Bahan: Katun', 0, 100000, 1, NULL),
+('D6302', 'SP02', 0, 'Floral', 'Bahan: Katun', 0, 100000, 1, 40),
 ('D6304', 'SP02', 0, 'Beads & Flower', 'Bahan : Kulit Sintetis', 0, 220000, 1, NULL),
 ('D6305', 'SP02', 0, 'Bunny', 'Bahan : Kulit Sintetis', 0, 200000, 2, NULL),
 ('D6508', 'SP03', 0, '2 Colors', 'Bahan : Kulit Sintetis', 0, 230000, 3, NULL),
 ('D6601', 'SP04', 0, 'Suprelo', 'Bahan : Kulit sintetis', 0, 230000, 2, NULL),
-('D6602', 'SP03', 0, 'Thunder', 'Bahan : Kulit Sintetis', 0, 250000, 1, NULL),
+('D6602', 'SP03', 0, 'Thunder', 'Bahan : Kulit Sintetis', 0, 250000, 1, 25),
 ('D6603', 'SP03', 0, 'LED', 'Bahan : Kulit Sintetis', 0, 280000, 3, NULL),
 ('D6604', 'SP01', 0, 'Adidas', 'Bahan : Kulit Sintetis', 0, 340000, 0, NULL),
-('D6605', 'SP01', 0, 'Girl Camo', 'Bahan : Kulit Sintetis', 0, 200000, 1, NULL),
+('D6605', 'SP01', 0, 'Girl Camo', 'Bahan : Kulit Sintetis', 0, 200000, 1, 30),
 ('D6606', 'SP03', 0, 'Boy Camo', 'Bahan : Kulit Sintetis', 0, 200000, 1, NULL),
 ('D8605', 'ST03', 0, 'XSB', 'Bahan: Katun', 0, 120000, 2, NULL),
 ('D8606', 'ST03', 0, 'Trees', 'Bahan: Katun', 0, 100000, 2, NULL),
@@ -232,7 +230,7 @@ INSERT INTO `product` (`id_product`, `id_category`, `bundling`, `Product_name`, 
 ('R4807', 'DS01', 0, 'Floral Dress', 'Bahan: Katun', 0, 200000, 2, NULL),
 ('R6204', 'SP01', 0, 'Mushroom', 'Bahan : Kulit Sintetis', 0, 200000, 2, NULL),
 ('R8601', 'ST04', 0, 'Royal Clothes', 'Bahan: Katun', 0, 130000, 2, NULL),
-('R8602', 'ST04', 0, 'Setelan Panjang Cowok Elephant', 'Bahan: Katun', 0, 100000, 5, NULL);
+('R8602', 'ST04', 0, 'Setelan Panjang Cowok Elephant', 'Bahan: Katun', 0, 100000, 5, 25);
 
 -- --------------------------------------------------------
 
@@ -420,7 +418,9 @@ INSERT INTO `transaction` (`transaction_id`, `session_id`, `date`, `total_transa
 ('201912161', '8g5l1n6aqnd7418o4a5flc6shp', '2019-12-16', 190000, '-', 0, 'N', 0, 0, 20000),
 ('201912162', 's3gel75mq84ggi7rk5b8ggsrhc', '2019-12-16', 241000, '-', 0, 'N', 0, 1, 20000),
 ('201912181', 'o9ijaag9bokqrb37nrcpuidt4k', '2019-12-18', 192500, '-', 0, 'N', 0, 1, 20000),
-('201912182', 'cbd1dnna09jviilfsefb8i9aba', '2019-12-18', 778000, '-', 0, 'N', 0, 1, 18000);
+('201912182', 'cbd1dnna09jviilfsefb8i9aba', '2019-12-18', 778000, '-', 0, 'N', 0, 1, 18000),
+('201912183', 'iloo2pmu41k6aq0qcrigsmme75', '2019-12-18', 200000, 'pvannyamelia', 0, 'N', 0, 0, 20000),
+('201912251', 'i50k4a41nu7jpspfb52sep16gu', '2019-12-25', 120000, '-', 0, 'N', 0, 0, 20000);
 
 -- --------------------------------------------------------
 
@@ -485,7 +485,9 @@ INSERT INTO `transaction_detail` (`transaction_detail_id`, `transaction_id`, `id
 ('201912161-2', '201912161', 'PDR48062', 190000, 3, 190000),
 ('201912162-2', '201912162', 'PDR48062', 190000, 3, 190000),
 ('201912181-2', '201912181', 'PDR48042', 180000, 1, 180000),
-('201912182-1', '201912182', 'PDR48062', 190000, 4, 380000);
+('201912182-1', '201912182', 'PDR48062', 190000, 4, 380000),
+('201912183-1', '201912183', 'PDR48072', 200000, 1, 200000),
+('201912251-1', '201912251', 'PDD48512', 120000, 1, 120000);
 
 -- --------------------------------------------------------
 
@@ -495,22 +497,23 @@ INSERT INTO `transaction_detail` (`transaction_detail_id`, `transaction_id`, `id
 
 CREATE TABLE `user_voucher` (
   `username` varchar(20) NOT NULL,
-  `Id_voucher` varchar(20) NOT NULL
+  `Id_voucher` varchar(20) NOT NULL,
+  `Qty` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user_voucher`
 --
 
-INSERT INTO `user_voucher` (`username`, `Id_voucher`) VALUES
-('pvannyamelia', 'DS1001'),
-('pvannyamelia', 'DS1002'),
-('pvannyamelia', 'DS1003'),
-('pvannyamelia', 'DS3001'),
-('pvannyamelia', 'DS3002'),
-('pvannyamelia', 'DS3003'),
-('pvannyamelia', 'GO001003'),
-('pvannyamelia', 'GO102001');
+INSERT INTO `user_voucher` (`username`, `Id_voucher`, `Qty`) VALUES
+('pvannyamelia', 'DS1001', 4),
+('thimande', 'DS1002', 2),
+('pvannyamelia', 'DS1003', 4),
+('pvannyamelia', 'DS3001', 4),
+('thimande', 'DS3002', 2),
+('pvannyamelia', 'DS3003', 4),
+('pvannyamelia', 'GO001003', 4),
+('thimande', 'GO102001', 2);
 
 -- --------------------------------------------------------
 
@@ -536,8 +539,8 @@ INSERT INTO `voucher` (`id_voucher`, `id_voucher_type`, `Voucher_name`, `Voucher
 ('DS3001', 'DS', 'Discount 30%', 'Discount 30%  for all Items'),
 ('DS3002', 'DS', 'Discount 30%', 'Discount 30%  for Boys Item'),
 ('DS3003', 'DS', 'Discount 30%', 'Discount 30%  for Girls Item'),
-('GO001003', 'GO', 'Gratis Ongkir hingga 10.000 tanpa minimal pembelian', 'Gratis Ongkir 10k'),
-('GO102001', 'GO', 'Gratis Ongkir hingga 20.000 dengan minimal pembelian 100.000', 'Gratis Ongkir 20k');
+('GO001003', 'GO', 'Gratis Ongkir 10k', 'Gratis Ongkir hingga 10.000 tanpa minimal pembelian'),
+('GO102001', 'GO', 'Gratis Ongkir 20k', 'Gratis Ongkir hingga 20.000 dengan minimal pembelian 100.000');
 
 -- --------------------------------------------------------
 
@@ -600,13 +603,13 @@ CREATE TABLE `wishlist` (
 --
 
 INSERT INTO `wishlist` (`username`, `Id_product`) VALUES
-('pvannyamelia', 'D4851'),
+('thimande', 'D4851'),
 ('pvannyamelia', 'R4807'),
-('pvannyamelia', 'D6305'),
-('pvannyamelia', 'D6508'),
+('thimande', 'D6305'),
+('thimande', 'D6508'),
 ('pvannyamelia', 'R8602'),
 ('pvannyamelia', 'R4804'),
-('pvannyamelia', 'D6605');
+('thimande', 'D6605');
 
 --
 -- Indexes for dumped tables
